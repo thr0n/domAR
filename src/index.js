@@ -1,32 +1,35 @@
 import * as d3 from 'd3'
 
 import './demo.css'
-import THREE from './three'
 import data from './data.json'
 
-//window.Argon.init();
+const Argon = window.Argon;
+const THREE = window.THREE;
 
-let charts, timer
+const app = Argon.init();
+app.view.element.style.zIndex = 0;
 
-const scene = new THREE.Scene()
+const renderer = new THREE.CSS3DArgonRenderer();
+const hud = new THREE.CSS3DArgonHUD();
 
-const width = window.innerWidth
-const height = window.innerHeight
+app.view.element.appendChild(renderer.domElement);
+app.view.element.appendChild(hud.domElement);
 
-const camera = new THREE.PerspectiveCamera(40, width / height, 1, 10000)
-camera.position.z = 3000
+const camera = new THREE.PerspectiveCamera();
+const scene = new THREE.Scene();
 
-const renderer = new THREE.CSS3DRenderer()
-renderer.setSize(width, height)
-renderer.domElement.style.position = 'absolute'
-document.getElementById('container').appendChild(renderer.domElement)
+const root = new THREE.Object3D()
+const userLocation = new THREE.Object3D();
+userLocation.add(root)
 
-const controls = new THREE.TrackballControls(camera, renderer.domElement)
-controls.addEventListener('change', render)
+scene.add(userLocation);
+scene.add(camera);
+
+app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
+
+let charts
 
 init()
-render()
-animate()
 
 function init() {
     const size = [225, 140] // chart [width, height]
@@ -221,7 +224,7 @@ function init() {
         object.rotation.y = rotation.y
         object.rotation.z = rotation.z
 
-        scene.add(object)
+        root.add(object)
     }
 
     function setData(d, i) {
@@ -275,11 +278,46 @@ function init() {
     }
 }
 
-function render() {
-    renderer.render(scene, camera)
-}
+app.updateEvent.addEventListener(function () {
+    var userPose = app.context.getEntityPose(app.context.user);
 
-function animate() {
-    requestAnimationFrame(animate)
-    controls.update()
+    if (userPose.poseStatus & Argon.PoseStatus.KNOWN) {
+        userLocation.position.copy(userPose.position);
+    }
+});
+
+var viewport = null;
+var subViews = null;
+app.renderEvent.addEventListener(function () {
+    viewport = app.view.getViewport();
+    subViews = app.view.getSubviews();
+    window.requestAnimationFrame(renderFunc);
+});
+
+function renderFunc() {
+    renderer.setSize(viewport.width, viewport.height);
+    hud.setSize(viewport.width, viewport.height);
+
+    if (subViews.length > 1 || !app.focus.hasFocus) {
+        hud.domElement.style.display = 'none';
+    } else {
+        hud.domElement.style.display = 'block';
+    }
+
+    for (var _i = 0, _a = subViews; _i < _a.length; _i++) {
+        var subview = _a[_i];
+        var frustum = subview.frustum;
+
+        camera.position.copy(subview.pose.position);
+        camera.quaternion.copy(subview.pose.orientation);
+        camera.projectionMatrix.fromArray(subview.frustum.projectionMatrix);
+        camera.fov = THREE.Math.radToDeg(frustum.fovy);
+
+        var _b = subview.viewport, x = _b.x, y = _b.y, width = _b.width, height = _b.height;
+        renderer.setViewport(x, y, width, height, _i);
+        hud.setViewport(x, y, width, height, _i);
+
+        renderer.render(scene, camera, _i);
+        hud.render(_i);
+    }
 }
