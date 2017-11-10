@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
+    "@argonjs/argon": "^1.4.0-58",
     "d3": "^4.10.2",
     "three": "^0.87.1"
   },
