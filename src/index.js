@@ -33,17 +33,27 @@ init()
 
 function init() {
 
-    charts = d3
-        .selectAll('.element')
-        .data(data)
-        .enter()
+    const color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    const selection = d3.selectAll('.element').data(data)
+
+    const enterDiv = selection.enter()
         .append('div')
         .attr('class', 'element')
-        .style("background-color", d => 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')')
-        .text("ABCDEFGH")
 
-    charts.each(setData)
-    charts.each(objectify)
+    const enterSvg = enterDiv.append("svg")
+        .attr("width", 160)
+        .attr("height", 160)
+
+    const enterCircle = enterSvg.append("circle")
+        .attr("class", "radar")
+        .attr("cx", 80)
+        .attr("cy", 80)
+        .attr("r", 80)
+        .attr("fill", d => color(d.name))
+
+    enterDiv.each(setData)
+    enterDiv.each(objectify)
 
     function objectify(d, i) {
         const {position, rotation} = d.sphere
