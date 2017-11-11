@@ -8,6 +8,8 @@
     "three": "^0.87.1"
   },
   "devDependencies": {
+    "express": "^4.16.2",
+    "pem": "^1.12.3",
     "react-scripts": "1.0.13"
   },
   "scripts": {
