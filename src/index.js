@@ -27,8 +27,6 @@ scene.add(camera);
 
 app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
 
-let charts
-
 init()
 
 function init() {
@@ -45,7 +43,7 @@ function init() {
         .attr("width", 160)
         .attr("height", 160)
 
-    const enterCircle = enterSvg.append("circle")
+    enterSvg.append("circle")
         .attr("class", "radar")
         .attr("cx", 80)
         .attr("cy", 80)
