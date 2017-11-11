@@ -39,6 +39,8 @@ function init() {
         .enter()
         .append('div')
         .attr('class', 'element')
+        .style("background-color", d => 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')')
+        .text("ABCDEFGH")
 
     charts.each(setData)
     charts.each(objectify)
