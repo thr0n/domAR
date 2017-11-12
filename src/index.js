@@ -2,6 +2,9 @@ import * as d3 from 'd3'
 
 import './demo.css'
 import data from './data.json'
+import Radars from './Radars';
+
+const radars = new Radars(80);
 
 const Argon = window.Argon;
 const THREE = window.THREE;
@@ -34,6 +37,8 @@ function init() {
     const color = d3.scaleOrdinal(d3.schemeCategory20);
 
     const selection = d3.selectAll('div.root').data(data)
+
+    const radarSvgs = radars.draw(50);
 
     const enterDiv = selection.enter()
         .append('div')
@@ -94,7 +99,7 @@ function init() {
         sphere.position.y = 800 * Math.sin(theta) * Math.sin(phi)
         sphere.position.z = 800 * Math.cos(phi)
 
-        vector.copy(sphere.position).multiplyScalar(2)
+        vector.copy(sphere.position).multiplyScalar(-2)
         sphere.lookAt(vector)
 
         d.sphere = sphere
@@ -108,9 +113,9 @@ function init() {
         helix.position.y = -(50 * 8) + 500
         helix.position.z = 1000 * Math.cos(phi)
 
-        vector.x = helix.position.x * 2
-        vector.y = helix.position.y
-        vector.z = helix.position.z * 2
+        vector.x = -helix.position.x * 2
+        vector.y = -helix.position.y
+        vector.z = -helix.position.z * 2
 
         helix.lookAt(vector)
 
