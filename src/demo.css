@@ -16,6 +16,10 @@ a {
     opacity: .5;
 }
 
+textPath.legend {
+    font-size: .5em;
+}
+
 #menu {
     position: absolute;
     bottom: 50px;

@@ -1,4 +1,4 @@
-import * as d3 from 'd3'
+import * as d3 from 'd3';
 import * as _ from 'lodash';
 
 const DEMO_SEGMENTS = [
@@ -25,35 +25,52 @@ export default class Radars {
     }
 
     _draw(allRadarsData, radius) {
+        const color = d3.scaleOrdinal(d3.schemeCategory20);
+
+        const initSegments = (segments) => {
+            const pies = d3.pie()(_.fill(_.range(segments.length), 1));
+            return segments.map((segment, i) => {
+                return {...segment, no: i, pie: pies[i]};
+            });
+        };
+
         const ringData = ({rings, segments}) => {
             return rings.map((ring, index) => {
                 const inner = index * (radius / rings.length);
                 const outer = (index+1) * (radius / rings.length);
                 return {
                     ring,
+                    count: rings.length,
                     arc: d3.arc().outerRadius(outer).innerRadius(inner),
-                    segments: segments
+                    segments: initSegments(segments)
                 }
             });
         };
 
         const svgData = d3.selectAll("svg.radar").data(allRadarsData);
-        svgData.enter()
+        const svgEnter = svgData.enter()
             .append("svg")
             .attr("class", "radar")
-            .attr("width", radius*2)
-            .attr("height", radius*2);
+            .attr("width", radius*2+30)
+            .attr("height", radius*2+30);
+
+        svgEnter.append("g")
+            .attr("class", "root")
+            .attr("transform", "translate(" + (radius) + "," + (radius) + ")");
 
         const svgAll = d3.selectAll("svg.radar");
+        const gRootAll = svgAll.selectAll("g.root");
+        gRootAll.data(d => [d]);
 
-        const gRingData = svgAll.selectAll("g.ring").data(ringData);
+
+        const gRingData = gRootAll.selectAll("g.ring").data(ringData);
         gRingData.enter()
             .append("g")
             .attr("class", "ring");
 
         gRingData.exit().remove();
 
-        const gRingAll = gRadar.selectAll("g.ring");
+        const gRingAll = svgAll.selectAll("g.ring");
 
         const gArcData = gRingAll.selectAll("g.arc")
             .data(d => d.segments, d => d.id);
@@ -73,7 +90,7 @@ export default class Radars {
                 const ringId = this.parentNode.parentNode.__data__.ring.id;
                 return "arc arc-" + d.id + " arc-" + ringId;
             })
-            .style("fill", "#3732F5")
+            .style("fill", d => color(d.id))
             .transition()
             .duration(1000)
             .attr("d", function (d) {
@@ -82,7 +99,8 @@ export default class Radars {
             })
             .style("opacity", function (d, i) {
                 const ringNo = this.parentNode.parentNode.__data__.ring.ringNo;
-                return (1 / (rings.length+1)) * (ringNo+1);
+                const numberOfRings = this.parentNode.parentNode.__data__.count;
+                return (1 / (numberOfRings+1)) * (ringNo+1);
             });
 
         gArcData.exit().remove();
@@ -117,18 +135,18 @@ export default class Radars {
             .style("text-anchor","middle") //place the text halfway on the arc
             .attr("startOffset", "20%");
 
-        gRadar.selectAll("textPath.legend")
+        svgAll.selectAll("textPath.legend")
             .attr("xlink:href", d => "#legendarc" + d.no)
             .text(d => d.name);
 
         gLegendArcData.exit().remove();
 
-        return svgData;
+        return svgAll;
     }
 
     draw(numberOfRadars) {
         const allRadarsData = _.range(numberOfRadars).map(number => {
-            return {rings: DEMO_RINGS, segments: DEMO_SEGMENTS, name: num}
+            return {rings: DEMO_RINGS, segments: DEMO_SEGMENTS, name: number}
         });
         return this._draw(allRadarsData, this.radius);
     }

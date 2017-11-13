@@ -34,35 +34,10 @@ init()
 
 function init() {
 
-    const color = d3.scaleOrdinal(d3.schemeCategory20);
+    const radarSvgs = radars.draw(100);
 
-    const selection = d3.selectAll('div.root').data(data)
-
-    const radarSvgs = radars.draw(50);
-
-    const enterDiv = selection.enter()
-        .append('div')
-        .attr('class', 'root')
-
-    const enterSvg = enterDiv.append("svg")
-        .attr("width", 160)
-        .attr("height", 160)
-
-    enterSvg.append("circle")
-        .attr("class", "radar")
-        .attr("cx", 80)
-        .attr("cy", 80)
-        .attr("r", 80)
-        .attr("fill", d => color(d.name))
-
-    enterSvg.append("text")
-        .attr("class", "circle")
-        .attr("x", 0)
-        .attr("y", 80)
-        .text(d => d.name)
-
-    enterDiv.each(setData)
-    enterDiv.each(objectify)
+    radarSvgs.each(setData)
+    radarSvgs.each(objectify)
 
     function objectify(d, i) {
         const {position, rotation} = d.sphere
