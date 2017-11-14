@@ -18,6 +18,8 @@ const DEMO_RINGS = [
     {name: "Forschung", id: "ring4"}
 ];
 
+const ADD_TO_SVG = 50;
+
 export default class Radars {
 
     constructor(radius) {
@@ -27,6 +29,12 @@ export default class Radars {
     _draw(allRadarsData, radius) {
         const color = d3.scaleOrdinal(d3.schemeCategory20);
 
+        const initRings = (rings) => {
+            return rings = rings.map((ring, i) => {
+                return {...ring, ringNo: i}
+            });
+        }
+
         const initSegments = (segments) => {
             const pies = d3.pie()(_.fill(_.range(segments.length), 1));
             return segments.map((segment, i) => {
@@ -35,7 +43,7 @@ export default class Radars {
         };
 
         const ringData = ({rings, segments}) => {
-            return rings.map((ring, index) => {
+            return initRings(rings).map((ring, index) => {
                 const inner = index * (radius / rings.length);
                 const outer = (index+1) * (radius / rings.length);
                 return {
@@ -51,12 +59,16 @@ export default class Radars {
         const svgEnter = svgData.enter()
             .append("svg")
             .attr("class", "radar")
-            .attr("width", radius*2+30)
-            .attr("height", radius*2+30);
+            .attr("width", radius*2+ADD_TO_SVG)
+            .attr("height", radius*2+ADD_TO_SVG);
 
-        svgEnter.append("g")
+        const gRootEnter = svgEnter.append("g")
             .attr("class", "root")
-            .attr("transform", "translate(" + (radius) + "," + (radius) + ")");
+            .attr("transform", "translate(" + (radius + ADD_TO_SVG/2) + "," + (radius + ADD_TO_SVG/2) + ")");
+
+        gRootEnter.append("circle")
+            .attr("class", "background")
+            .attr("r", radius + ADD_TO_SVG/2);
 
         const svgAll = d3.selectAll("svg.radar");
         const gRootAll = svgAll.selectAll("g.root");
@@ -90,7 +102,7 @@ export default class Radars {
                 const ringId = this.parentNode.parentNode.__data__.ring.id;
                 return "arc arc-" + d.id + " arc-" + ringId;
             })
-            .style("fill", d => color(d.id))
+            .style("fill", "#3732F5")
             .transition()
             .duration(1000)
             .attr("d", function (d) {
