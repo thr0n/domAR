@@ -1,10 +1,9 @@
 import * as d3 from 'd3'
 
 import './demo.css'
-import data from './data.json'
 import Radars from './Radars';
 
-const radars = new Radars(80);
+const radars = new Radars(200);
 
 const Argon = window.Argon;
 const THREE = window.THREE;
@@ -30,17 +29,19 @@ scene.add(camera);
 
 app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
 
+const NUMBER_OF_RADARS = 8;
+
 init()
 
 function init() {
 
-    const radarSvgs = radars.draw(100);
+    const radarSvgs = radars.draw(NUMBER_OF_RADARS);
 
     radarSvgs.each(setData)
     radarSvgs.each(objectify)
 
     function objectify(d, i) {
-        const {position, rotation} = d.sphere
+        const {position, rotation} = d.helix
 
         const object = new THREE.CSS3DObject(this)
         d.object = object
@@ -66,9 +67,9 @@ function init() {
 
         const sphere = new THREE.Object3D()
         vector = new THREE.Vector3()
-        phi = Math.acos(-1 + 2 * i / data.length)
+        phi = Math.acos(-1 + 2 * i / NUMBER_OF_RADARS)
 
-        const theta = Math.sqrt((data.length - 1) * Math.PI) * phi
+        const theta = Math.sqrt((NUMBER_OF_RADARS - 1) * Math.PI) * phi
 
         sphere.position.x = 800 * Math.cos(theta) * Math.sin(phi)
         sphere.position.y = 800 * Math.sin(theta) * Math.sin(phi)
@@ -81,7 +82,8 @@ function init() {
 
         const helix = new THREE.Object3D()
         vector = new THREE.Vector3()
-        phi = (i + 12) * 0.25 + Math.PI
+        //phi = (i + 12) * 0.25 + Math.PI
+        phi = i/NUMBER_OF_RADARS * 2 * Math.PI
 
         helix.position.x = 1000 * Math.sin(phi)
         //helix.position.y = -(i * 8) + 500
