@@ -27,8 +27,6 @@ export default class Radars {
     }
 
     _draw(allRadarsData, radius) {
-        const color = d3.scaleOrdinal(d3.schemeCategory20);
-
         const initRings = (rings) => {
             return rings = rings.map((ring, i) => {
                 return {...ring, ringNo: i}
