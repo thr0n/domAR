@@ -18,7 +18,8 @@ a {
 
 textPath.legend {
     font-size: 1em;
-    fill: white;
+    fill: black;
+    font-weight: bolder;
 }
 
 text.item {
@@ -39,8 +40,8 @@ path.arc {
 }
 
 circle.background {
-    fill: grey;
-    opacity: .7;
+    fill: white;
+    opacity: .9;
 }
 
 #menu {
