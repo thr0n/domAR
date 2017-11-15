@@ -28,6 +28,10 @@ text.item {
     fill: black;
 }
 
+text.title {
+    font-size: 4em;
+}
+
 polygon.item {
     fill: white;
     stroke: black;

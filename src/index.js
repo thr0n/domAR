@@ -1,7 +1,7 @@
 import './demo.css'
 import Radars from './Radars';
 
-const radars = new Radars(300);
+const radars = new Radars(250);
 
 const Argon = window.Argon;
 const THREE = window.THREE;
@@ -27,7 +27,7 @@ scene.add(camera);
 
 app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
 
-const NUMBER_OF_RADARS = 4;
+const NUMBER_OF_RADARS = 5;
 
 init()
 

@@ -102,16 +102,22 @@ export default class Radars {
         const svgEnter = svgData.enter()
             .append("svg")
             .attr("class", "radar")
-            .attr("width", radius*2+ADD_TO_SVG+500)
-            .attr("height", radius*2+ADD_TO_SVG);
+            .attr("width", radius*2+ADD_TO_SVG + 500)
+            .attr("height", radius*2+ADD_TO_SVG + 100);
 
         const gRootEnter = svgEnter.append("g")
             .attr("class", "root")
-            .attr("transform", "translate(" + (center(radius)) + "," + (center(radius)) + ")");
+            .attr("transform", "translate(" + (center(radius)) + "," + (center(radius + 100)) + ")");
 
         gRootEnter.append("circle")
             .attr("class", "background")
             .attr("r", radius + ADD_TO_SVG/2);
+
+        gRootEnter.append("text")
+            .attr("class", "title")
+            .attr("y", -radius - 50)
+            .attr("x", -radius)
+            .text(d => d.name);
 
         const svgAll = d3.selectAll("svg.radar");
         const gRootAll = svgAll.selectAll("g.root");
@@ -205,7 +211,7 @@ export default class Radars {
         const initItems = (items) => {
             return items.map(item => {
                 const deg = Math.random() * 360;
-                const dist = Math.random();
+                const dist = Math.random() * 0.7;
                 const revertRad = (deg - 180) * (Math.PI / 180);
                 const revertX = this.radius * dist * Math.cos(revertRad);
                 const revertY = this.radius * dist * Math.sin(revertRad);
@@ -215,11 +221,13 @@ export default class Radars {
             })
         };
 
+        const names = ["Robert", "Milena", "Axel", "Oliver", "Michael", "Stefan"];
+
         const allRadarsData = _.range(numberOfRadars).map(number => {
             return {
                 rings: DEMO_RINGS,
                 segments: DEMO_SEGMENTS,
-                name: number,
+                name: names[number] + "'s Radar",
                 items: initItems(DEMO_ITEMS)
             }
         });
