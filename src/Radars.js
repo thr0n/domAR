@@ -102,7 +102,7 @@ export default class Radars {
         const svgEnter = svgData.enter()
             .append("svg")
             .attr("class", "radar")
-            .attr("width", radius*2+ADD_TO_SVG)
+            .attr("width", radius*2+ADD_TO_SVG+500)
             .attr("height", radius*2+ADD_TO_SVG);
 
         const gRootEnter = svgEnter.append("g")

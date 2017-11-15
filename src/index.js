@@ -1,7 +1,7 @@
 import './demo.css'
 import Radars from './Radars';
 
-const radars = new Radars(400);
+const radars = new Radars(300);
 
 const Argon = window.Argon;
 const THREE = window.THREE;
