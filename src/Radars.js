@@ -57,13 +57,13 @@ export default class Radars {
         gItemEnter
             .append("polygon")
             .attr("class", "item")
-            .attr("points", "0,0 20,0 10,17");
+            .attr("points", "0,0 40,0 20,34");
 
         gItemEnter
             .append("text")
             .attr("class", "item")
-            .attr("x", 25)
-            .attr("y", 9);
+            .attr("x", 50)
+            .attr("y", 18);
 
         gItemAll.selectAll("text").data(d => [d]);
 
