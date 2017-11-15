@@ -21,6 +21,18 @@ textPath.legend {
     fill: white;
 }
 
+text.item {
+    font-size: 0.7em;
+    font-weight: bolder;
+    fill: white;
+}
+
+polygon.item {
+    fill: white;
+    stroke: black;
+    stroke-width: 2px;
+}
+
 path.arc {
     stroke: white;
     stroke-width: 2px;

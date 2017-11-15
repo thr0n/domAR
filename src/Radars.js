@@ -18,12 +18,57 @@ const DEMO_RINGS = [
     {name: "Forschung", id: "ring4"}
 ];
 
+const DEMO_ITEMS = [
+    {name: "In-vehicle Payments", id: "item0"},
+    {name: "Pay as you drive", id: "item1"},
+    {name: "Near Field Communication", id: "item2"},
+    {name: "Beacons", id: "item3"},
+    {name: "Bluetooth Low Energy (BLE, Bluethooth Smart)", id: "item4"},
+    {name: "Smart Parking", id: "item5"}
+];
+
 const ADD_TO_SVG = 50;
+
+const center = r => r + ADD_TO_SVG/2;
 
 export default class Radars {
 
     constructor(radius) {
         this.radius = radius;
+    }
+
+    _drawItems(root) {
+        const gItemData = root.selectAll("g.item").data(d => d.items, d => d.id);
+
+        const gItemEnter = gItemData.enter()
+            .append("g")
+            .attr("class", d => "item item-" + d.id)
+            .attr("transform", d => "translate(" + d.x + "," + d.y + ")")
+
+        gItemData.exit().remove();
+
+        const gItemAll = root.selectAll("g.item");
+
+        gItemAll
+            .transition()
+            .duration(1000)
+            .attr("transform", d => "translate(" + d.x + "," + d.y + ")");
+
+        gItemEnter
+            .append("polygon")
+            .attr("class", "item")
+            .attr("points", "0,0 20,0 10,17");
+
+        gItemEnter
+            .append("text")
+            .attr("class", "item")
+            .attr("x", 25)
+            .attr("y", 9);
+
+        gItemAll.selectAll("text").data(d => [d]);
+
+        gItemAll.selectAll("text")
+            .text(d => d.name);
     }
 
     _draw(allRadarsData, radius) {
@@ -62,7 +107,7 @@ export default class Radars {
 
         const gRootEnter = svgEnter.append("g")
             .attr("class", "root")
-            .attr("transform", "translate(" + (radius + ADD_TO_SVG/2) + "," + (radius + ADD_TO_SVG/2) + ")");
+            .attr("transform", "translate(" + (center(radius)) + "," + (center(radius)) + ")");
 
         gRootEnter.append("circle")
             .attr("class", "background")
@@ -151,13 +196,34 @@ export default class Radars {
 
         gLegendArcData.exit().remove();
 
+        this._drawItems(svgAll);
+
         return svgAll;
     }
 
     draw(numberOfRadars) {
+        const initItems = (items) => {
+            return items.map(item => {
+                const deg = Math.random() * 360;
+                const dist = Math.random();
+                const revertRad = (deg - 180) * (Math.PI / 180);
+                const revertX = this.radius * dist * Math.cos(revertRad);
+                const revertY = this.radius * dist * Math.sin(revertRad);
+                const x = center(this.radius) + revertX;
+                const y = center(this.radius) + revertY;
+                return {...item, x, y}
+            })
+        };
+
         const allRadarsData = _.range(numberOfRadars).map(number => {
-            return {rings: DEMO_RINGS, segments: DEMO_SEGMENTS, name: number}
+            return {
+                rings: DEMO_RINGS,
+                segments: DEMO_SEGMENTS,
+                name: number,
+                items: initItems(DEMO_ITEMS)
+            }
         });
+
         return this._draw(allRadarsData, this.radius);
     }
 }
