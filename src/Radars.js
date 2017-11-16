@@ -37,6 +37,14 @@ export default class Radars {
         this.radius = radius;
     }
 
+    names() {
+        return ["Robert", "Milena", "Axel", "Oliver", "Michael", "Stefan"];
+    }
+
+    numberOfRadars() {
+        return this.names().length;
+    }
+
     _drawItems(root) {
         const gItemData = root.selectAll("g.item").data(d => d.items, d => d.id);
 
@@ -221,13 +229,11 @@ export default class Radars {
             })
         };
 
-        const names = ["Robert", "Milena", "Axel", "Oliver", "Michael", "Stefan"];
-
-        const allRadarsData = _.range(numberOfRadars).map(number => {
+        const allRadarsData = _.range(this.numberOfRadars()).map(number => {
             return {
                 rings: DEMO_RINGS,
                 segments: DEMO_SEGMENTS,
-                name: names[number] + "'s Radar",
+                name: this.names()[number] + "'s Radar",
                 items: initItems(DEMO_ITEMS)
             }
         });
