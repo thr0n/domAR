@@ -10,14 +10,14 @@ const initialDirections = [FRONT, BACK, RIGHT, LEFT, TOP, BOTTOM];
 
 const drawSvgBars = () => {
 
-    const selection = d3.selectAll("div.container")
+    const divSelection = d3.selectAll("div.container")
         .data(cubeData, d => d.id);
 
-    const enterContainer = selection.enter()
+    const enterContainer = divSelection.enter()
         .append("div")
         .attr("class", d => "container _" + d.id)
 
-    enterContainer.merge(selection)
+    enterContainer.merge(divSelection)
         .style("transform", d => "translateX(" + d.x + "px) translateY(" + d.y + "px) translateZ(" + d.z + "px) ")
 
     const rotation = (degX, degY) => "rotateX(" + degX + "deg) rotateY(" + degY + "deg)"
@@ -55,14 +55,14 @@ const drawSvgBars = () => {
     const height = d => isTopBottom(d) ? d.width : d.height;
     const width = d => d.width;
 
-    const selection = enterCube.selectAll("svg")
+    const svgSelection = enterCube.selectAll("svg")
         .data(d => {
             return initialDirections.map(direction => {
                 return {...d, initialDirection: direction, currentDirection: direction}
             })
         })
 
-    selection.enter()
+    svgSelection.enter()
         .append("svg")
         .attr("class", d => "part " + d.initialDirection)
         .attr("height", height)

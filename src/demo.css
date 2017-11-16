@@ -48,6 +48,21 @@ circle.background {
     opacity: .9;
 }
 
+.cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: translateZ( -50px );
+}
+
+.cube .front  { background: hsla(   0, 100%, 50%, 0.7 ); }
+.cube .back   { background: hsla(  60, 100%, 50%, 0.7 ); }
+.cube .right  { background: hsla( 120, 100%, 50%, 0.7 ); }
+.cube .left   { background: hsla( 180, 100%, 50%, 0.7 ); }
+.cube .top    { background: hsla( 240, 100%, 50%, 0.7 ); }
+.cube .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
+
 #menu {
     position: absolute;
     bottom: 50px;

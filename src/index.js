@@ -1,5 +1,9 @@
+import url from 'url';
 import './demo.css'
 import Radars from './Radars';
+import drawSvgBars from './drawSvgBars';
+
+console.log(url.parse(window.location.href));
 
 const radars = new Radars(250);
 
@@ -27,16 +31,32 @@ scene.add(camera);
 
 app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
 
-const numberOfRadars = radars.numberOfRadars();
+let numberOfBodies = radars.numberOfRadars();
 
-init()
+const bodyType = url.parse(window.location.href).query;
 
-function init() {
+const BODY_TYPE_RADAR = "radar";
+const BODY_TYPE_CUBE = "cube";
 
-    const radarSvgs = radars.draw(numberOfRadars);
+init(bodyType)
 
-    radarSvgs.each(setData)
-    radarSvgs.each(objectify)
+function init(bodyType) {
+
+    switch (bodyType) {
+        case BODY_TYPE_CUBE:
+            numberOfBodies = 4;
+            const cubes = drawSvgBars();
+            cubes.each(setData);
+            cubes.each(objectify);
+            break;
+
+        default:
+            numberOfBodies = radars.numberOfRadars();
+            const radarSvgs = radars.draw(numberOfBodies);
+
+            radarSvgs.each(setData);
+            radarSvgs.each(objectify);
+    }
 
     function objectify(d, i) {
         const {position, rotation} = d.helix
@@ -65,9 +85,9 @@ function init() {
 
         const sphere = new THREE.Object3D()
         vector = new THREE.Vector3()
-        phi = Math.acos(-1 + 2 * i / numberOfRadars)
+        phi = Math.acos(-1 + 2 * i / numberOfBodies)
 
-        const theta = Math.sqrt((numberOfRadars - 1) * Math.PI) * phi
+        const theta = Math.sqrt((numberOfBodies - 1) * Math.PI) * phi
 
         sphere.position.x = 800 * Math.cos(theta) * Math.sin(phi)
         sphere.position.y = 800 * Math.sin(theta) * Math.sin(phi)
@@ -81,7 +101,7 @@ function init() {
         const helix = new THREE.Object3D()
         vector = new THREE.Vector3()
         //phi = (i + 12) * 0.25 + Math.PI
-        phi = i/numberOfRadars * 2 * Math.PI
+        phi = i/numberOfBodies * 2 * Math.PI
 
         helix.position.x = 1000 * Math.sin(phi)
         //helix.position.y = -(i * 8) + 500

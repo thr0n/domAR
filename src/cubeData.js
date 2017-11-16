@@ -1,3 +1,5 @@
+import {UPPER_LEFT, UPPER_RIGHT, LOWER_LEFT, LOWER_RIGHT} from './places';
+
 export const WIDTH = window.innerWidth;
 export const HEIGHT = window.innerHeight;
 export const SIDE_LENGTH = Math.min(WIDTH, HEIGHT) / 4;
