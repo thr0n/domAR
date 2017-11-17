@@ -1,10 +1,15 @@
 import * as d3 from 'd3';
+import * as _ from 'lodash';
 
 import {nextDirection, BOTTOM, BACK, TOP, FRONT, LEFT, RIGHT, AXIS_X, AXIS_Y} from './direction';
 import {cubeData} from './cubeData';
+import DrawText from './DrawText';
+import getText from './getText';
 
 const START_Y_ROTATION = 10;
 const START_X_ROTATION = -10;
+
+const START_PATH = "M 10, 10 m -7.5, 0 a 7.5,7.5 0 1,0 15,0 a 7.5,7.5 0 1,0 -15,0";
 
 const initialDirections = [FRONT, BACK, RIGHT, LEFT, TOP, BOTTOM];
 
@@ -24,32 +29,9 @@ const drawSvgBars = () => {
 
     const enterCube = enterContainer
         .append("div")
-        .attr("class", d => "cube _" + d.id)
+        .attr("class", d => "cube _" + d.id + " spinning" + (_.random(1, 3)))
         .style("transform-origin", d => (d.width/2) + "px " + (d.height/2) + "px")
         .style("transform", rotation(START_X_ROTATION, START_Y_ROTATION))
-
-    const rotate = (id, axis) => {
-        const divs = enterContainer.selectAll("div.cube._" + id)
-            .transition()
-            .duration(1000)
-            .styleTween("transform", d => {
-                if(axis === AXIS_X) {
-                    d.rotationX = isNaN(d.rotationX) ? START_X_ROTATION - 90 : d.rotationX-90;
-                    d.rotationY = isNaN(d.rotationY) ? START_Y_ROTATION : d.rotationY;
-                    return d3.interpolate(rotation(d.rotationX+90, d.rotationY), rotation(d.rotationX, d.rotationY));
-                }
-                else if(axis === AXIS_Y){
-                    d.rotationX = isNaN(d.rotationX) ? START_X_ROTATION : d.rotationX;
-                    d.rotationY = isNaN(d.rotationY) ? START_Y_ROTATION + 90 : d.rotationY+90;
-                    return d3.interpolate(rotation(d.rotationX, d.rotationY-90), rotation(d.rotationX, d.rotationY));
-                }
-            })
-
-        divs.selectAll("svg.part")
-            .each(d => {
-                d.currentDirection = nextDirection(d.currentDirection, axis);
-            })
-    }
 
     const isTopBottom = d => d.initialDirection === "top" || d.initialDirection === "bottom";
     const height = d => isTopBottom(d) ? d.width : d.height;
@@ -62,7 +44,7 @@ const drawSvgBars = () => {
             })
         })
 
-    svgSelection.enter()
+    const enterSvg = svgSelection.enter()
         .append("svg")
         .attr("class", d => "part " + d.initialDirection)
         .attr("height", height)
@@ -74,6 +56,34 @@ const drawSvgBars = () => {
                 return "translateY(" + y + "px)";
             }
         })
+
+    const sideG = enterSvg.append("g")
+        .attr("transform", d => "translate(" + (width(d)/2) + "," + (height(d)/2) + ")")
+
+    const fromId = d => d.id + "-" + d.initialDirection + "-from";
+    const toId = d => d.id + "-" + d.initialDirection + "-to";
+
+    sideG.append("path")
+        .attr("class", d => d.id + " " + d.initialDirection + " from")
+        .attr("id", fromId)
+        .attr("stroke", "white")
+        .attr("stroke-width", 3)
+        .attr("fill", "none")
+        .attr("d", START_PATH)
+
+    sideG.append("path")
+        .attr("class", d => d.id + " " + d.initialDirection + " to")
+        .attr("id", toId)
+        .attr("stroke", "white")
+        .attr("stroke-width", 3)
+        .attr("fill", "none")
+        .attr("d", START_PATH)
+        .style("visibility", "hidden")
+
+    sideG.each(d => {
+        const text = getText(d.id).next().value;
+        (new DrawText(sideG, "#" + fromId(d), "#" + toId(d), text)).start();
+    })
 
     enterContainer.selectAll("svg." + FRONT)
         .style("transform", d => "translateZ(" + (d.width/2) + "px)")

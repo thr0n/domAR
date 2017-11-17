@@ -8,6 +8,8 @@ export const BOTTOM = "bottom";
 export const AXIS_X = "ax";
 export const AXIS_Y = "ay";
 
+export const parts = [FRONT, BACK, RIGHT, LEFT, TOP, BOTTOM];
+
 const rules = {
     [FRONT]: {
         [AXIS_X]: BOTTOM,

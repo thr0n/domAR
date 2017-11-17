@@ -56,6 +56,33 @@ circle.background {
     transform: translateZ( -50px );
 }
 
+.spinning1 {
+    animation: spinCube1       8s infinite ease-in-out;
+}
+
+.spinning2 {
+    animation: spinCube2       8s infinite ease-in-out;
+}
+
+.spinning3 {
+    animation: spinCube3       8s infinite ease-in-out;
+}
+
+@keyframes spinCube1 {
+    0% { transform: rotateX(-10deg) rotateY(0deg); }
+    100% { transform: rotateX(350deg) rotateY(360deg); }
+}
+
+@keyframes spinCube2 {
+    0% { transform: rotateX(-10deg) rotateY(0deg); }
+    100% { transform: rotateX(-10deg) rotateY(360deg); }
+}
+
+@keyframes spinCube3 {
+    0% { transform: rotateX(-10deg) rotateY(0deg); }
+    100% { transform: rotateX(350deg) rotateY(720deg); }
+}
+
 .cube .front  { background: hsla(   0, 100%, 50%, 0.7 ); }
 .cube .back   { background: hsla(  60, 100%, 50%, 0.7 ); }
 .cube .right  { background: hsla( 120, 100%, 50%, 0.7 ); }
