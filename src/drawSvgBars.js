@@ -26,8 +26,11 @@ const initialDirections = [FRONT, BACK, RIGHT, LEFT, TOP, BOTTOM];
 export const NUMBER_OF_CUBES = 6;
 
 const cubeData = _.range(NUMBER_OF_CUBES).map(num => {
-    return {width: SIDE_LENGTH, height: SIDE_LENGTH, id: "cube-" + num, color: randomColor().next().value}
+    const hue = 360 / NUMBER_OF_CUBES * num;
+    return {width: SIDE_LENGTH, height: SIDE_LENGTH, id: "cube-" + num, color: "hsla(" + hue + ",100%,50%,0.7)", hue: hue}
 });
+
+const hsla = hue => "hsla(" + hue + ",100%,50%,0.7)";
 
 export const drawSvgBars = () => {
 
@@ -74,9 +77,7 @@ export const drawSvgBars = () => {
     enterSvg.append("rect")
         .attr("width", width)
         .attr("height", height)
-        .attr("fill", d => d.color)
-        .style("stroke", "white")
-        .style("stroke-width", "5px")
+        .attr("fill", (d,i) => hsla(d.hue + i*10))
 
     const sideG = enterSvg.append("g")
         .attr("transform", d => "translate(" + (width(d)/5) + "," + (height(d)/5*4) + ")")
