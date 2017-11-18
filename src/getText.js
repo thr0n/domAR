@@ -30,7 +30,7 @@ const texts = {
 const getText = function*(id) {
     let lastId;
     let index = -1;
-    const textArray = _.values(texts);
+    const textArray = _.shuffle(_.values(texts));
     while(true) {
         if(id !== lastId) {
             index = index < textArray-2 ? index+1 : 0;
