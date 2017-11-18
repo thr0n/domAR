@@ -79,7 +79,7 @@ export const drawSvgBars = () => {
         .style("stroke-width", "5px")
 
     const sideG = enterSvg.append("g")
-        .attr("transform", d => "translate(" + (width(d)/2) + "," + (height(d)/2) + ")")
+        .attr("transform", d => "translate(" + (width(d)/5) + "," + (height(d)/5*4) + ")")
 
     const fromId = d => d.id + "-" + d.initialDirection + "-from";
     const toId = d => d.id + "-" + d.initialDirection + "-to";
