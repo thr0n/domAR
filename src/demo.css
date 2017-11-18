@@ -57,15 +57,15 @@ circle.background {
 }
 
 .spinning1 {
-    animation: spinCube1       20s infinite ease-in-out;
+    animation: spinCube1       60s infinite ease-in-out;
 }
 
 .spinning2 {
-    animation: spinCube2       25s infinite ease-in-out;
+    animation: spinCube2       75s infinite ease-in-out;
 }
 
 .spinning3 {
-    animation: spinCube3       30s infinite ease-in-out;
+    animation: spinCube3       90s infinite ease-in-out;
 }
 
 @keyframes spinCube1 {
