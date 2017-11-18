@@ -1,4 +1,6 @@
 import url from 'url';
+import * as _ from 'lodash';
+
 import './demo.css'
 import Radars from './Radars';
 import {drawSvgBars, NUMBER_OF_CUBES} from './drawSvgBars';
@@ -38,9 +40,13 @@ const bodyType = url.parse(window.location.href).query;
 const BODY_TYPE_RADAR = "radar";
 const BODY_TYPE_CUBE = "cube";
 
+const NUMBER_OF_POSSIBLE_PLACES = 50;
+
 init(bodyType)
 
 function init(bodyType) {
+
+    const shuffledPlaces = _.shuffle(_.range(0, NUMBER_OF_POSSIBLE_PLACES-1));
 
     switch (bodyType) {
         case BODY_TYPE_CUBE:
@@ -59,7 +65,7 @@ function init(bodyType) {
     }
 
     function objectify(d, i) {
-        const {position, rotation} = bodyType == BODY_TYPE_CUBE ? d.sphere : d.helix;
+        const {position, rotation} = bodyType == BODY_TYPE_CUBE ? d.random : d.helix;
 
         const object = new THREE.CSS3DObject(this)
         d.object = object
@@ -77,9 +83,17 @@ function init(bodyType) {
         let vector, phi
 
         const random = new THREE.Object3D()
-        random.position.x = Math.random() * 4000 - 2000
-        random.position.y = Math.random() * 4000 - 2000
-        random.position.z = Math.random() * 4000 - 2000
+        vector = new THREE.Vector3()
+        phi = Math.acos(-1 + 2 * shuffledPlaces[i] / NUMBER_OF_POSSIBLE_PLACES)
+
+        const theta2 = Math.sqrt((NUMBER_OF_POSSIBLE_PLACES - 1) * Math.PI) * phi
+
+        random.position.x = 800 * Math.cos(theta2) * Math.sin(phi)
+        random.position.y = 800 * Math.sin(theta2) * Math.sin(phi)
+        random.position.z = 800 * Math.cos(phi)
+
+        vector.copy(random.position).multiplyScalar(-2)
+        random.lookAt(vector)
 
         d.random = random
 

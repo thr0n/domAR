@@ -13,7 +13,7 @@ const BOTTOM = "bottom";
 
 const WIDTH = window.innerWidth;
 const HEIGHT = window.innerHeight;
-const SIDE_LENGTH = Math.min(WIDTH, HEIGHT) / 4;
+const SIDE_LENGTH = Math.min(WIDTH, HEIGHT)/3;
 
 const START_Y_ROTATION = 10;
 const START_X_ROTATION = -10;
