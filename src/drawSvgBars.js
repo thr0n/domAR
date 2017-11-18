@@ -22,11 +22,13 @@ const START_PATH = "M 10, 10 m -7.5, 0 a 7.5,7.5 0 1,0 15,0 a 7.5,7.5 0 1,0 -15,
 
 const initialDirections = [FRONT, BACK, RIGHT, LEFT, TOP, BOTTOM];
 
-const cubeData = _.range(24).map(num => {
+export const NUMBER_OF_CUBES = 6;
+
+const cubeData = _.range(NUMBER_OF_CUBES).map(num => {
     return {width: SIDE_LENGTH, height: SIDE_LENGTH, id: "cube-" + num}
 });
 
-const drawSvgBars = () => {
+export const drawSvgBars = () => {
 
     const divSelection = d3.selectAll("div.container")
         .data(cubeData, d => d.id);
@@ -115,5 +117,3 @@ const drawSvgBars = () => {
 
     return enterContainer
 };
-
-export default drawSvgBars;

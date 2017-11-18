@@ -1,7 +1,7 @@
 import url from 'url';
 import './demo.css'
 import Radars from './Radars';
-import drawSvgBars from './drawSvgBars';
+import {drawSvgBars, NUMBER_OF_CUBES} from './drawSvgBars';
 
 console.log(url.parse(window.location.href));
 
@@ -44,7 +44,7 @@ function init(bodyType) {
 
     switch (bodyType) {
         case BODY_TYPE_CUBE:
-            numberOfBodies = 24;
+            numberOfBodies = NUMBER_OF_CUBES;
             const cubes = drawSvgBars();
             cubes.each(setData);
             cubes.each(objectify);
@@ -59,7 +59,7 @@ function init(bodyType) {
     }
 
     function objectify(d, i) {
-        const {position, rotation} = d.helix
+        const {position, rotation} = bodyType == BODY_TYPE_CUBE ? d.sphere : d.helix;
 
         const object = new THREE.CSS3DObject(this)
         d.object = object
