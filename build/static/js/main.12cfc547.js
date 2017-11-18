@@ -629,7 +629,7 @@ Parser.prototype.parseLookupList = function(lookupTableParsers) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_creator__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_creator__ = __webpack_require__(58);
 /* unused harmony reexport creator */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_local__ = __webpack_require__(243);
 /* unused harmony reexport local */
@@ -637,9 +637,9 @@ Parser.prototype.parseLookupList = function(lookupTableParsers) {
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__src_matcher__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_mouse__ = __webpack_require__(244);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__src_mouse__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_namespace__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_namespace__ = __webpack_require__(59);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__src_namespace__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_namespaces__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_namespaces__ = __webpack_require__(60);
 /* unused harmony reexport namespaces */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_select__ = __webpack_require__(245);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_6__src_select__["a"]; });
@@ -647,7 +647,7 @@ Parser.prototype.parseLookupList = function(lookupTableParsers) {
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_7__src_selectAll__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_selection_index__ = __webpack_require__(7);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_8__src_selection_index__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_selector__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_selector__ = __webpack_require__(64);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_9__src_selector__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_selectorAll__ = __webpack_require__(117);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_10__src_selectorAll__["a"]; });
@@ -657,9 +657,9 @@ Parser.prototype.parseLookupList = function(lookupTableParsers) {
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_12__src_touch__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_touches__ = __webpack_require__(275);
 /* unused harmony reexport touches */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_window__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_window__ = __webpack_require__(65);
 /* unused harmony reexport window */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__src_selection_on__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__src_selection_on__ = __webpack_require__(62);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_15__src_selection_on__["c"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_15__src_selection_on__["a"]; });
 
@@ -824,7 +824,7 @@ function newInterval(floori, offseti, count, field) {
 /* unused harmony reexport pairs */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__src_permute__ = __webpack_require__(230);
 /* unused harmony reexport permute */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__src_quantile__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__src_quantile__ = __webpack_require__(56);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_18__src_quantile__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__src_range__ = __webpack_require__(111);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_19__src_range__["a"]; });
@@ -1115,7 +1115,7 @@ LookupList.prototype.constructor = LookupList;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__insert__ = __webpack_require__(269);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__remove__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__datum__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__on__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__on__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__dispatch__ = __webpack_require__(272);
 
 
@@ -1199,11 +1199,11 @@ Selection.prototype = selection.prototype = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_value__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_value__ = __webpack_require__(66);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_value__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_array__ = __webpack_require__(127);
 /* unused harmony reexport interpolateArray */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_basis__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_basis__ = __webpack_require__(69);
 /* unused harmony reexport interpolateBasis */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_basisClosed__ = __webpack_require__(125);
 /* unused harmony reexport interpolateBasisClosed */
@@ -1437,7 +1437,7 @@ function create(node, id, self) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_color__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_color__ = __webpack_require__(67);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_color__["e"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_0__src_color__["g"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__src_color__["f"]; });
@@ -1462,11 +1462,11 @@ function create(node, id, self) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clip_circle__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip_rectangle__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__compose__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__identity__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__identity__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__math__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__rotation__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__transform__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fit__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__fit__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__resample__ = __webpack_require__(383);
 
 
@@ -19089,7 +19089,7 @@ function nogamma(a, b) {
 /* unused harmony reexport nest */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_set__ = __webpack_require__(332);
 /* unused harmony reexport set */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_map__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_map__ = __webpack_require__(72);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__src_map__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_keys__ = __webpack_require__(333);
 /* unused harmony reexport keys */
@@ -19385,8 +19385,8 @@ function asin(x) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Beach__ = __webpack_require__(502);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Cell__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Circle__ = __webpack_require__(183);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Edge__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__RedBlackTree__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Edge__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__RedBlackTree__ = __webpack_require__(96);
 
 
 
@@ -19875,7 +19875,7 @@ Path.prototype.toDOMElement = function(decimalPlaces) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_timer__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_timer__ = __webpack_require__(71);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["c"]; });
 /* unused harmony reexport timerFlush */
@@ -19985,7 +19985,7 @@ function tweenValue(transition, name, value) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDecimal__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDecimal__ = __webpack_require__(79);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(x) {
@@ -20318,7 +20318,7 @@ TransformStream.prototype = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__request__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__request__ = __webpack_require__(88);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(defaultMimeType, response) {
@@ -20344,7 +20344,7 @@ TransformStream.prototype = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__array__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constant__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constant__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__number__ = __webpack_require__(163);
 
 
@@ -20751,6 +20751,13 @@ Cardinal.prototype = {
 
 /***/ }),
 /* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(510);
+
+
+/***/ }),
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21042,7 +21049,7 @@ function addGlyphNames(font) {
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21064,7 +21071,7 @@ function addGlyphNames(font) {
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21078,12 +21085,12 @@ function addGlyphNames(font) {
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__namespace__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__namespaces__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__namespace__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__namespaces__ = __webpack_require__(60);
 
 
 
@@ -21112,11 +21119,11 @@ function creatorFixed(fullname) {
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__namespaces__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__namespaces__ = __webpack_require__(60);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(name) {
@@ -21127,7 +21134,7 @@ function creatorFixed(fullname) {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21144,11 +21151,11 @@ var xhtml = "http://www.w3.org/1999/xhtml";
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__selection_on__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__selection_on__ = __webpack_require__(62);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function() {
@@ -21159,7 +21166,7 @@ var xhtml = "http://www.w3.org/1999/xhtml";
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21275,7 +21282,7 @@ function customEvent(event1, listener, that, args) {
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21295,7 +21302,7 @@ function customEvent(event1, listener, that, args) {
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21309,7 +21316,7 @@ function none() {}
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21321,7 +21328,7 @@ function none() {}
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21356,7 +21363,7 @@ function none() {}
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21369,7 +21376,7 @@ function none() {}
 /* harmony export (immutable) */ __webpack_exports__["b"] = Rgb;
 /* unused harmony export hslConvert */
 /* harmony export (immutable) */ __webpack_exports__["f"] = hsl;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__define__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__define__ = __webpack_require__(68);
 
 
 function Color() {}
@@ -21703,7 +21710,7 @@ function hsl2rgb(h, m1, m2) {
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21721,7 +21728,7 @@ function extend(parent, definition) {
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21748,7 +21755,7 @@ function basis(t1, v0, v1, v2, v3) {
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21766,7 +21773,7 @@ function basis(t1, v0, v1, v2, v3) {
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21887,7 +21894,7 @@ function sleep(time) {
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21970,11 +21977,11 @@ function map(object, f) {
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_dsv__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_dsv__ = __webpack_require__(74);
 /* unused harmony reexport dsvFormat */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_csv__ = __webpack_require__(336);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__src_csv__["a"]; });
@@ -21992,7 +21999,7 @@ function map(object, f) {
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22126,7 +22133,7 @@ function inferColumns(rows) {
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22136,7 +22143,7 @@ function inferColumns(rows) {
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22146,7 +22153,7 @@ function inferColumns(rows) {
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22160,7 +22167,7 @@ function inferColumns(rows) {
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22187,7 +22194,7 @@ function inferColumns(rows) {
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22208,7 +22215,7 @@ function inferColumns(rows) {
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22218,13 +22225,13 @@ function inferColumns(rows) {
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export conicEqualAreaRaw */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__math__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conic__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conic__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cylindricalEqualArea__ = __webpack_require__(384);
 
 
@@ -22259,7 +22266,7 @@ function conicEqualAreaRaw(y0, y1) {
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22284,7 +22291,7 @@ function conicProjection(projectAt) {
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22326,7 +22333,7 @@ function fitSize(projection, size, object) {
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22390,7 +22397,7 @@ function mercatorProjection(project) {
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22490,7 +22497,7 @@ Node.prototype = hierarchy.prototype = {
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22507,7 +22514,7 @@ function required(f) {
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22584,7 +22591,7 @@ function squarifyRatio(ratio, parent, x0, y0, x1, y1) {
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22744,7 +22751,7 @@ function hasResponse(xhr) {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22756,11 +22763,11 @@ function hasResponse(xhr) {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_defaultLocale__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_defaultLocale__ = __webpack_require__(91);
 /* unused harmony reexport timeFormatDefaultLocale */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_defaultLocale__["a"]; });
 /* unused harmony reexport timeParse */
@@ -22779,7 +22786,7 @@ function hasResponse(xhr) {
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22819,14 +22826,14 @@ function defaultLocale(definition) {
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_path__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constant__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__curve_linear__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__point__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__point__ = __webpack_require__(93);
 
 
 
@@ -22885,7 +22892,7 @@ function defaultLocale(definition) {
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22901,7 +22908,7 @@ function y(p) {
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22999,7 +23006,7 @@ CatmullRom.prototype = {
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23020,7 +23027,7 @@ function sum(series) {
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23265,7 +23272,7 @@ function RedBlackFirst(node) {
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23442,13 +23449,6 @@ function clipEdges(x0, y0, x1, y1) {
     }
   }
 }
-
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(510);
 
 
 /***/ }),
@@ -24841,15 +24841,15 @@ module.exports = function(module) {
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_d3_dispatch__ = __webpack_require__(15);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3_drag__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3_drag__ = __webpack_require__(57);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_d3_dsv__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_d3_dsv__ = __webpack_require__(73);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_d3_ease__ = __webpack_require__(133);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_d3_force__ = __webpack_require__(338);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_d3_format__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_d3_format__ = __webpack_require__(78);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_d3_geo__ = __webpack_require__(368);
 /* unused harmony namespace reexport */
@@ -24861,7 +24861,7 @@ module.exports = function(module) {
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_d3_polygon__ = __webpack_require__(418);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_d3_quadtree__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_d3_quadtree__ = __webpack_require__(76);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_d3_queue__ = __webpack_require__(425);
 /* unused harmony namespace reexport */
@@ -24878,11 +24878,11 @@ module.exports = function(module) {
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_24_d3_shape__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_d3_time__ = __webpack_require__(49);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_d3_time_format__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_d3_time_format__ = __webpack_require__(90);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_d3_timer__ = __webpack_require__(40);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_d3_transition__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_d3_transition__ = __webpack_require__(70);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_d3_voronoi__ = __webpack_require__(498);
 /* unused harmony namespace reexport */
@@ -25357,7 +25357,7 @@ EnterNode.prototype = {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = styleValue;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__window__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__window__ = __webpack_require__(65);
 
 
 function styleRemove(name) {
@@ -25471,7 +25471,7 @@ var rad2deg = 180 / Math.PI;
 /* unused harmony export rgbBasis */
 /* unused harmony export rgbBasisClosed */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__basis__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__basis__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__basisClosed__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__color__ = __webpack_require__(27);
 
@@ -25536,7 +25536,7 @@ var rgbBasisClosed = rgbSpline(__WEBPACK_IMPORTED_MODULE_2__basisClosed__["a" /*
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__basis__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__basis__ = __webpack_require__(69);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(values) {
@@ -25569,7 +25569,7 @@ var rgbBasisClosed = rgbSpline(__WEBPACK_IMPORTED_MODULE_2__basisClosed__["a" /*
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__value__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__value__ = __webpack_require__(66);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(a, b) {
@@ -25607,7 +25607,7 @@ var rgbBasisClosed = rgbSpline(__WEBPACK_IMPORTED_MODULE_2__basisClosed__["a" /*
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__value__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__value__ = __webpack_require__(66);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(a, b) {
@@ -26246,7 +26246,7 @@ FormatSpecifier.prototype.toString = function() {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return prefixExponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDecimal__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDecimal__ = __webpack_require__(79);
 
 
 var prefixExponent;
@@ -27248,7 +27248,7 @@ function boundsPoint(x, y) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__conicEqualArea__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__conicEqualArea__ = __webpack_require__(81);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function() {
@@ -27625,7 +27625,7 @@ function constantZero() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__request__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__request__ = __webpack_require__(88);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(defaultMimeType, parse) {
@@ -27746,7 +27746,7 @@ function ordinal(range) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_time__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_time_format__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_time_format__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__array__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__continuous__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__nice__ = __webpack_require__(164);
@@ -28431,7 +28431,7 @@ function formatLiteralPercent() {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isoSpecifier; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__defaultLocale__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__defaultLocale__ = __webpack_require__(91);
 
 
 var isoSpecifier = "%Y-%m-%dT%H:%M:%S.%LZ";
@@ -28455,8 +28455,8 @@ var formatIso = Date.prototype.toISOString
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_path__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constant__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__curve_linear__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__line__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__point__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__line__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__point__ = __webpack_require__(93);
 
 
 
@@ -28621,7 +28621,7 @@ function curveRadial(curve) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = lineRadial;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__curve_radial__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__line__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__line__ = __webpack_require__(92);
 
 
 
@@ -28961,7 +28961,7 @@ CardinalOpen.prototype = {
 /* unused harmony export cellHalfedgeEnd */
 /* harmony export (immutable) */ __webpack_exports__["d"] = sortCellHalfedges;
 /* harmony export (immutable) */ __webpack_exports__["b"] = clipCells;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Edge__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Edge__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Diagram__ = __webpack_require__(37);
 
 
@@ -29099,7 +29099,7 @@ function clipCells(x0, y0, x1, y1) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return firstCircle; });
 /* harmony export (immutable) */ __webpack_exports__["a"] = attachCircle;
 /* harmony export (immutable) */ __webpack_exports__["b"] = detachCircle;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__RedBlackTree__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__RedBlackTree__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Diagram__ = __webpack_require__(37);
 
 
@@ -29633,7 +29633,7 @@ function makeCmapTable(glyphs) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__encoding__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__encoding__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__glyphset__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__parse__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__path__ = __webpack_require__(38);
@@ -33018,7 +33018,7 @@ function makeOS2Table(options) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__encoding__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__encoding__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parse__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__table__ = __webpack_require__(6);
 // The `post` table stores additional PostScript information, such as glyph names.
@@ -37065,7 +37065,7 @@ var dependencies = {"d3-array":"1.2.1","d3-axis":"1.0.8","d3-brush":"1.0.4","d3-
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ascending__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__number__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__quantile__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__quantile__ = __webpack_require__(56);
 
 
 
@@ -37171,7 +37171,7 @@ var dependencies = {"d3-array":"1.2.1","d3-axis":"1.0.8","d3-brush":"1.0.4","d3-
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ascending__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__number__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__quantile__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__quantile__ = __webpack_require__(56);
 
 
 
@@ -37572,10 +37572,10 @@ var slice = Array.prototype.slice;
 /* unused harmony export brushX */
 /* unused harmony export brushY */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_dispatch__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_drag__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_drag__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_interpolate__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_selection__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3_transition__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3_transition__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constant__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__event__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__noevent__ = __webpack_require__(324);
@@ -38431,8 +38431,8 @@ Local.prototype = local.prototype = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sourceEvent__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__point__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sourceEvent__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__point__ = __webpack_require__(63);
 
 
 
@@ -38464,7 +38464,7 @@ Local.prototype = local.prototype = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selector__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selector__ = __webpack_require__(64);
 
 
 
@@ -38855,7 +38855,7 @@ function ascending(a, b) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__namespace__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__namespace__ = __webpack_require__(59);
 
 
 function attrRemove(name) {
@@ -39129,7 +39129,7 @@ function lower() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__creator__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__creator__ = __webpack_require__(58);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(name) {
@@ -39145,8 +39145,8 @@ function lower() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__creator__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selector__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__creator__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selector__ = __webpack_require__(64);
 
 
 
@@ -39195,7 +39195,7 @@ function remove() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__window__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__window__ = __webpack_require__(65);
 
 
 function dispatchEvent(node, type, params) {
@@ -39252,8 +39252,8 @@ function dispatchFunction(type, params) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sourceEvent__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__point__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sourceEvent__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__point__ = __webpack_require__(63);
 
 
 
@@ -39275,8 +39275,8 @@ function dispatchFunction(type, params) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sourceEvent__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__point__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sourceEvent__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__point__ = __webpack_require__(63);
 
 
 
@@ -39337,8 +39337,8 @@ DragEvent.prototype.on = function() {
 /* unused harmony export Lab */
 /* harmony export (immutable) */ __webpack_exports__["b"] = hcl;
 /* unused harmony export Hcl */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__define__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__define__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__math__ = __webpack_require__(123);
 
 
@@ -39457,8 +39457,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__define__["a" /* default */])(Hcl, hcl, Objec
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = cubehelix;
 /* unused harmony export Cubehelix */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__define__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__define__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__math__ = __webpack_require__(123);
 
 
@@ -39924,7 +39924,7 @@ __WEBPACK_IMPORTED_MODULE_0_d3_selection__["h" /* selection */].prototype.transi
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timer__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timer__ = __webpack_require__(71);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(callback, delay, time) {
@@ -39943,7 +39943,7 @@ __WEBPACK_IMPORTED_MODULE_0_d3_selection__["h" /* selection */].prototype.transi
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timer__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timer__ = __webpack_require__(71);
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (function(callback, delay, time) {
@@ -41347,7 +41347,7 @@ Path.prototype = path.prototype = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__map__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__map__ = __webpack_require__(72);
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (function() {
@@ -41428,7 +41428,7 @@ function setMap(map, key, value) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__map__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__map__ = __webpack_require__(72);
 
 
 function Set() {}
@@ -41515,7 +41515,7 @@ function set(object, f) {
 /* unused harmony export csvParseRows */
 /* unused harmony export csvFormat */
 /* unused harmony export csvFormatRows */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dsv__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dsv__ = __webpack_require__(74);
 
 
 var csv = Object(__WEBPACK_IMPORTED_MODULE_0__dsv__["a" /* default */])(",");
@@ -41535,7 +41535,7 @@ var csvFormatRows = csv.formatRows;
 /* unused harmony export tsvParseRows */
 /* unused harmony export tsvFormat */
 /* unused harmony export tsvFormatRows */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dsv__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dsv__ = __webpack_require__(74);
 
 
 var tsv = Object(__WEBPACK_IMPORTED_MODULE_0__dsv__["a" /* default */])("\t");
@@ -41626,8 +41626,8 @@ var tsvFormatRows = tsv.formatRows;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constant__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jiggle__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_quadtree__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jiggle__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_quadtree__ = __webpack_require__(76);
 
 
 
@@ -42010,7 +42010,7 @@ function addAll(data) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__quad__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__quad__ = __webpack_require__(77);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(x, y, radius) {
@@ -42182,7 +42182,7 @@ function removeAll(data) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__quad__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__quad__ = __webpack_require__(77);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(callback) {
@@ -42206,7 +42206,7 @@ function removeAll(data) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__quad__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__quad__ = __webpack_require__(77);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(callback) {
@@ -42266,7 +42266,7 @@ function defaultY(d) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constant__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jiggle__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jiggle__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_collection__ = __webpack_require__(28);
 
 
@@ -42392,8 +42392,8 @@ function find(nodeById, nodeId) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constant__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jiggle__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_quadtree__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__jiggle__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_quadtree__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__simulation__ = __webpack_require__(135);
 
 
@@ -42769,7 +42769,7 @@ function defaultLocale(definition) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDecimal__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDecimal__ = __webpack_require__(79);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function(x, p) {
@@ -42880,7 +42880,7 @@ function defaultLocale(definition) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__src_projection_conicConformal__ = __webpack_require__(388);
 /* unused harmony reexport geoConicConformal */
 /* unused harmony reexport geoConicConformalRaw */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__src_projection_conicEqualArea__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__src_projection_conicEqualArea__ = __webpack_require__(81);
 /* unused harmony reexport geoConicEqualArea */
 /* unused harmony reexport geoConicEqualAreaRaw */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__src_projection_conicEquidistant__ = __webpack_require__(389);
@@ -42897,7 +42897,7 @@ function defaultLocale(definition) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__src_projection_index__ = __webpack_require__(11);
 /* unused harmony reexport geoProjection */
 /* unused harmony reexport geoProjectionMutator */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__src_projection_mercator__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__src_projection_mercator__ = __webpack_require__(84);
 /* unused harmony reexport geoMercator */
 /* unused harmony reexport geoMercatorRaw */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__src_projection_naturalEarth1__ = __webpack_require__(392);
@@ -43656,7 +43656,7 @@ function graticule10() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__identity__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__identity__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__stream__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__area__ = __webpack_require__(378);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bounds__ = __webpack_require__(152);
@@ -44215,8 +44215,8 @@ function cylindricalEqualAreaRaw(phi0) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__math__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__albers__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__conicEqualArea__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fit__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__conicEqualArea__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fit__ = __webpack_require__(83);
 
 
 
@@ -44385,8 +44385,8 @@ azimuthalEquidistantRaw.invert = Object(__WEBPACK_IMPORTED_MODULE_1__azimuthal__
 "use strict";
 /* unused harmony export conicConformalRaw */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__math__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conic__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mercator__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conic__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mercator__ = __webpack_require__(84);
 
 
 
@@ -44431,7 +44431,7 @@ function conicConformalRaw(y0, y1) {
 "use strict";
 /* unused harmony export conicEquidistantRaw */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__math__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conic__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conic__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__equirectangular__ = __webpack_require__(154);
 
 
@@ -44497,9 +44497,9 @@ gnomonicRaw.invert = Object(__WEBPACK_IMPORTED_MODULE_1__azimuthal__["a" /* azim
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__clip_rectangle__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__identity__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__identity__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transform__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fit__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fit__ = __webpack_require__(83);
 
 
 
@@ -44658,7 +44658,7 @@ stereographicRaw.invert = Object(__WEBPACK_IMPORTED_MODULE_1__azimuthal__["a" /*
 "use strict";
 /* unused harmony export transverseMercatorRaw */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__math__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mercator__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mercator__ = __webpack_require__(84);
 
 
 
@@ -44695,7 +44695,7 @@ transverseMercatorRaw.invert = function(x, y) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_cluster__ = __webpack_require__(397);
 /* unused harmony reexport cluster */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_hierarchy_index__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_hierarchy_index__ = __webpack_require__(85);
 /* unused harmony reexport hierarchy */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_pack_index__ = __webpack_require__(409);
 /* unused harmony reexport pack */
@@ -44719,7 +44719,7 @@ transverseMercatorRaw.invert = function(x, y) {
 /* unused harmony reexport treemapSlice */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__src_treemap_sliceDice__ = __webpack_require__(416);
 /* unused harmony reexport treemapSliceDice */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_treemap_squarify__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_treemap_squarify__ = __webpack_require__(87);
 /* unused harmony reexport treemapSquarify */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_treemap_resquarify__ = __webpack_require__(417);
 /* unused harmony reexport treemapResquarify */
@@ -45040,7 +45040,7 @@ function leastCommonAncestor(a, b) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__siblings__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accessors__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accessors__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constant__ = __webpack_require__(157);
 
 
@@ -45214,8 +45214,8 @@ function shuffle(array) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__accessors__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hierarchy_index__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__accessors__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hierarchy_index__ = __webpack_require__(85);
 
 
 
@@ -45296,7 +45296,7 @@ function defaultParentId(d) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hierarchy_index__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hierarchy_index__ = __webpack_require__(85);
 
 
 function defaultSeparation(a, b) {
@@ -45542,8 +45542,8 @@ function treeRoot(root) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__round__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__squarify__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accessors__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__squarify__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accessors__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constant__ = __webpack_require__(157);
 
 
@@ -45716,7 +45716,7 @@ function treeRoot(root) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dice__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__slice__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__squarify__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__squarify__ = __webpack_require__(87);
 
 
 
@@ -46223,7 +46223,7 @@ var slice = [].slice;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_request__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_request__ = __webpack_require__(88);
 /* unused harmony reexport request */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_html__ = __webpack_require__(434);
 /* unused harmony reexport html */
@@ -46305,7 +46305,7 @@ var slice = [].slice;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_dsv__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_dsv__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dsv__ = __webpack_require__(161);
 
 
@@ -46318,7 +46318,7 @@ var slice = [].slice;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_dsv__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_dsv__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dsv__ = __webpack_require__(161);
 
 
@@ -46568,7 +46568,7 @@ function identity() {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_format__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_format__ = __webpack_require__(78);
 
 
 
@@ -46609,8 +46609,8 @@ function identity() {
 "use strict";
 /* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_format__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constant__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_format__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constant__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__nice__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__continuous__ = __webpack_require__(48);
 
@@ -46750,7 +46750,7 @@ function log() {
 "use strict";
 /* unused harmony export default */
 /* unused harmony export sqrt */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constant__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constant__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__linear__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__continuous__ = __webpack_require__(48);
 
@@ -47394,7 +47394,7 @@ var utcYears = utcYear.range;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__isoFormat__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__defaultLocale__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__defaultLocale__ = __webpack_require__(91);
 
 
 
@@ -47416,7 +47416,7 @@ var parseIso = +new Date("2000-01-01T00:00:00.000Z")
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__time__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_time_format__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_time_format__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_time__ = __webpack_require__(49);
 
 
@@ -47587,7 +47587,7 @@ function sequential(interpolator) {
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_arc__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_area__ = __webpack_require__(168);
 /* unused harmony reexport area */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_line__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_line__ = __webpack_require__(92);
 /* unused harmony reexport line */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_pie__ = __webpack_require__(475);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__src_pie__["a"]; });
@@ -47638,7 +47638,7 @@ function sequential(interpolator) {
 /* unused harmony reexport curveCatmullRomClosed */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__src_curve_catmullRomOpen__ = __webpack_require__(485);
 /* unused harmony reexport curveCatmullRomOpen */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__src_curve_catmullRom__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__src_curve_catmullRom__ = __webpack_require__(94);
 /* unused harmony reexport curveCatmullRom */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__src_curve_linearClosed__ = __webpack_require__(486);
 /* unused harmony reexport curveLinearClosed */
@@ -47665,7 +47665,7 @@ function sequential(interpolator) {
 /* unused harmony reexport stackOffsetSilhouette */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__src_offset_wiggle__ = __webpack_require__(494);
 /* unused harmony reexport stackOffsetWiggle */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__src_order_ascending__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__src_order_ascending__ = __webpack_require__(95);
 /* unused harmony reexport stackOrderAscending */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__src_order_descending__ = __webpack_require__(495);
 /* unused harmony reexport stackOrderDescending */
@@ -48151,7 +48151,7 @@ function cornerTangents(x0, y0, x1, y1, r1, rc, cw) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_path__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__array__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constant__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__point__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__point__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pointRadial__ = __webpack_require__(171);
 
 
@@ -48481,7 +48481,7 @@ Bundle.prototype = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cardinalClosed__ = __webpack_require__(180);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__noop__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__catmullRom__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__catmullRom__ = __webpack_require__(94);
 
 
 
@@ -48564,7 +48564,7 @@ CatmullRomClosed.prototype = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cardinalOpen__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__catmullRom__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__catmullRom__ = __webpack_require__(94);
 
 
 
@@ -49071,7 +49071,7 @@ function stackValue(d, key) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ascending__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ascending__ = __webpack_require__(95);
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (function(series) {
@@ -49085,7 +49085,7 @@ function stackValue(d, key) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__none__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ascending__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ascending__ = __webpack_require__(95);
 
 
 
@@ -49231,10 +49231,10 @@ function y(d) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = removeBeach;
 /* harmony export (immutable) */ __webpack_exports__["a"] = addBeach;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__RedBlackTree__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__RedBlackTree__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Cell__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Circle__ = __webpack_require__(183);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Edge__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Edge__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Diagram__ = __webpack_require__(37);
 
 
@@ -49451,10 +49451,10 @@ function rightBreakPoint(arc, directrix) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_dispatch__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_drag__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_drag__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_interpolate__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_selection__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3_transition__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3_transition__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constant__ = __webpack_require__(505);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__event__ = __webpack_require__(506);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__transform__ = __webpack_require__(184);
@@ -49941,17 +49941,19 @@ function nopropagation() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DrawText__ = __webpack_require__(509);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__getText__ = __webpack_require__(530);
-var FRONT="front";var LEFT="left";var RIGHT="right";var BACK="back";var TOP="top";var BOTTOM="bottom";var WIDTH=window.innerWidth;var HEIGHT=window.innerHeight;var SIDE_LENGTH=Math.min(WIDTH,HEIGHT)/3;var START_Y_ROTATION=10;var START_X_ROTATION=-10;var START_PATH="M 10, 10 m -7.5, 0 a 7.5,7.5 0 1,0 15,0 a 7.5,7.5 0 1,0 -15,0";var initialDirections=[FRONT,BACK,RIGHT,LEFT,TOP,BOTTOM];var NUMBER_OF_CUBES=6;var cubeData=__WEBPACK_IMPORTED_MODULE_1_lodash__["range"](NUMBER_OF_CUBES).map(function(num){return{width:SIDE_LENGTH,height:SIDE_LENGTH,id:"cube-"+num};});var drawSvgBars=function drawSvgBars(){var divSelection=__WEBPACK_IMPORTED_MODULE_0_d3__["c" /* selectAll */]("div.container").data(cubeData,function(d){return d.id;});var enterContainer=divSelection.enter().append("div").attr("class",function(d){return"container _"+d.id;});var rotation=function rotation(degX,degY){return"rotateX("+degX+"deg) rotateY("+degY+"deg)";};var enterCube=enterContainer.append("div").attr("class",function(d){return"cube _"+d.id+" spinning"+__WEBPACK_IMPORTED_MODULE_1_lodash__["random"](1,3);}).style("transform-origin",function(d){return d.width/2+"px "+d.height/2+"px";}).style("transform",rotation(START_X_ROTATION,START_Y_ROTATION));var isTopBottom=function isTopBottom(d){return d.initialDirection==="top"||d.initialDirection==="bottom";};var height=function height(d){return isTopBottom(d)?d.width:d.height;};var width=function width(d){return d.width;};var svgSelection=enterCube.selectAll("svg").data(function(d){return initialDirections.map(function(direction){return Object.assign({},d,{initialDirection:direction,currentDirection:direction});});});var enterSvg=svgSelection.enter().append("svg").attr("class",function(d){return"part "+d.initialDirection;}).attr("height",height).attr("width",width).style("position","absolute").style("transform",function(d){if(isTopBottom(d)){var y=d.height/2-d.width/2;return"translateY("+y+"px)";}});var sideG=enterSvg.append("g").attr("transform",function(d){return"translate("+width(d)/2+","+height(d)/2+")";});var fromId=function fromId(d){return d.id+"-"+d.initialDirection+"-from";};var toId=function toId(d){return d.id+"-"+d.initialDirection+"-to";};sideG.append("path").attr("class",function(d){return d.id+" "+d.initialDirection+" from";}).attr("id",fromId).attr("stroke","white").attr("stroke-width",3).attr("fill","none").attr("d",START_PATH);sideG.append("path").attr("class",function(d){return d.id+" "+d.initialDirection+" to";}).attr("id",toId).attr("stroke","white").attr("stroke-width",3).attr("fill","none").attr("d",START_PATH).style("visibility","hidden");sideG.each(function(d){var text=Object(__WEBPACK_IMPORTED_MODULE_3__getText__["a" /* default */])(d.id).next().value;new __WEBPACK_IMPORTED_MODULE_2__DrawText__["a" /* default */](sideG,"#"+fromId(d),"#"+toId(d),text).start();});enterContainer.selectAll("svg."+FRONT).style("transform",function(d){return"translateZ("+d.width/2+"px)";});enterContainer.selectAll("svg."+BACK).style("transform",function(d){return"rotateY(-180deg) translateZ("+d.width/2+"px)";});enterContainer.selectAll("svg."+RIGHT).style("transform",function(d){return"rotateY(90deg) translateZ("+d.width/2+"px)";});enterContainer.selectAll("svg."+LEFT).style("transform",function(d){return"rotateY(-90deg) translateZ("+d.width/2+"px)";});enterContainer.selectAll("svg."+TOP).style("transform",function(d){return"translateY("+(d.height/2-d.width/2)+"px) rotateX(90deg) translateZ("+d.height/2+"px)";});enterContainer.selectAll("svg."+BOTTOM).style("transform",function(d){return"translateY("+(d.height/2-d.width/2)+"px) rotateX(-90deg) translateZ("+d.height/2+"px)";});return enterContainer;};
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__color__ = __webpack_require__(531);
+var FRONT="front";var LEFT="left";var RIGHT="right";var BACK="back";var TOP="top";var BOTTOM="bottom";var WIDTH=window.innerWidth;var HEIGHT=window.innerHeight;var SIDE_LENGTH=Math.min(WIDTH,HEIGHT)/3;var START_Y_ROTATION=10;var START_X_ROTATION=-10;var START_PATH="M 10, 10 m -7.5, 0 a 7.5,7.5 0 1,0 15,0 a 7.5,7.5 0 1,0 -15,0";var initialDirections=[FRONT,BACK,RIGHT,LEFT,TOP,BOTTOM];var NUMBER_OF_CUBES=6;var cubeData=__WEBPACK_IMPORTED_MODULE_1_lodash__["range"](NUMBER_OF_CUBES).map(function(num){return{width:SIDE_LENGTH,height:SIDE_LENGTH,id:"cube-"+num,color:Object(__WEBPACK_IMPORTED_MODULE_4__color__["a" /* randomColor */])().next().value};});var drawSvgBars=function drawSvgBars(){var divSelection=__WEBPACK_IMPORTED_MODULE_0_d3__["c" /* selectAll */]("div.container").data(cubeData,function(d){return d.id;});var enterContainer=divSelection.enter().append("div").attr("class",function(d){return"container _"+d.id;});var rotation=function rotation(degX,degY){return"rotateX("+degX+"deg) rotateY("+degY+"deg)";};var enterCube=enterContainer.append("div").attr("class",function(d){return"cube _"+d.id+" spinning"+__WEBPACK_IMPORTED_MODULE_1_lodash__["random"](1,3);}).style("transform-origin",function(d){return d.width/2+"px "+d.height/2+"px";}).style("transform",rotation(START_X_ROTATION,START_Y_ROTATION));var isTopBottom=function isTopBottom(d){return d.initialDirection==="top"||d.initialDirection==="bottom";};var height=function height(d){return isTopBottom(d)?d.width:d.height;};var width=function width(d){return d.width;};var svgSelection=enterCube.selectAll("svg").data(function(d){return initialDirections.map(function(direction){return Object.assign({},d,{initialDirection:direction,currentDirection:direction});});});var enterSvg=svgSelection.enter().append("svg").attr("class",function(d){return"part "+d.initialDirection;})//.style("background", d => color(d.id))
+.attr("height",height).attr("width",width).style("position","absolute").style("transform",function(d){if(isTopBottom(d)){var y=d.height/2-d.width/2;return"translateY("+y+"px)";}});enterSvg.append("rect").attr("width",width).attr("height",height).attr("fill",function(d){return d.color;}).style("stroke","white").style("stroke-width","5px");var sideG=enterSvg.append("g").attr("transform",function(d){return"translate("+width(d)/2+","+height(d)/2+")";});var fromId=function fromId(d){return d.id+"-"+d.initialDirection+"-from";};var toId=function toId(d){return d.id+"-"+d.initialDirection+"-to";};sideG.append("path").attr("class",function(d){return d.id+" "+d.initialDirection+" from";}).attr("id",fromId).attr("stroke","white").attr("stroke-width",3).attr("fill","none").attr("d",START_PATH);sideG.append("path").attr("class",function(d){return d.id+" "+d.initialDirection+" to";}).attr("id",toId).attr("stroke","white").attr("stroke-width",3).attr("fill","none").attr("d",START_PATH).style("visibility","hidden");sideG.each(function(d){var text=Object(__WEBPACK_IMPORTED_MODULE_3__getText__["a" /* default */])(d.id).next().value;new __WEBPACK_IMPORTED_MODULE_2__DrawText__["a" /* default */](sideG,"#"+fromId(d),"#"+toId(d),text).start();});enterContainer.selectAll("svg."+FRONT).style("transform",function(d){return"translateZ("+d.width/2+"px)";});enterContainer.selectAll("svg."+BACK).style("transform",function(d){return"rotateY(-180deg) translateZ("+d.width/2+"px)";});enterContainer.selectAll("svg."+RIGHT).style("transform",function(d){return"rotateY(90deg) translateZ("+d.width/2+"px)";});enterContainer.selectAll("svg."+LEFT).style("transform",function(d){return"rotateY(-90deg) translateZ("+d.width/2+"px)";});enterContainer.selectAll("svg."+TOP).style("transform",function(d){return"translateY("+(d.height/2-d.width/2)+"px) rotateX(90deg) translateZ("+d.height/2+"px)";});enterContainer.selectAll("svg."+BOTTOM).style("transform",function(d){return"translateY("+(d.height/2-d.width/2)+"px) rotateX(-90deg) translateZ("+d.height/2+"px)";});return enterContainer;};
 
 /***/ }),
 /* 509 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Fonts__ = __webpack_require__(512);
-var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _asyncToGenerator(fn){return function(){var gen=fn.apply(this,arguments);return new Promise(function(resolve,reject){function step(key,arg){try{var info=gen[key](arg);var value=info.value;}catch(error){reject(error);return;}if(info.done){resolve(value);}else{return Promise.resolve(value).then(function(value){step("next",value);},function(err){step("throw",err);});}}return step("next");});};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var fonts=new __WEBPACK_IMPORTED_MODULE_1__Fonts__["a" /* default */]();var KUTE=__webpack_require__(201);__webpack_require__(529);var DrawText=function(){function DrawText(root,fromSelector,toSelector,text){var fontPath=arguments.length>4&&arguments[4]!==undefined?arguments[4]:'fonts/Roboto-Black.ttf';var x=arguments.length>5&&arguments[5]!==undefined?arguments[5]:0;var y=arguments.length>6&&arguments[6]!==undefined?arguments[6]:0;var size=arguments.length>7&&arguments[7]!==undefined?arguments[7]:100;_classCallCheck(this,DrawText);this.root=root;this.fromSelector=fromSelector;this.toSelector=toSelector;this.text=text;this.fontPath=fontPath;this.x=x;this.y=y;this.size=size;}_createClass(DrawText,[{key:'_getPath',value:function _getPath(ch,font){return font.getPath(ch,this.x,this.y,this.size).toPathData();}},{key:'_chars',value:/*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _chars(){var currentIndex;return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _chars$(_context){while(1){switch(_context.prev=_context.next){case 0:currentIndex=0;case 1:if(false){_context.next=7;break;}_context.next=4;return this.text[currentIndex];case 4:currentIndex=currentIndex<this.text.length-1?currentIndex+1:0;_context.next=1;break;case 7:case'end':return _context.stop();}}},_chars,this);})},{key:'_setToD',value:function _setToD(newToD){var toPath=this.root.select(this.toSelector);var oldToD=toPath.attr("d");var fromPath=this.root.select(this.fromSelector);fromPath.attr("d",oldToD);toPath.attr("d",newToD);}},{key:'_morph',value:function _morph(){KUTE.to(this.fromSelector,{path:this.toSelector},{duration:100}).start();}},{key:'_drawNextChar',value:function _drawNextChar(chars,font){var charD=this._getPath(chars.next().value,font);this._setToD(charD);this._morph();var that=this;setTimeout(function(){that._drawNextChar(chars,font);},Math.random(1500)+500);}},{key:'start',value:function(){var _ref=_asyncToGenerator(/*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(){var font,chars;return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context2){while(1){switch(_context2.prev=_context2.next){case 0:_context2.next=2;return fonts.getFont(this.fontPath);case 2:font=_context2.sent;chars=this._chars();this._drawNextChar(chars,font);case 5:case'end':return _context2.stop();}}},_callee,this);}));function start(){return _ref.apply(this,arguments);}return start;}()}]);return DrawText;}();/* harmony default export */ __webpack_exports__["a"] = (DrawText);
+var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _asyncToGenerator(fn){return function(){var gen=fn.apply(this,arguments);return new Promise(function(resolve,reject){function step(key,arg){try{var info=gen[key](arg);var value=info.value;}catch(error){reject(error);return;}if(info.done){resolve(value);}else{return Promise.resolve(value).then(function(value){step("next",value);},function(err){step("throw",err);});}}return step("next");});};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var fonts=new __WEBPACK_IMPORTED_MODULE_1__Fonts__["a" /* default */]();var KUTE=__webpack_require__(201);__webpack_require__(529);var DrawText=function(){function DrawText(root,fromSelector,toSelector,text){var fontPath=arguments.length>4&&arguments[4]!==undefined?arguments[4]:'fonts/Roboto-Black.ttf';var x=arguments.length>5&&arguments[5]!==undefined?arguments[5]:0;var y=arguments.length>6&&arguments[6]!==undefined?arguments[6]:0;var size=arguments.length>7&&arguments[7]!==undefined?arguments[7]:75;_classCallCheck(this,DrawText);this.root=root;this.fromSelector=fromSelector;this.toSelector=toSelector;this.text=text;this.fontPath=fontPath;this.x=x;this.y=y;this.size=size;}_createClass(DrawText,[{key:'_getPath',value:function _getPath(ch,font){return font.getPath(ch,this.x,this.y,this.size).toPathData();}},{key:'_chars',value:/*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _chars(){var currentIndex;return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _chars$(_context){while(1){switch(_context.prev=_context.next){case 0:currentIndex=0;case 1:if(false){_context.next=7;break;}_context.next=4;return this.text[currentIndex];case 4:currentIndex=currentIndex<this.text.length-1?currentIndex+1:0;_context.next=1;break;case 7:case'end':return _context.stop();}}},_chars,this);})},{key:'_setToD',value:function _setToD(newToD){var toPath=this.root.select(this.toSelector);var oldToD=toPath.attr("d");var fromPath=this.root.select(this.fromSelector);fromPath.attr("d",oldToD);toPath.attr("d",newToD);}},{key:'_morph',value:function _morph(){KUTE.to(this.fromSelector,{path:this.toSelector},{duration:100}).start();}},{key:'_drawNextChar',value:function _drawNextChar(chars,font){var charD=this._getPath(chars.next().value,font);this._setToD(charD);this._morph();var that=this;setTimeout(function(){that._drawNextChar(chars,font);},Math.random(1500)+500);}},{key:'start',value:function(){var _ref=_asyncToGenerator(/*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(){var font,chars;return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context2){while(1){switch(_context2.prev=_context2.next){case 0:_context2.next=2;return fonts.getFont(this.fontPath);case 2:font=_context2.sent;chars=this._chars();this._drawNextChar(chars,font);case 5:case'end':return _context2.stop();}}},_callee,this);}));function start(){return _ref.apply(this,arguments);}return start;}()}]);return DrawText;}();/* harmony default export */ __webpack_exports__["a"] = (DrawText);
 
 /***/ }),
 /* 510 */
@@ -50728,7 +50730,7 @@ if (hadRuntime) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
@@ -50747,7 +50749,7 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tiny_inflate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_tiny_inflate__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__font__ = __webpack_require__(515);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__glyph__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__encoding__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__encoding__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__parse__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__bbox__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__path__ = __webpack_require__(38);
@@ -51563,7 +51565,7 @@ module.exports = tinf_uncompress;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__path__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tables_sfnt__ = __webpack_require__(516);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__encoding__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__encoding__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__glyphset__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__substitution__ = __webpack_require__(518);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(200);
@@ -59110,12 +59112,27 @@ function parseLocaTable(data, start, numGlyphs, shortVersion) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
-var texts={"stayin-alive":"Well,youcantellbythewayIusemywalkI'mawoman'sman:notimetotalkMusicloudandwomenwarm,I'vebeenkickedaroundSinceIwasbornAndnowit'sallright,it'sokayAndyoumaylooktheotherwayWecantrytounderstandTheNewYorkTimes'effectonmanWhetheryou'reabrotherorwhetheryou'reamotherYou'restayin'alive,stayin'aliveFeelthecitybreakin'andeverybodyshakin'Andwe'restayin'alive,stayin'aliveAh,ha,ha,ha,stayin'alive,stayin'aliveAh,ha,ha,ha,stayin'aliveWellnow,IgetlowandIgethighAndifIcan'tgeteither,IreallytryGotthewingsofheavenonmyshoesI'madancin'manandIjustcan'tloseYouknowit'sallright,it'sokayI'lllivetoseeanotherdayWecantrytounderstand","satisfaction":"Ican'tgetnosatisfaction,Ican'tgetnosatisfaction'CauseItryandItryandItryandItryIcan'tgetno,Ican'tgetnoWhenI'mdrivin'inmycar,andthemancomeontheradioHe'stellin'memoreandmoreaboutsomeuselessinformationSupposedtofiremyimaginationIcan'tgetno,oh,no,no,no,hey,hey,heyThat'swhatIsayIcan'tgetnosatisfaction,Ican'tgetnosatisfaction'CauseItryandItryandItryandItryIcan'tgetno,Ican'tgetnoWhenI'mwatchin'mytvandamancomesonandtellmeHowwhitemyshirtscanbeBut,hecan'tbeaman'causehedoesn'tsmokeThesamecigarettesasmeIcan'tgetno,oh,no,no,no,hey,hey,heyThat'swhatIsayIcan'tgetnosatisfaction,Ican'tgetgirlreaction'CauseItryandItryandItryandItryIcan'tgetno,Ican'tgetnoWhenI'mridin'roundtheworldAndI'mdoin'thisandI'msignin'thatAndI'mtryin'tomakesomegirl,whotellsmeBaby,bettercomebackmaybenextweekCan'tyouseeI'monalosingstreakIcan'tgetno,oh,no,no,no,hey,hey,heyThat'swhatIsay,Ican'tgetno,Ican'tgetnoIcan'tgetnosatisfaction,nosatisfactionNosatisfaction,nosatisfaction","night-fever":"ListentothegroundThereismovementallaroundThereissomethinggoin'downAndIcanfeelitOnthewavesoftheairThereisdancin'outthereIfit'ssomethin'wecanshareWecanstealitAndthatsweetcitywomanShemovesthroughthelightControllingmymindandmysoulWhenyoureachoutformeYeah,andthefeelin'isrightThenIgetnightfever,nightfeverWeknowhowtodoitGimmethatnightfever,nightfeverWeknowhowtoshowitHereIamPrayin'forthismomenttolastLivin'onthemusicsofineBorneonthewindMakin'itmineNightfever,nightfeverWeknowhowtodoitGimmethatnightfever,nightfeverWeknowhowtoshowitIntheheatofourloveDon'tneednohelpforustomakeitGimmejustenoughtotakeustothemornin'","let-it-be":"WhenIfindmyselfintimesoftroubleMotherMarycomestomeSpeakingwordsofwisdom,letitbeAndinmyhourofdarknessSheisstandingrightinfrontofmeSpeakingwordsofwisdom,letitbeOh,letitbe,letitbe,letitbe,letitbeWhisperwordsofwisdom,letitbeAndwhenthebrokenheartedpeopleLivingintheworldagreeTherewillbeananswer,letitbeForthoughtheymaybepartedThereisstillachancethattheywillseeTherewillbeananswer,letitbeOh,letitbe,letitbe,letitbe,letitbeAndtherewillbeananswer,letitbeOh,letitbe,letitbe,letitbe,letitbeWhisperwordsofwisdom,letitbeOh,letitbe,letitbe,letitbe,letitbeWhisperwordsofwisdom,letitbeAndwhenthenightiscloudyThereisstillalightthatshinesonmeShineonuntiltomorrow,letitbeIwakeuptothesoundofmusicMotherMarycomestomeSpeakingwordsofwisdom,letitbeOh,letitbe,letitbe,letitbe,letitbeTherewillbeananswer,letitbeOh,letitbeWon'tyouletitbe,letitbe,letitbeWhisperwordsofwisdom,letitbeLetitbe","hey-jude":"Hey,Jude,don'tmakeitbadTakeasadsongandmakeitbetterRemembertoletherintoyourheartThenyoucanstarttomakeitbetterHey,Jude,don'tbeafraidYouweremadetogooutandgetherTheminuteyouletherunderyourskinThenyoubegintomakeitbetterAndanytimeyoufeelthepain,Hey,Jude,refrainDon'tcarrytheworlduponyourshouldersForwellyouknowthatit'safoolWhoplaysitcoolBymakinghisworldalittlecolderNah,nahnah,nahnah,nahnah,nahnahHey,Jude,don'tletmedownYouhavefoundher,nowgoandgetherRemembertoletherintoyourheartThenyoucanstarttomakeitbetterSoletitoutandletitin,Hey,Jude,beginYou'rewaitingforsomeonetoperformwithAnddon'tyouknowthatit'sjustyou,Hey,Jude,you'lldoThemovementyouneedisonyourshoulderNah,nahnah,nahnah,nahnah,nahnahyeahHey,Jude,don'tmakeitbadTakeasadsongandmakeitbetterRemembertoletherunderyourskinThenyou'llbegintomakeitbetter,better,better,better,better...oh!Nah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(Jude)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(yeah,yeah,yeah)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(don'tmakeitbad,Jude)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(takeasadsongandmakeitbetter)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(oh,Jude)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(Jude,hey,Jude,whoa)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(ooh)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude","ebony-and-ivory":"EbonyandivorylivetogetherinperfectharmonySidebysideonmypianokeyboard,ohLord,whydon'twe?WeallknowthatpeoplearethesamewhereeveryougoThereisgoodandbadinev'ryoneWelearntolive,whenwelearntogiveEachotherwhatweneedtosurvive,togetheraliveEbonyandivorylivetogetherinperfectharmonySidebysideonmypianokeyboard,ohLordwhydon'twe?Ebony,ivory,livinginperfectharmonyEbony,ivory,oohWeallknowthatpeoplearethesamewhereeveryougoThereisgoodandbadinev'ryoneWelearntolive,whenwelearntogiveEachotherwhatweneedtosurvive,togetheraliveEbonyandivorylivetogetherinperfectharmonySidebysideonmypianokeyboard,ohLordwhydon'twe?Sidebysideonmypianokeyboard,ohLord,whydon'tweEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmony","blowing-in-the-wind":"HowmanyroadsmustamanwalkdownBeforeyoucallhimaman?HowmanyseasmustawhitedovesailBeforeshesleepsinthesand?HowmanytimesmustthecannonballsflyBeforethey'reforeverbanned?Theanswer,myfriend,isblowin'inthewindTheanswerisblowin'inthewindHowmanyyearscanamountainexistBeforeit'swashedtothesea?HowmanyyearsmustsomepeopleexistBeforethey'reallowedtobefree?AndhowmanytimescanamanturnhisheadAndpretendthathejustdoesn'tsee-theanswerTheanswer,myfriend,isblowin'inthewindTheanswerisblowin'inthewindHowmanytimescanamanlookupBeforeheseesthesky?HowmanyearsmustonepersonhaveBeforehecanhearpeoplecry?Andhowmanydeathswillittake'tillheknowsThattoomanypeoplehavedied?Theanswer,myfriends,isblowin'inthewindTheanswerisblowin'inthewindOh,theanswer,myfriends,isblowin'inthewindTheanswerisblowin'inthewind","billie-jean":"ShewasmorelikeabeautyqueenfromamoviesceneIsaiddon'tmind,butwhatdoyoumean,IamtheoneWhowilldanceonthefloorintheroundShesaidIamtheone,whowilldanceonthefloorintheroundShetoldmehernamewasBillieJean,asshecausedasceneTheneveryheadturnedwitheyesthatdreamedofbeingtheoneWhowilldanceonthefloorintheroundPeoplealwaystoldmebecarefulofwhatyoudoAnddon'tgoaroundbreakingyounggirls'heartsAndmotheralwaystoldmebecarefulofwhoyouloveAndbecarefulofwhatyoudo'causetheliebecomesthetruthBillieJeanisnotmyloverShe'sjustagirlwhoclaimsthatIamtheoneButthekidisnotmysonShesaysIamtheone,butthekidisnotmysonForfortydaysandfortynightsThelawwasonhersideButwhocanstandwhenshe'sindemandHerschemesandplans'CausewedancedonthefloorintheroundSotakemystrongadvice,justremembertoalwaysthinktwice(Don'tthinktwice,don'tthinktwice)Shetoldmybabywe'ddancedtillthree,thenshelookedatmeThenshowedaphotomybabycriedhiseyeswerelikemine(oh,no!)'Causewedancedonthefloorintheround,babyPeoplealwaystoldmebecarefulofwhatyoudoAnddon'tgoaroundbreakingyounggirls'heartsShecameandstoodrightbymeJustthesmellofsweetperfumeThishappenedmuchtoosoonShecalledmetoherroomBillieJeanisnotmyloverShe'sjustagirlwhoclaimsthatIamtheoneButthekidisnotmysonBillieJeanisnotmyloverShe'sjustagirlwhoclaimsthatIamtheoneButthekidisnotmysonShesaysIamtheone,butthekidisnotmysonShesaysIamtheone,butthekidisnotmysonBillieJeanisnotmyloverShe'sjustagirlwhoclaimsthatIamtheoneButthekidisnotmysonShesaysIamtheone,butthekidisnotmysonShesaysIamtheone,(Youknowwhatyoudid,(shesaysheismyson)breakingmyheartbabe)ShesaysIamtheoneBillieJeanisnotmyloverBillieJeanisnotmyloverBillieJeanisnotmyloverBillieJeanisnotmylover(don'tBillieJean)BillieJeanisnotmyloverBillieJeanisnotmylover","bette-davis-eyes":"HerhairisHarlowgoldHerlipsaresweetsurpriseHerhandsarenevercoldShe'sgotBetteDaviseyesShe'llturnthemusiconyouYouwon'thavetothinktwiceShe'spureasNewYorksnowShegotBetteDaviseyesAndshe'llteaseyou,she'lluneaseyouAllthebetterjusttopleaseyouShe'sprecocious,andsheknowsjustwhatitTakestomakeaproblushShegotGretaGarbo'sstandoffsighs,she'sgotBetteDaviseyesShe'llletyoutakeherhomeItwhetsherappetiteShe'lllayyouonthethroneShegotBetteDaviseyesShe'lltakeatumbleonyouRollyoulikeyouwerediceUntilyoucomeoutblueShe'sgotBetteDaviseyesShe'llexposeyou,whenshesnowsyouOffyourfeetwiththecrumbs,shethrowsyouShe'sferociousandsheknowsjustwhatitTakestomakeaproblushAlltheboysthinkshe'saspy,she'sgotBetteDaviseyesAndshe'llteaseyou,she'lluneaseyouAllthebetterjusttopleaseyouShe'sprecocious,andsheknowsjustwhatitTakestomakeaproblushAlltheboysthinkshe'saspy,she'sgotBetteDaviseyesShe'llteaseyouShe'lluneaseyouJusttopleaseyouShe'sgotBetteDaviseyesShe'llexposeyouWhenshesnowsyouSheknowsyou,she'sgotBetteDavisEyes","winner-takes-it-all":"Idon'twannatalkAboutthingswe'vegonethroughThoughit'shurtingmeNowit'shistoryI'veplayedallmycardsAndthat'swhatyou'vedonetooNothingmoretosayNomoreacetoplayThewinnertakesitallTheloser'sstandingsmallBesidethevictoryThat'sherdestinyIwasinyourarmsThinkingIbelongedthereIfigureditmadesenseBuildingmeafenceBuildingmeahomeThinkingI'dbestrongthereButIwasafoolPlayingbytherulesThegodsmaythrowthediceTheirmindsascoldasiceAndsomeonewaydownhereLosessomeonedearThewinnertakesitallTheloserhastofallIt'ssimpleandit'splainWhyshouldIcomplain?ButtellmedoesshekissLikeIusedtokissyou?DoesitfeelthesameWhenshecallsyourname?SomewheredeepinsideYoumustknowImissyouButwhatcanIsay?RulesmustbeobeyedThejudgeswilldecideThelikesofmeabideSpectatorsoftheshowAlwaysstayinglowThegameisonagainAloverorafriendAbigthingorasmallThewinnertakesitallIdon'twannatalkIfitmakesyoufeelsadAndIunderstandYou'vecometoshakemyhandIapologizeIfitmakesyoufeelbadSeeingmesotenseNoself-confidenceButyouseeThewinnertakesitallThewinnertakesitallSothewinnertakesitallAndthetheloserhastofallThrowadice,coldasiceWaydownhere,someonedearTakesitall,hastofallItseemsplaintome","upside-down":"Who'stosayWhat'simpossibleWelltheyforgotThisworldkeepsspinningAndwitheachnewdayIcanfeelachangeineverythingAndasthesurfacebreaksreflectionsfadeButinsomewaystheyremainthesameAndasmymindbeginstospreadit'swingsThere'snostoppingcuriosityIwanttoturnthewholethingupsidedownI'llfindthethingstheysayjustcan'tbefoundI'llsharethisloveIfindwitheveryoneWe'llsinganddancetoMotherNature'ssongsIdon'twantthisfeelingtogoawayWho'stosayIcan'tdoeverythingWellIcantryAndasIrollalongIbegintofindThingsaren'talwaysjustwhattheyseemIwanttoturnthewholethingupsidedownI'llfindthingstheysayjustcan'tbefoundI'llsharethisloveIfindwitheveryone","nothing-compares-2-u":"It'sbeensevenhoursandfifteendaysSinceyoutookyourloveawayIgoouteverynightandsleepalldaySinceyoutookyourloveawaySinceyoubeengoneIcandowhateverIwantIcanseewhomeverIchooseIcaneatmydinnerinafancyrestaurantButnothingIsaidnothingcantakeawaytheseblues'CausenothingcomparesNothingcomparestoyouIt'sbeensolonelywithoutyouhereLikeabirdwithoutasongNothingcanstoptheselonelytearsfromfallingTellmebabywheredidIgowrongIcouldputmyarmsaroundeveryboyIseeButthey'donlyremindmeofyouIwenttothedoctorandguesswhathetoldme?Guesswhathetoldme?HesaidgirlyoubettertrytohavefunNomatterwhatyoudo,buthe'safool","physical":"I'msayingallthethingsthatIknowyou'lllikeMakinggoodconversationIgottahandleyoujustrightYouknowwhatImeanItookyoutoanintimaterestaurantThentoasuggestivemovieThere'snothinglefttotalkaboutUnlessit'shorizontallyLet'sgetphysical,physicalIwanttogetphysicalLet'sgetintophysicalLetmehearyourbodytalk,yourbodytalkLetmehearyourbodytalkI'vebeenpatient,I'vebeengoodTriedtokeepmyhandsonthetableIt'sgettin'hardthisholdin'backIfyouknowwhatImeanI'msureyou'llunderstandmypointofviewWeknoweachothermentallyYougottaknowthatyou'rebringin'outTheanimalinmeLet'sgetphysical,physicalIwanttogetphysicalLet'sgetintophysicalLetmehearyourbodytalk,yourbodytalkLetmehearyourbodytalkLet'sgetphysical,physicalIwanttogetphysicalLet'sgetintophysicalLetmehearyourbodytalk,yourbodytalkLetmehearyourbodytalkLet'sgetphysical,physicalIwanttogetphysicalLet'sgetintophysicalLetmehearyourbodytalk,yourbodytalkLetmehearyourbodytalkLet'sgetanimal,animalIwanttogetanimalLet'sgetintoanimalLetmehearyourbodytalkLetmehearyourbodytalk","eye-of-the-tiger":"Risingup,backonthestreetDidmytime,tookmychancesWentthedistance,nowI'mbackonmyfeetJustamanandhiswilltosurviveSomanytimesithappenstoofastYoutradeyourpassionforgloryDon'tloseyourgriponthedreamsofthepastYoumustfightjusttokeepthemaliveIt'stheeyeofthetigerIt'sthethrillofthefightRisinguptothechallengeofourrivalAndthelastknownsurvivorStalkshispreyinthenightAndhe'swatchingusallwiththeeyeofthetigerFacetoface,outintheheatHangingtough,stayinghungryTheystacktheoddsstillwetaketothestreetForthekillwiththeskilltosurviveIt'stheeyeofthetigerIt'sthethrillofthefightRisinguptothechallengeofourrivalAndthelastknownsurvivorStalkshispreyinthenightAndhe'swatchingusallwiththeeyeofthetigerRisingup,straighttothetopHadtheguts,gotthegloryWentthedistance,nowI'mnotgonnastopJustamanandhiswilltosurviveIt'stheeyeofthetigerIt'sthethrillofthefightRisinguptothechallengeofourrivalAndthelastknownsurvivorStalkshispreyinthenightAndhe'swatchingusallwiththeeyeofthetigerTheeyeofthetigerTheeyeofthetigerTheeyeofthetigerTheeyeofthetiger","every-breath-you-take":"EverybreathyoutakeEverymoveyoumakeEverybondyoubreakEverystepyoutakeI'llbewatchingyouEverysingledayEverywordyousayEverygameyouplayEverynightyoustayI'llbewatchingyouOhcan'tyouseeYoubelongtomeMypoorheartachesWitheverystepyoutakeEverymoveyoumakeEveryvowyoubreakEverysmileyoufakeEveryclaimyoustakeI'llbewatchingyouSinceyou'vegoneIbeenlostwithoutatraceIdreamatnightIcanonlyseeyourfaceIlookaroundbutit'syouIcan'treplaceIfeelsocoldandIlongforyourembraceIkeepcryingbaby,baby,pleaseOhcan'tyouseeYoubelongtomeMypoorheartachesWitheverystepyoutakeEverymoveyoumakeEveryvowyoubreakEverysmileyoufakeEveryclaimyoustakeI'llbewatchingyouEverymoveyoumakeEverystepyoutakeI'llbewatchingyouI'llbewatchingyou(Everybreathyoutake,everymoveyoumake,everybondyoubreak,everystepyoutake)I'llbewatchingyou(Everysingleday,everywordyousay,everygameyouplay,everynightyoustay)I'llbewatchingyou(Everymoveyoumake,everyvowyoubreak,everysmileyoufake,everyclaimyoustake)I'llbewatchingyou(Everysingleday,everywordyousay,everygameyouplay,everynightyoustay)I'llbewatchingyou(Everybreathyoutake,everymoveyoumake,everybondyoubreak,everystepyoutake)I'llbewatchingyou(Everysingleday,everywordyousay,everygameyouplay,everynightyoustay)I'llbewatchingyou","flashdance":"Firstwhenthere'snothingButaslowglowingdreamThatyourfearseemstohideDeepinsideyourmindAllaloneIhavecriedSilenttearsfullofprideInaworldmadeofsteelMadeofstoneWell,IhearthemusicClosemyeyes,feeltherhythmWraparoundTakeaholdofmyheartWhatafeelingBein'sbelievin'IcanhaveitallNowI'mdancingformylifeTakeyourpassionAndmakeithappenPicturescomealiveYoucandancerightthroughyourlifeNowIhearthemusicClosemyeyes,IamrhythmInaflashIttakesholdofmyheartWhatafeelingBein'sbelievin'IcanhaveitallNowI'mdancingformylifeTakeyourpassionAndmakeithappenPicturescomealiveYoucandancerightthroughyourlifeWhatafeelingWhatafeeling(Iammusicnow)Bein'sbelievin'(Iamrhythmnow)PicturescomealiveYoucandancerightthroughyourlifeWhatafeeling(Icanreallyhaveitall)Whatafeeling(PicturescomealivewhenIcall)Icanhaveitall(Icanreallyhaveitall)Haveitall(PicturescomealivewhenIcall)(Call,call,call,call)Icanhaveitall(Bein'sbelievin')Bein'sbelievin'(Takeyourpassion)Makeithappen(Whatafeeling)Whatafeeling(Bein'sbelievin')Happen(Takeyourpassion)","another-one-bites-the-dust":"Oh!Let'sgo!StevewalkswarilydownthestreetWiththebrimpulledwaydownlow.Ain'tnosoundbutthesoundofhisfeet,Machinegunsreadytogo.Areyouready,hey,areyoureadyforthis?Areyouhangingontheedgeofyourseat?OutofthedoorwaythebulletsripTothesoundofthebeatAnotheronebitesthedustAnotheronebitesthedustAndanotheronegone,andanotheronegoneAnotheronebitesthedustHey,I'mgonnagetyou,tooAnotheronebitesthedustHowdoyouthinkI'mgoingtogetalongWithoutyouwhenyou'regone?YoutookmeforeverythingthatIhadAndkickedmeoutonmyownAreyouhappy,areyousatisfied?Howlongcanyoustandtheheat?OutofthedoorwaythebulletsripTothesoundofthebeat[Chorus]AnotheronebitesthedustAnotheronebitesthedustAnotheronebitesthedustAnotheronebitesthedustThereareplentyofwaysthatyoucanhurtamanAndbringhimtothegroundYoucanbeathim,youcancheathimYoucantreathimbadandleavehimwhenhe'sdownButI'mready,yes,I'mreadyforyouI'mstandingonmyowntwofeetOutofthedoorwaythebulletsripRepeatingtothesoundofthebeat","i-will-always-love-you":"IfIshouldstayIwouldonlybeinyourwaySoI'llgobutIknowI'llthinkofyoueverystepofthewayAndI...willalwaysloveyou,oohWillalwaysloveyouYouMydarling,you...Mmm-mmBittersweetmemories–ThatisallI'mtakingwithme.Sogood-bye.Pleasedon'tcry:WebothknowI'mnotwhatyou,youneedAndI...willalwaysloveyouI...willalwaysloveyouYou,ooh[Instrumental/Saxsolo]IhopelifetreatsyoukindAndIhopeyouhaveallyou'vedreamedofAndIwishyoujoyandhappinessButaboveallthisIwishyouloveAndI...willalwaysloveyouIwillalwaysloveyouIwillalwaysloveyouIwillalwaysloveyouIwillalwaysloveyouI,Iwillalwaysloveyou.You.Darling,Iloveyou.I'llalways...I'llalwaysloveyou.OohOoh","imagine":"Imaginethere'snoheavenIt'seasyifyoutryNohellbelowusAboveusonlyskyImagineallthepeopleLivingfortoday...Aha-ah...Imaginethere'snocountriesItisn'thardtodoNothingtokillordieforAndnoreligion,tooImagineallthepeopleLivinglifeinpeace...You...YoumaysayI'madreamerButI'mnottheonlyoneIhopesomedayyou'lljoinusAndtheworldwillbeasoneImaginenopossessionsIwonderifyoucanNoneedforgreedorhungerAbrotherhoodofmanImagineallthepeopleSharingalltheworld...You...YoumaysayI'madreamerButI'mnottheonlyoneIhopesomedayyou'lljoinusAndtheworldwillliveasone","are-you-lonesome":"Areyoulonesometonight,doyoumissmetonight?Areyousorrywedriftedapart?DoesyourmemorystraytoabrightersunnydayWhenIkissedyouandcalledyousweetheart?Dothechairsinyourparlorseememptyandbare?Doyougazeatyourdoorstepandpicturemethere?Isyourheartfilledwithpain,shallIcomebackagain?Tellmedear,areyoulonesometonight?Iwonderifyou'relonesometonightYouknowsomeonesaidthattheworld'sastageAndeachmustplayapart.Fatehadmeplayinginloveyouasmysweetheart.Actonewaswhenwemet,IlovedyouatfirstglanceYoureadyourlinesocleverlyandnevermissedacueThencameacttwo,youseemedtochangeandyouactedstrangeAndwhyI'llneverknow.Honey,youliedwhenyousaidyoulovedmeAndIhadnocausetodoubtyou.ButI'drathergoonhearingyourliesThangoonlivingwithoutyou.NowthestageisbareandI'mstandingthereWithemptinessallaroundAndifyouwon'tcomebacktomeThenmakethembringthecurtaindown.Isyourheartfilledwithpain,shallIcomebackagain?Tellmedear,areyoulonesometonight?","born-in-the-usa":"Borndowninadeadman'stownThefirstkickItookwaswhenIhitthegroundYouenduplikeadogthat'sbeenbeattoomuchTillyouspendhalfyourlifejustcoveringupBornintheU.S.A.IwasbornintheU.S.A.IwasbornintheU.S.A.BornintheU.S.A.GotinalittlehometownjamSotheyputarifleinmyhandSentmeofftoaforeignlandTogoandkilltheyellowmanBornintheU.S.A.IwasbornintheU.S.A.IwasbornintheU.S.A.IwasbornintheU.S.A.BornintheU.S.A.ComebackhometotherefineryHiringmansays\"Sonifitwasuptome\"WentdowntoseemyV.A.manHesaid\"Son,don'tyouunderstand\"IhadabrotheratKheSanhfightingofftheVietCongThey'restillthere,he'sallgoneHehadawomanhelovedinSaigonIgotapictureofhiminherarmsnowDownintheshadowofthepenitentiaryOutbythegasfiresoftherefineryI'mtenyearsburningdowntheroadNowheretorunain'tgotnowheretogoBornintheU.S.A.IwasbornintheU.S.A.BornintheU.S.A.I'malonggoneDaddyintheU.S.A.BornintheU.S.A.BornintheU.S.A.BornintheU.S.A.I'macoolrockingDaddyintheU.S.A.","waterloo":"My,my,atWaterlooNapoleondidsurrenderOhyeah,andIhavemetmydestinyinquiteasimilarwayThehistorybookontheshelfIsalwaysrepeatingitselfWaterloo-Iwasdefeated,youwonthewarWaterloo-PromisetoloveyouforevermoreWaterloo-Couldn'tescapeifIwantedtoWaterloo-KnowingmyfateistobewithyouWaterloo-FinallyfacingmyWaterlooMy,my,ItriedtoholdyoubackbutyouwerestrongerOhyeah,andnowitseemsmyonlychanceisgivingupthefightAndhowcouldIeverrefuseIfeellikeIwinwhenIloseWaterloo-Iwasdefeated,youwonthewarWaterloo-PromisetoloveyouforevermoreWaterloo-Couldn'tescapeifIwantedtoWaterloo-KnowingmyfateistobewithyouWaterloo-FinallyfacingmyWaterlooSohowcouldIeverrefuseIfeellikeIwinwhenIlose-Waterloo-Couldn'tescapeifIwantedtoWaterloo-KnowingmyfateistobewithyouWaterloo-FinallyfacingmyWaterloo","surfin-usa":"IfeverybodyhadanoceanAcrosstheU.S.A.Theneverybody'dbesurfin'LikeCaliforni-aYou'dseem'emwearingtheirbaggiesHuarachesandalstooAbushybushyblondehairdoSurfin'U.S.A.You'dcatch'emsurfin'atDelMarVenturaCountylineSantaCruzandTrestleAustralia'sNarrabeenAlloverManhattanAnddownDohenyWayEverybody'sgonesurfin'Surfin'U.S.A.We'llallbeplanningthatrouteWe'regonnatakerealsoonWe'rewaxingdownoursurfboardsWecan'twaitforJuneWe'llallbegoneforthesummerWe'reonsurfaritostayTelltheteacherwe'resurfin'Surfin'U.S.A.HaggertiesandSwamiesPacificPalisadesSanOnofreandSunsetRedondoBeachL.A.AlloverLaJollaAtWa'imeaBayEverybody'sgonesurfin'Surfin'U.S.A.Everybody'sgonesurfin'Surfin'U.S.A.Everybody'sgonesurfin'Surfin'U.S.A.","like-a-rolling-stone":"OnceuponatimeyoudressedsofineThrewthebumsadimeinyourprime,didn'tyou?Peoplecallsay'bewaredoll,you'reboundtofall'YouthoughttheywereallkiddingyouYouusedtolaughaboutEverybodythatwashangingoutNowyoudon'ttalksoloudNowyoudon'tseemsoproudAbouthavingtobescroungingyournextmealHowdoesitfeel,howdoesitfeel?TobewithoutahomeLikeacompleteunknown,likearollingstoneAhhyou'vegonetothefinestschools,alrightMissLonelyButyouknowyouonlyusedtogetjuicedinitNobody'severtaughtyouhowtoliveoutonthestreetAndnowyou'regonnahavetogetusedtoitYousayyounevercompromiseWiththemysterytramp,butnowyourealizeHe'snotsellinganyalibisAsyoustareintothevacuumofhiseyesAndsaydoyouwanttomakeadeal?Howdoesitfeel,howdoesitfeel?Tobeonyourown,withnodirectionhomeAcompleteunknown,likearollingstoneAhyouneverturnedaroundtoseethefrownsOnthejugglersandtheclownswhentheyalldidtricksforyouYouneverunderstoodthatitain'tnogoodYoushouldn'tletotherpeoplegetyourkicksforyouYouusedtorideonachromehorsewithyourdiplomatWhocarriedonhisshoulderaSiamesecatAin'tithardwhenyoudiscoveredthatHereallywasn'twhereit'satAfterhetookfromyoueverythinghecouldstealHowdoesitfeel,howdoesitfeel?Tohaveonyourown,withnodirectionhomeLikeacompleteunknown,likearollingstoneAhhprincessonasteepleandalltheprettypeopleThey'realldrinking,thinkingthatthey'vegotitmadeExchangingallpreciousgiftsButyoubettertakeyourdiamondring,youbetterpawnitbabeYouusedtobesoamusedAtNapoleoninragsandthelanguagethatheusedGotohimhecallsyou,youcan'trefuseWhenyouain'tgotnothing,yougotnothingtoloseYou'reinvisiblenow,you'vegotnosecretstoconcealHowdoesitfeel,ahhowdoesitfeel?Tobeonyourown,withnodirectionhomeLikeacompleteunknown,likearollingstone"};var getText=/*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(id){var lastId,index,textArray;return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context){while(1){switch(_context.prev=_context.next){case 0:lastId=void 0;index=-1;textArray=__WEBPACK_IMPORTED_MODULE_1_lodash___default.a.shuffle(__WEBPACK_IMPORTED_MODULE_1_lodash___default.a.values(texts));case 3:if(false){_context.next=9;break;}if(id!==lastId){index=index<textArray-2?index+1:0;lastId=id;}_context.next=7;return textArray[index];case 7:_context.next=3;break;case 9:case"end":return _context.stop();}}},_callee,this);});/* harmony default export */ __webpack_exports__["a"] = (getText);
+var texts={"stayin-alive":"Well,youcantellbythewayIusemywalkI'mawoman'sman:notimetotalkMusicloudandwomenwarm,I'vebeenkickedaroundSinceIwasbornAndnowit'sallright,it'sokayAndyoumaylooktheotherwayWecantrytounderstandTheNewYorkTimes'effectonmanWhetheryou'reabrotherorwhetheryou'reamotherYou'restayin'alive,stayin'aliveFeelthecitybreakin'andeverybodyshakin'Andwe'restayin'alive,stayin'aliveAh,ha,ha,ha,stayin'alive,stayin'aliveAh,ha,ha,ha,stayin'aliveWellnow,IgetlowandIgethighAndifIcan'tgeteither,IreallytryGotthewingsofheavenonmyshoesI'madancin'manandIjustcan'tloseYouknowit'sallright,it'sokayI'lllivetoseeanotherdayWecantrytounderstand","satisfaction":"Ican'tgetnosatisfaction,Ican'tgetnosatisfaction'CauseItryandItryandItryandItryIcan'tgetno,Ican'tgetnoWhenI'mdrivin'inmycar,andthemancomeontheradioHe'stellin'memoreandmoreaboutsomeuselessinformationSupposedtofiremyimaginationIcan'tgetno,oh,no,no,no,hey,hey,heyThat'swhatIsayIcan'tgetnosatisfaction,Ican'tgetnosatisfaction'CauseItryandItryandItryandItryIcan'tgetno,Ican'tgetnoWhenI'mwatchin'mytvandamancomesonandtellmeHowwhitemyshirtscanbeBut,hecan'tbeaman'causehedoesn'tsmokeThesamecigarettesasmeIcan'tgetno,oh,no,no,no,hey,hey,heyThat'swhatIsayIcan'tgetnosatisfaction,Ican'tgetgirlreaction'CauseItryandItryandItryandItryIcan'tgetno,Ican'tgetnoWhenI'mridin'roundtheworldAndI'mdoin'thisandI'msignin'thatAndI'mtryin'tomakesomegirl,whotellsmeBaby,bettercomebackmaybenextweekCan'tyouseeI'monalosingstreakIcan'tgetno,oh,no,no,no,hey,hey,heyThat'swhatIsay,Ican'tgetno,Ican'tgetnoIcan'tgetnosatisfaction,nosatisfactionNosatisfaction,nosatisfaction","night-fever":"ListentothegroundThereismovementallaroundThereissomethinggoin'downAndIcanfeelitOnthewavesoftheairThereisdancin'outthereIfit'ssomethin'wecanshareWecanstealitAndthatsweetcitywomanShemovesthroughthelightControllingmymindandmysoulWhenyoureachoutformeYeah,andthefeelin'isrightThenIgetnightfever,nightfeverWeknowhowtodoitGimmethatnightfever,nightfeverWeknowhowtoshowitHereIamPrayin'forthismomenttolastLivin'onthemusicsofineBorneonthewindMakin'itmineNightfever,nightfeverWeknowhowtodoitGimmethatnightfever,nightfeverWeknowhowtoshowitIntheheatofourloveDon'tneednohelpforustomakeitGimmejustenoughtotakeustothemornin'","let-it-be":"WhenIfindmyselfintimesoftroubleMotherMarycomestomeSpeakingwordsofwisdom,letitbeAndinmyhourofdarknessSheisstandingrightinfrontofmeSpeakingwordsofwisdom,letitbeOh,letitbe,letitbe,letitbe,letitbeWhisperwordsofwisdom,letitbeAndwhenthebrokenheartedpeopleLivingintheworldagreeTherewillbeananswer,letitbeForthoughtheymaybepartedThereisstillachancethattheywillseeTherewillbeananswer,letitbeOh,letitbe,letitbe,letitbe,letitbeAndtherewillbeananswer,letitbeOh,letitbe,letitbe,letitbe,letitbeWhisperwordsofwisdom,letitbeOh,letitbe,letitbe,letitbe,letitbeWhisperwordsofwisdom,letitbeAndwhenthenightiscloudyThereisstillalightthatshinesonmeShineonuntiltomorrow,letitbeIwakeuptothesoundofmusicMotherMarycomestomeSpeakingwordsofwisdom,letitbeOh,letitbe,letitbe,letitbe,letitbeTherewillbeananswer,letitbeOh,letitbeWon'tyouletitbe,letitbe,letitbeWhisperwordsofwisdom,letitbeLetitbe","hey-jude":"Hey,Jude,don'tmakeitbadTakeasadsongandmakeitbetterRemembertoletherintoyourheartThenyoucanstarttomakeitbetterHey,Jude,don'tbeafraidYouweremadetogooutandgetherTheminuteyouletherunderyourskinThenyoubegintomakeitbetterAndanytimeyoufeelthepain,Hey,Jude,refrainDon'tcarrytheworlduponyourshouldersForwellyouknowthatit'safoolWhoplaysitcoolBymakinghisworldalittlecolderNah,nahnah,nahnah,nahnah,nahnahHey,Jude,don'tletmedownYouhavefoundher,nowgoandgetherRemembertoletherintoyourheartThenyoucanstarttomakeitbetterSoletitoutandletitin,Hey,Jude,beginYou'rewaitingforsomeonetoperformwithAnddon'tyouknowthatit'sjustyou,Hey,Jude,you'lldoThemovementyouneedisonyourshoulderNah,nahnah,nahnah,nahnah,nahnahyeahHey,Jude,don'tmakeitbadTakeasadsongandmakeitbetterRemembertoletherunderyourskinThenyou'llbegintomakeitbetter,better,better,better,better...oh!Nah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(Jude)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(yeah,yeah,yeah)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(don'tmakeitbad,Jude)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(takeasadsongandmakeitbetter)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(oh,Jude)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(Jude,hey,Jude,whoa)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude(ooh)Nah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,JudeNah,nahnah,nahnah,nah,nah,nahnah,Hey,Jude","ebony-and-ivory":"EbonyandivorylivetogetherinperfectharmonySidebysideonmypianokeyboard,ohLord,whydon'twe?WeallknowthatpeoplearethesamewhereeveryougoThereisgoodandbadinev'ryoneWelearntolive,whenwelearntogiveEachotherwhatweneedtosurvive,togetheraliveEbonyandivorylivetogetherinperfectharmonySidebysideonmypianokeyboard,ohLordwhydon'twe?Ebony,ivory,livinginperfectharmonyEbony,ivory,oohWeallknowthatpeoplearethesamewhereeveryougoThereisgoodandbadinev'ryoneWelearntolive,whenwelearntogiveEachotherwhatweneedtosurvive,togetheraliveEbonyandivorylivetogetherinperfectharmonySidebysideonmypianokeyboard,ohLordwhydon'twe?Sidebysideonmypianokeyboard,ohLord,whydon'tweEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmonyEbony,ivory,livinginperfectharmony","blowing-in-the-wind":"HowmanyroadsmustamanwalkdownBeforeyoucallhimaman?HowmanyseasmustawhitedovesailBeforeshesleepsinthesand?HowmanytimesmustthecannonballsflyBeforethey'reforeverbanned?Theanswer,myfriend,isblowin'inthewindTheanswerisblowin'inthewindHowmanyyearscanamountainexistBeforeit'swashedtothesea?HowmanyyearsmustsomepeopleexistBeforethey'reallowedtobefree?AndhowmanytimescanamanturnhisheadAndpretendthathejustdoesn'tsee-theanswerTheanswer,myfriend,isblowin'inthewindTheanswerisblowin'inthewindHowmanytimescanamanlookupBeforeheseesthesky?HowmanyearsmustonepersonhaveBeforehecanhearpeoplecry?Andhowmanydeathswillittake'tillheknowsThattoomanypeoplehavedied?Theanswer,myfriends,isblowin'inthewindTheanswerisblowin'inthewindOh,theanswer,myfriends,isblowin'inthewindTheanswerisblowin'inthewind","billie-jean":"ShewasmorelikeabeautyqueenfromamoviesceneIsaiddon'tmind,butwhatdoyoumean,IamtheoneWhowilldanceonthefloorintheroundShesaidIamtheone,whowilldanceonthefloorintheroundShetoldmehernamewasBillieJean,asshecausedasceneTheneveryheadturnedwitheyesthatdreamedofbeingtheoneWhowilldanceonthefloorintheroundPeoplealwaystoldmebecarefulofwhatyoudoAnddon'tgoaroundbreakingyounggirls'heartsAndmotheralwaystoldmebecarefulofwhoyouloveAndbecarefulofwhatyoudo'causetheliebecomesthetruthBillieJeanisnotmyloverShe'sjustagirlwhoclaimsthatIamtheoneButthekidisnotmysonShesaysIamtheone,butthekidisnotmysonForfortydaysandfortynightsThelawwasonhersideButwhocanstandwhenshe'sindemandHerschemesandplans'CausewedancedonthefloorintheroundSotakemystrongadvice,justremembertoalwaysthinktwice(Don'tthinktwice,don'tthinktwice)Shetoldmybabywe'ddancedtillthree,thenshelookedatmeThenshowedaphotomybabycriedhiseyeswerelikemine(oh,no!)'Causewedancedonthefloorintheround,babyPeoplealwaystoldmebecarefulofwhatyoudoAnddon'tgoaroundbreakingyounggirls'heartsShecameandstoodrightbymeJustthesmellofsweetperfumeThishappenedmuchtoosoonShecalledmetoherroomBillieJeanisnotmyloverShe'sjustagirlwhoclaimsthatIamtheoneButthekidisnotmysonBillieJeanisnotmyloverShe'sjustagirlwhoclaimsthatIamtheoneButthekidisnotmysonShesaysIamtheone,butthekidisnotmysonShesaysIamtheone,butthekidisnotmysonBillieJeanisnotmyloverShe'sjustagirlwhoclaimsthatIamtheoneButthekidisnotmysonShesaysIamtheone,butthekidisnotmysonShesaysIamtheone,(Youknowwhatyoudid,(shesaysheismyson)breakingmyheartbabe)ShesaysIamtheoneBillieJeanisnotmyloverBillieJeanisnotmyloverBillieJeanisnotmyloverBillieJeanisnotmylover(don'tBillieJean)BillieJeanisnotmyloverBillieJeanisnotmylover","bette-davis-eyes":"HerhairisHarlowgoldHerlipsaresweetsurpriseHerhandsarenevercoldShe'sgotBetteDaviseyesShe'llturnthemusiconyouYouwon'thavetothinktwiceShe'spureasNewYorksnowShegotBetteDaviseyesAndshe'llteaseyou,she'lluneaseyouAllthebetterjusttopleaseyouShe'sprecocious,andsheknowsjustwhatitTakestomakeaproblushShegotGretaGarbo'sstandoffsighs,she'sgotBetteDaviseyesShe'llletyoutakeherhomeItwhetsherappetiteShe'lllayyouonthethroneShegotBetteDaviseyesShe'lltakeatumbleonyouRollyoulikeyouwerediceUntilyoucomeoutblueShe'sgotBetteDaviseyesShe'llexposeyou,whenshesnowsyouOffyourfeetwiththecrumbs,shethrowsyouShe'sferociousandsheknowsjustwhatitTakestomakeaproblushAlltheboysthinkshe'saspy,she'sgotBetteDaviseyesAndshe'llteaseyou,she'lluneaseyouAllthebetterjusttopleaseyouShe'sprecocious,andsheknowsjustwhatitTakestomakeaproblushAlltheboysthinkshe'saspy,she'sgotBetteDaviseyesShe'llteaseyouShe'lluneaseyouJusttopleaseyouShe'sgotBetteDaviseyesShe'llexposeyouWhenshesnowsyouSheknowsyou,she'sgotBetteDavisEyes","winner-takes-it-all":"Idon'twannatalkAboutthingswe'vegonethroughThoughit'shurtingmeNowit'shistoryI'veplayedallmycardsAndthat'swhatyou'vedonetooNothingmoretosayNomoreacetoplayThewinnertakesitallTheloser'sstandingsmallBesidethevictoryThat'sherdestinyIwasinyourarmsThinkingIbelongedthereIfigureditmadesenseBuildingmeafenceBuildingmeahomeThinkingI'dbestrongthereButIwasafoolPlayingbytherulesThegodsmaythrowthediceTheirmindsascoldasiceAndsomeonewaydownhereLosessomeonedearThewinnertakesitallTheloserhastofallIt'ssimpleandit'splainWhyshouldIcomplain?ButtellmedoesshekissLikeIusedtokissyou?DoesitfeelthesameWhenshecallsyourname?SomewheredeepinsideYoumustknowImissyouButwhatcanIsay?RulesmustbeobeyedThejudgeswilldecideThelikesofmeabideSpectatorsoftheshowAlwaysstayinglowThegameisonagainAloverorafriendAbigthingorasmallThewinnertakesitallIdon'twannatalkIfitmakesyoufeelsadAndIunderstandYou'vecometoshakemyhandIapologizeIfitmakesyoufeelbadSeeingmesotenseNoself-confidenceButyouseeThewinnertakesitallThewinnertakesitallSothewinnertakesitallAndthetheloserhastofallThrowadice,coldasiceWaydownhere,someonedearTakesitall,hastofallItseemsplaintome","upside-down":"Who'stosayWhat'simpossibleWelltheyforgotThisworldkeepsspinningAndwitheachnewdayIcanfeelachangeineverythingAndasthesurfacebreaksreflectionsfadeButinsomewaystheyremainthesameAndasmymindbeginstospreadit'swingsThere'snostoppingcuriosityIwanttoturnthewholethingupsidedownI'llfindthethingstheysayjustcan'tbefoundI'llsharethisloveIfindwitheveryoneWe'llsinganddancetoMotherNature'ssongsIdon'twantthisfeelingtogoawayWho'stosayIcan'tdoeverythingWellIcantryAndasIrollalongIbegintofindThingsaren'talwaysjustwhattheyseemIwanttoturnthewholethingupsidedownI'llfindthingstheysayjustcan'tbefoundI'llsharethisloveIfindwitheveryone","nothing-compares-2-u":"It'sbeensevenhoursandfifteendaysSinceyoutookyourloveawayIgoouteverynightandsleepalldaySinceyoutookyourloveawaySinceyoubeengoneIcandowhateverIwantIcanseewhomeverIchooseIcaneatmydinnerinafancyrestaurantButnothingIsaidnothingcantakeawaytheseblues'CausenothingcomparesNothingcomparestoyouIt'sbeensolonelywithoutyouhereLikeabirdwithoutasongNothingcanstoptheselonelytearsfromfallingTellmebabywheredidIgowrongIcouldputmyarmsaroundeveryboyIseeButthey'donlyremindmeofyouIwenttothedoctorandguesswhathetoldme?Guesswhathetoldme?HesaidgirlyoubettertrytohavefunNomatterwhatyoudo,buthe'safool","physical":"I'msayingallthethingsthatIknowyou'lllikeMakinggoodconversationIgottahandleyoujustrightYouknowwhatImeanItookyoutoanintimaterestaurantThentoasuggestivemovieThere'snothinglefttotalkaboutUnlessit'shorizontallyLet'sgetphysical,physicalIwanttogetphysicalLet'sgetintophysicalLetmehearyourbodytalk,yourbodytalkLetmehearyourbodytalkI'vebeenpatient,I'vebeengoodTriedtokeepmyhandsonthetableIt'sgettin'hardthisholdin'backIfyouknowwhatImeanI'msureyou'llunderstandmypointofviewWeknoweachothermentallyYougottaknowthatyou'rebringin'outTheanimalinmeLet'sgetphysical,physicalIwanttogetphysicalLet'sgetintophysicalLetmehearyourbodytalk,yourbodytalkLetmehearyourbodytalkLet'sgetphysical,physicalIwanttogetphysicalLet'sgetintophysicalLetmehearyourbodytalk,yourbodytalkLetmehearyourbodytalkLet'sgetphysical,physicalIwanttogetphysicalLet'sgetintophysicalLetmehearyourbodytalk,yourbodytalkLetmehearyourbodytalkLet'sgetanimal,animalIwanttogetanimalLet'sgetintoanimalLetmehearyourbodytalkLetmehearyourbodytalk","eye-of-the-tiger":"Risingup,backonthestreetDidmytime,tookmychancesWentthedistance,nowI'mbackonmyfeetJustamanandhiswilltosurviveSomanytimesithappenstoofastYoutradeyourpassionforgloryDon'tloseyourgriponthedreamsofthepastYoumustfightjusttokeepthemaliveIt'stheeyeofthetigerIt'sthethrillofthefightRisinguptothechallengeofourrivalAndthelastknownsurvivorStalkshispreyinthenightAndhe'swatchingusallwiththeeyeofthetigerFacetoface,outintheheatHangingtough,stayinghungryTheystacktheoddsstillwetaketothestreetForthekillwiththeskilltosurviveIt'stheeyeofthetigerIt'sthethrillofthefightRisinguptothechallengeofourrivalAndthelastknownsurvivorStalkshispreyinthenightAndhe'swatchingusallwiththeeyeofthetigerRisingup,straighttothetopHadtheguts,gotthegloryWentthedistance,nowI'mnotgonnastopJustamanandhiswilltosurviveIt'stheeyeofthetigerIt'sthethrillofthefightRisinguptothechallengeofourrivalAndthelastknownsurvivorStalkshispreyinthenightAndhe'swatchingusallwiththeeyeofthetigerTheeyeofthetigerTheeyeofthetigerTheeyeofthetigerTheeyeofthetiger","every-breath-you-take":"EverybreathyoutakeEverymoveyoumakeEverybondyoubreakEverystepyoutakeI'llbewatchingyouEverysingledayEverywordyousayEverygameyouplayEverynightyoustayI'llbewatchingyouOhcan'tyouseeYoubelongtomeMypoorheartachesWitheverystepyoutakeEverymoveyoumakeEveryvowyoubreakEverysmileyoufakeEveryclaimyoustakeI'llbewatchingyouSinceyou'vegoneIbeenlostwithoutatraceIdreamatnightIcanonlyseeyourfaceIlookaroundbutit'syouIcan'treplaceIfeelsocoldandIlongforyourembraceIkeepcryingbaby,baby,pleaseOhcan'tyouseeYoubelongtomeMypoorheartachesWitheverystepyoutakeEverymoveyoumakeEveryvowyoubreakEverysmileyoufakeEveryclaimyoustakeI'llbewatchingyouEverymoveyoumakeEverystepyoutakeI'llbewatchingyouI'llbewatchingyou(Everybreathyoutake,everymoveyoumake,everybondyoubreak,everystepyoutake)I'llbewatchingyou(Everysingleday,everywordyousay,everygameyouplay,everynightyoustay)I'llbewatchingyou(Everymoveyoumake,everyvowyoubreak,everysmileyoufake,everyclaimyoustake)I'llbewatchingyou(Everysingleday,everywordyousay,everygameyouplay,everynightyoustay)I'llbewatchingyou(Everybreathyoutake,everymoveyoumake,everybondyoubreak,everystepyoutake)I'llbewatchingyou(Everysingleday,everywordyousay,everygameyouplay,everynightyoustay)I'llbewatchingyou","flashdance":"Firstwhenthere'snothingButaslowglowingdreamThatyourfearseemstohideDeepinsideyourmindAllaloneIhavecriedSilenttearsfullofprideInaworldmadeofsteelMadeofstoneWell,IhearthemusicClosemyeyes,feeltherhythmWraparoundTakeaholdofmyheartWhatafeelingBein'sbelievin'IcanhaveitallNowI'mdancingformylifeTakeyourpassionAndmakeithappenPicturescomealiveYoucandancerightthroughyourlifeNowIhearthemusicClosemyeyes,IamrhythmInaflashIttakesholdofmyheartWhatafeelingBein'sbelievin'IcanhaveitallNowI'mdancingformylifeTakeyourpassionAndmakeithappenPicturescomealiveYoucandancerightthroughyourlifeWhatafeelingWhatafeeling(Iammusicnow)Bein'sbelievin'(Iamrhythmnow)PicturescomealiveYoucandancerightthroughyourlifeWhatafeeling(Icanreallyhaveitall)Whatafeeling(PicturescomealivewhenIcall)Icanhaveitall(Icanreallyhaveitall)Haveitall(PicturescomealivewhenIcall)(Call,call,call,call)Icanhaveitall(Bein'sbelievin')Bein'sbelievin'(Takeyourpassion)Makeithappen(Whatafeeling)Whatafeeling(Bein'sbelievin')Happen(Takeyourpassion)","another-one-bites-the-dust":"Oh!Let'sgo!StevewalkswarilydownthestreetWiththebrimpulledwaydownlow.Ain'tnosoundbutthesoundofhisfeet,Machinegunsreadytogo.Areyouready,hey,areyoureadyforthis?Areyouhangingontheedgeofyourseat?OutofthedoorwaythebulletsripTothesoundofthebeatAnotheronebitesthedustAnotheronebitesthedustAndanotheronegone,andanotheronegoneAnotheronebitesthedustHey,I'mgonnagetyou,tooAnotheronebitesthedustHowdoyouthinkI'mgoingtogetalongWithoutyouwhenyou'regone?YoutookmeforeverythingthatIhadAndkickedmeoutonmyownAreyouhappy,areyousatisfied?Howlongcanyoustandtheheat?OutofthedoorwaythebulletsripTothesoundofthebeat[Chorus]AnotheronebitesthedustAnotheronebitesthedustAnotheronebitesthedustAnotheronebitesthedustThereareplentyofwaysthatyoucanhurtamanAndbringhimtothegroundYoucanbeathim,youcancheathimYoucantreathimbadandleavehimwhenhe'sdownButI'mready,yes,I'mreadyforyouI'mstandingonmyowntwofeetOutofthedoorwaythebulletsripRepeatingtothesoundofthebeat","i-will-always-love-you":"IfIshouldstayIwouldonlybeinyourwaySoI'llgobutIknowI'llthinkofyoueverystepofthewayAndI...willalwaysloveyou,oohWillalwaysloveyouYouMydarling,you...Mmm-mmBittersweetmemories–ThatisallI'mtakingwithme.Sogood-bye.Pleasedon'tcry:WebothknowI'mnotwhatyou,youneedAndI...willalwaysloveyouI...willalwaysloveyouYou,ooh[Instrumental/Saxsolo]IhopelifetreatsyoukindAndIhopeyouhaveallyou'vedreamedofAndIwishyoujoyandhappinessButaboveallthisIwishyouloveAndI...willalwaysloveyouIwillalwaysloveyouIwillalwaysloveyouIwillalwaysloveyouIwillalwaysloveyouI,Iwillalwaysloveyou.You.Darling,Iloveyou.I'llalways...I'llalwaysloveyou.OohOoh","imagine":"Imaginethere'snoheavenIt'seasyifyoutryNohellbelowusAboveusonlyskyImagineallthepeopleLivingfortoday...Aha-ah...Imaginethere'snocountriesItisn'thardtodoNothingtokillordieforAndnoreligion,tooImagineallthepeopleLivinglifeinpeace...You...YoumaysayI'madreamerButI'mnottheonlyoneIhopesomedayyou'lljoinusAndtheworldwillbeasoneImaginenopossessionsIwonderifyoucanNoneedforgreedorhungerAbrotherhoodofmanImagineallthepeopleSharingalltheworld...You...YoumaysayI'madreamerButI'mnottheonlyoneIhopesomedayyou'lljoinusAndtheworldwillliveasone","are-you-lonesome":"Areyoulonesometonight,doyoumissmetonight?Areyousorrywedriftedapart?DoesyourmemorystraytoabrightersunnydayWhenIkissedyouandcalledyousweetheart?Dothechairsinyourparlorseememptyandbare?Doyougazeatyourdoorstepandpicturemethere?Isyourheartfilledwithpain,shallIcomebackagain?Tellmedear,areyoulonesometonight?Iwonderifyou'relonesometonightYouknowsomeonesaidthattheworld'sastageAndeachmustplayapart.Fatehadmeplayinginloveyouasmysweetheart.Actonewaswhenwemet,IlovedyouatfirstglanceYoureadyourlinesocleverlyandnevermissedacueThencameacttwo,youseemedtochangeandyouactedstrangeAndwhyI'llneverknow.Honey,youliedwhenyousaidyoulovedmeAndIhadnocausetodoubtyou.ButI'drathergoonhearingyourliesThangoonlivingwithoutyou.NowthestageisbareandI'mstandingthereWithemptinessallaroundAndifyouwon'tcomebacktomeThenmakethembringthecurtaindown.Isyourheartfilledwithpain,shallIcomebackagain?Tellmedear,areyoulonesometonight?","born-in-the-usa":"Borndowninadeadman'stownThefirstkickItookwaswhenIhitthegroundYouenduplikeadogthat'sbeenbeattoomuchTillyouspendhalfyourlifejustcoveringupBornintheU.S.A.IwasbornintheU.S.A.IwasbornintheU.S.A.BornintheU.S.A.GotinalittlehometownjamSotheyputarifleinmyhandSentmeofftoaforeignlandTogoandkilltheyellowmanBornintheU.S.A.IwasbornintheU.S.A.IwasbornintheU.S.A.IwasbornintheU.S.A.BornintheU.S.A.ComebackhometotherefineryHiringmansays\"Sonifitwasuptome\"WentdowntoseemyV.A.manHesaid\"Son,don'tyouunderstand\"IhadabrotheratKheSanhfightingofftheVietCongThey'restillthere,he'sallgoneHehadawomanhelovedinSaigonIgotapictureofhiminherarmsnowDownintheshadowofthepenitentiaryOutbythegasfiresoftherefineryI'mtenyearsburningdowntheroadNowheretorunain'tgotnowheretogoBornintheU.S.A.IwasbornintheU.S.A.BornintheU.S.A.I'malonggoneDaddyintheU.S.A.BornintheU.S.A.BornintheU.S.A.BornintheU.S.A.I'macoolrockingDaddyintheU.S.A.","waterloo":"My,my,atWaterlooNapoleondidsurrenderOhyeah,andIhavemetmydestinyinquiteasimilarwayThehistorybookontheshelfIsalwaysrepeatingitselfWaterloo-Iwasdefeated,youwonthewarWaterloo-PromisetoloveyouforevermoreWaterloo-Couldn'tescapeifIwantedtoWaterloo-KnowingmyfateistobewithyouWaterloo-FinallyfacingmyWaterlooMy,my,ItriedtoholdyoubackbutyouwerestrongerOhyeah,andnowitseemsmyonlychanceisgivingupthefightAndhowcouldIeverrefuseIfeellikeIwinwhenIloseWaterloo-Iwasdefeated,youwonthewarWaterloo-PromisetoloveyouforevermoreWaterloo-Couldn'tescapeifIwantedtoWaterloo-KnowingmyfateistobewithyouWaterloo-FinallyfacingmyWaterlooSohowcouldIeverrefuseIfeellikeIwinwhenIlose-Waterloo-Couldn'tescapeifIwantedtoWaterloo-KnowingmyfateistobewithyouWaterloo-FinallyfacingmyWaterloo","surfin-usa":"IfeverybodyhadanoceanAcrosstheU.S.A.Theneverybody'dbesurfin'LikeCaliforni-aYou'dseem'emwearingtheirbaggiesHuarachesandalstooAbushybushyblondehairdoSurfin'U.S.A.You'dcatch'emsurfin'atDelMarVenturaCountylineSantaCruzandTrestleAustralia'sNarrabeenAlloverManhattanAnddownDohenyWayEverybody'sgonesurfin'Surfin'U.S.A.We'llallbeplanningthatrouteWe'regonnatakerealsoonWe'rewaxingdownoursurfboardsWecan'twaitforJuneWe'llallbegoneforthesummerWe'reonsurfaritostayTelltheteacherwe'resurfin'Surfin'U.S.A.HaggertiesandSwamiesPacificPalisadesSanOnofreandSunsetRedondoBeachL.A.AlloverLaJollaAtWa'imeaBayEverybody'sgonesurfin'Surfin'U.S.A.Everybody'sgonesurfin'Surfin'U.S.A.Everybody'sgonesurfin'Surfin'U.S.A.","like-a-rolling-stone":"OnceuponatimeyoudressedsofineThrewthebumsadimeinyourprime,didn'tyou?Peoplecallsay'bewaredoll,you'reboundtofall'YouthoughttheywereallkiddingyouYouusedtolaughaboutEverybodythatwashangingoutNowyoudon'ttalksoloudNowyoudon'tseemsoproudAbouthavingtobescroungingyournextmealHowdoesitfeel,howdoesitfeel?TobewithoutahomeLikeacompleteunknown,likearollingstoneAhhyou'vegonetothefinestschools,alrightMissLonelyButyouknowyouonlyusedtogetjuicedinitNobody'severtaughtyouhowtoliveoutonthestreetAndnowyou'regonnahavetogetusedtoitYousayyounevercompromiseWiththemysterytramp,butnowyourealizeHe'snotsellinganyalibisAsyoustareintothevacuumofhiseyesAndsaydoyouwanttomakeadeal?Howdoesitfeel,howdoesitfeel?Tobeonyourown,withnodirectionhomeAcompleteunknown,likearollingstoneAhyouneverturnedaroundtoseethefrownsOnthejugglersandtheclownswhentheyalldidtricksforyouYouneverunderstoodthatitain'tnogoodYoushouldn'tletotherpeoplegetyourkicksforyouYouusedtorideonachromehorsewithyourdiplomatWhocarriedonhisshoulderaSiamesecatAin'tithardwhenyoudiscoveredthatHereallywasn'twhereit'satAfterhetookfromyoueverythinghecouldstealHowdoesitfeel,howdoesitfeel?Tohaveonyourown,withnodirectionhomeLikeacompleteunknown,likearollingstoneAhhprincessonasteepleandalltheprettypeopleThey'realldrinking,thinkingthatthey'vegotitmadeExchangingallpreciousgiftsButyoubettertakeyourdiamondring,youbetterpawnitbabeYouusedtobesoamusedAtNapoleoninragsandthelanguagethatheusedGotohimhecallsyou,youcan'trefuseWhenyouain'tgotnothing,yougotnothingtoloseYou'reinvisiblenow,you'vegotnosecretstoconcealHowdoesitfeel,ahhowdoesitfeel?Tobeonyourown,withnodirectionhomeLikeacompleteunknown,likearollingstone"};var textArray=__WEBPACK_IMPORTED_MODULE_1_lodash___default.a.shuffle(__WEBPACK_IMPORTED_MODULE_1_lodash___default.a.values(texts));var getText=/*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(id){var lastId,index;return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context){while(1){switch(_context.prev=_context.next){case 0:lastId=void 0;index=-1;case 2:if(false){_context.next=8;break;}if(id!==lastId){index=index<textArray-2?index+1:0;lastId=id;}_context.next=6;return textArray[index];case 6:_context.next=2;break;case 8:case"end":return _context.stop();}}},_callee,this);});/* harmony default export */ __webpack_exports__["a"] = (getText);
+
+/***/ }),
+/* 531 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export hue2rgb */
+/* unused harmony export hslToRgb */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return randomColor; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+// from http://bl.ocks.org/jdarling/06019d16cb5fd6795edf
+// or http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/
+var hue2rgb=function hue2rgb(p,q,t){if(t<0)t+=1;if(t>1)t-=1;if(t<1/6)return p+(q-p)*6*t;if(t<1/2)return q;if(t<2/3)return p+(q-p)*(2/3-t)*6;return p;};var hslToRgb=function hslToRgb(h,s,l){var r=void 0,g=void 0,b=void 0;if(s===0){r=g=b=l;// achromatic
+}else{var q=l<0.5?l*(1+s):l+s-l*s;var p=2*l-q;r=hue2rgb(p,q,h+1/3);g=hue2rgb(p,q,h);b=hue2rgb(p,q,h-1/3);}return'#'+Math.round(r*255).toString(16)+Math.round(g*255).toString(16)+Math.round(b*255).toString(16);};var GOLDEN_RATIO_CONJUGATE=0.618033988749895;var randomColor=/*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(){var h;return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context){while(1){switch(_context.prev=_context.next){case 0:h=Math.random();case 1:if(false){_context.next=8;break;}h+=GOLDEN_RATIO_CONJUGATE;h%=1;_context.next=6;return hslToRgb(h,0.5,0.60);case 6:_context.next=1;break;case 8:case'end':return _context.stop();}}},_callee,this);});
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.548d9ae6.js.map
+//# sourceMappingURL=main.12cfc547.js.map
