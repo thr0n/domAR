@@ -14,7 +14,7 @@ class DrawText {
                 fontPath = 'fonts/Roboto-Black.ttf',
                 x = 0,
                 y = 0,
-                size = 100) {
+                size = 75) {
         this.root = root;
         this.fromSelector = fromSelector;
         this.toSelector = toSelector;

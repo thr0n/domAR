@@ -83,12 +83,14 @@ circle.background {
     100% { transform: rotateX(350deg) rotateY(720deg); }
 }
 
+/*
 .cube .front  { background: hsla(   0, 100%, 50%, 0.7 ); }
 .cube .back   { background: hsla(  60, 100%, 50%, 0.7 ); }
 .cube .right  { background: hsla( 120, 100%, 50%, 0.7 ); }
 .cube .left   { background: hsla( 180, 100%, 50%, 0.7 ); }
 .cube .top    { background: hsla( 240, 100%, 50%, 0.7 ); }
 .cube .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
+*/
 
 #menu {
     position: absolute;

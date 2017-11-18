@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 
 import DrawText from './DrawText';
 import getText from './getText';
+import {randomColor} from './color';
 
 const FRONT = "front";
 const LEFT = "left";
@@ -25,7 +26,7 @@ const initialDirections = [FRONT, BACK, RIGHT, LEFT, TOP, BOTTOM];
 export const NUMBER_OF_CUBES = 6;
 
 const cubeData = _.range(NUMBER_OF_CUBES).map(num => {
-    return {width: SIDE_LENGTH, height: SIDE_LENGTH, id: "cube-" + num}
+    return {width: SIDE_LENGTH, height: SIDE_LENGTH, id: "cube-" + num, color: randomColor().next().value}
 });
 
 export const drawSvgBars = () => {
@@ -59,6 +60,7 @@ export const drawSvgBars = () => {
     const enterSvg = svgSelection.enter()
         .append("svg")
         .attr("class", d => "part " + d.initialDirection)
+        //.style("background", d => color(d.id))
         .attr("height", height)
         .attr("width", width)
         .style("position", "absolute")
@@ -68,6 +70,13 @@ export const drawSvgBars = () => {
                 return "translateY(" + y + "px)";
             }
         })
+
+    enterSvg.append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill", d => d.color)
+        .style("stroke", "white")
+        .style("stroke-width", "5px")
 
     const sideG = enterSvg.append("g")
         .attr("transform", d => "translate(" + (width(d)/2) + "," + (height(d)/2) + ")")
