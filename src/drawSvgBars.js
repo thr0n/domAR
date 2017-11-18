@@ -1,10 +1,19 @@
 import * as d3 from 'd3';
 import * as _ from 'lodash';
 
-import {nextDirection, BOTTOM, BACK, TOP, FRONT, LEFT, RIGHT, AXIS_X, AXIS_Y} from './direction';
-import {cubeData} from './cubeData';
 import DrawText from './DrawText';
 import getText from './getText';
+
+const FRONT = "front";
+const LEFT = "left";
+const RIGHT = "right";
+const BACK = "back";
+const TOP = "top";
+const BOTTOM = "bottom";
+
+const WIDTH = window.innerWidth;
+const HEIGHT = window.innerHeight;
+const SIDE_LENGTH = Math.min(WIDTH, HEIGHT) / 4;
 
 const START_Y_ROTATION = 10;
 const START_X_ROTATION = -10;
@@ -12,6 +21,10 @@ const START_X_ROTATION = -10;
 const START_PATH = "M 10, 10 m -7.5, 0 a 7.5,7.5 0 1,0 15,0 a 7.5,7.5 0 1,0 -15,0";
 
 const initialDirections = [FRONT, BACK, RIGHT, LEFT, TOP, BOTTOM];
+
+const cubeData = _.range(24).map(num => {
+    return {width: SIDE_LENGTH, height: SIDE_LENGTH, id: "cube-" + num}
+});
 
 const drawSvgBars = () => {
 
@@ -21,9 +34,6 @@ const drawSvgBars = () => {
     const enterContainer = divSelection.enter()
         .append("div")
         .attr("class", d => "container _" + d.id)
-
-    enterContainer.merge(divSelection)
-        .style("transform", d => "translateX(" + d.x + "px) translateY(" + d.y + "px) translateZ(" + d.z + "px) ")
 
     const rotation = (degX, degY) => "rotateX(" + degX + "deg) rotateY(" + degY + "deg)"
 

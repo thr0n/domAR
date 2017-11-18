@@ -44,7 +44,7 @@ function init(bodyType) {
 
     switch (bodyType) {
         case BODY_TYPE_CUBE:
-            numberOfBodies = 4;
+            numberOfBodies = 24;
             const cubes = drawSvgBars();
             cubes.each(setData);
             cubes.each(objectify);
