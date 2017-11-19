@@ -3,7 +3,9 @@ import * as _ from 'lodash';
 
 import './demo.css'
 import Radars from './Radars';
-import {drawSvgBars, NUMBER_OF_CUBES} from './drawSvgBars';
+import {drawCubes, NUMBER_OF_CUBES} from './drawCubes';
+import {parseQuery} from './parseQuery';
+import {getTextFunction} from './getText';
 
 console.log(url.parse(window.location.href));
 
@@ -35,10 +37,19 @@ app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
 
 let numberOfBodies = radars.numberOfRadars();
 
-const bodyType = url.parse(window.location.href).query;
-
 const BODY_TYPE_RADAR = "radar";
 const BODY_TYPE_CUBE = "cube";
+
+let bodyType = BODY_TYPE_RADAR;
+let queryMap = {};
+const query = url.parse(window.location.href).query;
+if(!_.isEmpty(query)) {
+    queryMap = parseQuery(query);
+}
+
+if(!_.isEmpty(queryMap[BODY_TYPE_CUBE])) {
+    bodyType = BODY_TYPE_CUBE;
+}
 
 const NUMBER_OF_POSSIBLE_PLACES = 50;
 
@@ -51,7 +62,9 @@ function init(bodyType) {
     switch (bodyType) {
         case BODY_TYPE_CUBE:
             numberOfBodies = NUMBER_OF_CUBES;
-            const cubes = drawSvgBars();
+            const nameOfTextSet = queryMap[BODY_TYPE_CUBE];
+            const getText = getTextFunction(nameOfTextSet);
+            const cubes = drawCubes(getText);
             cubes.each(setData);
             cubes.each(objectify);
             break;

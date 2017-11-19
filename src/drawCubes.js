@@ -2,8 +2,7 @@ import * as d3 from 'd3';
 import * as _ from 'lodash';
 
 import DrawText from './DrawText';
-import getText from './getText';
-import {randomColor} from './color';
+import {hsla} from './color';
 
 const FRONT = "front";
 const LEFT = "left";
@@ -30,9 +29,7 @@ const cubeData = _.range(NUMBER_OF_CUBES).map(num => {
     return {width: SIDE_LENGTH, height: SIDE_LENGTH, id: "cube-" + num, color: "hsla(" + hue + ",100%,50%,0.7)", hue: hue}
 });
 
-const hsla = hue => "hsla(" + hue + ",100%,50%,0.7)";
-
-export const drawSvgBars = () => {
+export const drawCubes = (getText) => {
 
     const divSelection = d3.selectAll("div.container")
         .data(cubeData, d => d.id);
@@ -40,6 +37,9 @@ export const drawSvgBars = () => {
     const enterContainer = divSelection.enter()
         .append("div")
         .attr("class", d => "container _" + d.id)
+        .each(d => {
+            d.text = getText.next().value;
+        })
 
     const rotation = (degX, degY) => "rotateX(" + degX + "deg) rotateY(" + degY + "deg)"
 
@@ -103,8 +103,7 @@ export const drawSvgBars = () => {
         .style("visibility", "hidden")
 
     sideG.each(d => {
-        const text = getText(d.id).next().value;
-        (new DrawText(sideG, "#" + fromId(d), "#" + toId(d), text)).start();
+        (new DrawText(sideG, "#" + fromId(d), "#" + toId(d), d.text)).start();
     })
 
     enterContainer.selectAll("svg." + FRONT)

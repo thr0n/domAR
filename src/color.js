@@ -37,3 +37,5 @@ export const randomColor = function*() {
         yield hslToRgb(h, 0.5, 0.60);
     }
 };
+
+export const hsla = hue => "hsla(" + hue + ",100%,50%,0.7)";
