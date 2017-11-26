@@ -215,7 +215,7 @@ export default class Radars {
         return svgAll;
     }
 
-    draw(numberOfRadars) {
+    draw() {
         const initItems = (items) => {
             return items.map(item => {
                 const deg = Math.random() * 360;
