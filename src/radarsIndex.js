@@ -7,6 +7,6 @@ export const initRadars = () => {
     const radars = new Radars(250);
     const radarSvgs = radars.draw();
     radarSvgs.each(function (d, i) {
-        setArPosition(this, root, TYPE_RING, radars.numberOfRadars(), i)
+        setArPosition(this, root, TYPE_RING, i, radars.numberOfRadars())
     });
 }
