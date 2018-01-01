@@ -2,6 +2,8 @@ import url from 'url';
 import * as _ from 'lodash';
 
 import './demo.css'
+//import 'materialize-css/dist/css/materialize.css';
+
 import {initCubes} from './cubesIndex';
 import {initRadars} from './radarsIndex';
 import {initSlides} from './slides/slidesIndex';
@@ -36,5 +38,5 @@ switch (bodyType) {
         break;
 
     default:
-        initSlides();
+        initSlides("#container");
 }

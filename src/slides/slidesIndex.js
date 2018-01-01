@@ -4,9 +4,9 @@ import './slides.css';
 
 import {demoSlides} from './demoSlides/demoSlides';
 
-export const initSlides = () => {
+export const initSlides = (rootSelector) => {
     const {root} = init();
-    const selection = demoSlides();
+    const selection = demoSlides(rootSelector);
     selection.each(function (d, i) {
         setArPosition(this, root, TYPE_RING, i, selection.size());
     });

@@ -7,7 +7,8 @@ const SLIDE_CLASS = "slide";
 export class Slides {
 
     constructor(rootSelector, width, height) {
-        this.root = d3.select(rootSelector);
+        this.rootSelector = rootSelector;
+        this.root = d3.selectAll(rootSelector);
         this.width = width;
         this.height = height;
         this.slides = [];
@@ -26,7 +27,7 @@ export class Slides {
             .style("height", this.height + "px");
 
         this.selection()
-            .each((d, i) => {
+            .each(function(d, i) {
                 that.slides[i] = this;
             })
 
@@ -37,12 +38,13 @@ export class Slides {
         return this.slides[i];
     }
 
-    getId(i) {
+    getAttr(i, attrName) {
         return d3.select(this.getSlide(i))
-            .attr("id")
+            .attr(attrName)
     }
 
     selection() {
-        return this.root.selectAll(`${SLIDE_ELEMENT}.${SLIDE_CLASS}`)
+        const selector = `${SLIDE_ELEMENT}.${SLIDE_CLASS}`;
+        return this.root.selectAll(selector)
     }
 }
