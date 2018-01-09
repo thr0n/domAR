@@ -3,8 +3,8 @@ import {slidePlotly} from './slidePlotly';
 import {htmlSlide} from '../htmlSlide';
 import {createDummySlide} from '../dummySlide';
 
-const width = window.innerWidth / 3;
-const height = window.innerHeight / 3;
+const width = window.innerWidth;
+const height = window.innerHeight;
 
 const createDummySlides = (slides, startIndex, numberOfSlides) => {
     for(let i = startIndex; i < startIndex + numberOfSlides; i++) {
