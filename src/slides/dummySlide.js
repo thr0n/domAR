@@ -7,5 +7,7 @@ export const createDummySlide = (rootSelector) => {
     root
         .append("div")
         .attr("class", "dummy")
+        .style("width", "100%")
+        .style("height", "100%")
         .text(id)
 }

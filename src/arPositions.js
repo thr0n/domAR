@@ -69,9 +69,9 @@ export const ring = (numberOfBodies, i) => {
     const vector = new THREE.Vector3();
     const phi = i/numberOfBodies * 2 * Math.PI;
 
-    ring.position.x = 2000 * Math.sin(phi);
+    ring.position.x = 3000 * Math.sin(phi);
     ring.position.y = 100;
-    ring.position.z = 2000 * Math.cos(phi);
+    ring.position.z = 3000 * Math.cos(phi);
 
     vector.x = -ring.position.x * 2;
     vector.y = -ring.position.y;

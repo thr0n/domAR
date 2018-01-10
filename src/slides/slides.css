@@ -1,3 +1,4 @@
-div.slide {
-    background-color: grey;
+div.slide .dummy {
+    background-color: lightgray;
+    font-size: 10em;
 }
