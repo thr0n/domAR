@@ -13,16 +13,9 @@ const createDummySlides = (slides, startIndex, numberOfSlides) => {
     }
 }
 
-export const demoSlides = (rootSelector) => {
-
-    const slides = new Slides(rootSelector, width, height);
-    const selection = slides.create(10);
-
-    const idOfFirstSlide = slides.getAttr(0, "id");
-    slidePlotly(idOfFirstSlide);
-
-    const idOfSecondSlide = slides.getAttr(5, "id");
-    htmlSlide(idOfSecondSlide, {
+const createAnimeSlide = (slides, id) => {
+    const slideId = slides.getAttr(id, "id");
+    htmlSlide(slideId, {
         pathToHtml: "slides/anime/anime.html",
         pathToJsArray: [
             "slides/anime/ymlarg.js",
@@ -35,9 +28,40 @@ export const demoSlides = (rootSelector) => {
             "slides/anime/style.css"
         ]
     });
+}
 
-    createDummySlides(slides, 1, 4);
-    createDummySlides(slides, 6, 4);
+const createVelocitySlide = (slides, id) => {
+    const slideId = slides.getAttr(id, "id");
+    htmlSlide(slideId, {
+        pathToHtml: "slides/velocity/velocity.html",
+        pathToJsArray: [
+            "slides/velocity/load-webfont.js",
+            "http://cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js",
+            "slides/velocity/index.js"
+        ],
+        pathToCssArray: [
+            "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css",
+            "slides/velocity/style.css"
+        ]
+    })
+}
+
+const createPlotlySlide = (slides, id) => {
+    const slideId = slides.getAttr(id, "id");
+    slidePlotly(slideId);
+
+}
+
+export const demoSlides = (rootSelector) => {
+
+    const slides = new Slides(rootSelector, width, height);
+    const selection = slides.create(10);
+
+    createDummySlides(slides, 0, 5);
+    createVelocitySlide(slides, 5);
+    createAnimeSlide(slides, 6);
+    createPlotlySlide(slides, 7);
+    createDummySlides(slides, 8, 2);
 
     return selection;
 }
