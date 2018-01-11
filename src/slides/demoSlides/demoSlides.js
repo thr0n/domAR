@@ -1,6 +1,6 @@
 import {Slides} from '../Slides';
 import {slidePlotly} from './slidePlotly';
-import {htmlSlide} from '../htmlSlide';
+import {htmlSlide, HtmlSlide} from '../htmlSlide';
 import {createDummySlide} from '../dummySlide';
 
 const width = window.innerWidth;
@@ -32,7 +32,7 @@ const createAnimeSlide = (slides, id) => {
 
 const createVelocitySlide = (slides, id) => {
     const slideId = slides.getAttr(id, "id");
-    htmlSlide(slideId, {
+    const slide = new HtmlSlide(slideId, {
         pathToHtml: "slides/velocity/velocity.html",
         pathToJsArray: [
             "slides/velocity/load-webfont.js",
@@ -42,8 +42,10 @@ const createVelocitySlide = (slides, id) => {
         pathToCssArray: [
             "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css",
             "slides/velocity/style.css"
-        ]
-    })
+        ],
+        startFunction: () => {window._velocity_start()}
+    });
+    slide.setReloadInterval(10000);
 }
 
 const createPlotlySlide = (slides, id) => {

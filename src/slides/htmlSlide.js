@@ -5,6 +5,10 @@ const loadHtml = (slideId, pathToHtml) => {
     $("#" + slideId).load(pathToHtml);
 }
 
+const clearHtml = (slideId) => {
+    $("#" + slideId).empty();
+}
+
 const appendScriptsRecursive = (index, pathToJsArray) => {
     if(!_.isEmpty(pathToJsArray) && index < pathToJsArray.length) {
         const scriptElement = document.createElement("script");
@@ -29,8 +33,39 @@ const appendStyles = (pathToCssArray) => {
     }
 }
 
+const start = (startFunction) => {
+    if(typeof(startFunction) === 'function') {
+        startFunction();
+    }
+}
+
 export const htmlSlide = (slideId, config) => {
     appendStyles(config.pathToCssArray);
     loadHtml(slideId, config.pathToHtml);
     appendScriptsRecursive(0, config.pathToJsArray);
+    start(config.startFunction);
+}
+
+export class HtmlSlide {
+
+    constructor(slideId, config) {
+        this.slideId = slideId;
+        this.config = config;
+
+        htmlSlide(slideId, config);
+    }
+
+    setReloadInterval(ms) {
+        this.reloadInterval = setInterval(this.reload, ms);
+    }
+
+    clearReloadInterval() {
+        clearInterval(this.reloadInterval);
+    }
+
+    reload() {
+        clearHtml(this.slideId);
+        loadHtml(this.config.pathToHtml);
+        start(this.config.startFunction);
+    }
 }
