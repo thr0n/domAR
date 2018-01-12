@@ -35,17 +35,17 @@ const createVelocitySlide = (slides, id) => {
     const slide = new HtmlSlide(slideId, {
         pathToHtml: "slides/velocity/velocity.html",
         pathToJsArray: [
-            "slides/velocity/load-webfont.js",
-            "http://cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js",
             "slides/velocity/index.js"
         ],
         pathToCssArray: [
             "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css",
             "slides/velocity/style.css"
         ],
-        startFunction: () => {window._velocity_start()}
+        startFunction: () => {
+            window._velocity_start()
+        }
     });
-    slide.setReloadInterval(10000);
+    //slide.setReloadInterval(10000);
 }
 
 const createPlotlySlide = (slides, id) => {

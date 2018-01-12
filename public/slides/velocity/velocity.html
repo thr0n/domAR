@@ -1,6 +1,22 @@
 <div>
-<div class="landscape">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1200 800" enable-background="new 0 0 1200 800" xml:space="preserve">
+
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: {families: ['Open+Sans:400italic,400,700,300:latin']}
+        };
+        (function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <div class="landscape">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1200 800" enable-background="new 0 0 1200 800" xml:space="preserve">
 <g id="Sky">
 	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="600" y1="515.9" x2="600" y2="-0">
 		<stop offset="0" style="stop-color:#F4D4F6"/>
@@ -1242,9 +1258,9 @@
 </g>
 </svg>
 
-    <div class="observatory__wrap">
-        <div class="tube"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1200 800" enable-background="new 0 0 1200 800" xml:space="preserve">
+        <div class="observatory__wrap">
+            <div class="tube"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1200 800" enable-background="new 0 0 1200 800" xml:space="preserve">
 <g id="Observatory">
 	<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="956.1" y1="548.3" x2="946.7" y2="495.3">
 		<stop offset="0" style="stop-color:#6E6E6E"/>
@@ -1274,8 +1290,12 @@
 </g>
 </svg>
 
+        </div>
     </div>
-</div>
 
-<div class="stars"></div>
+    <div class="stars"></div>
+
+
+	<script src='http://cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js'></script>
+
 </div>
