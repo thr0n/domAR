@@ -39,7 +39,7 @@ const createVelocitySlide = (slides, id) => {
         scriptThingyArray: [{
             pathToScript: "slides/velocity/index.js",
             readyFunction: () => {
-                return (typeof window._velocity_start === 'function');
+                return window._velocity_ready;
             }
         }
         ],
@@ -54,15 +54,7 @@ const createVelocitySlide = (slides, id) => {
             window._velocity_start()
         },
         resetFunction: () => {
-            $('.star').velocity('reverse');
-            $('.tube').velocity('reverse');
-            $('#SVGID_1_ stop').velocity('reverse');
-            $('#Hills_in_Distance_1 path').velocity('reverse');
-            $('#Hills_in_Distance_2 path').velocity('reverse');
-            $('#River_Background rect').velocity('reverse');
-            $('#Distant_Left_Ridge path').velocity('reverse');
-            $('#Right_Ridge path').velocity('reverse');
-            $('#SVGID_2_ stop').velocity('reverse');
+            window._velocity_restart()
         }
     });
     slide.setResetInterval(10000);

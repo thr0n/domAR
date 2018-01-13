@@ -1,4 +1,5 @@
 /* global $ */
+
 $(document).ready(function() {
 
 	function getRandomInt(min, max) {
@@ -232,5 +233,21 @@ $(document).ready(function() {
         });
     }
 
+    function restart() {
+        $('.star').velocity('reverse');
+        $('.tube').velocity('reverse');
+        $('#SVGID_1_ stop').velocity('reverse');
+        $('#Hills_in_Distance_1 path').velocity('reverse');
+        $('#Hills_in_Distance_2 path').velocity('reverse');
+        $('#River_Background rect').velocity('reverse');
+        $('#Distant_Left_Ridge path').velocity('reverse');
+        $('#Right_Ridge path').velocity('reverse');
+        $('#SVGID_2_ stop').velocity('reverse');
+        $('#SVGID_3_ stop').velocity('reverse');
+        $('#Sun circle, #SVGID_2_').velocity('reverse');
+    }
+
     window._velocity_start = start;
+    window._velocity_restart = restart;
+    window._velocity_ready = true;
 });
