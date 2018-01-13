@@ -52,9 +52,20 @@ const createVelocitySlide = (slides, id) => {
         ],
         startFunction: () => {
             window._velocity_start()
+        },
+        resetFunction: () => {
+            $('.star').velocity('reverse');
+            $('.tube').velocity('reverse');
+            $('#SVGID_1_ stop').velocity('reverse');
+            $('#Hills_in_Distance_1 path').velocity('reverse');
+            $('#Hills_in_Distance_2 path').velocity('reverse');
+            $('#River_Background rect').velocity('reverse');
+            $('#Distant_Left_Ridge path').velocity('reverse');
+            $('#Right_Ridge path').velocity('reverse');
+            $('#SVGID_2_ stop').velocity('reverse');
         }
     });
-    slide.setReloadInterval(10000);
+    slide.setResetInterval(10000);
 }
 
 const createPlotlySlide = (slides, id) => {

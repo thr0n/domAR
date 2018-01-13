@@ -80,6 +80,7 @@ $(document).ready(function() {
     var sunGradient = ['#FFEE80','#FFC261','#FF5121','#05257d','#005cc9'];
 
     function start() {
+    	console.log("start sunset");
         setTimeout(function(){
             observeStars();
         },5500);

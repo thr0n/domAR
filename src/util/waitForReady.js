@@ -1,3 +1,5 @@
+import * as fct from './fct';
+
 const NUMBER_OF_TRIES = 1000;
 const WAIT_TIME = 10;
 
@@ -20,7 +22,7 @@ const _waitForReadyRecursive = (ctr, readyFunction, resolve, reject, name) => {
 }
 
 export const waitForReady = (readyFunction, resolve, reject, name) => {
-    if(typeof(readyFunction) === 'function') {
+    if(fct.isFunction(readyFunction)) {
         _waitForReadyRecursive(0, readyFunction, resolve, reject, name)
     }
     else {
@@ -29,7 +31,7 @@ export const waitForReady = (readyFunction, resolve, reject, name) => {
 }
 
 export const waitForReadyPromise = (readyFunction, name) => {
-    if(typeof readyFunction === 'function') {
+    if(fct.isFunction(readyFunction)) {
         return new Promise((resolve, reject) => {
             console.log("waitForReadyPromise: " + name);
             waitForReady(readyFunction, resolve, reject, name);

@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import * as _ from 'lodash';
 
+import * as fct from '../util/fct';
 import {waitForReadyPromise} from '../util/waitForReady';
 import {appendScripts} from '../util/loadScript';
 
@@ -24,12 +25,6 @@ const appendStyles = (pathToCssArray) => {
     }
 }
 
-const start = (startFunction) => {
-    if(typeof(startFunction) === 'function') {
-        startFunction();
-    }
-}
-
 export const htmlSlide = (slideId, config) => {
     config.scriptThingyArray = config.scriptThingyArray || [];
     config.pathToJsArray = config.pathToJsArray || [];
@@ -38,7 +33,7 @@ export const htmlSlide = (slideId, config) => {
     loadHtml(slideId, config.pathToHtml);
     appendScripts([...config.pathToJsArray, ...config.scriptThingyArray]).then(() => {
         waitForReadyPromise(config.readyFunction, "final").then(() => {
-            start(config.startFunction);
+            fct.call(config.startFunction);
         })
     });
 
@@ -63,9 +58,23 @@ export class HtmlSlide {
         clearInterval(this.reloadInterval);
     }
 
+    setResetInterval(ms) {
+        this.resetInterval = setInterval(() => {
+            this.reset();
+        }, ms);
+    }
+
+    clearResetInterval() {
+        clearInterval(this.resetInterval);
+    }
+
+    reset() {
+        fct.call(this.config.resetFunction);
+    }
+
     reload() {
         clearHtml(this.slideId);
         loadHtml(this.slideId, this.config.pathToHtml);
-        start(this.config.startFunction);
+        fct.call(this.config.startFunction);
     }
 }
