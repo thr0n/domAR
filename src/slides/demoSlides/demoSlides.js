@@ -1,3 +1,5 @@
+import {$} from '../../jquery/jquery-common';
+
 import {Slides} from '../Slides';
 import {slidePlotly} from './slidePlotly';
 import {htmlSlide, HtmlSlide} from '../htmlSlide';
@@ -34,9 +36,16 @@ const createVelocitySlide = (slides, id) => {
     const slideId = slides.getAttr(id, "id");
     const slide = new HtmlSlide(slideId, {
         pathToHtml: "slides/velocity/velocity.html",
-        pathToJsArray: [
-            "slides/velocity/index.js"
+        scriptThingyArray: [{
+            pathToScript: "slides/velocity/index.js",
+            readyFunction: () => {
+                return (typeof window._velocity_start === 'function');
+            }
+        }
         ],
+        readyFunction: () => {
+            return (typeof $('#SVGID_2_ stop').velocity === 'function');
+        },
         pathToCssArray: [
             "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css",
             "slides/velocity/style.css"
@@ -45,7 +54,7 @@ const createVelocitySlide = (slides, id) => {
             window._velocity_start()
         }
     });
-    //slide.setReloadInterval(10000);
+    slide.setReloadInterval(10000);
 }
 
 const createPlotlySlide = (slides, id) => {

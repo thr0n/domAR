@@ -1,1 +1,1 @@
-export const jquery = window.$;
+export const $ = window.$;
