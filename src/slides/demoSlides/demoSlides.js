@@ -54,7 +54,7 @@ const createVelocitySlide = (slides, id) => {
             window._velocity_start()
         },
         resetFunction: () => {
-            window._velocity_restart()
+            window._velocity_reset()
         }
     });
     slide.setResetInterval(10000);

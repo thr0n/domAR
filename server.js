@@ -4,6 +4,7 @@ var https = require('https');
 var pem = require('pem');
 
 const httpPort = process.env.PORT||1337;
+const folder = process.argv[2] || 'build';
 
 pem.createCertificate({ days:1, selfSigned:true }, function(err, keys) {
     // Create middleware for a static server
@@ -13,7 +14,7 @@ pem.createCertificate({ days:1, selfSigned:true }, function(err, keys) {
     //     if (req.secure) return next();
     //     res.redirect('https://' + req.hostname + ':' + httpsServer.address().port + req.url);
     // });
-    app.use('/', express.static(__dirname + '/build'));
+    app.use('/', express.static(__dirname + '/' + folder));
 
     // Create an HTTPS service
     var httpsServer = https.createServer({
@@ -24,5 +25,5 @@ pem.createCertificate({ days:1, selfSigned:true }, function(err, keys) {
     // Create an http service
     http.createServer(app).listen(httpPort);
 
-    console.log(`serving on http://localhost:${httpPort}`);
+    console.log(`serving folder '${folder}' on http://localhost:${httpPort}`);
 });

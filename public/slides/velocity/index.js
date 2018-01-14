@@ -6,6 +6,8 @@ $(document).ready(function() {
   		return Math.floor(Math.random() * (max - min)) + min;
 	}
 
+	var star;
+
 	function starGenerate(){
 		
 		for (var i = 0;i<100;i++) {
@@ -13,15 +15,16 @@ $(document).ready(function() {
 			$star = $('<div class="star"></div>');
 			$('.stars').append($star);
 		}
-		
-		starAnimate($('.star'));
+
+		star = $('.star');
+		starAnimate();
 	}
 
 	var svgWidth = $('div.landscape').width();
 
 	var svgHeight = $('div.landscape').height();
 
-	function starAnimate(star){
+	function starAnimate(){
 		star.velocity({
 			scale: function() {
 				return getRandomInt(50,120) + '%';
@@ -53,6 +56,14 @@ $(document).ready(function() {
 		});
 	}
 
+	function hideStars(duration) {
+        star.velocity({
+            opacity: 0
+        }, {
+            duration: duration
+        })
+    }
+
 	function observeStars() {
 		$('.tube').velocity({
 			rotateZ: '30deg',
@@ -72,6 +83,48 @@ $(document).ready(function() {
 		});
 	}
 
+	function unobserveStars(duration) {
+        $('.tube').velocity({
+            rotateZ: '30deg',
+            rotateX: '-20deg',
+            translateY: '210%'
+        },{
+            duration:duration
+        });
+    }
+
+    var stopColors = {};
+    function saveStopColors(id) {
+        stopColors[id] = $('#' + id + ' stop').map(function () {
+            return $(this).css('stop-color');
+        })
+    }
+
+    function resetStopColors(id, duration) {
+        $('#' + id + ' stop').each(function (index) {
+            $(this).velocity({
+                stopColor: stopColors[id][index]
+            },{
+                easing:'easeOutQuart',
+                duration:duration
+            });
+        })
+    }
+
+    var fills = {};
+    function saveFill(selector) {
+        fills[selector] = $(selector).css('fill');
+    }
+
+    function resetFill(selector, duration) {
+        $(selector).velocity({
+            fill: fills[selector]
+        },{
+            easing:'linear',
+            duration:duration
+        });
+    }
+
     var skyGradientTwilight = ['#ffeecc','#e29ae5','#869cee','#509aee','#4988e5'];
 
     var skyGradientEvening = ['#05257d','#03287d','#02389d','#0247c6','#015cc9'];
@@ -81,7 +134,17 @@ $(document).ready(function() {
     var sunGradient = ['#FFEE80','#FFC261','#FF5121','#05257d','#005cc9'];
 
     function start() {
-    	console.log("start sunset");
+        saveStopColors('SVGID_1_');
+        saveStopColors('SVGID_2_');
+        saveStopColors('SVGID_3_');
+
+        saveFill('#Hills_in_Distance_1 path');
+        saveFill('#Hills_in_Distance_2 path');
+        saveFill('#River_Background rect');
+        saveFill('#Distant_Left_Ridge path');
+        saveFill('#Right_Ridge path');
+
+        console.log("start sunset");
         setTimeout(function(){
             observeStars();
         },5500);
@@ -233,21 +296,24 @@ $(document).ready(function() {
         });
     }
 
-    function restart() {
-        $('.star').velocity('reverse');
-        $('.tube').velocity('reverse');
-        $('#SVGID_1_ stop').velocity('reverse');
-        $('#Hills_in_Distance_1 path').velocity('reverse');
-        $('#Hills_in_Distance_2 path').velocity('reverse');
-        $('#River_Background rect').velocity('reverse');
-        $('#Distant_Left_Ridge path').velocity('reverse');
-        $('#Right_Ridge path').velocity('reverse');
-        $('#SVGID_2_ stop').velocity('reverse');
-        $('#SVGID_3_ stop').velocity('reverse');
-        $('#Sun circle, #SVGID_2_').velocity('reverse');
+    function reset() {
+        var DURATION = 1000;
+
+        hideStars(DURATION);
+        unobserveStars(DURATION);
+
+        resetFill('#Hills_in_Distance_1 path', DURATION);
+        resetFill('#Hills_in_Distance_2 path', DURATION);
+        resetFill('#River_Background rect', DURATION);
+        resetFill('#Distant_Left_Ridge path', DURATION);
+        resetFill('#Right_Ridge path', DURATION);
+
+        resetStopColors('SVGID_1_', DURATION);
+        resetStopColors('SVGID_2_', DURATION);
+        resetStopColors('SVGID_3_', DURATION);
     }
 
     window._velocity_start = start;
-    window._velocity_restart = restart;
+    window._velocity_reset = reset;
     window._velocity_ready = true;
 });
