@@ -57,11 +57,7 @@ $(document).ready(function() {
 	}
 
 	function hideStars(duration) {
-        star.velocity({
-            opacity: 0
-        }, {
-            duration: duration
-        })
+	    star.css('opacity', 0);
     }
 
 	function observeStars() {
@@ -83,13 +79,11 @@ $(document).ready(function() {
 		});
 	}
 
-	function unobserveStars(duration) {
+	function unobserveStars() {
         $('.tube').velocity({
             rotateZ: '30deg',
             rotateX: '-20deg',
             translateY: '210%'
-        },{
-            duration:duration
         });
     }
 
@@ -100,14 +94,9 @@ $(document).ready(function() {
         })
     }
 
-    function resetStopColors(id, duration) {
+    function resetStopColors(id) {
         $('#' + id + ' stop').each(function (index) {
-            $(this).velocity({
-                stopColor: stopColors[id][index]
-            },{
-                easing:'easeOutQuart',
-                duration:duration
-            });
+            $(this).css('stop-color', stopColors[id][index]);
         })
     }
 
@@ -116,13 +105,39 @@ $(document).ready(function() {
         fills[selector] = $(selector).css('fill');
     }
 
-    function resetFill(selector, duration) {
+    function resetFill(selector) {
         $(selector).css('fill', fills[selector]);
-        $(selector).velocity({
-            fill: fills[selector]
+    }
+
+    function addPx(base, toAdd) {
+        return  parseFloat(base) + toAdd + "px";
+    }
+
+    var sunx;
+    var suny;
+    var svgidx;
+    var svgidy;
+    function saveSunPositions() {
+        sunx = $('#Sun circle').attr("cx");
+        suny = $('#Sun circle').attr("cy");
+        svgidx = $('#SVGID_2_').attr("cx");
+        svgidy = $('#SVGID_2_').attr("cy");
+    }
+
+    function resetSunPositions() {
+/*
+        $('#Sun circle').attr("cx", sunx);
+        $('#Sun circle').attr("cy", suny);
+        $('#SVGID_2_').attr("cx", svgidx);
+        $('#SVGID_2_').attr("cy", svgidy);
+*/
+
+        $('#Sun circle, #SVGID_2_').velocity({
+            cy: '-=900',
+            cx: '+=400'
         },{
-            easing:'linear',
-            duration:duration
+            easing:'easeOut',
+            duration:1000
         });
     }
 
@@ -144,6 +159,8 @@ $(document).ready(function() {
         saveFill('#River_Background rect');
         saveFill('#Distant_Left_Ridge path');
         saveFill('#Right_Ridge path');
+
+        saveSunPositions();
 
         console.log("start sunset");
         setTimeout(function(){
@@ -298,24 +315,24 @@ $(document).ready(function() {
     }
 
     function reset() {
-        var DURATION = 0;
+        hideStars();
+        unobserveStars();
 
-        hideStars(DURATION);
-        unobserveStars(DURATION);
+        resetFill('#Hills_in_Distance_1 path');
+        resetFill('#Hills_in_Distance_2 path');
+        resetFill('#River_Background rect');
+        resetFill('#Distant_Left_Ridge path');
+        resetFill('#Right_Ridge path');
 
-        resetFill('#Hills_in_Distance_1 path', DURATION);
-        resetFill('#Hills_in_Distance_2 path', DURATION);
-        resetFill('#River_Background rect', DURATION);
-        resetFill('#Distant_Left_Ridge path', DURATION);
-        resetFill('#Right_Ridge path', DURATION);
+        resetStopColors('SVGID_1_');
+        resetStopColors('SVGID_2_');
+        resetStopColors('SVGID_3_');
 
-        resetStopColors('SVGID_1_', DURATION);
-        resetStopColors('SVGID_2_', DURATION);
-        resetStopColors('SVGID_3_', DURATION);
+        resetSunPositions();
     }
 
     start();
-    setTimeout(reset, 10000);
+    setTimeout(reset, 15000);
 
     window._velocity_start = start;
     window._velocity_reset = reset;
