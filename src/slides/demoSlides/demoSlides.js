@@ -54,10 +54,11 @@ const createVelocitySlide = (slides, id) => {
             window._velocity_start()
         },
         resetFunction: () => {
-            window._velocity_reset()
+            window._velocity_reset();
+            setTimeout(window._velocity_start, 2000);
         }
     });
-    slide.setResetInterval(10000);
+    slide.setResetInterval(15000);
 }
 
 const createPlotlySlide = (slides, id) => {

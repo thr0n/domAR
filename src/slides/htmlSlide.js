@@ -26,17 +26,19 @@ const appendStyles = (pathToCssArray) => {
 }
 
 export const htmlSlide = (slideId, config) => {
-    config.scriptThingyArray = config.scriptThingyArray || [];
-    config.pathToJsArray = config.pathToJsArray || [];
+    return new Promise((resolve, reject) => {
+        config.scriptThingyArray = config.scriptThingyArray || [];
+        config.pathToJsArray = config.pathToJsArray || [];
 
-    appendStyles(config.pathToCssArray);
-    loadHtml(slideId, config.pathToHtml);
-    appendScripts([...config.pathToJsArray, ...config.scriptThingyArray]).then(() => {
-        waitForReadyPromise(config.readyFunction, "final").then(() => {
-            fct.call(config.startFunction);
-        })
-    });
-
+        appendStyles(config.pathToCssArray);
+        loadHtml(slideId, config.pathToHtml);
+        appendScripts([...config.pathToJsArray, ...config.scriptThingyArray]).then(() => {
+            waitForReadyPromise(config.readyFunction, "final").then(() => {
+                fct.call(config.startFunction);
+                resolve();
+            })
+        });
+    })
 }
 
 export class HtmlSlide {
@@ -45,7 +47,7 @@ export class HtmlSlide {
         this.slideId = slideId;
         this.config = config;
 
-        htmlSlide(slideId, config);
+        this.startedPromise = htmlSlide(slideId, config);
     }
 
     setReloadInterval(ms) {
@@ -69,12 +71,16 @@ export class HtmlSlide {
     }
 
     reset() {
-        fct.call(this.config.resetFunction);
+        this.startedPromise.then(() => {
+            fct.call(this.config.resetFunction);
+        })
     }
 
     reload() {
-        clearHtml(this.slideId);
-        loadHtml(this.slideId, this.config.pathToHtml);
-        fct.call(this.config.startFunction);
+        this.startedPromise.then(() => {
+            clearHtml(this.slideId);
+            loadHtml(this.slideId, this.config.pathToHtml);
+            fct.call(this.config.startFunction);
+        })
     }
 }

@@ -12,6 +12,7 @@ const _waitForReadyRecursive = (ctr, readyFunction, resolve, reject, name) => {
     else {
         if(ctr > NUMBER_OF_TRIES) {
             reject("readyFunction not true after " + NUMBER_OF_TRIES + " tries: " + name);
+            console.log(readyFunction);
         }
         else {
             setTimeout(() => {
