@@ -32,6 +32,13 @@ const createAnimeSlide = (slides, id) => {
     });
 }
 
+const createDynamicsSlide = (slides, id) => {
+    const slideId = slides.getAttr(id, "id");
+    htmlSlide(slideId, {
+        pathToHtml: "slides/dynamics/dynamics.html",
+    })
+}
+
 const createVelocitySlide = (slides, id) => {
     const slideId = slides.getAttr(id, "id");
     const slide = new HtmlSlide(slideId, {
@@ -72,7 +79,8 @@ export const demoSlides = (rootSelector) => {
     const slides = new Slides(rootSelector, width, height);
     const selection = slides.create(10);
 
-    createDummySlides(slides, 0, 5);
+    createDummySlides(slides, 0, 4);
+    createDynamicsSlide(slides, 4);
     createVelocitySlide(slides, 5);
     createAnimeSlide(slides, 6);
     createPlotlySlide(slides, 7);
