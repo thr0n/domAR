@@ -2,3 +2,11 @@ div.slide .dummy {
     background-color: lightgray;
     font-size: 10em;
 }
+
+div.title {
+    position: absolute;
+    top: .5em;
+    left: .5em;
+    font-size: 5em;
+    z-index: 1000;
+}

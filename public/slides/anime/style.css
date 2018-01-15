@@ -18,13 +18,6 @@
   background-color: black;
 }
 
-div.title {
-  position: absolute;
-  top: .5em;
-  left: .5em;
-  font-size: 5em;
-}
-
 .output {
   display: -webkit-box;
   display: -ms-flexbox;

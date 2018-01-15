@@ -9,6 +9,6 @@ export const slidePlotly = (slideId) => {
         .attr("class", "title")
         .style("color", "black")
         .style("z-index", 1000)
-        .text("plotly")
+        .text("plotly.js")
 
 }
