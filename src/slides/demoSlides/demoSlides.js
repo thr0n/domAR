@@ -5,8 +5,8 @@ import {slidePlotly} from './slidePlotly';
 import {htmlSlide, HtmlSlide} from '../htmlSlide';
 import {createDummySlide} from '../dummySlide';
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+const width = window.innerWidth * 1.5;
+const height = window.innerHeight * 1.5;
 
 const createDummySlides = (slides, startIndex, numberOfSlides) => {
     for(let i = startIndex; i < startIndex + numberOfSlides; i++) {
@@ -77,14 +77,12 @@ const createPlotlySlide = (slides, id) => {
 export const demoSlides = (rootSelector) => {
 
     const slides = new Slides(rootSelector, width, height);
-    const selection = slides.create(10);
+    const selection = slides.create(4);
 
-    createDummySlides(slides, 0, 4);
-    createDynamicsSlide(slides, 4);
-    createVelocitySlide(slides, 5);
-    createAnimeSlide(slides, 6);
-    createPlotlySlide(slides, 7);
-    createDummySlides(slides, 8, 2);
+    createDynamicsSlide(slides, 2);
+    createVelocitySlide(slides, 1);
+    createAnimeSlide(slides, 0);
+    createPlotlySlide(slides, 3);
 
     return selection;
 }

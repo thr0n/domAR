@@ -4,6 +4,7 @@ import * as _ from 'lodash';
 import * as fct from '../util/fct';
 import {waitForReadyPromise} from '../util/waitForReady';
 import {appendScripts} from '../util/loadScript';
+import {slideControl} from './SlideControl';
 
 const loadHtml = (slideId, pathToHtml) => {
     $("#" + slideId).load(pathToHtml);
@@ -48,6 +49,8 @@ export class HtmlSlide {
         this.config = config;
 
         this.startedPromise = htmlSlide(slideId, config);
+
+        slideControl.registerConfig(slideId, config);
     }
 
     setReloadInterval(ms) {
