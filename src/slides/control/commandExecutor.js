@@ -17,10 +17,12 @@ export const execute = (commandStr) => {
 
     switch (command.command) {
         case "pause":
+            console.log("pause");
             slideControl.pauseJs(command.slideId);
             break;
 
         case "resume":
+            console.log("resume");
             slideControl.resumeJs(command.slideId);
             break;
 

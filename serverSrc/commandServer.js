@@ -17,13 +17,18 @@ function removeSocket(socketId) {
     delete sockets[socketId];
 }
 
+function sendObject(socket, obj) {
+    const strObj = JSON.stringify(obj);
+    console.log("send: " + strObj);
+    socket.send(strObj, function (error) {
+        console.log(error);
+    });
+}
+
 function sendToAllSockets(obj) {
     _.forOwn(sockets, function (socket, socketId) {
-        const strObj = JSON.stringify(obj);
-        console.log("send to socket " + socketId + ": " + strObj);
-        socket.send(strObj, function (error) {
-            console.log(error);
-        });
+        console.log("send to socket " + socketId);
+        sendObject(socket, obj);
     })
 }
 
@@ -43,5 +48,8 @@ wss.on('connection', function(ws) {
         sendCommandToAllSockets(commandString);
     });
 
-    ws.send('connected: ' + socketId);
+    sendObject(ws, {
+        command: "connected",
+        socketId
+    })
 });
