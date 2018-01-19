@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 import * as fct from '../../util/fct';
 
 class SlideControl {
@@ -12,7 +14,7 @@ class SlideControl {
 
     pauseJs(slideId) {
         const config = this.configs[slideId];
-        if(fct.isFunction(config.pauseFunction)) {
+        if(!_.isEmpty(config) && fct.isFunction(config.pauseFunction)) {
             config.pauseFunction();
         }
     }

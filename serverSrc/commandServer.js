@@ -21,7 +21,9 @@ function sendObject(socket, obj) {
     const strObj = JSON.stringify(obj);
     console.log("send: " + strObj);
     socket.send(strObj, function (error) {
-        console.log(error);
+        if(!_.isEmpty(error)) {
+            console.log(error);
+        }
     });
 }
 
@@ -46,6 +48,13 @@ wss.on('connection', function(ws) {
 
     ws.on('message', function(commandString) {
         sendCommandToAllSockets(commandString);
+    });
+
+    ws.on('error', (error) => console.log(error));
+
+    ws.on('close', () => {
+        console.log('disconnected: ' + socketId);
+        removeSocket(socketId);
     });
 
     sendObject(ws, {
