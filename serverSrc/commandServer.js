@@ -21,7 +21,9 @@ function sendToAllSockets(obj) {
     _.forOwn(sockets, function (socket, socketId) {
         const strObj = JSON.stringify(obj);
         console.log("send to socket " + socketId + ": " + strObj);
-        socket.send(strObj);
+        socket.send(strObj, function (error) {
+            console.log(error);
+        });
     })
 }
 

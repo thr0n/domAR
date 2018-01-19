@@ -4,7 +4,7 @@ import * as _ from 'lodash';
 import * as fct from '../util/fct';
 import {waitForReadyPromise} from '../util/waitForReady';
 import {appendScripts} from '../util/loadScript';
-import {slideControl} from './SlideControl';
+import {slideControl} from './control/SlideControl';
 
 const loadHtml = (slideId, pathToHtml) => {
     $("#" + slideId).load(pathToHtml);

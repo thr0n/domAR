@@ -1,4 +1,4 @@
-import * as fct from '../util/fct';
+import * as fct from '../../util/fct';
 
 class SlideControl {
 

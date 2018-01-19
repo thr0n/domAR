@@ -1,6 +1,7 @@
 import {setArPosition, TYPE_RING} from '../arPositions';
 import {init} from '../argonApp';
 import './slides.css';
+import {socket} from './control/commandHub';
 
 import {demoSlides} from './demoSlides/demoSlides';
 
