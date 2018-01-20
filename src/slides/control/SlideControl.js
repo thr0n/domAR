@@ -9,6 +9,8 @@ class SlideControl {
     }
 
     registerConfig(slideId, config) {
+        console.log("registered: " + slideId);
+        console.dir(config);
         this.configs[slideId] = config;
     }
 

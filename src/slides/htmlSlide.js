@@ -35,6 +35,7 @@ export const htmlSlide = (slideId, config) => {
         loadHtml(slideId, config.pathToHtml);
         appendScripts([...config.pathToJsArray, ...config.scriptThingyArray]).then(() => {
             waitForReadyPromise(config.readyFunction, "final").then(() => {
+                slideControl.registerConfig(slideId, config);
                 fct.call(config.startFunction);
                 resolve();
             })
@@ -49,8 +50,6 @@ export class HtmlSlide {
         this.config = config;
 
         this.startedPromise = htmlSlide(slideId, config);
-
-        slideControl.registerConfig(slideId, config);
     }
 
     setReloadInterval(ms) {

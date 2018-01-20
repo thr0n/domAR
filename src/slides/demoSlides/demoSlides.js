@@ -36,6 +36,12 @@ const createDynamicsSlide = (slides, id) => {
     const slideId = slides.getAttr(id, "id");
     htmlSlide(slideId, {
         pathToHtml: "slides/dynamics/dynamics.html",
+        pauseFunction: () => {
+            window._dynamics_pause();
+        },
+        resumeFunction: () => {
+            window._dynamics_resume();
+        }
     })
 }
 

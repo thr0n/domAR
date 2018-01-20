@@ -28,5 +28,8 @@
         pauseFlag = false;
         pressButtonDelayedAndRecursive(currentButtons, currentIndex);
     }
+
+    window._anime_pause = pause;
+    window._anime_resume = resume;
 })();
 

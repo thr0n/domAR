@@ -7,6 +7,8 @@
     var tick = document.querySelector('.tick')
     var arrows = document.querySelectorAll('.arrow')
 
+    var paused = false;
+
     function start() {
         // Show the spinner
         dynamics.animate(spinner, {
@@ -127,13 +129,29 @@
                     scale: 1
                 })
 
-                // Start!
-                dynamics.setTimeout(start, 500)
+                if(!paused) {
+                    // Start!
+                    dynamics.setTimeout(start, 500)
+                }
             }
         })
+    }
+
+    function doPause() {
+        paused = true;
+    }
+
+    function doResume() {
+        if(paused) {
+            paused = false;
+            start();
+        }
     }
 
 // Start!
     start()
     rotate()
+
+    window._dynamics_pause = doPause;
+    window._dynamics_resume = doResume;
 })();
