@@ -4,6 +4,7 @@ import {Slides} from '../Slides';
 import {slidePlotly} from './slidePlotly';
 import {htmlSlide, HtmlSlide} from '../htmlSlide';
 import {createDummySlide} from '../dummySlide';
+import {slideControl} from '../control/SlideControl';
 
 const width = window.innerWidth * 1.5;
 const height = window.innerHeight * 1.5;
@@ -28,7 +29,13 @@ const createAnimeSlide = (slides, id) => {
             "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css",
             "slides/anime/ewxggx.css",
             "slides/anime/style.css"
-        ]
+        ],
+        pauseFunction: () => {
+            window._anime_pause();
+        },
+        resumeFunction: () => {
+            window._anime_resume();
+        }
     });
 }
 
@@ -69,15 +76,34 @@ const createVelocitySlide = (slides, id) => {
         resetFunction: () => {
             window._velocity_reset();
             setTimeout(window._velocity_start, 2000);
+        },
+        pauseFunction: () => {
+            slide.clearResetInterval();
+        },
+        resumeFunction: () => {
+            start();
         }
     });
-    slide.setResetInterval(15000);
+    const start = () => {
+        slide.setResetInterval(15000);
+    }
+    start();
 }
 
 const createPlotlySlide = (slides, id) => {
     const slideId = slides.getAttr(id, "id");
-    slidePlotly(slideId);
+    const plotlyDemo = slidePlotly(slideId);
 
+    const config = {
+        pauseFunction: () => {
+            plotlyDemo.doPause();
+        },
+        resumeFunction: () => {
+            plotlyDemo.doResume();
+        }
+    }
+
+    slideControl.registerConfig(slideId, config);
 }
 
 export const demoSlides = (rootSelector) => {

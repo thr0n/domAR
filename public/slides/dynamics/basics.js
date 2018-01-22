@@ -3,18 +3,22 @@
 (function () {
     var el = document.querySelector('#triangle')
 
+    var paused = false;
+
 // From purple to green
     function animate1() {
-        dynamics.animate(el, {
-            rotateZ: 180,
-            scale: 1.5,
-            borderBottomColor: '#43F086'
-        }, {
-            type: dynamics.spring,
-            friction: 400,
-            duration: 1300,
-            complete: animate2
-        })
+        if(!paused) {
+            dynamics.animate(el, {
+                rotateZ: 180,
+                scale: 1.5,
+                borderBottomColor: '#43F086'
+            }, {
+                type: dynamics.spring,
+                friction: 400,
+                duration: 1300,
+                complete: animate2
+            })
+        }
     }
 
 // From green to purple
@@ -34,7 +38,20 @@
         })
     }
 
-// Start first animation
     animate1()
+
+    function doPause() {
+        paused = true;
+    }
+
+    function doResume() {
+        if(paused) {
+            paused = false;
+            animate1();
+        }
+    }
+
+    window._dynamics_add_pause_function(doResume);
+    window._dynamics_add_resume_function(doPause);
 })();
 

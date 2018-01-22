@@ -4,6 +4,8 @@
     var dots = document.querySelectorAll('.dot')
     var colors = ['#007EFF', '#FF3700', '#92FF00']
 
+    var paused = false;
+
 // Start the 3 dot animations with different delays
     function animateDots() {
         for(var i=0; i<dots.length; i++) {
@@ -18,9 +20,24 @@
                 delay: i * 450
             })
         }
-
-        dynamics.setTimeout(animateDots, 2500)
+        if(!paused) {
+            dynamics.setTimeout(animateDots, 2500)
+        }
     }
 
     animateDots()
+
+    function doPause() {
+        paused = true;
+    }
+
+    function doResume() {
+        if(paused) {
+            paused = false;
+            animateDots();
+        }
+    }
+
+    window._dynamics_add_pause_function(doResume);
+    window._dynamics_add_resume_function(doPause);
 })();

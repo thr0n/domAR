@@ -6,21 +6,25 @@
     var pathOver = el.getAttribute('data-over-path')
     var pathOut = el.getAttribute('d')
 
+    var paused = false;
+
 // Over animation
     function animateOver() {
-        dynamics.animate(el, {
-            d: pathOver,
-            fill: "#007EFF"
-        }, {
-            type: dynamics.spring,
-            complete: animateOut
-        })
+        if(!paused) {
+            dynamics.animate(el, {
+                d: pathOver,
+                fill: "#007EFF"
+            }, {
+                type: dynamics.spring,
+                complete: animateOut
+            })
 
-        dynamics.animate(textEl, {
-            scale: 1.06
-        }, {
-            type: dynamics.spring
-        })
+            dynamics.animate(textEl, {
+                scale: 1.06
+            }, {
+                type: dynamics.spring
+            })
+        }
     }
 
 // Out animation
@@ -44,6 +48,19 @@
         })
     }
 
-// Start
     animateOver()
+
+    function doPause() {
+        paused = true;
+    }
+
+    function doResume() {
+        if(paused) {
+            paused = false;
+            animateOver();
+        }
+    }
+
+    window._dynamics_add_pause_function(doResume);
+    window._dynamics_add_resume_function(doPause);
 })();

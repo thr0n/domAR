@@ -52,6 +52,10 @@ export class HtmlSlide {
         this.startedPromise = htmlSlide(slideId, config);
     }
 
+    setPause(pauseIsOn) {
+        this.pauseIsOn = pauseIsOn;
+    }
+
     setReloadInterval(ms) {
         this.reloadInterval = setInterval(() => {
             this.reload();

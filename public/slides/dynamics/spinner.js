@@ -99,13 +99,11 @@
                     delay: 300
                 })
 
-                // Restart the whole animation for this demo
                 dynamics.setTimeout(restart, 1500)
             }
         })
     }
 
-// Restart the whole animation
     function restart() {
         dynamics.animate(spinner, {
             opacity: 0
@@ -148,10 +146,9 @@
         }
     }
 
-// Start!
     start()
     rotate()
 
-    window._dynamics_pause = doPause;
-    window._dynamics_resume = doResume;
+    window._dynamics_add_pause_function(doResume);
+    window._dynamics_add_resume_function(doPause);
 })();
