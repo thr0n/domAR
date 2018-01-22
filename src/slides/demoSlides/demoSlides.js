@@ -16,8 +16,7 @@ const createDummySlides = (slides, startIndex, numberOfSlides) => {
     }
 }
 
-const createAnimeSlide = (slides, id) => {
-    const slideId = slides.getAttr(id, "id");
+const createAnimeSlide = (slides, slideId) => {
     htmlSlide(slideId, {
         pathToHtml: "slides/anime/anime.html",
         pathToJsArray: [
@@ -39,8 +38,7 @@ const createAnimeSlide = (slides, id) => {
     });
 }
 
-const createDynamicsSlide = (slides, id) => {
-    const slideId = slides.getAttr(id, "id");
+const createDynamicsSlide = (slides, slideId) => {
     htmlSlide(slideId, {
         pathToHtml: "slides/dynamics/dynamics.html",
         pauseFunction: () => {
@@ -52,8 +50,7 @@ const createDynamicsSlide = (slides, id) => {
     })
 }
 
-const createVelocitySlide = (slides, id) => {
-    const slideId = slides.getAttr(id, "id");
+const createVelocitySlide = (slides, slideId) => {
     const slide = new HtmlSlide(slideId, {
         pathToHtml: "slides/velocity/velocity.html",
         scriptThingyArray: [{
@@ -90,8 +87,7 @@ const createVelocitySlide = (slides, id) => {
     start();
 }
 
-const createPlotlySlide = (slides, id) => {
-    const slideId = slides.getAttr(id, "id");
+const createPlotlySlide = (slides, slideId) => {
     const plotlyDemo = slidePlotly(slideId);
 
     const config = {
@@ -109,12 +105,12 @@ const createPlotlySlide = (slides, id) => {
 export const demoSlides = (rootSelector) => {
 
     const slides = new Slides(rootSelector, width, height);
-    const selection = slides.create(4);
+    const selection = slides.create(["dynamics", "velocity", "anime", "plotly"]);
 
-    createDynamicsSlide(slides, 2);
-    createVelocitySlide(slides, 1);
-    createAnimeSlide(slides, 0);
-    createPlotlySlide(slides, 3);
+    createDynamicsSlide(slides, "dynamics");
+    createVelocitySlide(slides, "velocity");
+    createAnimeSlide(slides, "anime");
+    createPlotlySlide(slides, "plotly");
 
     return selection;
 }

@@ -6,13 +6,15 @@
     function pressButtonDelayedAndRecursive(buttons, index) {
         currentButtons = buttons;
         currentIndex = index;
-        if(pauseFlag) {
-            return;
-        }
 
         setTimeout(function () {
-            buttons.item(index).click();
-            pressButtonDelayedAndRecursive(buttons, index < buttons.length-1 ? index+1 : 0);
+            if(!pauseFlag) {
+                buttons.item(index).click();
+                pressButtonDelayedAndRecursive(buttons, index < buttons.length-1 ? index+1 : 0);
+            }
+            else {
+                console.log("is paused");
+            }
         }, 5000)
     }
 
@@ -22,11 +24,17 @@
 
     function pause() {
         pauseFlag = true;
+        console.log("timeline pause");
+        window._anime_timeline.pause();
     }
 
     function resume() {
-        pauseFlag = false;
-        pressButtonDelayedAndRecursive(currentButtons, currentIndex);
+        if(pauseFlag) {
+            pauseFlag = false;
+            pressButtonDelayedAndRecursive(currentButtons, currentIndex);
+        }
+        console.log("timeline play");
+        window._anime_timeline.play();
     }
 
     window._anime_pause = pause;

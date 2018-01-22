@@ -61,6 +61,6 @@
         }
     }
 
-    window._dynamics_add_pause_function(doResume);
-    window._dynamics_add_resume_function(doPause);
+    window._dynamics_add_pause_function(doPause);
+    window._dynamics_add_resume_function(doResume);
 })();

@@ -13,4 +13,5 @@ export const slidePlotly = (slideId) => {
         .style("z-index", 1000)
         .text("plotly.js")
 
+    return plotlyDemo;
 }

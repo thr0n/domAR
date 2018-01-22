@@ -14,15 +14,15 @@ export class Slides {
         this.slides = [];
     }
 
-    create(num) {
+    create(ids) {
         const that = this;
 
         this.selection()
-            .data(_.range(num))
+            .data(ids)
             .enter()
             .append(SLIDE_ELEMENT)
             .attr("class", SLIDE_CLASS)
-            .attr("id", d => "slide-" + d)
+            .attr("id", d => d)
             .style("width", this.width + "px")
             .style("height", this.height + "px");
 

@@ -11,19 +11,16 @@
     }
 
     function doPause() {
-        window._dynamics_spinner_pause();
-        window._dynamics_basics_pause();
-        window._dynamics_button_pause();
-        window._dynamics_pin_pause();
-        window._dynamics_dots_pause();
+        pauseFunctions.forEach(function (pauseFunction) {
+            pauseFunction();
+        })
+
     }
 
     function doResume() {
-        window._dynamics_spinner_resume();
-        window._dynamics_basics_resume();
-        window._dynamics_button_resume();
-        window._dynamics_pin_resume();
-        window._dynamics_dots_resume();
+        resumeFunctions.forEach(function (resumeFunction) {
+            resumeFunction();
+        })
     }
 
     window._dynamics_add_pause_function = addPauseFunction;

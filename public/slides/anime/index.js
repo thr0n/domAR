@@ -16,6 +16,8 @@ function animateProgress(easingName) {
     loop: true
   });
 
+  window._anime_timeline = timeline;
+
   timeline.add([
     {
       targets: '.axis.x',
