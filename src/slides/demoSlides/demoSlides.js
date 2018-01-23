@@ -105,11 +105,11 @@ const createPlotlySlide = (slides, slideId) => {
 export const demoSlides = (rootSelector) => {
 
     const slides = new Slides(rootSelector, width, height);
-    const selection = slides.create(["dynamics", "velocity", "anime", "plotly"]);
+    const selection = slides.create(["anime", "velocity", "dynamics", "plotly"]);
 
     createDynamicsSlide(slides, "dynamics");
-    createVelocitySlide(slides, "velocity");
     createAnimeSlide(slides, "anime");
+    createVelocitySlide(slides, "velocity");
     createPlotlySlide(slides, "plotly");
 
     return selection;
