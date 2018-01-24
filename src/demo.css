@@ -139,6 +139,7 @@ circle.background {
     color: rgba(127, 255, 255, 0.75);
 }
 
+/*
 button {
     color: rgba(127, 255, 255, 0.75);
     background: transparent;
@@ -156,6 +157,7 @@ button:active {
     color: #000000;
     background-color: rgba(0, 255, 255, 0.75);
 }
+*/
 
 iframe {
     z-index: -1000;

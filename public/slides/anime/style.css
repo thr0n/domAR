@@ -133,7 +133,7 @@
   background: #FF1461;
   border-radius: 50%;
 }
-svg {
+.anime svg {
   overflow: visible;
   position: relative;
   z-index: 1;

@@ -13,11 +13,6 @@
     padding: 0;
     overflow: visible;
 }
-.dynamics button svg {
-    position: absolute;
-    left: 0;
-    top: -55px;
-}
 .dynamics button span {
     position: absolute;
     top: 0;
