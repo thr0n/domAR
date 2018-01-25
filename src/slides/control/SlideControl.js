@@ -14,18 +14,41 @@ class SlideControl {
         this.configs[slideId] = config;
     }
 
-    pauseJs(slideId) {
+    doForAll(fctName) {
+        _.forOwn(this.configs, (config) => {
+            this.doForOneWithConfig(config, fctName);
+        })
+    }
+
+    doForOneWithSlideId(slideId, fctName) {
         const config = this.configs[slideId];
-        if(!_.isEmpty(config) && fct.isFunction(config.pauseFunction)) {
-            config.pauseFunction();
+        this.doForOneWithConfig(config, fctName);
+    }
+
+    doForOneWithConfig(config, fctName) {
+        if(!_.isEmpty(config)) {
+            const configFct = config[fctName];
+            if(fct.isFunction(configFct)) {
+                configFct();
+            }
         }
     }
 
-    resumeJs(slideId) {
-        const config = this.configs[slideId];
-        if(fct.isFunction(config.resumeFunction)) {
-            config.resumeFunction();
+    doForOneOrForAll(param, fctName) {
+        if(param == ":all") {
+            this.doForAll(fctName);
         }
+        else {
+            this.doForOneWithSlideId(param, fctName);
+        }
+    }
+
+    pauseJs(param) {
+        this.doForOneOrForAll(param, "pauseFunction");
+    }
+
+    resumeJs(param) {
+        this.doForOneOrForAll(param, "resumeFunction");
     }
 }
 
