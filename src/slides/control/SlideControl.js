@@ -16,16 +16,16 @@ class SlideControl {
 
     doForAll(fctName) {
         _.forOwn(this.configs, (config) => {
-            this.doForOneWithConfig(config, fctName);
+            SlideControl.doForOneWithConfig(config, fctName);
         })
     }
 
     doForOneWithSlideId(slideId, fctName) {
         const config = this.configs[slideId];
-        this.doForOneWithConfig(config, fctName);
+        SlideControl.doForOneWithConfig(config, fctName);
     }
 
-    doForOneWithConfig(config, fctName) {
+    static doForOneWithConfig(config, fctName) {
         if(!_.isEmpty(config)) {
             const configFct = config[fctName];
             if(fct.isFunction(configFct)) {
