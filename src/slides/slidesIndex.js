@@ -1,14 +1,16 @@
-import {setArPosition, TYPE_RING} from '../arPositions';
+import {setArPositionRotation, TYPE_RING} from '../arPositions';
 import {init} from '../argonApp';
 import './slides.css';
-import {socket} from './control/commandHub';
+import {CommandHub} from './control/commandHub';
 
 import {demoSlides} from './demoSlides/demoSlides';
 
 export const initSlides = (rootSelector) => {
+    new CommandHub();
+
     const {root} = init();
     const selection = demoSlides(rootSelector);
     selection.each(function (d, i) {
-        setArPosition(this, root, TYPE_RING, i, selection.size());
+        setArPositionRotation(this, root, TYPE_RING, i, selection.size());
     });
 }

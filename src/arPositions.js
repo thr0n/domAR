@@ -93,33 +93,30 @@ const addToRoot = (that, root, position, rotation) => {
     root.add(object);
 }
 
-export const setArPosition = (that, root, type, i, num) => {
+export const getArPositionRotation = (type, i, num) => {
     switch (type) {
         case TYPE_HELIX: {
-            const {position, rotation} = helix(num, i);
-            addToRoot(that, root, position, rotation);
-            break;
+            return helix(num, i);
         }
 
         case TYPE_SPHERE: {
-            const {position, rotation} = sphere(num, i);
-            addToRoot(that, root, position, rotation);
-            break;
+            return sphere(num, i);
         }
 
         case TYPE_RING: {
-            const {position, rotation} = ring(num, i);
-            addToRoot(that, root, position, rotation);
-            break;
+            return ring(num, i);
         }
 
         case TYPE_SPHERE_RANDOM: {
-            const {position, rotation} = randomSphere(i);
-            addToRoot(that, root, position, rotation);
-            break;
+            return randomSphere(i);
         }
 
         default:
     }
+}
+
+export const setArPositionRotation = (that, root, type, i, num) => {
+    const {position, rotation} = getArPositionRotation(type, i, num);
+    addToRoot(that, root, position, rotation);
 }
 
