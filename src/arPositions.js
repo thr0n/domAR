@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
 import {THREE} from './threeHelper';
 
+import {ObjectData} from './ObjectData';
+
 export const TYPE_HELIX = "helix";
 export const TYPE_SPHERE = "sphere";
 export const TYPE_SPHERE_RANDOM = "sphere-random";
@@ -82,41 +84,58 @@ export const ring = (numberOfBodies, i) => {
     return ring;
 };
 
-const addToRoot = (that, root, position, rotation) => {
-    const object = new THREE.CSS3DObject(that);
-
+const setPositionRotationOnObject = (object, position, rotation) => {
     Object.assign(object.position, position);
     object.rotation.x = rotation.x;
     object.rotation.y = rotation.y;
     object.rotation.z = rotation.z;
+}
 
+const addToRoot = (that, root, position, rotation) => {
+    const object = new THREE.CSS3DObject(that);
+
+    setPositionRotationOnObject(object, position, rotation);
     root.add(object);
+
+    return object;
 }
 
 export const getArPositionRotation = (type, i, num) => {
+    let three3dObject;
+
     switch (type) {
         case TYPE_HELIX: {
-            return helix(num, i);
+             three3dObject = helix(num, i);
         }
 
         case TYPE_SPHERE: {
-            return sphere(num, i);
+            three3dObject = sphere(num, i);
         }
 
         case TYPE_RING: {
-            return ring(num, i);
+            three3dObject = ring(num, i);
         }
 
         case TYPE_SPHERE_RANDOM: {
-            return randomSphere(i);
+            three3dObject = randomSphere(i);
         }
 
         default:
     }
+
+    const {position, rotation} = three3dObject;
+    return {position, rotation};
+}
+
+const addDataToObject = (object, type, index, totalNum) => {
+    const objectData = new ObjectData(index, type, totalNum);
+    object._data = objectData;
 }
 
 export const setArPositionRotation = (that, root, type, i, num) => {
     const {position, rotation} = getArPositionRotation(type, i, num);
-    addToRoot(that, root, position, rotation);
-}
+    const object = addToRoot(that, root, position, rotation);
+    addDataToObject(object, type, i, num);
 
+    return object;
+}

@@ -14,6 +14,18 @@ class SlideControl {
         this.configs[slideId] = config;
     }
 
+    addObject(slideId, object) {
+        const config = this.configs[slideId];
+        if(_.isObject(config)) {
+            config.object = object;
+        }
+    }
+
+    getAllObjects() {
+        const allObjects = _.map(this.configs, (config) => config.object);
+        return allObjects;
+    }
+
     doForAll(fctName) {
         _.forOwn(this.configs, (config) => {
             SlideControl.doForOneWithConfig(config, fctName);
