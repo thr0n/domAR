@@ -26,6 +26,10 @@ export const execute = (commandStr) => {
             slideControl.resumeJs(command.slideId);
             break;
 
+        case "next":
+            slideControl.nextSlide();
+            break;
+
         default:
             console.log("cannot execute");
             console.log(command);

@@ -1,9 +1,8 @@
 import {getArPositionRotation} from './arPositions';
-import {slideControl} from './slides/control/SlideControl';
 
 const TWEEN = require('@tweenjs/tween.js');
 
-const DEFAULT_DURATION = 5000;
+const DEFAULT_DURATION = 1000;
 
 const nextPositionAndRotation = (object) => {
     const type = object._data.getType();
@@ -32,8 +31,7 @@ export const next = (object) => {
     object.setIndex(nextIndex);
 }
 
-export const allNext = () => {
-    const allObjects = slideControl.getAllObjects();
+export const allNext = (allObjects) => {
     allObjects.forEach((object) => {
         next(object);
     })

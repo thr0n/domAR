@@ -2,6 +2,8 @@ import * as _ from 'lodash';
 
 import * as fct from '../../util/fct';
 
+import * as arTransform from '../../arTransform';
+
 class SlideControl {
 
     constructor() {
@@ -22,7 +24,7 @@ class SlideControl {
     }
 
     getAllObjects() {
-        const allObjects = _.map(this.configs, (config) => config.object);
+        const allObjects = _.map(this.configs, 'object');
         return allObjects;
     }
 
@@ -61,6 +63,11 @@ class SlideControl {
 
     resumeJs(param) {
         this.doForOneOrForAll(param, "resumeFunction");
+    }
+
+    nextSlide() {
+        const allObjects = this.getAllObjects();
+        arTransform.allNext(allObjects);
     }
 }
 

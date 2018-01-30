@@ -5,8 +5,8 @@ function parse(command) {
     });
 
     return {
-        command: parts[0],
-        slideId: parts[1]
+        command: parts.length > 0 ?  parts[0] : "",
+        slideId: parts.length > 1 ?  parts[1] : ""
     }
 }
 
