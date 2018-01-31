@@ -17,7 +17,7 @@ const createDummySlides = (slides, startIndex, numberOfSlides) => {
 }
 
 const createAnimeSlide = (slides, slideId) => {
-    htmlSlide(slideId, {
+    return htmlSlide(slideId, {
         pathToHtml: "slides/anime/anime.html",
         pathToJsArray: [
             "slides/anime/ymlarg.js",
@@ -39,7 +39,7 @@ const createAnimeSlide = (slides, slideId) => {
 }
 
 const createDynamicsSlide = (slides, slideId) => {
-    htmlSlide(slideId, {
+    return htmlSlide(slideId, {
         pathToHtml: "slides/dynamics/dynamics.html",
         pauseFunction: () => {
             window._dynamics_pause();
@@ -85,6 +85,8 @@ const createVelocitySlide = (slides, slideId) => {
         slide.setResetInterval(15000);
     }
     start();
+    
+    return slide.getStartedPromise();
 }
 
 const createPlotlySlide = (slides, slideId) => {
@@ -102,15 +104,17 @@ const createPlotlySlide = (slides, slideId) => {
     slideControl.registerConfig(slideId, config);
 }
 
-export const demoSlides = (rootSelector) => {
+export const demoSlides = async (rootSelector) => {
 
     const slides = new Slides(rootSelector, width, height);
     const selection = slides.create(["anime", "velocity", "dynamics", "plotly"]);
 
-    createDynamicsSlide(slides, "dynamics");
-    createAnimeSlide(slides, "anime");
-    createVelocitySlide(slides, "velocity");
-    createPlotlySlide(slides, "plotly");
+    await Promise.all([
+        createDynamicsSlide(slides, "dynamics"),
+        createAnimeSlide(slides, "anime"),
+        createVelocitySlide(slides, "velocity"),
+        createPlotlySlide(slides, "plotly")
+    ]);
 
     return selection;
 }

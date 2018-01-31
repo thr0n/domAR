@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import * as log from 'loglevel';
 
 import * as fct from '../../util/fct';
 
@@ -11,12 +12,14 @@ class SlideControl {
     }
 
     registerConfig(slideId, config) {
-        console.log("registered: " + slideId);
-        console.dir(config);
+        log.info("registered: " + slideId);
+        log.info(config);
         this.configs[slideId] = config;
     }
 
     addObject(slideId, object) {
+        log.info("add object to slideId: " + slideId);
+        log.info(object);
         const config = this.configs[slideId];
         if(_.isObject(config)) {
             config.object = object;

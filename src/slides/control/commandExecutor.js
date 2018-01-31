@@ -1,3 +1,5 @@
+import * as log from 'loglevel';
+
 import {slideControl} from './SlideControl';
 
 const parse = (commandStr) => {
@@ -5,7 +7,7 @@ const parse = (commandStr) => {
         const command = JSON.parse(commandStr);
         return  command;
     } catch (e) {
-        console.log(e);
+        log.error(e);
         return {
             command: "error"
         }
@@ -17,21 +19,21 @@ export const execute = (commandStr) => {
 
     switch (command.command) {
         case "pause":
-            console.log("pause");
+            log.info("command: pause");
             slideControl.pauseJs(command.slideId);
             break;
 
         case "resume":
-            console.log("resume");
+            log.info("command: resume");
             slideControl.resumeJs(command.slideId);
             break;
 
         case "next":
+            log.info("command: next");
             slideControl.nextSlide();
             break;
 
         default:
-            console.log("cannot execute");
-            console.log(command);
+            log.error("cannot execute: " + command);
     }
 }

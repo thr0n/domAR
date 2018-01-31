@@ -18,9 +18,12 @@ const tween = 0;
 export const next = (object) => {
     const {nextIndex, position, rotation} = nextPositionAndRotation(object);
 
+    console.log("start tween: " + object._data.getIndex());
+
     new TWEEN.Tween(object.position)
         .to({x: position.x, y: position.y, z: position.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
         .easing(TWEEN.Easing.Exponential.InOut)
+        .onUpdate(() => console.log(object.position))
         .start();
 
     new TWEEN.Tween(object.rotation)
@@ -28,7 +31,7 @@ export const next = (object) => {
         .easing(TWEEN.Easing.Exponential.InOut)
         .start();
 
-    object.setIndex(nextIndex);
+    object._data.setIndex(nextIndex);
 }
 
 export const allNext = (allObjects) => {

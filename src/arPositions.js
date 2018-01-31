@@ -104,21 +104,24 @@ export const getArPositionRotation = (type, i, num) => {
     let three3dObject;
 
     switch (type) {
-        case TYPE_HELIX: {
+        case TYPE_HELIX:
              three3dObject = helix(num, i);
-        }
+             break;
 
-        case TYPE_SPHERE: {
+
+        case TYPE_SPHERE:
             three3dObject = sphere(num, i);
-        }
+            break;
 
-        case TYPE_RING: {
+
+        case TYPE_RING:
             three3dObject = ring(num, i);
-        }
+            break;
 
-        case TYPE_SPHERE_RANDOM: {
+
+        case TYPE_SPHERE_RANDOM:
             three3dObject = randomSphere(i);
-        }
+            break;
 
         default:
     }

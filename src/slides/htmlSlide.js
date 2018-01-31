@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import * as _ from 'lodash';
+import * as log from 'loglevel';
 
 import * as fct from '../util/fct';
 import {waitForReadyPromise} from '../util/waitForReady';
@@ -35,6 +36,7 @@ export const htmlSlide = (slideId, config) => {
         loadHtml(slideId, config.pathToHtml);
         appendScripts([...config.pathToJsArray, ...config.scriptThingyArray]).then(() => {
             waitForReadyPromise(config.readyFunction, "final").then(() => {
+                console.log("ready: " + slideId);
                 slideControl.registerConfig(slideId, config);
                 fct.call(config.startFunction);
                 resolve();
@@ -50,6 +52,10 @@ export class HtmlSlide {
         this.config = config;
 
         this.startedPromise = htmlSlide(slideId, config);
+    }
+
+    getStartedPromise() {
+        return this.startedPromise;
     }
 
     setPause(pauseIsOn) {
