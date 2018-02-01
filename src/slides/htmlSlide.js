@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import * as _ from 'lodash';
-import * as log from 'loglevel';
 
+import {log} from '../util/log';
 import * as fct from '../util/fct';
 import {waitForReadyPromise} from '../util/waitForReady';
 import {appendScripts} from '../util/loadScript';
@@ -36,7 +36,7 @@ export const htmlSlide = (slideId, config) => {
         loadHtml(slideId, config.pathToHtml);
         appendScripts([...config.pathToJsArray, ...config.scriptThingyArray]).then(() => {
             waitForReadyPromise(config.readyFunction, "final").then(() => {
-                console.log("ready: " + slideId);
+                log.info("ready: " + slideId);
                 slideControl.registerConfig(slideId, config);
                 fct.call(config.startFunction);
                 resolve();

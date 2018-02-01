@@ -1,5 +1,4 @@
-import * as log from 'loglevel';
-
+import {log} from '../../util/log';
 import {slideControl} from './SlideControl';
 
 const parse = (commandStr) => {
@@ -33,7 +32,11 @@ export const execute = (commandStr) => {
             slideControl.nextSlide();
             break;
 
+        case "connected":
+            // do nothing
+            break;
+
         default:
-            log.error("cannot execute: " + command);
+            log.error("cannot execute: " + commandStr);
     }
 }

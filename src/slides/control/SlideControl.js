@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
-import * as log from 'loglevel';
 
+import {log} from '../../util/log';
 import * as fct from '../../util/fct';
 
 import * as arTransform from '../../arTransform';
@@ -9,6 +9,10 @@ class SlideControl {
 
     constructor() {
         this.configs = {};
+    }
+
+    setTWEEN(TWEEN) {
+        this.TWEEN = TWEEN;
     }
 
     registerConfig(slideId, config) {
@@ -70,7 +74,7 @@ class SlideControl {
 
     nextSlide() {
         const allObjects = this.getAllObjects();
-        arTransform.allNext(allObjects);
+        arTransform.allNext(allObjects, this.TWEEN);
     }
 }
 

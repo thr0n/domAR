@@ -84,7 +84,7 @@ export const ring = (numberOfBodies, i) => {
     return ring;
 };
 
-const setPositionRotationOnObject = (object, position, rotation) => {
+export const setPositionRotationOnObject = (object, position, rotation) => {
     Object.assign(object.position, position);
     object.rotation.x = rotation.x;
     object.rotation.y = rotation.y;

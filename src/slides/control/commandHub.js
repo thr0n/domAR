@@ -1,3 +1,5 @@
+import {log} from '../../util/log';
+
 import {execute} from './commandExecutor';
 
 const host = window.location.hostname;
@@ -9,7 +11,7 @@ export class CommandHub {
 
         this.socket.onmessage = function (event) {
             const commandStr = event.data;
-            console.log(commandStr);
+            log.info(commandStr);
             execute(commandStr);
         }
     }

@@ -1,12 +1,14 @@
-import {waitForReady} from "./waitForReady";
 import * as _ from "lodash";
+
+import {log} from './log';
+import {waitForReady} from "./waitForReady";
 
 const _loadScript = (pathToScript) => {
     return new Promise((resolve) => {
         const scriptElement = document.createElement("script");
         scriptElement.type = "text/javascript";
         scriptElement.onload = () => {
-            console.log("script: " + pathToScript + " loaded");
+            log.info("script: " + pathToScript + " loaded");
             resolve();
         }
         document.head.appendChild(scriptElement);
@@ -18,7 +20,7 @@ const _loadScriptAndWait = (pathToScriptWithReadyFunction) => {
     return new Promise((resolve, reject) => {
         if(typeof(pathToScriptWithReadyFunction) === 'object' && !_.isEmpty(pathToScriptWithReadyFunction.pathToScript)) {
             _loadScript(pathToScriptWithReadyFunction.pathToScript).then(() => {
-                console.log("wait for ready for script: " + pathToScriptWithReadyFunction.pathToScript);
+                log.info("wait for ready for script: " + pathToScriptWithReadyFunction.pathToScript);
                 waitForReady(pathToScriptWithReadyFunction.readyFunction, resolve, reject, pathToScriptWithReadyFunction.pathToScript);
             })
         }
