@@ -1,0 +1,28 @@
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+}
+
+.char {
+    margin: .1em;
+    height: 3em;
+    width: 3em;
+    background-color: pink;
+    font-family: Montserrat, sans-serif;
+    font-size: 5em;
+    text-align: center;
+    line-height: 3em;
+    float: left;
+}
+
+.titletext {
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+    font-family: Montserrat, sans-serif;
+    font-size: 5em;
+    text-align: center;
+    line-height: 3em;
+    float: left;
+}

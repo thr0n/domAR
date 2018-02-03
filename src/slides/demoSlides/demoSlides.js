@@ -89,31 +89,12 @@ const createVelocitySlide = (slides, slideId) => {
     return slide.getStartedPromise();
 }
 
-const createPlotlySlide = (slides, slideId) => {
-    const plotlyDemo = slidePlotly(slideId);
-
-    const config = {
-        pauseFunction: () => {
-            plotlyDemo.doPause();
-        },
-        resumeFunction: () => {
-            plotlyDemo.doResume();
-        }
-    }
-
-    slideControl.registerConfig(slideId, config);
-}
-
 export const demoSlides = async (rootSelector) => {
 
     const slides = new Slides(rootSelector, width, height);
     const selection = slides.create(["anime", "velocity", "dynamics", "plotly"]);
 
     await Promise.all([
-        createDynamicsSlide(slides, "dynamics"),
-        createAnimeSlide(slides, "anime"),
-        createVelocitySlide(slides, "velocity"),
-        createPlotlySlide(slides, "plotly")
     ]);
 
     return selection;
