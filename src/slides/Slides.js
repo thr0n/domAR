@@ -12,10 +12,12 @@ export class Slides {
         this.width = width;
         this.height = height;
         this.slides = [];
+        this.ids = [];
     }
 
     create(ids) {
-        const that = this;
+        const thisSlides = this;
+        this.ids = ids;
 
         this.selection()
             .data(ids)
@@ -28,10 +30,14 @@ export class Slides {
 
         this.selection()
             .each(function(d, i) {
-                that.slides[i] = this;
+                thisSlides.slides[i] = this;
             })
 
         return this.selection()
+    }
+
+    addOne(newId) {
+        this.create([...this.ids, newId]);
     }
 
     getSlide(i) {
