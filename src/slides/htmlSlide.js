@@ -8,6 +8,7 @@ import {appendScripts} from '../util/loadScript';
 import {slideControl} from './control/SlideControl';
 
 const loadHtml = (slideId, pathToHtml) => {
+    log.info("load html: " + pathToHtml);
     $("#" + slideId).load(pathToHtml);
 }
 

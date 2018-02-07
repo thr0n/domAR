@@ -1,16 +1,14 @@
 import {log} from '../util/log';
 import {setArPositionRotation, TYPE_RING} from '../arPositions';
 import {init} from '../argonApp';
-import './slides.css';
+//import './slides.css';
 import {CommandHub} from './control/commandHub';
 import {slideControl} from './control/SlideControl';
-
-import {demoSlides} from './demoSlides/demoSlides';
 
 const TWEEN = require('@tweenjs/tween.js');
 slideControl.setTWEEN(TWEEN);
 
-export const initSlides = async (rootSelector) => {
+export const initSlides = async (rootSelector, slideCreateFunction) => {
     new CommandHub();
 
     const withAr = false;
@@ -22,7 +20,7 @@ export const initSlides = async (rootSelector) => {
             TWEEN.update();
         });
 
-        const selection = await demoSlides(rootSelector);
+        const selection = await slideCreateFunction(rootSelector);
         log.info("demo slides ready")
         selection.each(function (id, i) {
             const object = setArPositionRotation(this, root, TYPE_RING, i, selection.size());
@@ -30,6 +28,6 @@ export const initSlides = async (rootSelector) => {
         });
     }
     else {
-
+        const selection = await slideCreateFunction(rootSelector);
     }
 }
