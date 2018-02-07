@@ -41,7 +41,8 @@ switch (bodyType) {
         break;
 
     case BODY_TYPE_SLIDE_DEMO:
-        initSlides("#container", demoSlides)
+        initSlides("#container", demoSlides);
+        break;
 
     default:
         initSlides("#container", slide3dd3.init);
