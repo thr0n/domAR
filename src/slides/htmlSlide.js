@@ -16,7 +16,7 @@ const clearHtml = (slideId) => {
     $("#" + slideId).empty();
 }
 
-const appendStyles = (pathToCssArray) => {
+export const appendStyles = (pathToCssArray) => {
     if(!_.isEmpty(pathToCssArray)) {
         pathToCssArray.forEach((pathToCss) => {
             const linkElement = document.createElement("link");
