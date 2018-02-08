@@ -11,7 +11,7 @@ slideControl.setTWEEN(TWEEN);
 export const initSlides = async (rootSelector, slideCreateFunction) => {
     new CommandHub();
 
-    const withAr = false;
+    const withAr = true;
 
     if(withAr) {
         const {root, app} = init();

@@ -19,7 +19,7 @@ export const init = async (rootSelector) => {
     const slides = new Slides(rootSelector, width, height);
 
     await Promise.all([
-        //_title(slides, "title"),
+        _title(slides, "title"),
         _css3d(slides, "css3d")
     ])
 
