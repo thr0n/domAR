@@ -9,7 +9,7 @@ import {initSlides} from './slides/slidesIndex';
 import {demoSlides} from "./slides/demoSlides/demoSlides";
 import * as slide3dd3 from "./slides/3dd3/slides3dd3";
 
-import {appendStyles} from './slides/htmlSlide';
+import {appendStyles} from './util/loadStyles';
 
 const BODY_TYPE_RADAR = "radar";
 const BODY_TYPE_CUBE = "cube";

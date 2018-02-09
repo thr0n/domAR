@@ -6,6 +6,7 @@ import * as fct from '../util/fct';
 import {waitForReadyPromise} from '../util/waitForReady';
 import {appendScripts, appendScriptsWithReadyFunction} from '../util/loadScript';
 import {slideControl} from './control/SlideControl';
+import {appendStyles} from "../util/loadStyles";
 
 const loadHtml = (slideId, pathToHtml) => {
     log.info("load html: " + pathToHtml);
@@ -14,18 +15,6 @@ const loadHtml = (slideId, pathToHtml) => {
 
 const clearHtml = (slideId) => {
     $("#" + slideId).empty();
-}
-
-export const appendStyles = (pathToCssArray) => {
-    if(!_.isEmpty(pathToCssArray)) {
-        pathToCssArray.forEach((pathToCss) => {
-            const linkElement = document.createElement("link");
-            linkElement.setAttribute("rel", "stylesheet");
-            linkElement.setAttribute("type", "text/css");
-            linkElement.setAttribute("href", pathToCss);
-            document.head.appendChild(linkElement);
-        })
-    }
 }
 
 export const htmlSlide = (slideId, config) => {
