@@ -59809,7 +59809,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommandHub; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_log__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__commandExecutor__ = __webpack_require__(553);
-function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var host=window.location.hostname;var port=1337;var CommandHub=function CommandHub(){_classCallCheck(this,CommandHub);this.socket=new WebSocket("ws://"+host+":"+port);this.socket.onmessage=function(event){var commandStr=event.data;__WEBPACK_IMPORTED_MODULE_0__util_log__["a" /* log */].info(commandStr);Object(__WEBPACK_IMPORTED_MODULE_1__commandExecutor__["a" /* execute */])(commandStr);};};
+function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var host=window.location.hostname;var port=1337;var CommandHub=function CommandHub(){_classCallCheck(this,CommandHub);if(!host.startsWith("localhost")){return;}this.socket=new WebSocket("ws://"+host+":"+port);this.socket.onmessage=function(event){var commandStr=event.data;__WEBPACK_IMPORTED_MODULE_0__util_log__["a" /* log */].info(commandStr);Object(__WEBPACK_IMPORTED_MODULE_1__commandExecutor__["a" /* execute */])(commandStr);};};
 
 /***/ }),
 /* 553 */
@@ -71396,4 +71396,4 @@ var staticSlide=function staticSlide(slides,slideId,pathToHtml){slides.addOne(sl
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.6887c541.js.map
+//# sourceMappingURL=main.881de744.js.map
