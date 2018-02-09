@@ -7,6 +7,10 @@ const port = 1337;
 
 export class CommandHub {
     constructor() {
+        if(!host.startsWith("localhost")) {
+            return
+        }
+        
         this.socket = new WebSocket("ws://" + host + ":" + port);
 
         this.socket.onmessage = function (event) {
