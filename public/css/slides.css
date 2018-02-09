@@ -12,6 +12,10 @@ div.title {
     font-family: sans-serif;
 }
 
+div.title.dark {
+    color: black;
+}
+
 body {
     position: absolute;
     width: 100%;

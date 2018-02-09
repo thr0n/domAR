@@ -4,7 +4,7 @@ import * as _ from 'lodash';
 import {log} from '../util/log';
 import * as fct from '../util/fct';
 import {waitForReadyPromise} from '../util/waitForReady';
-import {appendScripts} from '../util/loadScript';
+import {appendScripts, appendScriptsWithReadyFunction} from '../util/loadScript';
 import {slideControl} from './control/SlideControl';
 
 const loadHtml = (slideId, pathToHtml) => {
@@ -35,14 +35,13 @@ export const htmlSlide = (slideId, config) => {
 
         appendStyles(config.pathToCssArray);
         loadHtml(slideId, config.pathToHtml);
-        appendScripts([...config.pathToJsArray, ...config.scriptThingyArray]).then(() => {
-            waitForReadyPromise(config.readyFunction, "final").then(() => {
-                log.info("ready: " + slideId);
-                slideControl.registerConfig(slideId, config);
-                fct.call(config.startFunction);
-                resolve();
-            })
-        });
+
+        appendScriptsWithReadyFunction([...config.pathToJsArray, ...config.scriptThingyArray], config.readyFunction, "final").then(() => {
+            log.info("ready: " + slideId);
+            slideControl.registerConfig(slideId, config);
+            fct.call(config.startFunction);
+            resolve();
+        })
     })
 }
 

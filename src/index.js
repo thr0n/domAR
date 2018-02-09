@@ -26,10 +26,12 @@ switch (bodyType) {
         break;
 
     case BODY_TYPE_RADAR:
+        appendStyles(['css/demo.css']);
         initRadars();
         break;
 
     case BODY_TYPE_SLIDE_DEMO:
+        appendStyles(['css/slides.css']);
         initSlides("#container", demoSlides);
         break;
 

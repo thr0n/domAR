@@ -3,6 +3,7 @@ import {$} from '../../jquery/jquery-common';
 import {Slides} from '../Slides';
 import {slidePlotly} from './slidePlotly';
 import {htmlSlide, HtmlSlide} from '../htmlSlide';
+import {appendScriptsWithReadyFunction} from '../../util/loadScript';
 import {createDummySlide} from '../dummySlide';
 import {slideControl} from '../control/SlideControl';
 
@@ -90,18 +91,20 @@ const createVelocitySlide = (slides, slideId) => {
 }
 
 const createPlotlySlide = (slides, slideId) => {
-    const plotlyDemo = slidePlotly(slideId);
+    appendScriptsWithReadyFunction(['lib/plotly.min.js'], () => window.Plotly, "wait for Plotly").then(() => {
+        const plotlyDemo = slidePlotly(slideId);
 
-    const config = {
-        pauseFunction: () => {
-            plotlyDemo.doPause();
-        },
-        resumeFunction: () => {
-            plotlyDemo.doResume();
+        const config = {
+            pauseFunction: () => {
+                plotlyDemo.doPause();
+            },
+            resumeFunction: () => {
+                plotlyDemo.doResume();
+            }
         }
-    }
 
-    slideControl.registerConfig(slideId, config);
+        slideControl.registerConfig(slideId, config);
+    })
 }
 
 export const demoSlides = async (rootSelector) => {

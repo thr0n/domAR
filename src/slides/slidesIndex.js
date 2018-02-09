@@ -1,7 +1,6 @@
 import {log} from '../util/log';
 import {setArPositionRotation, TYPE_RING} from '../arPositions';
 import {init} from '../argonApp';
-//import './slides.css';
 import {CommandHub} from './control/commandHub';
 import {slideControl} from './control/SlideControl';
 

@@ -1,5 +1,4 @@
 import * as _ from 'lodash';
-import {Plotly} from './plotly-common';
 
 const n = 100;
 const dt = 0.015;
@@ -41,7 +40,7 @@ export class PlotlyDemo {
     update() {
         this.compute();
 
-        Plotly.animate(this.containerId, {
+        window.Plotly.animate(this.containerId, {
             data: [{x: this.x, y: this.z}]
         }, {
             transition: {
@@ -63,7 +62,7 @@ export class PlotlyDemo {
     }
 
     startDemo() {
-        Plotly.plot(this.containerId, [{
+        window.Plotly.plot(this.containerId, [{
             x: this.x,
             y: this.z,
             mode: 'markers'

@@ -1,7 +1,7 @@
 import * as _ from "lodash";
 
 import {log} from './log';
-import {waitForReady} from "./waitForReady";
+import {waitForReady, waitForReadyPromise} from "./waitForReady";
 
 const _loadScript = (pathToScript) => {
     return new Promise((resolve) => {
@@ -54,3 +54,10 @@ export const appendScripts = (scriptThingyArray) => {
     })
 }
 
+export const appendScriptsWithReadyFunction = (scriptThingyArray, readyFunction, readyFunctionName) => {
+    return new Promise((resolve, reject) => {
+        appendScripts(scriptThingyArray).then(() => {
+            waitForReadyPromise(readyFunction, readyFunctionName).then(() => resolve(), (err) => reject(err));
+        })
+    })
+}
