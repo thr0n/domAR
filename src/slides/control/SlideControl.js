@@ -21,6 +21,14 @@ class SlideControl {
         this.configs[slideId] = config;
     }
 
+    createAndRegisterConfig(slideId) {
+        log.info("created new config for: " + slideId);
+        const config = {};
+        this.registerConfig(slideId, config);
+
+        return config;
+    }
+
     addObject(slideId, object) {
         log.info("add object to slideId: " + slideId);
         log.info(object);
