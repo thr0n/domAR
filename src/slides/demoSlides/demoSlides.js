@@ -91,19 +91,17 @@ const createVelocitySlide = (slides, slideId) => {
 }
 
 const createPlotlySlide = (slides, slideId) => {
+    const config = slideControl.createAndRegisterConfig(slideId);
+
     appendScriptsWithReadyFunction(['lib/plotly.min.js'], () => window.Plotly, "wait for Plotly").then(() => {
         const plotlyDemo = slidePlotly(slideId);
 
-        const config = {
-            pauseFunction: () => {
-                plotlyDemo.doPause();
-            },
-            resumeFunction: () => {
-                plotlyDemo.doResume();
-            }
-        }
-
-        slideControl.registerConfig(slideId, config);
+        config.pauseFunction = () => {
+            plotlyDemo.doPause();
+        };
+        config.resumeFunction = () => {
+            plotlyDemo.doResume();
+        };
     })
 }
 
