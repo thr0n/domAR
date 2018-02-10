@@ -7,12 +7,21 @@ import {slideControl} from './control/SlideControl';
 const TWEEN = require('@tweenjs/tween.js');
 slideControl.setTWEEN(TWEEN);
 
-export const initSlides = async (rootSelector, slideCreateFunction) => {
+const startSlideShow = (slideShowIntervalInSeconds) => {
+    if(slideShowIntervalInSeconds > 0) {
+        setInterval(() => {
+            slideControl.nextSlide();
+        }, slideShowIntervalInSeconds * 1000);
+    }
+}
+
+export const initSlides = async (rootSelector, slideCreateFunction, param) => {
     new CommandHub();
 
     const withAr = true;
 
     if(withAr) {
+        const slideShowIntervalInSeconds = param;
         const {root, app} = init();
 
         app.updateEvent.on(() => {
@@ -25,6 +34,8 @@ export const initSlides = async (rootSelector, slideCreateFunction) => {
             const object = setArPositionRotation(this, root, TYPE_RING, i, selection.size());
             slideControl.addObject(id, object);
         });
+
+        startSlideShow(slideShowIntervalInSeconds);
     }
     else {
         const selection = await slideCreateFunction(rootSelector);

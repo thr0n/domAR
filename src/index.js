@@ -17,12 +17,12 @@ const BODY_TYPE_SLIDE_DEMO = "slideDemo";
 const BODY_TYPE_SLIDE_3DD3 = "slide3dd3";
 
 const bodyType = query.firstParamSet([BODY_TYPE_SLIDE_DEMO, BODY_TYPE_CUBE, BODY_TYPE_RADAR, BODY_TYPE_SLIDE_3DD3]);
+const paramValue = query.paramValue(bodyType);
 
 switch (bodyType) {
     case BODY_TYPE_CUBE:
         appendStyles(['css/demo.css']);
-        const nameOfTextSet = query.paramValue(BODY_TYPE_CUBE);
-        initCubes(nameOfTextSet);
+        initCubes(paramValue);
         break;
 
     case BODY_TYPE_RADAR:
@@ -32,9 +32,9 @@ switch (bodyType) {
 
     case BODY_TYPE_SLIDE_DEMO:
         appendStyles(['css/slides.css']);
-        initSlides("#container", demoSlides);
+        initSlides("#container", demoSlides, paramValue);
         break;
 
     default:
-        initSlides("#container", slide3dd3.init);
+        initSlides("#container", slide3dd3.init, paramValue);
 }
