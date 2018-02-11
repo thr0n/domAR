@@ -4,6 +4,8 @@ import * as _ from 'lodash';
 import DrawText from './DrawText';
 import {hsla} from './color';
 
+import * as query from './util/query';
+
 const FRONT = "front";
 const LEFT = "left";
 const RIGHT = "right";
@@ -23,8 +25,10 @@ const START_PATH = "M 10, 10 m -7.5, 0 a 7.5,7.5 0 1,0 15,0 a 7.5,7.5 0 1,0 -15,
 const initialDirections = [FRONT, BACK, RIGHT, LEFT, TOP, BOTTOM];
 
 export const NUMBER_OF_CUBES = 6;
+const paramNumberOfCubes = query.paramValue("num");
+const numberOfCubes = paramNumberOfCubes || NUMBER_OF_CUBES;
 
-const cubeData = _.range(NUMBER_OF_CUBES).map(num => {
+const cubeData = _.range(numberOfCubes).map(num => {
     const hue = 360 / NUMBER_OF_CUBES * num;
     return {width: SIDE_LENGTH, height: SIDE_LENGTH, id: "cube-" + num, color: "hsla(" + hue + ",100%,50%,0.7)", hue: hue}
 });

@@ -1,8 +1,11 @@
+import * as _ from 'lodash';
+
 import {log} from '../util/log';
 import {setArPositionRotation, TYPE_RING} from '../arPositions';
 import {init} from '../argonApp';
 import {CommandHub} from './control/commandHub';
 import {slideControl} from './control/SlideControl';
+import * as query from '../util/query';
 
 const TWEEN = require('@tweenjs/tween.js');
 slideControl.setTWEEN(TWEEN);
@@ -18,9 +21,9 @@ const startSlideShow = (slideShowIntervalInSeconds) => {
 export const initSlides = async (rootSelector, slideCreateFunction, param) => {
     new CommandHub();
 
-    const withAr = true;
+    const selectedSlideId = query.paramValue("slide");
 
-    if(withAr) {
+    if(_.isEmpty(selectedSlideId)) {
         const slideShowIntervalInSeconds = param;
         const {root, app} = init();
 
@@ -38,6 +41,6 @@ export const initSlides = async (rootSelector, slideCreateFunction, param) => {
         startSlideShow(slideShowIntervalInSeconds);
     }
     else {
-        const selection = await slideCreateFunction(rootSelector);
+        const selection = await slideCreateFunction(rootSelector, selectedSlideId);
     }
 }
