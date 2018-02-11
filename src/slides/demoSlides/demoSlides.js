@@ -7,8 +7,13 @@ import {appendScriptsWithReadyFunction} from '../../util/loadScript';
 import {createDummySlide} from '../dummySlide';
 import {slideControl} from '../control/SlideControl';
 
-const width = window.innerWidth * 1.5;
-const height = window.innerHeight * 1.5;
+import * as query from '../../util/query';
+
+const paramFactor = query.paramValue("f");
+const factor = Number(paramFactor || 2.0);
+
+const width = window.innerWidth * factor;
+const height = window.innerHeight * factor;
 
 const createDummySlides = (slides, startIndex, numberOfSlides) => {
     for(let i = startIndex; i < startIndex + numberOfSlides; i++) {
