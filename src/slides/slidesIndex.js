@@ -6,6 +6,9 @@ import {init} from '../argonApp';
 import {CommandHub} from './control/commandHub';
 import {slideControl} from './control/SlideControl';
 import * as query from '../util/query';
+import * as slidAR from './slidAR/slidAR';
+
+window.slidAR = slidAR;
 
 const TWEEN = require('@tweenjs/tween.js');
 slideControl.setTWEEN(TWEEN);

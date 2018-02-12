@@ -36,13 +36,10 @@
 
 <script>
 
-    d3.selectAll("div.char")
-        .each(function(_, i) {
-            var element = this;
-            setTimeout(function () {
-                d3.select(element).classed("xaxis", true)
-            }, 3000 + i * 100)
-        })
+    setTimeout(function () {
+        window.slidAR.classUtil.setClass("div.char", "xaxis", 100);
+    }, 3000);
+
 </script>
 
 </body>

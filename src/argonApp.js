@@ -34,6 +34,16 @@ export const init = () => {
     return {root, app};
 }
 
+const setViewPort = (subview, renderer, hud, i) => {
+    const x = subview.viewport.x;
+    const y = subview.viewport.y;
+    const width = subview.viewport.width;
+    const height = subview.viewport.height;
+
+    renderer.setViewport(x, y, width, height, i);
+    hud.setViewport(x, y, width, height, i);
+}
+
 const renderFunc = (app, viewport, subViews, hud, camera, renderer, scene) => {
     renderer.setSize(viewport.width, viewport.height);
     hud.setSize(viewport.width, viewport.height);
@@ -53,13 +63,7 @@ const renderFunc = (app, viewport, subViews, hud, camera, renderer, scene) => {
         camera.projectionMatrix.fromArray(subview.frustum.projectionMatrix);
         camera.fov = THREE.Math.radToDeg(frustum.fovy);
 
-        const x = subview.viewport.x;
-        const y = subview.viewport.y;
-        const width = subview.viewport.width;
-        const height = subview.viewport.height;
-
-        renderer.setViewport(x, y, width, height, _i);
-        hud.setViewport(x, y, width, height, _i);
+        setViewPort(subview, renderer, hud, _i);
 
         renderer.render(scene, camera, _i);
         hud.render(_i);

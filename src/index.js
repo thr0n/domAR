@@ -1,4 +1,3 @@
-//import './demo.css'
 import 'materialize-css/dist/css/materialize.css';
 
 import * as query from './util/query';
@@ -10,6 +9,9 @@ import {demoSlides} from "./slides/demoSlides/demoSlides";
 import * as slide3dd3 from "./slides/3dd3/slides3dd3";
 
 import {appendStyles} from './util/loadStyles';
+
+import {slidAR} from './slides/slidAR/slidAR';
+window.slidAR = slidAR;
 
 const BODY_TYPE_RADAR = "radar";
 const BODY_TYPE_CUBE = "cube";
