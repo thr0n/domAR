@@ -1,5 +1,4 @@
 import * as d3 from 'd3';
-import * as _ from 'lodash';
 
 const SLIDE_ELEMENT = "div";
 const SLIDE_CLASS = "slide";

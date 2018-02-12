@@ -1,5 +1,3 @@
-import * as _ from 'lodash';
-
 import {Slides} from "../Slides";
 import {staticSlide} from "../../staticSlide";
 import * as slidesUtil from '../../slidesUtil';

@@ -64,7 +64,7 @@ class SlideControl {
     }
 
     doForOneOrForAll(param, fctName) {
-        if(param == ":all") {
+        if(param === ":all") {
             this.doForAll(fctName);
         }
         else {

@@ -1,10 +1,8 @@
 import $ from 'jquery';
-import * as _ from 'lodash';
 
 import {log} from '../util/log';
 import * as fct from '../util/fct';
-import {waitForReadyPromise} from '../util/waitForReady';
-import {appendScripts, appendScriptsWithReadyFunction} from '../util/loadScript';
+import {appendScriptsWithReadyFunction} from '../util/loadScript';
 import {slideControl} from './control/SlideControl';
 import {appendStyles} from "../util/loadStyles";
 

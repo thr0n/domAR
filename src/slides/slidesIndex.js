@@ -44,6 +44,6 @@ export const initSlides = async (rootSelector, slideCreateFunction, param) => {
         startSlideShow(slideShowIntervalInSeconds);
     }
     else {
-        const selection = await slideCreateFunction(rootSelector, selectedSlideId);
+        slideCreateFunction(rootSelector, selectedSlideId);
     }
 }
