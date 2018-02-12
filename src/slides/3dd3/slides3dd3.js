@@ -20,8 +20,8 @@ export const init = async (rootSelector, selectedSlideId) => {
     const slides = new Slides(rootSelector, width, height);
 
     await Promise.all([
-        slidesUtil.createSlide(_css3d, slides, "css3d", selectedSlideId),
         slidesUtil.createSlide(_title, slides, "title", selectedSlideId),
+        slidesUtil.createSlide(_css3d, slides, "css3d", selectedSlideId),
     ])
 
     return slides.selection();

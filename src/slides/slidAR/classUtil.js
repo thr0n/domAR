@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 export const setRemoveClass = (selector, className, trueToSet, intervalInMs) => {
-    d3.selectAll("div.char")
+    d3.selectAll(selector)
         .each(function(_, i) {
             var element = this;
             setTimeout(function () {
