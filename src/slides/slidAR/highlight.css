@@ -1,4 +1,17 @@
-._highlight_.border.light {
-    border-width: thick;
-    border-color: red;
+._highlight_.border.off {
+    border: 3px dashed transparent;
+}
+
+._highlight_.border.on {
+    transition: border-color 1s ease-in;
+}
+
+._highlight_.border.on.light {
+    transition: border-color 1s ease-in;
+    border-color: white;
+}
+
+._highlight_.border.on.dark {
+    transition: border-color 1s ease-in;
+    border-color: black;
 }
