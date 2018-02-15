@@ -88,7 +88,7 @@ class SlideControl {
 
     setCurrentSlideId(slideId) {
         this.currentSlideId = slideId;
-        this.currentStep = 0;
+        this.currentStepNumber = 0;
     }
 
     setSteps(slideId, steps) {
@@ -109,17 +109,34 @@ class SlideControl {
         return this.getSteps(this.currentSlideId);
     }
 
+    nextStep(trueIfForward) {
+        const nextStepNumber = this.currentStepNumber + (trueIfForward ? +1 : -1);
+        const nextStep = this.steps[nextStepNumber];
+        if(!_.isEmpty(nextStep)) {
+
+        }
+    }
+
     forwardStep() {
         const steps = this.getCurrentSteps();
-        if(!_.isEmpty(steps)) {
-            const step = steps[this.currentStep];
-            if(!_.isEmpty(step)) {
-                const forwardStep = step.f;
-                if(fct.isFunction(forwardStep)) {
-                    forwardStep();
-                }
-            }
+        if(_.isEmpty(steps)) {
+            return
         }
+        if(this.currentStepNumber < steps.length) {
+            const step = steps[this.currentStepNumber];
+            step.f();
+            this.currentStepNumber++;
+        }
+    }
+
+    backwardStep() {
+        const steps = this.getCurrentSteps();
+        if(_.isEmpty(steps) || !(this.currentStepNumber > 0)) {
+            return
+        }
+        this.currentStepNumber--;
+        const step = steps[this.currentStepNumber];
+        step.b();
     }
 }
 

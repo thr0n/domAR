@@ -11,5 +11,10 @@ export const init = () => {
     keyboard.bind('right', () => {
         slideControl.forwardStep();
     })
+
+    keyboard.bind('left', () => {
+        slideControl.backwardStep();
+    })
+
 }
 
