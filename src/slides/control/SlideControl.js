@@ -4,11 +4,13 @@ import {log} from '../../util/log';
 import * as fct from '../../util/fct';
 
 import * as arTransform from '../../arTransform';
+import * as slidAR from '../slidAR/slidAR';
 
 class SlideControl {
 
     constructor() {
         this.configs = {};
+        this.steps = {};
     }
 
     setTWEEN(TWEEN) {
@@ -83,6 +85,35 @@ class SlideControl {
     nextSlide() {
         const allObjects = this.getAllObjects();
         arTransform.allNext(allObjects, this.TWEEN);
+    }
+
+    setCurrentSlideId(slideId) {
+        this.currentSlideId = slideId;
+        this.currentStep = 0;
+    }
+
+    setSteps(slideId, steps) {
+        this.steps[slideId] = steps;
+    }
+
+    getSteps = (slideId) => {
+        return this.steps[slideId];
+    }
+
+    setStepsForCurrentSlide(steps) {
+        if(!_.isEmpty(this.currentSlideId)) {
+            this.setSteps(this.currentSlideId, steps);
+        }
+    }
+
+    getCurrentSteps() {
+        return slidAR.getSteps(this.currentSlideId);
+    }
+
+    forwardStep() {
+        if(!_.isEmpty()) {
+            const step = window
+        }
     }
 }
 

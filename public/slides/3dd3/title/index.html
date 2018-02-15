@@ -35,11 +35,19 @@
 </div>
 
 <script>
+    (function () {
+        function step1() {
+            window.slidAR.classUtil.setClass(".slide-title div.char", "xaxis", 100);
+        }
 
-    setTimeout(function () {
-        window.slidAR.classUtil.setClass(".slide-title div.char", "xaxis", 100);
-    }, 3000);
+        function _step1() {
+            window.slidAR.classUtil.removeClass(".slide-title div.char", "xaxis");
+        }
 
+        window.slidAR.steps.set([
+            {f: step1, b: _step1}
+        ]);
+    })()
 </script>
 
 </body>
