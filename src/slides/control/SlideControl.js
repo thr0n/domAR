@@ -4,7 +4,6 @@ import {log} from '../../util/log';
 import * as fct from '../../util/fct';
 
 import * as arTransform from '../../arTransform';
-import * as slidAR from '../slidAR/slidAR';
 
 class SlideControl {
 
@@ -107,12 +106,19 @@ class SlideControl {
     }
 
     getCurrentSteps() {
-        return slidAR.getSteps(this.currentSlideId);
+        return this.getSteps(this.currentSlideId);
     }
 
     forwardStep() {
-        if(!_.isEmpty()) {
-            const step = window
+        const steps = this.getCurrentSteps();
+        if(!_.isEmpty(steps)) {
+            const step = steps[this.currentStep];
+            if(!_.isEmpty(step)) {
+                const forwardStep = step.f;
+                if(fct.isFunction(forwardStep)) {
+                    forwardStep();
+                }
+            }
         }
     }
 }

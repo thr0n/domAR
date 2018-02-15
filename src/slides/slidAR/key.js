@@ -2,8 +2,14 @@ import {Keyboard} from 'keyboardjs';
 
 import {slideControl} from '../control/SlideControl';
 
-const keyboard = new Keyboard();
+const usLocale = require('keyboardjs/locales/us');
 
-keyboard.bind('left', () => {
-    slideControl.forwardStep();
-})
+const keyboard = new Keyboard();
+keyboard.setLocale('us', usLocale);
+
+export const init = () => {
+    keyboard.bind('right', () => {
+        slideControl.forwardStep();
+    })
+}
+

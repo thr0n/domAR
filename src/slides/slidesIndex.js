@@ -5,6 +5,7 @@ import {setArPositionRotation, TYPE_RING} from '../arPositions';
 import {init} from '../argonApp';
 import {CommandHub} from './control/commandHub';
 import {slideControl} from './control/SlideControl';
+import * as key from './slidAR/key';
 import * as query from '../util/query';
 import * as slidAR from './slidAR/slidAR';
 
@@ -22,6 +23,7 @@ const startSlideShow = (slideShowIntervalInSeconds) => {
 }
 
 export const initSlides = async (rootSelector, slideCreateFunction, param) => {
+    key.init();
     new CommandHub();
 
     const selectedSlideId = query.paramValue("slide");
