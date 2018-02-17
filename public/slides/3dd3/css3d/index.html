@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<div class="slidecounter"></div>
+
 <div class="title">
     <div class="char _1 font-effect-anaglyph">c</div>
     <div class="char font-effect-anaglyph">s</div>
@@ -18,13 +20,29 @@
 
 <script>
 
-    setTimeout(function() {
-        window.slidAR.highlight.animatedBorder("div.char._1", window.slidAR.highlight.DARK_COLOR_CLASS);
-    }, 1000)
+    (function () {
+        function step1() {
+            window.slidAR.highlight.animatedBorder("div.char._1", window.slidAR.highlight.DARK_COLOR_CLASS);
+        }
 
-    setTimeout(function () {
-        window.slidAR.tooltip.create("div._1", "div._1", window.slidAR.tooltip.TOP);
-    }, 2000)
+        function _step1() {
+            window.slidAR.highlight.removeBorder("div.char._1");
+        }
+
+        function step2() {
+            window.slidAR.tooltip.create("div._1", "div._1", window.slidAR.tooltip.TOP);
+        }
+
+        function _step2() {
+            window.slidAR.tooltip.remove("div._1", window.slidAR.tooltip.TOP);
+        }
+
+        window.slidAR.steps.set([
+            {f: step1, b: _step1},
+            {f: step2, b: _step2}
+        ])
+    })()
+
 
 </script>
 

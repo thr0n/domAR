@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import * as $ from 'jquery';
 
 import {log} from '../../util/log';
 import * as fct from '../../util/fct';
@@ -117,6 +118,23 @@ class SlideControl {
         }
     }
 
+    renderStepNumber() {
+        const renderCounterElement = $("#" + this.currentSlideId + " .slidecounter");
+        if(!_.isEmpty(renderCounterElement)) {
+            renderCounterElement.html(this.currentStepNumber + " / " + this.getCurrentSteps().length);
+        }
+    }
+
+    incCurrentStepNumber() {
+        this.currentStepNumber++;
+        this.renderStepNumber();
+    }
+
+    decCurrentStepNumber() {
+        this.currentStepNumber--;
+        this.renderStepNumber();
+    }
+
     forwardStep() {
         const steps = this.getCurrentSteps();
         if(_.isEmpty(steps)) {
@@ -124,8 +142,8 @@ class SlideControl {
         }
         if(this.currentStepNumber < steps.length) {
             const step = steps[this.currentStepNumber];
-            step.f();
-            this.currentStepNumber++;
+            fct.call(step.f);
+            this.incCurrentStepNumber();
         }
     }
 
@@ -134,9 +152,9 @@ class SlideControl {
         if(_.isEmpty(steps) || !(this.currentStepNumber > 0)) {
             return
         }
-        this.currentStepNumber--;
+        this.decCurrentStepNumber();
         const step = steps[this.currentStepNumber];
-        step.b();
+        fct.call(step.b);
     }
 }
 

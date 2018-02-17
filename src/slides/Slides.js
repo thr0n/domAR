@@ -25,7 +25,7 @@ export class Slides {
             .attr("class", SLIDE_CLASS)
             .attr("id", d => d)
             .style("width", this.width + "px")
-            .style("height", this.height + "px");
+            .style("height", this.height + "px")
 
         this.selection()
             .each(function(d, i) {
