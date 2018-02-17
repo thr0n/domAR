@@ -36,7 +36,6 @@ export const remove = (selector, placement) => {
 }
 
 export const createPt = (title, selector, position) => {
-    const currentSlideId = slideControl.getCurrentSlideId();
     $(selector).protipShow({
         title,
         position,
