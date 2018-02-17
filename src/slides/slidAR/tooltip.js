@@ -41,7 +41,8 @@ export const createPt = (title, selector, position) => {
         title,
         position,
         target: true,
-        size: 'big'
+        size: 'big',
+        scheme: 'blue'
     })
 }
 
