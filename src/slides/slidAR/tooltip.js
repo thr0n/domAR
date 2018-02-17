@@ -3,11 +3,14 @@ import * as d3 from 'd3';
 import * as _ from 'lodash';
 
 import * as domData from './domData';
+import {slideControl} from '../control/SlideControl';
 
 export const TOP = "top";
 export const BOTTOM = "bottom";
 export const RIGHT = "right";
 export const LEFT = "left";
+
+const $ = window.$;
 
 const tooltipAttribute = (attributeName) => {
     return "tooltip-" + attributeName;
@@ -32,4 +35,18 @@ export const remove = (selector, placement) => {
         })
 }
 
-export const tooltip = {create, remove, TOP, BOTTOM, RIGHT, LEFT}
+export const createPt = (title, selector, position) => {
+    const currentSlideId = slideControl.getCurrentSlideId();
+    $(selector).protipShow({
+        title,
+        position,
+        target: true,
+        size: 'big'
+    })
+}
+
+export const removePt = (selector) => {
+    $(selector).protipHide();
+}
+
+export const tooltip = {createPt, removePt, create, remove, TOP, BOTTOM, RIGHT, LEFT}

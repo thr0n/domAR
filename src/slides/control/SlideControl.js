@@ -92,6 +92,10 @@ class SlideControl {
         this.currentStepNumber = 0;
     }
 
+    getCurrentSlideId() {
+        return this.currentSlideId;
+    }
+
     setSteps(slideId, steps) {
         this.steps[slideId] = steps;
     }

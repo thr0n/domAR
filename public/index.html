@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="./css/style.css"/>
     <link rel="stylesheet" type="text/css" href="./css/material-icons.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/popper.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/protip.min.css"/>
 
     <script src="lib/argon-1.4.0.js"></script>
     <script src="lib/three.min.js"></script>
@@ -16,6 +16,7 @@
     <script src="lib/CSS3DArgonRenderer.js"></script>
     <script src="lib/CSS3DArgonHUD.js"></script>
     <script src="lib/jquery.js"></script>
+    <script src="lib/protip.min.js"></script>
     <script src="lib/d3.js"></script>
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
@@ -24,5 +25,11 @@
 </head>
 <body>
 <div id="container"></div>
+
+<script>
+    $(document).ready(function(){
+        $.protip();
+    });
+</script>
 </body>
 </html>

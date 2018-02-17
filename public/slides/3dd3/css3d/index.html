@@ -11,7 +11,7 @@
 <div class="slidecounter"></div>
 
 <div class="title">
-    <div class="char _1 font-effect-anaglyph">c</div>
+    <div class="char char1 font-effect-anaglyph">c</div>
     <div class="char font-effect-anaglyph">s</div>
     <div class="char font-effect-anaglyph">s</div>
     <div class="char font-effect-anaglyph">3</div>
@@ -22,19 +22,19 @@
 
     (function () {
         function step1() {
-            window.slidAR.highlight.animatedBorder("div.char._1", window.slidAR.highlight.DARK_COLOR_CLASS);
+            window.slidAR.highlight.animatedBorder(".title div.char.char1", window.slidAR.highlight.DARK_COLOR_CLASS);
         }
 
         function _step1() {
-            window.slidAR.highlight.removeBorder("div.char._1");
+            window.slidAR.highlight.removeBorder(".title div.char.char1");
         }
 
         function step2() {
-            window.slidAR.tooltip.create("div._1", "div._1", window.slidAR.tooltip.TOP);
+            window.slidAR.tooltip.createPt("div.char1", ".title div.char.char1", window.slidAR.tooltip.TOP);
         }
 
         function _step2() {
-            window.slidAR.tooltip.remove("div._1", window.slidAR.tooltip.TOP);
+            window.slidAR.tooltip.removePt(".title div.char.char1", window.slidAR.tooltip.TOP);
         }
 
         window.slidAR.steps.set([
