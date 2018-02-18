@@ -6,7 +6,9 @@
     <meta http-equiv="origin-trial" data-feature="WebVR" data-expires="2017-06-06" content="ArfXzMSluPfAfoVDD+ne9oWykUyDeLFD/z4/0uRCdZ1491aSrytWyj7gnGhwK1/Tzg/D+UOvNgD2+L9PWqF5XwwAAABceyJvcmlnaW4iOiJodHRwczovL2FyZ29uanMuaW86NDQzIiwiZmVhdHVyZSI6IldlYlZSIiwiZXhwaXJ5IjoxNDk2NzcxODA0LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=">
     <meta name="theme-color" content="#333333">
 
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
     <link rel="stylesheet" type="text/css" href="./css/material-icons.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/protip.min.css"/>
 
     <script src="lib/argon-1.4.0.js"></script>
     <script src="lib/three.min.js"></script>
@@ -14,6 +16,7 @@
     <script src="lib/CSS3DArgonRenderer.js"></script>
     <script src="lib/CSS3DArgonHUD.js"></script>
     <script src="lib/jquery.js"></script>
+    <script src="lib/protip.min.js"></script>
     <script src="lib/d3.js"></script>
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
@@ -22,5 +25,11 @@
 </head>
 <body>
 <div id="container"></div>
+
+<script>
+    $(document).ready(function(){
+        $.protip();
+    });
+</script>
 </body>
 </html>

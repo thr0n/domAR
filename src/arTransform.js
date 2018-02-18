@@ -12,8 +12,6 @@ const nextPositionAndRotation = (object) => {
     return {nextIndex, position, rotation}
 }
 
-const tween = 0;
-
 export const next = (object, TWEEN) => {
     const {nextIndex, position, rotation} = nextPositionAndRotation(object);
 

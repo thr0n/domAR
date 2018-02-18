@@ -4,7 +4,6 @@ import {Slides} from '../Slides';
 import {slidePlotly} from './slidePlotly';
 import {htmlSlide, HtmlSlide} from '../htmlSlide';
 import {appendScriptsWithReadyFunction} from '../../util/loadScript';
-import {createDummySlide} from '../dummySlide';
 import {slideControl} from '../control/SlideControl';
 
 import * as query from '../../util/query';
@@ -14,13 +13,6 @@ const factor = Number(paramFactor || 2.0);
 
 const width = window.innerWidth * factor;
 const height = window.innerHeight * factor;
-
-const createDummySlides = (slides, startIndex, numberOfSlides) => {
-    for(let i = startIndex; i < startIndex + numberOfSlides; i++) {
-        const id = slides.getAttr(i, "id");
-        createDummySlide("#" + id);
-    }
-}
 
 const createAnimeSlide = (slides, slideId) => {
     return htmlSlide(slideId, {
