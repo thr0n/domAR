@@ -20,7 +20,9 @@
 </style>
 <body>
 
-<div class="title">
+<div class="slidecounter"></div>
+
+<div class="title slide-title">
     <div class="char font-effect-anaglyph">3</div>
     <div class="char font-effect-anaglyph">D</div>
     <div class="char font-effect-anaglyph">+</div>
@@ -35,14 +37,19 @@
 </div>
 
 <script>
+    (function () {
+        function step1() {
+            window.slidAR.classUtil.setClass(".slide-title div.char", "xaxis", 100);
+        }
 
-    d3.selectAll("div.char")
-        .each(function(_, i) {
-            var element = this;
-            setTimeout(function () {
-                d3.select(element).classed("xaxis", true)
-            }, 3000 + i * 100)
-        })
+        function _step1() {
+            window.slidAR.classUtil.removeClass(".slide-title div.char", "xaxis");
+        }
+
+        window.slidAR.steps.set([
+            {f: step1, b: _step1}
+        ]);
+    })()
 </script>
 
 </body>
