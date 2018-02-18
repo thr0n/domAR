@@ -9,8 +9,6 @@ const keyboard = new Keyboard();
 keyboard.setLocale('us', usLocale);
 
 export const init = () => {
-    log.info("--> key.init");
-    
     keyboard.bind('right', () => {
         slideControl.forwardStep();
     })
