@@ -6,9 +6,15 @@ import {appendScriptsWithReadyFunction} from '../util/loadScript';
 import {slideControl} from './control/SlideControl';
 import {appendStyles} from "../util/loadStyles";
 
+const vsprintf = require('sprintf-js').vsprintf;
+
+export const loadHtmlWithSelector = (selector, pathToHtml) => {
+    log.info(vsprintf("Load html (%s) into selector: %s", [pathToHtml, selector]));
+    $(selector).load(pathToHtml);
+}
+
 const loadHtml = (slideId, pathToHtml) => {
-    log.info("load html: " + pathToHtml);
-    $("#" + slideId).load(pathToHtml);
+    loadHtmlWithSelector("#" + slideId, pathToHtml);
 }
 
 const clearHtml = (slideId) => {

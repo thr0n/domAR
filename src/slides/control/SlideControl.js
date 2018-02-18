@@ -11,6 +11,7 @@ class SlideControl {
     constructor() {
         this.configs = {};
         this.steps = {};
+        this.slideIds = [];
     }
 
     setTWEEN(TWEEN) {
@@ -94,6 +95,10 @@ class SlideControl {
 
     getCurrentSlideId() {
         return this.currentSlideId;
+    }
+
+    addSlideId(slideId) {
+        this.slideIds.push(slideId);
     }
 
     setSteps(slideId, steps) {
