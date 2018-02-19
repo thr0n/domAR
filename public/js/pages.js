@@ -1,5 +1,5 @@
 (function () {
     window._pages = [
-        {id: "html1", path: "html1.html"}
+        {id: "html1", name: "html1.html"}
     ]
 })()

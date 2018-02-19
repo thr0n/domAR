@@ -11,7 +11,7 @@
 
     function addPages() {
         window._pages.forEach(function(page) {
-            const path = addPathToFileneme(page.path);
+            const path = addPathToFileneme(page.name);
             console.log("add page: " + path);
             window.simplAR.addHtmlPageWithId(page.id, path);
         })
