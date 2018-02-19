@@ -11,7 +11,9 @@ import * as slide3dd3 from "./slides/3dd3/slides3dd3";
 import {appendStyles} from './util/loadStyles';
 
 import {slidAR} from './slides/slidAR/slidAR';
+import {simplAR} from './slides/simplAR/simplAR';
 window.slidAR = slidAR;
+window.simplAR = simplAR;
 
 const BODY_TYPE_RADAR = "radar";
 const BODY_TYPE_CUBE = "cube";
@@ -37,6 +39,9 @@ switch (bodyType) {
         initSlides("#container", demoSlides, paramValue);
         break;
 
-    default:
+    case BODY_TYPE_SLIDE_3DD3:
         initSlides("#container", slide3dd3.init, paramValue);
+
+    default:
+        // do nothing
 }
