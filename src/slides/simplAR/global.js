@@ -1,5 +1,6 @@
 let globalRoot;
 let globalApp;
+let TWEEN;
 
 export const setGlobalRoot = (root) => {
     globalRoot = root;
@@ -15,4 +16,12 @@ export const getGlobalRoot = () => {
 
 export const getGlobalApp = () => {
     return globalApp;
+}
+
+export const setTween = (_tween) => {
+    TWEEN = _tween;
+}
+
+export const getTween = () => {
+    return TWEEN;
 }

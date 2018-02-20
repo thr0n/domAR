@@ -18,6 +18,8 @@ export const initTween = () => {
     global.getGlobalApp().updateEvent.on(() => {
         TWEEN.update();
     });
+
+    global.setTween(TWEEN);
 }
 
 export const ar = {
