@@ -67,6 +67,13 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "proxy": {
+    "/public": {
+      "target": "http://localhost:3000",
+      "pathRewrite": {"^/public": ""},
+      "changeOrigin": true
+    }
+  },
   "homepage": "https://owidder.github.io/radAR/build",
   "jest": {
     "collectCoverageFrom": [
