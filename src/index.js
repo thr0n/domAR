@@ -11,7 +11,7 @@ import * as slide3dd3 from "./slides/3dd3/slides3dd3";
 import {appendStyles} from './util/loadStyles';
 
 import {slidAR} from './slides/slidAR/slidAR';
-import {simplAR} from './slides/simplAR/simplAR';
+import {simplAR} from './simplAR/simplAR';
 window.slidAR = slidAR;
 window.simplAR = simplAR;
 
