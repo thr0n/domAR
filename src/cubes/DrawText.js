@@ -1,4 +1,4 @@
-import Fonts from '../Fonts';
+import Fonts from './Fonts';
 
 const fonts = new Fonts();
 

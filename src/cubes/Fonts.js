@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {load} from 'opentype.js';
+import {load} from '../../node_modules/opentype.js/dist/opentype';
 
 class Fonts {
 
