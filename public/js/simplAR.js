@@ -31,7 +31,7 @@
         }
     }
 
-    if(!window._pages_ready) {
+    if(!window._pages_ready && window.location.href.indexOf("simplAR") > -1) {
         _addPages();
     }
 })()

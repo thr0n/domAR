@@ -91,8 +91,8 @@ export const setPositionRotationOnObject = (object, position, rotation) => {
     object.rotation.z = rotation.z;
 }
 
-const addToRoot = (that, root, position, rotation) => {
-    const object = new THREE.CSS3DObject(that);
+const addToRoot = (element, root, position, rotation) => {
+    const object = new THREE.CSS3DObject(element);
 
     setPositionRotationOnObject(object, position, rotation);
     root.add(object);
@@ -135,10 +135,10 @@ const addDataToObject = (object, type, index, totalNum) => {
     object._data = objectData;
 }
 
-export const setArPositionRotation = (that, root, type, i, num) => {
-    const {position, rotation} = getArPositionRotation(type, i, num);
-    const object = addToRoot(that, root, position, rotation);
-    addDataToObject(object, type, i, num);
+export const setArPositionRotation = (element, root, type, i, totalNum) => {
+    const {position, rotation} = getArPositionRotation(type, i, totalNum);
+    const object = addToRoot(element, root, position, rotation);
+    addDataToObject(object, type, i, totalNum);
 
     return object;
 }

@@ -1,7 +1,7 @@
 import {addHtmlPageWithId} from './addHtmlPage';
-import {slidAR} from '../slidAR/slidAR';
+import {ar} from './ar';
 
 export const simplAR = {
-    ...slidAR,
+    ...ar,
     addHtmlPageWithId
 }
