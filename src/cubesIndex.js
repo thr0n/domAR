@@ -1,6 +1,6 @@
 import {drawCubes} from './drawCubes';
-import {setArPositionRotation, TYPE_SPHERE_RANDOM} from './arPositions';
-import {init} from './argonApp';
+import {setArPositionRotation, TYPE_SPHERE_RANDOM} from './ar/arPositions';
+import {init} from './ar/argonApp';
 import {getTextFunction} from './getText';
 
 export const initCubes = (nameOfTextSet) => {

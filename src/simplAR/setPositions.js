@@ -2,8 +2,8 @@ import * as d3 from 'd3';
 import * as _ from 'lodash';
 
 import {getGlobalRoot, getTween} from './global';
-import {setArPositionRotation, getArPositionRotation, TYPE_HELIX, TYPE_RING, TYPE_SPHERE, TYPE_SPHERE_RANDOM, TYPE_TABLE, randomSphereInit, tableInit} from '../arPositions';
-import {moveTo, next} from '../arTransform';
+import {setArPositionRotation, getArPositionRotation, TYPE_HELIX, TYPE_RING, TYPE_SPHERE, TYPE_SPHERE_RANDOM, TYPE_TABLE, randomSphereInit, tableInit} from '../ar/arPositions';
+import {moveTo, next} from '../ar/arTransform';
 
 export const setPosition = (type, pageId, i, totalNum, positionFunction) => {
     d3.selectAll("#" + pageId)

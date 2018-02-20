@@ -4,7 +4,7 @@ import * as $ from 'jquery';
 import {log} from '../../util/log';
 import * as fct from '../../util/fct';
 
-import * as arTransform from '../../arTransform';
+import * as arTransform from '../../ar/arTransform';
 
 class SlideControl {
 

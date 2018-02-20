@@ -1,6 +1,6 @@
 import Radars from './Radars';
-import {setArPositionRotation, TYPE_RING} from './arPositions';
-import {init} from './argonApp';
+import {setArPositionRotation, TYPE_RING} from './ar/arPositions';
+import {init} from './ar/argonApp';
 
 export const initRadars = () => {
     const {root} = init();
