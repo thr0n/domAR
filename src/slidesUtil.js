@@ -10,4 +10,3 @@ export const createSlide = (fct, slides, slideId, selectedSlideId) => {
         return Promise.resolve();
     }
 }
-

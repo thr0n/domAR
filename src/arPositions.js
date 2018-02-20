@@ -7,8 +7,10 @@ export const TYPE_HELIX = "helix";
 export const TYPE_SPHERE = "sphere";
 export const TYPE_SPHERE_RANDOM = "sphere-random";
 export const TYPE_RING = "ring";
+export const TYPE_TABLE = "table";
 
 export const DEFAULT_NUMBER_OF_POSSIBLE_PLACES = 50;
+export const DEFAULT_NUMBER_PF_TABLE_COLUMNS = 30;
 
 export const randomSphereInit = (numberOfPossiblePlaces) => {
     const shuffledPlaces = _.shuffle(_.range(0, numberOfPossiblePlaces-1));
@@ -31,6 +33,26 @@ export const randomSphereInit = (numberOfPossiblePlaces) => {
 };
 
 export const randomSphere = randomSphereInit(DEFAULT_NUMBER_OF_POSSIBLE_PLACES);
+
+export const tableInit = (numberOfCols, _cellWidth, _cellHeight, _xOffset, _yOffset, _zOffset) => {
+    return (i) => {
+        const cellWidth = _.isUndefined(_cellWidth) ? 300 : _cellWidth;
+        const cellHeight = _.isUndefined(_cellHeight) ? 200 : _cellHeight;
+        const xOffset = _.isUndefined(_xOffset) ? -1330 : _xOffset;
+        const yOffset = _.isUndefined(_yOffset) ? 990 : _yOffset;
+        const zOffset = _.isUndefined(_zOffset) ? -1000 : _zOffset;
+        const row = Math.floor(i / numberOfCols);
+        const col = i % numberOfCols;
+        const table = new THREE.Object3D();
+        table.position.x = (col * cellWidth) + xOffset;
+        table.position.y = -(row * cellHeight) + yOffset;
+        table.position.z = zOffset;
+
+        return table;
+    }
+}
+
+export const table = tableInit(DEFAULT_NUMBER_PF_TABLE_COLUMNS);
 
 export const sphere = (numberOfBodies, i) => {
     const phi = Math.acos(-1 + 2 * i / numberOfBodies);
@@ -91,8 +113,8 @@ export const setPositionRotationOnObject = (object, position, rotation) => {
     object.rotation.z = rotation.z;
 }
 
-const addToRoot = (that, root, position, rotation) => {
-    const object = new THREE.CSS3DObject(that);
+const addToRoot = (element, root, position, rotation) => {
+    const object = new THREE.CSS3DObject(element);
 
     setPositionRotationOnObject(object, position, rotation);
     root.add(object);
@@ -100,7 +122,7 @@ const addToRoot = (that, root, position, rotation) => {
     return object;
 }
 
-export const getArPositionRotation = (type, i, num) => {
+export const getArPositionRotation = (type, i, num, positionFunction) => {
     let three3dObject;
 
     switch (type) {
@@ -120,7 +142,21 @@ export const getArPositionRotation = (type, i, num) => {
 
 
         case TYPE_SPHERE_RANDOM:
-            three3dObject = randomSphere(i);
+            if(_.isFunction(positionFunction)) {
+                three3dObject = positionFunction(i);
+            }
+            else {
+                three3dObject = randomSphere(i);
+            }
+            break;
+
+        case TYPE_TABLE:
+            if(_.isFunction(positionFunction)) {
+                three3dObject = positionFunction(i);
+            }
+            else {
+                three3dObject = table(i);
+            }
             break;
 
         default:
@@ -130,15 +166,15 @@ export const getArPositionRotation = (type, i, num) => {
     return {position, rotation};
 }
 
-const addDataToObject = (object, type, index, totalNum) => {
-    const objectData = new ObjectData(index, type, totalNum);
+const addDataToObject = (object, type, index, totalNum, positionFunction) => {
+    const objectData = new ObjectData(index, type, totalNum, positionFunction);
     object._data = objectData;
 }
 
-export const setArPositionRotation = (that, root, type, i, num) => {
-    const {position, rotation} = getArPositionRotation(type, i, num);
-    const object = addToRoot(that, root, position, rotation);
-    addDataToObject(object, type, i, num);
+export const setArPositionRotation = (element, root, type, i, totalNum, positionFunction) => {
+    const {position, rotation} = getArPositionRotation(type, i, totalNum, positionFunction);
+    const object = addToRoot(element, root, position, rotation);
+    addDataToObject(object, type, i, totalNum, positionFunction);
 
     return object;
 }

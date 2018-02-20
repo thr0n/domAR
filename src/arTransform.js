@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 import {log} from './util/log';
 import {getArPositionRotation, setPositionRotationOnObject} from './arPositions';
 
@@ -7,25 +9,22 @@ const nextPositionAndRotation = (object) => {
     const type = object._data.getType();
     const totalNum = object._data.getTotalNum();
     const nextIndex = object._data.getNextIndex();
-    const {position, rotation} = getArPositionRotation(type, nextIndex, totalNum);
+    const positionFunction = object._data.getPositionFunction();
+    const {position, rotation} = getArPositionRotation(type, nextIndex, totalNum, positionFunction);
 
     return {nextIndex, position, rotation}
 }
 
-export const next = (object, TWEEN) => {
-    const {nextIndex, position, rotation} = nextPositionAndRotation(object);
-
-    log.info("start tween: " + object._data.getIndex());
-
+export const moveTo = (object, newPosition, newRotation, TWEEN) => {
     if(TWEEN) {
         new TWEEN.Tween(object.position)
-            .to({x: position.x, y: position.y, z: position.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
+            .to({x: newPosition.x, y: newPosition.y, z: newPosition.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
             .easing(TWEEN.Easing.Exponential.InOut)
             .onUpdate(() => log.info("position: " + object.position))
             .start();
 
         new TWEEN.Tween(object.rotation)
-            .to({x: rotation.x, y: rotation.y, z: rotation.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
+            .to({x: newRotation.x, y: newRotation.y, z: newRotation.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
             .easing(TWEEN.Easing.Exponential.InOut)
             .onUpdate(() => log.info("rotation: " + object.rotation))
             .start();
@@ -35,8 +34,14 @@ export const next = (object, TWEEN) => {
             .start();
     }
     else {
-        setPositionRotationOnObject(object, position, rotation);
+        setPositionRotationOnObject(object, newPosition, newRotation);
     }
+}
+
+export const next = (object, TWEEN) => {
+    const {nextIndex, position, rotation} = nextPositionAndRotation(object);
+
+    moveTo(object, position, rotation, TWEEN);
 
     object._data.setIndex(nextIndex);
 }
