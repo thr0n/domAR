@@ -1,4 +1,4 @@
-import {HtmlSlide} from "./slides/htmlSlide";
+import {HtmlSlide} from "./htmlSlide";
 
 export const staticSlide = (slides, slideId, pathToHtml) => {
     slides.addOne(slideId);
