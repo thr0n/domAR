@@ -2,7 +2,7 @@ import * as _ from 'lodash';
 
 import {init} from '../../argonApp';
 import * as global from './global';
-import {ring, sphere, helix, sphereRandom, table} from './setPositions';
+import {ring, sphere, helix, sphereRandom, table, rotate} from './setPositions';
 
 const TWEEN = require('@tweenjs/tween.js');
 
@@ -25,5 +25,5 @@ export const initTween = () => {
 export const ar = {
     initAr,
     initTween,
-    ring, sphere, helix, sphereRandom, table
+    ring, sphere, helix, sphereRandom, table, rotate
 }

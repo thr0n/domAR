@@ -1,9 +1,10 @@
 export class ObjectData {
 
-    constructor(index, type, totalNum) {
+    constructor(index, type, totalNum, positionFunction) {
         this.index = index;
         this.type = type;
         this.totalNum = totalNum;
+        this.positionFunction = positionFunction;
     }
 
     getType() {
@@ -29,5 +30,9 @@ export class ObjectData {
     incIndex() {
         this.index = this.getNextIndex();
         return this.index;
+    }
+
+    getPositionFunction() {
+        return this.positionFunction;
     }
 }

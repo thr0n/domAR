@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 import {log} from './util/log';
 import {getArPositionRotation, setPositionRotationOnObject} from './arPositions';
 
@@ -7,7 +9,8 @@ const nextPositionAndRotation = (object) => {
     const type = object._data.getType();
     const totalNum = object._data.getTotalNum();
     const nextIndex = object._data.getNextIndex();
-    const {position, rotation} = getArPositionRotation(type, nextIndex, totalNum);
+    const positionFunction = object._data.getPositionFunction();
+    const {position, rotation} = getArPositionRotation(type, nextIndex, totalNum, positionFunction);
 
     return {nextIndex, position, rotation}
 }
@@ -37,8 +40,6 @@ export const moveTo = (object, newPosition, newRotation, TWEEN) => {
 
 export const next = (object, TWEEN) => {
     const {nextIndex, position, rotation} = nextPositionAndRotation(object);
-
-    log.info("start tween: " + object._data.getIndex());
 
     moveTo(object, position, rotation, TWEEN);
 
