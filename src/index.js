@@ -3,7 +3,7 @@ import 'materialize-css/dist/css/materialize.css';
 import * as query from './util/query';
 
 import {initCubes} from './cubes/cubesIndex';
-import {initRadars} from './radarsIndex';
+import {initRadars} from './radar/radarsIndex';
 import {initSlides} from './slides/slidesIndex';
 import {demoSlides} from "./slides/demoSlides/demoSlides";
 import * as slide3dd3 from "./slides/3dd3/slides3dd3";
