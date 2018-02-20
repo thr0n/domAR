@@ -1,21 +1,39 @@
 import * as d3 from 'd3';
+import * as _ from 'lodash';
 
 import {getGlobalRoot} from './global';
-import {setArPositionRotation, TYPE_HELIX, TYPE_RING, TYPE_SPHERE, TYPE_SPHERE_RANDOM, TYPE_TABLE, randomSphereInit, tableInit} from '../../arPositions';
+import {setArPositionRotation, getArPositionRotation, TYPE_HELIX, TYPE_RING, TYPE_SPHERE, TYPE_SPHERE_RANDOM, TYPE_TABLE, randomSphereInit, tableInit} from '../../arPositions';
+import {moveTo} from '../../arTransform';
 
 export const setPosition = (type, pageId, i, totalNum, positionFunction) => {
-
     d3.selectAll("#" + pageId)
-        .each(function() {
-            setArPositionRotation(this, getGlobalRoot(), type, i, totalNum, positionFunction);
+        .each(function(d) {
+            const object = setArPositionRotation(this, getGlobalRoot(), type, i, totalNum, positionFunction);
+            d.object = object;
         })
 }
+
+export const moveToPosition = (type, pageId, i, totalNum, positionFunction) => {
+    d3.selectAll("#" + pageId)
+        .each(function(d) {
+            const {position, rotation} = getArPositionRotation(type, i, totalNum, positionFunction);
+            moveTo(d.object, position, rotation);
+        })
+}
+
+let currentType;
 
 export const setPositions = (type, pageIds, positionFunction) => {
     const totalNum = pageIds.length;
     pageIds.forEach((pageId, i) => {
-        setPosition(type, pageId, i, totalNum, positionFunction);
+        if(_.isUndefined(currentType)) {
+            setPosition(type, pageId, i, totalNum, positionFunction);
+        }
+        else {
+            moveToPosition(type, pageId, i, totalNum, positionFunction);
+        }
     })
+    currentType = type;
 }
 
 const getIdArray = () => {

@@ -12,20 +12,16 @@ const nextPositionAndRotation = (object) => {
     return {nextIndex, position, rotation}
 }
 
-export const next = (object, TWEEN) => {
-    const {nextIndex, position, rotation} = nextPositionAndRotation(object);
-
-    log.info("start tween: " + object._data.getIndex());
-
+export const moveTo = (object, newPosition, newRotation, TWEEN) => {
     if(TWEEN) {
         new TWEEN.Tween(object.position)
-            .to({x: position.x, y: position.y, z: position.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
+            .to({x: newPosition.x, y: newPosition.y, z: newPosition.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
             .easing(TWEEN.Easing.Exponential.InOut)
             .onUpdate(() => log.info("position: " + object.position))
             .start();
 
         new TWEEN.Tween(object.rotation)
-            .to({x: rotation.x, y: rotation.y, z: rotation.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
+            .to({x: newRotation.x, y: newRotation.y, z: newRotation.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
             .easing(TWEEN.Easing.Exponential.InOut)
             .onUpdate(() => log.info("rotation: " + object.rotation))
             .start();
@@ -35,8 +31,16 @@ export const next = (object, TWEEN) => {
             .start();
     }
     else {
-        setPositionRotationOnObject(object, position, rotation);
+        setPositionRotationOnObject(object, newPosition, newRotation);
     }
+}
+
+export const next = (object, TWEEN) => {
+    const {nextIndex, position, rotation} = nextPositionAndRotation(object);
+
+    log.info("start tween: " + object._data.getIndex());
+
+    moveTo(object, position, rotation, TWEEN);
 
     object._data.setIndex(nextIndex);
 }
