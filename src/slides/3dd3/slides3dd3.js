@@ -1,6 +1,6 @@
 import {Slides} from "../Slides";
 import {staticSlide} from "../../staticSlide";
-import * as slidesUtil from '../../slidesUtil';
+import * as slidesUtil from '../slidesUtil';
 import {slideControl} from '../control/SlideControl';
 
 const width = window.innerWidth;

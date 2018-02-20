@@ -1,5 +1,5 @@
 import * as _ from "lodash";
-import {slideControl} from './slides/control/SlideControl';
+import {slideControl} from './control/SlideControl';
 
 export const createSlide = (fct, slides, slideId, selectedSlideId) => {
     if(_.isEmpty(selectedSlideId) ||  slideId === selectedSlideId) {
