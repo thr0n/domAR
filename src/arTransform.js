@@ -20,13 +20,11 @@ export const moveTo = (object, newPosition, newRotation, TWEEN) => {
         new TWEEN.Tween(object.position)
             .to({x: newPosition.x, y: newPosition.y, z: newPosition.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
             .easing(TWEEN.Easing.Exponential.InOut)
-            .onUpdate(() => log.info("position: " + object.position))
             .start();
 
         new TWEEN.Tween(object.rotation)
             .to({x: newRotation.x, y: newRotation.y, z: newRotation.z}, Math.random() * DEFAULT_DURATION + DEFAULT_DURATION)
             .easing(TWEEN.Easing.Exponential.InOut)
-            .onUpdate(() => log.info("rotation: " + object.rotation))
             .start();
 
         new TWEEN.Tween(this)
