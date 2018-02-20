@@ -7,8 +7,10 @@ export const TYPE_HELIX = "helix";
 export const TYPE_SPHERE = "sphere";
 export const TYPE_SPHERE_RANDOM = "sphere-random";
 export const TYPE_RING = "ring";
+export const TYPE_TABLE = "table";
 
 export const DEFAULT_NUMBER_OF_POSSIBLE_PLACES = 50;
+export const DEFAULT_NUMBER_PF_TABLE_COLUMNS = 30;
 
 export const randomSphereInit = (numberOfPossiblePlaces) => {
     const shuffledPlaces = _.shuffle(_.range(0, numberOfPossiblePlaces-1));
@@ -31,6 +33,26 @@ export const randomSphereInit = (numberOfPossiblePlaces) => {
 };
 
 export const randomSphere = randomSphereInit(DEFAULT_NUMBER_OF_POSSIBLE_PLACES);
+
+export const tableInit = (numberOfCols, _cellWidth, _cellHeight, _xOffset, _yOffset, _zOffset) => {
+    return (i) => {
+        const cellWidth = _.isUndefined(_cellWidth) ? 300 : _cellWidth;
+        const cellHeight = _.isUndefined(_cellHeight) ? 200 : _cellHeight;
+        const xOffset = _.isUndefined(_xOffset) ? -1330 : _xOffset;
+        const yOffset = _.isUndefined(_yOffset) ? 990 : _yOffset;
+        const zOffset = _.isUndefined(_zOffset) ? -1000 : _zOffset;
+        const row = Math.floor(i / numberOfCols);
+        const col = i % numberOfCols;
+        const table = new THREE.Object3D();
+        table.position.x = (col * cellWidth) + xOffset;
+        table.position.y = -(row * cellHeight) + yOffset;
+        table.position.z = zOffset;
+
+        return table;
+    }
+}
+
+export const table = tableInit(DEFAULT_NUMBER_PF_TABLE_COLUMNS);
 
 export const sphere = (numberOfBodies, i) => {
     const phi = Math.acos(-1 + 2 * i / numberOfBodies);
@@ -125,6 +147,15 @@ export const getArPositionRotation = (type, i, num, positionFunction) => {
             }
             else {
                 three3dObject = randomSphere(i);
+            }
+            break;
+
+        case TYPE_TABLE:
+            if(_.isFunction(positionFunction)) {
+                three3dObject = positionFunction(i);
+            }
+            else {
+                three3dObject = table(i);
             }
             break;
 

@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 import {getGlobalRoot} from './global';
-import {setArPositionRotation, TYPE_HELIX, TYPE_RING, TYPE_SPHERE, TYPE_SPHERE_RANDOM, randomSphereInit} from '../../arPositions';
+import {setArPositionRotation, TYPE_HELIX, TYPE_RING, TYPE_SPHERE, TYPE_SPHERE_RANDOM, TYPE_TABLE, randomSphereInit, tableInit} from '../../arPositions';
 
 export const setPosition = (type, pageId, i, totalNum, positionFunction) => {
 
@@ -37,4 +37,9 @@ export const helix = () => {
 export const sphereRandom = (numberOfSlots) => {
     const positionFunction = randomSphereInit(numberOfSlots);
     setPositions(TYPE_SPHERE_RANDOM, getIdArray(), positionFunction);
+}
+
+export const table = (numberOfColumns, cellWidth, cellHeight, xOffset, yOffset, zOffset) => {
+    const positionFunction = tableInit(numberOfColumns, cellWidth, cellHeight, xOffset, yOffset, zOffset);
+    setPositions(TYPE_TABLE, getIdArray(), positionFunction);
 }

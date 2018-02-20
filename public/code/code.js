@@ -2,7 +2,7 @@
 
     function init() {
         window.simplAR.initAr();
-        window.simplAR.sphereRandom(100);
+        window.simplAR.table(3, 1000, 200);
     }
 
 
