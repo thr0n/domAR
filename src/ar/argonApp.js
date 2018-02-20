@@ -1,5 +1,5 @@
 import {Argon} from './argonHelper';
-import {THREE} from '../threeHelper';
+import {THREE} from './threeHelper';
 
 export const init = () => {
     const app = Argon.init();
