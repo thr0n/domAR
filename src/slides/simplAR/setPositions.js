@@ -1,20 +1,20 @@
 import * as d3 from 'd3';
 
 import {getGlobalRoot} from './global';
-import {setArPositionRotation, TYPE_HELIX, TYPE_RING, TYPE_SPHERE, TYPE_SPHERE_RANDOM} from '../../arPositions';
+import {setArPositionRotation, TYPE_HELIX, TYPE_RING, TYPE_SPHERE, TYPE_SPHERE_RANDOM, randomSphereInit} from '../../arPositions';
 
-export const setPosition = (type, pageId, i, totalNum) => {
+export const setPosition = (type, pageId, i, totalNum, positionFunction) => {
 
     d3.selectAll("#" + pageId)
         .each(function() {
-            setArPositionRotation(this, getGlobalRoot(), type, i, totalNum);
+            setArPositionRotation(this, getGlobalRoot(), type, i, totalNum, positionFunction);
         })
 }
 
-export const setPositions = (type, pageIds) => {
+export const setPositions = (type, pageIds, positionFunction) => {
     const totalNum = pageIds.length;
     pageIds.forEach((pageId, i) => {
-        setPosition(type, pageId, i, totalNum);
+        setPosition(type, pageId, i, totalNum, positionFunction);
     })
 }
 
@@ -28,4 +28,13 @@ export const ring = () => {
 
 export const sphere = () => {
     setPositions(TYPE_SPHERE, getIdArray());
+}
+
+export const helix = () => {
+    setPositions(TYPE_HELIX, getIdArray());
+}
+
+export const sphereRandom = (numberOfSlots) => {
+    const positionFunction = randomSphereInit(numberOfSlots);
+    setPositions(TYPE_SPHERE_RANDOM, getIdArray(), positionFunction);
 }

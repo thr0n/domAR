@@ -100,7 +100,7 @@ const addToRoot = (element, root, position, rotation) => {
     return object;
 }
 
-export const getArPositionRotation = (type, i, num) => {
+export const getArPositionRotation = (type, i, num, positionFunction) => {
     let three3dObject;
 
     switch (type) {
@@ -120,7 +120,12 @@ export const getArPositionRotation = (type, i, num) => {
 
 
         case TYPE_SPHERE_RANDOM:
-            three3dObject = randomSphere(i);
+            if(_.isFunction(positionFunction)) {
+                three3dObject = positionFunction(i);
+            }
+            else {
+                three3dObject = randomSphere(i);
+            }
             break;
 
         default:
@@ -135,8 +140,8 @@ const addDataToObject = (object, type, index, totalNum) => {
     object._data = objectData;
 }
 
-export const setArPositionRotation = (element, root, type, i, totalNum) => {
-    const {position, rotation} = getArPositionRotation(type, i, totalNum);
+export const setArPositionRotation = (element, root, type, i, totalNum, positionFunction) => {
+    const {position, rotation} = getArPositionRotation(type, i, totalNum, positionFunction);
     const object = addToRoot(element, root, position, rotation);
     addDataToObject(object, type, i, totalNum);
 
