@@ -2,10 +2,10 @@
 
     function addPathToFileneme(filename) {
         if(window.location.href.indexOf("localhost:3000") > -1) {
-            return "html/" + filename;
+            return "code/" + filename;
         }
         else {
-            return "../public/html/" + filename;
+            return "../public/code/" + filename;
         }
     }
 

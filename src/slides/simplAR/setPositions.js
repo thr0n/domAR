@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 import {getGlobalRoot} from './global';
-import {setArPositionRotation} from '../../arPositions';
+import {setArPositionRotation, TYPE_HELIX, TYPE_RING, TYPE_SPHERE, TYPE_SPHERE_RANDOM} from '../../arPositions';
 
 export const setPosition = (type, pageId, i, totalNum) => {
 
@@ -14,6 +14,10 @@ export const setPosition = (type, pageId, i, totalNum) => {
 export const setPositions = (type, pageIds) => {
     const totalNum = pageIds.length;
     pageIds.forEach((pageId, i) => {
-        setPosition(type, pageId, totalNum);
+        setPosition(type, pageId, i, totalNum);
     })
+}
+
+export const ring = () => {
+    setPositions(TYPE_RING, window._pages.map((page) => page.id));
 }
