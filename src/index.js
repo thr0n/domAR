@@ -2,7 +2,7 @@ import 'materialize-css/dist/css/materialize.css';
 
 import * as query from './util/query';
 
-import {initCubes} from './cubesIndex';
+import {initCubes} from './cubes/cubesIndex';
 import {initRadars} from './radarsIndex';
 import {initSlides} from './slides/slidesIndex';
 import {demoSlides} from "./slides/demoSlides/demoSlides";
