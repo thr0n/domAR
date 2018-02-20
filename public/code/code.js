@@ -2,7 +2,7 @@
 
     function init() {
         window.simplAR.initAr();
-        window.simplAR.ring();
+        window.simplAR.sphere();
     }
 
 

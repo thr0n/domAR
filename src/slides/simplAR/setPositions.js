@@ -18,6 +18,14 @@ export const setPositions = (type, pageIds) => {
     })
 }
 
+const getIdArray = () => {
+    return window._pages.map((page) => page.id);
+}
+
 export const ring = () => {
-    setPositions(TYPE_RING, window._pages.map((page) => page.id));
+    setPositions(TYPE_RING, getIdArray());
+}
+
+export const sphere = () => {
+    setPositions(TYPE_SPHERE, getIdArray());
 }
