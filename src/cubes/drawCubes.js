@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import * as _ from 'lodash';
 
-import DrawText from '../DrawText';
+import DrawText from './DrawText';
 import {hsla} from './color';
 
 import * as query from '../util/query';
