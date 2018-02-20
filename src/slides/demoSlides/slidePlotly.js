@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import {PlotlyDemo} from '../../plotly/plotly-demo';
+import {PlotlyDemo} from './plotly-demo';
 
 export const slidePlotly = (slideId) => {
     const root = d3.select("#" + slideId);
