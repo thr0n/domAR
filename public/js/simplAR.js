@@ -20,19 +20,28 @@
         window._pages_ready = true;
     }
 
-    function _addPages() {
+    function _wait(resolve) {
         if(typeof window.simplAR === 'undefined' || typeof window._pages === 'undefined') {
             setTimeout(function () {
-                _addPages();
+                _wait(resolve);
             }, 100);
         }
         else {
-            addPages();
+            resolve();
         }
     }
 
+    function wait() {
+        return new Promise((resolve) => {
+            _wait(resolve);
+        })
+    }
+
     if(!window._pages_ready && window.location.href.indexOf("simplAR") > -1) {
-        _addPages();
+        wait().then(function () {
+            addPages();
+            window._start();
+        })
     }
 })()
 
