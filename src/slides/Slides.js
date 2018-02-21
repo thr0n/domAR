@@ -1,5 +1,7 @@
 import * as d3 from 'd3';
 
+import {slideControl} from './control/SlideControl';
+
 const SLIDE_ELEMENT = "div";
 const SLIDE_CLASS = "slide";
 
@@ -26,6 +28,9 @@ export class Slides {
             .attr("id", d => d)
             .style("width", this.width + "px")
             .style("height", this.height + "px")
+            .on("click", (d) => {
+                slideControl.setCurrentSlideId(d);
+            })
 
         this.selection()
             .each(function(d, i) {
@@ -36,6 +41,7 @@ export class Slides {
     }
 
     addOne(newId) {
+        slideControl.addSlideId(newId);
         this.create([...this.ids, newId]);
     }
 
