@@ -12,6 +12,7 @@ class SlideControl {
         this.configs = {};
         this.steps = {};
         this.slideIds = [];
+        this.currentStepNumbers = {};
     }
 
     setTWEEN(TWEEN) {
@@ -120,6 +121,14 @@ class SlideControl {
         if(!_.isEmpty(this.currentSlideId)) {
             this.setSteps(this.currentSlideId, steps);
         }
+    }
+
+    getCurrentStepNumber() {
+        if(_.isUndefined(this.currentStepNumbers[this.currentSlideId])) {
+            this.currentStepNumbers[this.currentSlideId] = 0;
+        }
+        return this.currentStepNumbers[this.currentSlideId];
+
     }
 
     getCurrentSteps() {
