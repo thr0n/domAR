@@ -86,7 +86,7 @@ class SlideControl {
     nextSlide() {
         const allObjects = this.getAllObjects();
         arTransform.allNext(allObjects, this.TWEEN);
-        this.shiftCurrentSlideId();
+        this.shiftForwardCurrentSlideId();
     }
 
     setCurrentSlideId(slideId) {
@@ -102,7 +102,7 @@ class SlideControl {
         this.slideIds.push(slideId);
     }
 
-    shiftCurrentSlideId() {
+    shiftForwardCurrentSlideId() {
         const currentIndex = this.slideIds.indexOf(this.currentSlideId);
         const nextIndex = currentIndex >= this.slideIds.length - 1 ? 0 : currentIndex+1;
         this.currentSlideId = this.slideIds[nextIndex];
