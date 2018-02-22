@@ -12,7 +12,7 @@ const clearHtml = (slideId) => {
 }
 
 export const htmlSlide = (slideId, config) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         config.scriptThingyArray = config.scriptThingyArray || [];
         config.pathToJsArray = config.pathToJsArray || [];
 

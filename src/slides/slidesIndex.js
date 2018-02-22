@@ -26,9 +26,9 @@ export const initSlides = async (rootSelector, slideCreateFunction, param) => {
     key.init();
     new CommandHub();
 
-    const selectedSlideId = query.paramValue("slide");
+    const selectedFilename = query.paramValue("slide");
 
-    if(_.isEmpty(selectedSlideId)) {
+    if(_.isEmpty(selectedFilename)) {
         const slideShowIntervalInSeconds = param;
         const {root, app} = init();
 
@@ -46,7 +46,6 @@ export const initSlides = async (rootSelector, slideCreateFunction, param) => {
         startSlideShow(slideShowIntervalInSeconds);
     }
     else {
-        slideControl.setCurrentSlideId(selectedSlideId);
-        slideCreateFunction(rootSelector, selectedSlideId);
+        slideCreateFunction(rootSelector, selectedFilename);
     }
 }

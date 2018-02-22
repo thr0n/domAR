@@ -28,9 +28,6 @@ export class Slides {
             .attr("id", d => d)
             .style("width", this.width + "px")
             .style("height", this.height + "px")
-            .on("click", (d) => {
-                slideControl.setCurrentSlideId(d);
-            })
 
         this.selection()
             .each(function(d, i) {

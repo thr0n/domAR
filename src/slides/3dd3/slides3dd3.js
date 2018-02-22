@@ -6,26 +6,18 @@ import {slideControl} from '../control/SlideControl';
 const width = window.innerWidth;
 const height = window.innerHeight;
 
-const SLIDES_FOLDER = "slides/3dd3"
-
-const _title = (slides, slideId) => {
-    return staticSlide(slides, slideId, `${SLIDES_FOLDER}/title/index.html`);
-}
-
-const _css3d = (slides, slideId) => {
-    return staticSlide(slides, slideId, `${SLIDES_FOLDER}/css3d/index.html`);
-}
-
-export const init = async (rootSelector, selectedSlideId) => {
+export const init = async (rootSelector, selectedFilename) => {
 
     const slides = new Slides(rootSelector, width, height);
 
+    const createFct = (filename) => staticSlide(slides, filename);
+
     await Promise.all([
-        slidesUtil.createSlide(_title, slides, "title", selectedSlideId),
-        slidesUtil.createSlide(_css3d, slides, "css3d", selectedSlideId),
+        slidesUtil.createSlide(createFct, "css3d", selectedFilename),
+        slidesUtil.createSlide(createFct, "title", selectedFilename),
     ])
 
-    slideControl.setCurrentSlideId("css3d");
+    slideControl.setCurrentSlideId("title.html");
 
     return slides.selection();
 }

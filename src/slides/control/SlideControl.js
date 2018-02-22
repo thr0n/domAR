@@ -12,7 +12,6 @@ class SlideControl {
         this.configs = {};
         this.steps = {};
         this.slideIds = [];
-        this.currentStepNumbers = {};
     }
 
     setTWEEN(TWEEN) {
@@ -92,11 +91,6 @@ class SlideControl {
 
     setCurrentSlideId(slideId) {
         this.currentSlideId = slideId;
-        this.currentStepNumber = 0;
-    }
-
-    getCurrentSlideId() {
-        return this.currentSlideId;
     }
 
     addSlideId(slideId) {
@@ -109,76 +103,67 @@ class SlideControl {
         this.currentSlideId = this.slideIds[nextIndex];
     }
 
-    setSteps(slideId, steps) {
-        this.steps[slideId] = steps;
+    setStepsObject(slideId, steps, currentStepNumber = 0) {
+        this.steps[slideId] = {steps, currentStepNumber};
     }
 
-    getSteps = (slideId) => {
+    getStepsObject = (slideId) => {
         return this.steps[slideId];
     }
 
-    setStepsForCurrentSlide(steps) {
-        if(!_.isEmpty(this.currentSlideId)) {
-            this.setSteps(this.currentSlideId, steps);
-        }
+    setCurrentStepsObject(steps, currentStepNumber = 0) {
+        this.setStepsObject(this.currentSlideId, steps, currentStepNumber);
     }
 
-    getCurrentStepNumber() {
-        if(_.isUndefined(this.currentStepNumbers[this.currentSlideId])) {
-            this.currentStepNumbers[this.currentSlideId] = 0;
-        }
-        return this.currentStepNumbers[this.currentSlideId];
-
-    }
-
-    getCurrentSteps() {
-        return this.getSteps(this.currentSlideId);
-    }
-
-    nextStep(trueIfForward) {
-        const nextStepNumber = this.currentStepNumber + (trueIfForward ? +1 : -1);
-        const nextStep = this.steps[nextStepNumber];
-        if(!_.isEmpty(nextStep)) {
-
-        }
+    getCurrentStepsObject() {
+        return this.getStepsObject(this.currentSlideId);
     }
 
     renderStepNumber() {
         const renderCounterElement = $("#" + this.currentSlideId + " .slidecounter");
         if(!_.isEmpty(renderCounterElement)) {
-            renderCounterElement.html(this.currentStepNumber + " / " + this.getCurrentSteps().length);
+            const {steps, currentStepNumber} = this.getCurrentStepsObject();
+            renderCounterElement.html(currentStepNumber + " / " + steps.length);
         }
     }
 
     incCurrentStepNumber() {
-        this.currentStepNumber++;
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
+        const newStepNumber = currentStepNumber+1;
+        this.setCurrentStepsObject(steps, currentStepNumber+1);
         this.renderStepNumber();
+
+        return newStepNumber;
     }
 
     decCurrentStepNumber() {
-        this.currentStepNumber--;
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
+        const newStepNumber = currentStepNumber-1;
+        this.setCurrentStepsObject(steps, newStepNumber);
         this.renderStepNumber();
+
+        return newStepNumber;
     }
 
     forwardStep() {
-        const steps = this.getCurrentSteps();
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
         if(_.isEmpty(steps)) {
             return
         }
-        if(this.currentStepNumber < steps.length) {
-            const step = steps[this.currentStepNumber];
+        if(currentStepNumber < steps.length) {
+            const step = steps[currentStepNumber];
             fct.call(step.f);
             this.incCurrentStepNumber();
         }
     }
 
     backwardStep() {
-        const steps = this.getCurrentSteps();
-        if(_.isEmpty(steps) || !(this.currentStepNumber > 0)) {
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
+        if(_.isEmpty(steps) || !(currentStepNumber > 0)) {
             return
         }
-        this.decCurrentStepNumber();
-        const step = steps[this.currentStepNumber];
+        const newstepNumber = this.decCurrentStepNumber();
+        const step = steps[newstepNumber];
         fct.call(step.b);
     }
 }

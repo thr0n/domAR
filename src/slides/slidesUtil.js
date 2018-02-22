@@ -1,10 +1,8 @@
 import * as _ from "lodash";
-import {slideControl} from './control/SlideControl';
 
-export const createSlide = (fct, slides, slideId, selectedSlideId) => {
-    if(_.isEmpty(selectedSlideId) ||  slideId === selectedSlideId) {
-        slideControl.setCurrentSlideId(slideId);
-        return fct(slides, slideId, slideId);
+export const createSlide = (createFct, filename, selectedFilename) => {
+    if(_.isEmpty(selectedFilename) ||  filename === selectedFilename) {
+        return createFct(filename);
     }
     else {
         return Promise.resolve();

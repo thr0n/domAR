@@ -1,7 +1,7 @@
 import {slideControl} from '../control/SlideControl';
 
-export const set = (steps) => {
-    slideControl.setStepsForCurrentSlide(steps);
+export const set = (slideId, steps) => {
+    slideControl.setStepsObject(slideId, steps);
 }
 
 export const steps = {
