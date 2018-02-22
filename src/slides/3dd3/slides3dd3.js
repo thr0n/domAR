@@ -17,7 +17,7 @@ export const init = async (rootSelector, selectedFilename) => {
         slidesUtil.createSlide(createFct, "title", selectedFilename),
     ])
 
-    slideControl.setCurrentSlideId("title.html");
+    slideControl.setCurrentSlideId("title");
 
     return slides.selection();
 }
