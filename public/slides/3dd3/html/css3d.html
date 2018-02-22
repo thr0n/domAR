@@ -18,28 +18,37 @@
     <div class="char font-effect-anaglyph">d</div>
 </div>
 
+<div id="csscode"></div>
+
 <script>
 
+    /* global slidAR */
+
     (function () {
-        function step1() {
-            window.slidAR.highlight.animatedBorder(".title div.char.char1", window.slidAR.highlight.DARK_COLOR_CLASS);
+        function showBorder() {
+            slidAR.highlight.animatedBorder(".title div.char.char1", slidAR.highlight.DARK_COLOR_CLASS);
         }
 
-        function _step1() {
-            window.slidAR.highlight.removeBorder(".title div.char.char1");
+        function _showBorder() {
+            slidAR.highlight.removeBorder(".title div.char.char1");
         }
 
-        function step2() {
-            window.slidAR.tooltip.createPt("div.char1", ".title span.char1", window.slidAR.tooltip.TOP);
+        function showTooltip() {
+            slidAR.tooltip.createPt("div.char1", ".title span.char1", slidAR.tooltip.TOP);
         }
 
-        function _step2() {
-            window.slidAR.tooltip.removePt(".title span.char1", window.slidAR.tooltip.TOP);
+        function _showTooltip() {
+            slidAR.tooltip.removePt(".title span.char1", slidAR.tooltip.TOP);
+        }
+
+        function showCode() {
+            slidAR.showCode.css("#csscode", "div.char1 {transform: rotateX(45deg);}")
         }
 
         window.slidAR.steps.set("css3d", [
-            {f: step1, b: _step1},
-            {f: step2, b: _step2}
+            {f: showBorder, b: _showBorder},
+            {f: showTooltip, b: _showTooltip},
+            {f: showCode}
         ])
     })()
 
