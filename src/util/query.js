@@ -27,17 +27,18 @@ export const createQueryMap = () => {
 }
 
 const makeQueryFromQueryMap = (queryMap) => {
-    _.toPairs(queryMap).reduce((queryString, keyValuePair) => {
+    return _.toPairs(queryMap).reduce((queryString, keyValuePair) => {
         if(_.isUndefined(keyValuePair[1])) {
             return queryString + "&" + keyValuePair[0];
         }
         return queryString + "&" + keyValuePair[0] + "=" + keyValuePair[1];
-    })
+    }, "")
 }
 
 export const createHrefWithQueryMap = (queryMap) => {
     const urlObject = url.parse(window.location.href);
     const newQuery = makeQueryFromQueryMap(queryMap);
+    urlObject.search = newQuery;
     urlObject.query = newQuery;
 
     return url.format(urlObject);

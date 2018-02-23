@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<style>
+    .rotatex {
+        transform: rotateX(45deg);
+        background-color: blue;
+    }
+</style>
+
 <div class="slidecounter"></div>
 
 <div class="title">
@@ -42,17 +49,26 @@
         }
 
         function showCode() {
-            slidAR.showCode.css("#csscode", "div.char1 {\n\ttransform: rotateX(45deg);\n}")
+            slidAR.showCode.css("#csscode", "div.char1 {\n\ttransform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);\n}")
         }
 
         function _showCode() {
             slidAR.showCode.remove("#csscode");
         }
 
+        function rotateX() {
+            $(".title span.char1").css("transform", "rotateX(45deg) rotateY(45deg) rotateZ(45deg)");
+        }
+
+        function _rotateX() {
+            $(".title span.char1").css("transform", "rotateX(0deg) rotateY(0deg) rotateZ(0deg)");
+        }
+
         window.slidAR.steps.set("css3d", [
             {f: showBorder, b: _showBorder},
             {f: showTooltip, b: _showTooltip},
-            {f: showCode, b: _showCode}
+            {f: showCode, b: _showCode},
+            {f: rotateX, b: _rotateX}
         ])
     })()
 
