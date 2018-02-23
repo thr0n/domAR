@@ -6,14 +6,14 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&effect=anaglyph" rel="stylesheet">
     <link href="./slides/3dd3/style.css" rel="stylesheet">
 </head>
-<body>
 
 <style>
     .rotatex {
-        transform: rotateX(45deg);
-        background-color: blue;
+        transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
     }
 </style>
+
+<body>
 
 <div class="slidecounter"></div>
 
@@ -57,11 +57,11 @@
         }
 
         function rotateX() {
-            $(".title span.char1").css("transform", "rotateX(45deg) rotateY(45deg) rotateZ(45deg)");
+            $(".title span.char1").addClass("rotatex");
         }
 
         function _rotateX() {
-            $(".title span.char1").css("transform", "rotateX(0deg) rotateY(0deg) rotateZ(0deg)");
+            $(".title span.char1").removeClass("rotatex");
         }
 
         window.slidAR.steps.set("css3d", [
