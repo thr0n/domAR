@@ -39,14 +39,14 @@
 <script>
     (function () {
         function step1() {
-            window.slidAR.classUtil.setClass(".slide-title div.char", "xaxis", 100);
+            slidAR.classUtil.setClass(".slide-title div.char", "xaxis", 100);
         }
 
         function _step1() {
-            window.slidAR.classUtil.removeClass(".slide-title div.char", "xaxis");
+            slidAR.classUtil.removeClass(".slide-title div.char", "xaxis");
         }
 
-        window.slidAR.steps.set([
+        window.slidAR.steps.set("title", [
             {f: step1, b: _step1}
         ]);
     })()

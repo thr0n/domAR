@@ -8,5 +8,6 @@
         {id: "html6", name: "html6.html"},
         {id: "html7", name: "html7.html"},
         {id: "html8", name: "html8.html"},
+        {id: "html9", name: "html9.html"},
     ]
 })()
