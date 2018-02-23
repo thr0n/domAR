@@ -4,7 +4,7 @@ import * as _ from 'lodash';
 import DrawText from './DrawText';
 import {hsla} from './color';
 
-import * as query from './util/query';
+import * as query from '../util/query';
 
 const FRONT = "front";
 const LEFT = "left";

@@ -3,12 +3,14 @@ import * as $ from 'jquery';
 
 import {log} from '../../util/log';
 import * as fct from '../../util/fct';
+import {slidarGlobal} from '../slidAR/slidarGlobal';
+import * as nonArSlides from '../nonArSlides';
 
-import * as arTransform from '../../arTransform';
+import * as arTransform from '../../ar/arTransform';
 
 class SlideControl {
 
-    constructor() {
+    constructor(withAr) {
         this.configs = {};
         this.steps = {};
         this.slideIds = [];
@@ -84,85 +86,92 @@ class SlideControl {
     }
 
     nextSlide() {
-        const allObjects = this.getAllObjects();
-        arTransform.allNext(allObjects, this.TWEEN);
+        if(slidarGlobal.withAr) {
+            const allObjects = this.getAllObjects();
+            arTransform.allNext(allObjects, this.TWEEN);
+            this.shiftForwardCurrentSlideId();
+        }
+        else {
+            this.shiftForwardCurrentSlideId();
+            nonArSlides.nextSlide(this.currentSlideId);
+        }
     }
 
     setCurrentSlideId(slideId) {
         this.currentSlideId = slideId;
-        this.currentStepNumber = 0;
-    }
-
-    getCurrentSlideId() {
-        return this.currentSlideId;
     }
 
     addSlideId(slideId) {
         this.slideIds.push(slideId);
     }
 
-    setSteps(slideId, steps) {
-        this.steps[slideId] = steps;
+    shiftForwardCurrentSlideId() {
+        const currentIndex = this.slideIds.indexOf(this.currentSlideId);
+        const nextIndex = currentIndex >= this.slideIds.length - 1 ? 0 : currentIndex+1;
+        this.currentSlideId = this.slideIds[nextIndex];
     }
 
-    getSteps = (slideId) => {
+    setStepsObject(slideId, steps, currentStepNumber = 0) {
+        this.steps[slideId] = {steps, currentStepNumber};
+    }
+
+    getStepsObject = (slideId) => {
         return this.steps[slideId];
     }
 
-    setStepsForCurrentSlide(steps) {
-        if(!_.isEmpty(this.currentSlideId)) {
-            this.setSteps(this.currentSlideId, steps);
-        }
+    setCurrentStepsObject(steps, currentStepNumber = 0) {
+        this.setStepsObject(this.currentSlideId, steps, currentStepNumber);
     }
 
-    getCurrentSteps() {
-        return this.getSteps(this.currentSlideId);
-    }
-
-    nextStep(trueIfForward) {
-        const nextStepNumber = this.currentStepNumber + (trueIfForward ? +1 : -1);
-        const nextStep = this.steps[nextStepNumber];
-        if(!_.isEmpty(nextStep)) {
-
-        }
+    getCurrentStepsObject() {
+        return this.getStepsObject(this.currentSlideId);
     }
 
     renderStepNumber() {
         const renderCounterElement = $("#" + this.currentSlideId + " .slidecounter");
         if(!_.isEmpty(renderCounterElement)) {
-            renderCounterElement.html(this.currentStepNumber + " / " + this.getCurrentSteps().length);
+            const {steps, currentStepNumber} = this.getCurrentStepsObject();
+            renderCounterElement.html(currentStepNumber + " / " + steps.length);
         }
     }
 
     incCurrentStepNumber() {
-        this.currentStepNumber++;
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
+        const newStepNumber = currentStepNumber+1;
+        this.setCurrentStepsObject(steps, currentStepNumber+1);
         this.renderStepNumber();
+
+        return newStepNumber;
     }
 
     decCurrentStepNumber() {
-        this.currentStepNumber--;
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
+        const newStepNumber = currentStepNumber-1;
+        this.setCurrentStepsObject(steps, newStepNumber);
         this.renderStepNumber();
+
+        return newStepNumber;
     }
 
     forwardStep() {
-        const steps = this.getCurrentSteps();
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
         if(_.isEmpty(steps)) {
             return
         }
-        if(this.currentStepNumber < steps.length) {
-            const step = steps[this.currentStepNumber];
+        if(currentStepNumber < steps.length) {
+            const step = steps[currentStepNumber];
             fct.call(step.f);
             this.incCurrentStepNumber();
         }
     }
 
     backwardStep() {
-        const steps = this.getCurrentSteps();
-        if(_.isEmpty(steps) || !(this.currentStepNumber > 0)) {
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
+        if(_.isEmpty(steps) || !(currentStepNumber > 0)) {
             return
         }
-        this.decCurrentStepNumber();
-        const step = steps[this.currentStepNumber];
+        const newstepNumber = this.decCurrentStepNumber();
+        const step = steps[newstepNumber];
         fct.call(step.b);
     }
 }

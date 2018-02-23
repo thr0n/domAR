@@ -1,13 +1,14 @@
 import * as _ from 'lodash';
 
 import {log} from '../util/log';
-import {setArPositionRotation, TYPE_RING} from '../arPositions';
-import {init} from '../argonApp';
+import {setArPositionRotation, TYPE_RING} from '../ar/arPositions';
+import {init} from '../ar/argonApp';
 import {CommandHub} from './control/commandHub';
 import {slideControl} from './control/SlideControl';
 import * as key from './slidAR/key';
 import * as query from '../util/query';
 import * as slidAR from './slidAR/slidAR';
+import {slidarGlobal} from './slidAR/slidarGlobal';
 
 window.slidAR = slidAR;
 
@@ -26,9 +27,10 @@ export const initSlides = async (rootSelector, slideCreateFunction, param) => {
     key.init();
     new CommandHub();
 
-    const selectedSlideId = query.paramValue("slide");
+    const selectedFilename = query.paramValue("slide");
 
-    if(_.isEmpty(selectedSlideId)) {
+    if(_.isEmpty(selectedFilename)) {
+        slidarGlobal.withAr = true;
         const slideShowIntervalInSeconds = param;
         const {root, app} = init();
 
@@ -46,7 +48,7 @@ export const initSlides = async (rootSelector, slideCreateFunction, param) => {
         startSlideShow(slideShowIntervalInSeconds);
     }
     else {
-        slideControl.setCurrentSlideId(selectedSlideId);
-        slideCreateFunction(rootSelector, selectedSlideId);
+        slidarGlobal.withAr = false;
+        slideCreateFunction(rootSelector, selectedFilename);
     }
 }

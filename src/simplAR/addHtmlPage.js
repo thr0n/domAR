@@ -1,4 +1,4 @@
-import {loadHtmlWithSelector} from '../htmlSlide';
+import {loadHtmlWithSelector} from '../util/loadHtml';
 import {createElement} from './createElements';
 
 export const addHtmlPageWithSelector = (selector, pathToHtmlPage) => {

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&effect=anaglyph" rel="stylesheet">
+    <link href="./slides/3dd3/style.css" rel="stylesheet">
+</head>
+
+<style>
+    .rotatex {
+        transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+    }
+</style>
+
+<body>
+
+<div class="slidecounter"></div>
+
+<div class="title">
+    <span class="char1"><div class="char char1 font-effect-anaglyph">c</div></span>
+    <div class="char font-effect-anaglyph">s</div>
+    <div class="char font-effect-anaglyph">s</div>
+    <div class="char font-effect-anaglyph">3</div>
+    <div class="char font-effect-anaglyph">d</div>
+</div>
+
+<div id="csscode"></div>
+
+<script>
+
+    /* global slidAR */
+
+    (function () {
+        function showBorder() {
+            slidAR.highlight.animatedBorder(".title div.char.char1", slidAR.highlight.DARK_COLOR_CLASS);
+        }
+
+        function _showBorder() {
+            slidAR.highlight.removeBorder(".title div.char.char1");
+        }
+
+        function showTooltip() {
+            slidAR.tooltip.createPt("div.char1", ".title span.char1", slidAR.tooltip.TOP);
+        }
+
+        function _showTooltip() {
+            slidAR.tooltip.removePt(".title span.char1", slidAR.tooltip.TOP);
+        }
+
+        function showCode() {
+            slidAR.showCode.css("#csscode", "div.char1 {\n\ttransform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);\n}")
+        }
+
+        function _showCode() {
+            slidAR.showCode.remove("#csscode");
+        }
+
+        function rotateX() {
+            $(".title span.char1").addClass("rotatex");
+        }
+
+        function _rotateX() {
+            $(".title span.char1").removeClass("rotatex");
+        }
+
+        window.slidAR.steps.set("css3d", [
+            {f: showBorder, b: _showBorder},
+            {f: showTooltip, b: _showTooltip},
+            {f: showCode, b: _showCode},
+            {f: rotateX, b: _rotateX}
+        ])
+    })()
+
+
+</script>
+
+</body>
+</html>

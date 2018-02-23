@@ -26,6 +26,24 @@ export const createQueryMap = () => {
     return {}
 }
 
+const makeQueryFromQueryMap = (queryMap) => {
+    return _.toPairs(queryMap).reduce((queryString, keyValuePair) => {
+        if(_.isUndefined(keyValuePair[1])) {
+            return queryString + "&" + keyValuePair[0];
+        }
+        return queryString + "&" + keyValuePair[0] + "=" + keyValuePair[1];
+    }, "")
+}
+
+export const createHrefWithQueryMap = (queryMap) => {
+    const urlObject = url.parse(window.location.href);
+    const newQuery = makeQueryFromQueryMap(queryMap);
+    urlObject.search = newQuery;
+    urlObject.query = newQuery;
+
+    return url.format(urlObject);
+}
+
 export const paramValue = (paramName) => {
     const queryMap = createQueryMap();
     return queryMap[paramName];

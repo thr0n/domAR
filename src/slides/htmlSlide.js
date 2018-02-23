@@ -5,24 +5,14 @@ import * as fct from '../util/fct';
 import {appendScriptsWithReadyFunction} from '../util/loadScript';
 import {slideControl} from './control/SlideControl';
 import {appendStyles} from "../util/loadStyles";
-
-const vsprintf = require('sprintf-js').vsprintf;
-
-export const loadHtmlWithSelector = (selector, pathToHtml) => {
-    log.info(vsprintf("Load html (%s) into selector: %s", [pathToHtml, selector]));
-    $(selector).load(pathToHtml);
-}
-
-const loadHtml = (slideId, pathToHtml) => {
-    loadHtmlWithSelector("#" + slideId, pathToHtml);
-}
+import {loadHtmlWithSelector, loadHtml} from '../util/loadHtml';
 
 const clearHtml = (slideId) => {
     $("#" + slideId).empty();
 }
 
 export const htmlSlide = (slideId, config) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         config.scriptThingyArray = config.scriptThingyArray || [];
         config.pathToJsArray = config.pathToJsArray || [];
 

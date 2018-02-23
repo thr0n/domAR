@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import {init} from '../../argonApp';
+import {init} from '../ar/argonApp';
 import * as global from './global';
 import {ring, sphere, helix, sphereRandom, table, rotate} from './setPositions';
 

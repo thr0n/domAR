@@ -2,7 +2,7 @@ import Fonts from './Fonts';
 
 const fonts = new Fonts();
 
-const KUTE = require('kute.js');
+const KUTE = require('../../node_modules/kute.js/kute');
 require("kute.js/kute-svg");
 
 class DrawText {

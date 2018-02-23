@@ -41,6 +41,7 @@
     "opentype.js": "^0.7.3",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
+    "prismjs": "^1.11.0",
     "promise": "8.0.1",
     "protip": "^1.4.16",
     "react-dev-utils": "^4.0.1",
@@ -70,7 +71,9 @@
   "proxy": {
     "/public": {
       "target": "http://localhost:3000",
-      "pathRewrite": {"^/public": ""},
+      "pathRewrite": {
+        "^/public": ""
+      },
       "changeOrigin": true
     }
   },

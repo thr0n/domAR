@@ -1,5 +1,3 @@
-import {$} from '../../jquery/jquery-common';
-
 import {Slides} from '../Slides';
 import {slidePlotly} from './slidePlotly';
 import {htmlSlide, HtmlSlide} from '../htmlSlide';
@@ -7,6 +5,8 @@ import {appendScriptsWithReadyFunction} from '../../util/loadScript';
 import {slideControl} from '../control/SlideControl';
 
 import * as query from '../../util/query';
+
+const $ = window.$;
 
 const paramFactor = query.paramValue("f");
 const factor = Number(paramFactor || 2.0);

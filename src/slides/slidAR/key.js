@@ -17,5 +17,9 @@ export const init = () => {
         slideControl.backwardStep();
     })
 
+    keyboard.bind('up', () => {
+        slideControl.nextSlide();
+    })
+
 }
 
