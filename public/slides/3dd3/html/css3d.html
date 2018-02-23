@@ -36,7 +36,8 @@
     <span class="char5"><div class="char char5 font-effect-anaglyph">d</div></span>
 </div>
 
-<div id="csscode"></div>
+<div id="transform-code"></div>
+<div id="animate-code"></div>
 
 <script>
 
@@ -59,12 +60,12 @@
             slidAR.tooltip.removePt(".title span.char1", slidAR.tooltip.TOP);
         }
 
-        function showCode() {
-            slidAR.showCode.css("#csscode", "div.char1 {\n\ttransform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);\n}")
+        function showCodeTransform() {
+            slidAR.showCode.css("#transform-code", "div.char1 {\n\ttransform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);\n}")
         }
 
-        function _showCode() {
-            slidAR.showCode.remove("#csscode");
+        function _showCodeTransform() {
+            slidAR.showCode.remove("#transform-code");
         }
 
         function rotateX() {
@@ -85,6 +86,22 @@
             slidAR.tooltip.removePt(".title span.char5", slidAR.tooltip.TOP);
         }
 
+        function showCodeAnimate() {
+            slidAR.showCode.css("#animate-code", "@keyframes rotate {\n" +
+                "        0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }\n" +
+                "        50% { transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg); }\n" +
+                "        100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }\n" +
+                "    }\n" +
+                "\n" +
+                "div.char5 {\n" +
+                "        animation: rotate 6s infinite ease-in-out;\n" +
+                "}")
+        }
+
+        function _showCodeAnimate() {
+            slidAR.showCode.remove("#animate-code");
+        }
+
         function rotate() {
             $(".title span.char5").addClass("rotate");
         }
@@ -96,9 +113,10 @@
         window.slidAR.steps.set("css3d", [
             {f: showBorder, b: _showBorder},
             {f: showTooltip, b: _showTooltip},
-            {f: showCode, b: _showCode},
+            {f: showCodeTransform, b: _showCodeTransform},
             {f: rotateX, b: _rotateX},
             {f: showBorderAndTooltip, b: _showBorderAndTooltip},
+            {f: showCodeAnimate, b: _showCodeAnimate},
             {f: rotate, b: _rotate}
         ])
     })()
