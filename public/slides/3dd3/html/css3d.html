@@ -11,6 +11,17 @@
     .rotatex {
         transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
     }
+
+    @keyframes rotate {
+        0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+        50% { transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg); }
+        100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+    }
+
+    .rotate {
+        animation: rotate 6s infinite ease-in-out;
+    }
+
 </style>
 
 <body>
@@ -22,7 +33,7 @@
     <div class="char font-effect-anaglyph">s</div>
     <div class="char font-effect-anaglyph">s</div>
     <div class="char font-effect-anaglyph">3</div>
-    <div class="char font-effect-anaglyph">d</div>
+    <span class="char5"><div class="char char5 font-effect-anaglyph">d</div></span>
 </div>
 
 <div id="csscode"></div>
@@ -64,11 +75,31 @@
             $(".title span.char1").removeClass("rotatex");
         }
 
+        function showBorderAndTooltip() {
+            slidAR.highlight.animatedBorder(".title div.char.char5", slidAR.highlight.DARK_COLOR_CLASS);
+            slidAR.tooltip.createPt("div.char5", ".title span.char5", slidAR.tooltip.TOP);
+        }
+
+        function _showBorderAndTooltip() {
+            slidAR.highlight.removeBorder(".title div.char.char5");
+            slidAR.tooltip.removePt(".title span.char5", slidAR.tooltip.TOP);
+        }
+
+        function rotate() {
+            $(".title span.char5").addClass("rotate");
+        }
+
+        function _rotate() {
+            $(".title span.char5").removeClass("rotate");
+        }
+
         window.slidAR.steps.set("css3d", [
             {f: showBorder, b: _showBorder},
             {f: showTooltip, b: _showTooltip},
             {f: showCode, b: _showCode},
-            {f: rotateX, b: _rotateX}
+            {f: rotateX, b: _rotateX},
+            {f: showBorderAndTooltip, b: _showBorderAndTooltip},
+            {f: rotate, b: _rotate}
         ])
     })()
 

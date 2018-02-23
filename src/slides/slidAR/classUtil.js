@@ -5,7 +5,7 @@ export const setRemoveClass = (selector, className, trueToSet, intervalInMs) => 
         .each(function(_, i) {
             const element = this;
             setTimeout(function () {
-                d3.select(element).classed("xaxis", trueToSet)
+                d3.select(element).classed(className, trueToSet)
             }, i * (intervalInMs || 0))
         })
 }
