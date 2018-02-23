@@ -1,7 +1,5 @@
 import * as d3 from 'd3';
 
-import {slideControl} from './control/SlideControl';
-
 const SLIDE_ELEMENT = "div";
 const SLIDE_CLASS = "slide";
 
@@ -38,7 +36,6 @@ export class Slides {
     }
 
     addOne(newId) {
-        slideControl.addSlideId(newId);
         this.create([...this.ids, newId]);
     }
 

@@ -8,6 +8,7 @@ import {slideControl} from './control/SlideControl';
 import * as key from './slidAR/key';
 import * as query from '../util/query';
 import * as slidAR from './slidAR/slidAR';
+import {slidarGlobal} from './slidAR/slidarGlobal';
 
 window.slidAR = slidAR;
 
@@ -29,6 +30,7 @@ export const initSlides = async (rootSelector, slideCreateFunction, param) => {
     const selectedFilename = query.paramValue("slide");
 
     if(_.isEmpty(selectedFilename)) {
+        slidarGlobal.withAr = true;
         const slideShowIntervalInSeconds = param;
         const {root, app} = init();
 
@@ -46,6 +48,7 @@ export const initSlides = async (rootSelector, slideCreateFunction, param) => {
         startSlideShow(slideShowIntervalInSeconds);
     }
     else {
+        slidarGlobal.withAr = false;
         slideCreateFunction(rootSelector, selectedFilename);
     }
 }

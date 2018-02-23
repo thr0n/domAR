@@ -3,12 +3,14 @@ import * as $ from 'jquery';
 
 import {log} from '../../util/log';
 import * as fct from '../../util/fct';
+import {slidarGlobal} from '../slidAR/slidarGlobal';
+import * as nonArSlides from '../nonArSlides';
 
 import * as arTransform from '../../ar/arTransform';
 
 class SlideControl {
 
-    constructor() {
+    constructor(withAr) {
         this.configs = {};
         this.steps = {};
         this.slideIds = [];
@@ -84,9 +86,15 @@ class SlideControl {
     }
 
     nextSlide() {
-        const allObjects = this.getAllObjects();
-        arTransform.allNext(allObjects, this.TWEEN);
-        this.shiftForwardCurrentSlideId();
+        if(slidarGlobal.withAr) {
+            const allObjects = this.getAllObjects();
+            arTransform.allNext(allObjects, this.TWEEN);
+            this.shiftForwardCurrentSlideId();
+        }
+        else {
+            this.shiftForwardCurrentSlideId();
+            nonArSlides.nextSlide(this.currentSlideId);
+        }
     }
 
     setCurrentSlideId(slideId) {
