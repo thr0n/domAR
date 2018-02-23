@@ -77,7 +77,7 @@
       "changeOrigin": true
     }
   },
-  "homepage": "https://owidder.github.io/radAR/build",
+  "homepage": "https://thr0n.github.io/domAR/build",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"

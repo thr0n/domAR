@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/radAR/build/";
+/******/ 	__webpack_require__.p = "/domAR/build/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 202);
@@ -76123,4 +76123,4 @@ var setPosition=function setPosition(type,pageId,i,totalNum,positionFunction){__
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.53f66d9f.js.map
+//# sourceMappingURL=main.c9a71498.js.map
