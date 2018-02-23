@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 import {Slides} from "../Slides";
 import {staticSlide} from "../staticSlide";
 import * as slidesUtil from '../slidesUtil';
@@ -17,7 +19,12 @@ export const init = async (rootSelector, selectedFilename) => {
         slidesUtil.createSlide(createFct, "title", selectedFilename),
     ])
 
-    slideControl.setCurrentSlideId("title");
+    if(_.isEmpty(selectedFilename)) {
+        slideControl.setCurrentSlideId("title");
+    }
+    else {
+        slideControl.setCurrentSlideId(selectedFilename);
+    }
 
     return slides.selection();
 }

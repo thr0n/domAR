@@ -42,13 +42,17 @@
         }
 
         function showCode() {
-            slidAR.showCode.css("#csscode", "div.char1 {transform: rotateX(45deg);}")
+            slidAR.showCode.css("#csscode", "div.char1 {\n\ttransform: rotateX(45deg);\n}")
+        }
+
+        function _showCode() {
+            slidAR.showCode.remove("#csscode");
         }
 
         window.slidAR.steps.set("css3d", [
             {f: showBorder, b: _showBorder},
             {f: showTooltip, b: _showTooltip},
-            {f: showCode}
+            {f: showCode, b: _showCode}
         ])
     })()
 
