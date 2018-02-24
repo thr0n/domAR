@@ -49,4 +49,18 @@ export const removePt = (selector) => {
     $(selector).protipHide();
 }
 
-export const tooltip = {createPt, removePt, create, remove, TOP, BOTTOM, RIGHT, LEFT}
+export const createPtStep = (title, selector, position) => {
+    return {
+        f: () => createPt(title, selector, position),
+        b: () => removePt(selector)
+    }
+}
+
+export const tooltip = {
+    createPt,
+    createPtStep,
+    removePt,
+    create,
+    remove,
+    TOP, BOTTOM, RIGHT, LEFT
+}
