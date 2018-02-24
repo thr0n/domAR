@@ -83,6 +83,34 @@
         animation-fill-mode: forwards;
     }
 
+    #cube-right {
+        background-color: #880e4f;
+        color: white;
+    }
+
+    @keyframes animate-right {
+        100% {transform: rotateY(90deg) translateZ(100px)}
+    }
+
+    .animate-right {
+        animation: animate-right 1s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    #cube-front {
+        background-color: #d4e157;
+        color: black;
+    }
+
+    @keyframes animate-front {
+        100% {transform: translateZ(100px)}
+    }
+
+    .animate-front {
+        animation: animate-front 1s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
 </style>
 
 <div id="cube-container">
@@ -113,6 +141,14 @@
             "        rotateY(-90deg) translateZ(100px)\n" +
             "    }")
 
+        const rightCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".bottom {\n" +
+            "        rotateY(90deg) translateZ(100px)\n" +
+            "    }")
+
+        const frontCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".bottom {\n" +
+            "        translateZ(100px)\n" +
+            "    }")
+
         slidAR.steps.set("cube", [
             slidAR.createElement.divStep("#_cube span", "cube-back", ["cube-side"], "Back"),
             backCodeStep.step,
@@ -130,6 +166,14 @@
             leftCodeStep.step,
             slidAR.classUtil.setClassStep("#cube-left", "animate-left"),
             leftCodeStep.reverseStep,
+            slidAR.createElement.divStep("#_cube span", "cube-right", ["cube-side"], "Right"),
+            rightCodeStep.step,
+            slidAR.classUtil.setClassStep("#cube-right", "animate-right"),
+            rightCodeStep.reverseStep,
+            slidAR.createElement.divStep("#_cube span", "cube-front", ["cube-side"], "Front"),
+            frontCodeStep.step,
+            slidAR.classUtil.setClassStep("#cube-front", "animate-front"),
+            frontCodeStep.reverseStep,
         ])
     })()
 
