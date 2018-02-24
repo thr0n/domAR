@@ -1,14 +1,50 @@
 <style>
-    #cube-front {
+
+    .cube-side {
         width: 200px;
         height: 200px;
-        background-color: #0f9d58;
-        color: white;
         position: absolute;
         top: 40%;
         left: 40%;
         font-size: 3em;
+        opacity: 0.5;
+    }
+
+    #cube-back {
+        background-color: #0f9d58;
+        color: white;
+    }
+
+    .back {
+        transform: rotateY(-180deg) translateZ(100px);
+    }
+
+    @keyframes animate-back {
+        0% {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);}
+        100% {transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg) translateZ(100px);}
+    }
+
+    .animate-back {
+        animation: animate-back 1s ease-in-out;
     }
 </style>
 
-<div id="cube-front">Back</div>
+<div id="cube-back" class="cube-side">Back</div>
+
+<div id="code"></div>
+
+<script>
+    (function () {
+
+        const backCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".back {\n" +
+            "        transform: rotateY(-180deg) translateZ(100px);\n" +
+            "    }")
+
+        slidAR.steps.set("cube", [
+            backCodeStep.step,
+            slidAR.classUtil.set2ClassesStep("#cube-back", "animate-back", "back"),
+            backCodeStep.reverseStep
+        ])
+    })()
+
+</script>

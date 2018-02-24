@@ -18,7 +18,26 @@ export const remove = (selector) => {
     $(selector).empty();
 }
 
+export const cssStep = (selector, cssString) => {
+    return {
+        f: () => css(selector, cssString),
+        b: () => remove(selector)
+    }
+}
+
+export const cssStepWithReverse = (selector, cssString) => {
+    const step = cssStep(selector, cssString);
+    const reverseStep = {
+        f: step.b,
+        b: step.f
+    }
+
+    return {step, reverseStep}
+}
+
 export const showCode = {
     css,
-    remove
+    remove,
+    cssStep,
+    cssStepWithReverse
 }

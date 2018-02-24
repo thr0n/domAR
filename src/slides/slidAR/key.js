@@ -1,7 +1,7 @@
 import {Keyboard} from 'keyboardjs';
 
 import {slideControl} from '../control/SlideControl';
-import {log} from '../../util/log';
+import {executeCommand, COMMAND_BACK, COMMAND_FWD, COMMAND_NEXT, COMMAND_PREV} from '../control/commandExecutor';
 
 const usLocale = require('keyboardjs/locales/us');
 
@@ -10,15 +10,19 @@ keyboard.setLocale('us', usLocale);
 
 export const init = () => {
     keyboard.bind('right', () => {
-        slideControl.forwardStep();
+        executeCommand(COMMAND_FWD);
     })
 
     keyboard.bind('left', () => {
-        slideControl.backwardStep();
+        executeCommand(COMMAND_BACK)
     })
 
     keyboard.bind('up', () => {
-        slideControl.nextSlide();
+        executeCommand(COMMAND_NEXT)
+    })
+
+    keyboard.bind('down', () => {
+        executeCommand(COMMAND_PREV)
     })
 
 }

@@ -13,23 +13,42 @@ const parse = (commandStr) => {
     }
 }
 
-export const execute = (commandStr) => {
-    const command = parse(commandStr);
+export const COMMAND_FWD = "fwd";
+export const COMMAND_BACK = "back";
+export const COMMAND_NEXT = "next";
+export const COMMAND_PREV = "prev";
 
-    switch (command.command) {
+export const executeCommand = (command, slideId) => {
+
+    switch (command) {
         case "pause":
             log.info("command: pause");
-            slideControl.pauseJs(command.slideId);
+            slideControl.pauseJs(slideId);
             break;
 
         case "resume":
             log.info("command: resume");
-            slideControl.resumeJs(command.slideId);
+            slideControl.resumeJs(slideId);
+            break;
+
+        case "fwd":
+            log.info("command: fwd");
+            slideControl.forwardStep();
+            break;
+
+        case "back":
+            log.info("command: back");
+            slideControl.backwardStep();
             break;
 
         case "next":
             log.info("command: next");
-            slideControl.nextSlide();
+            slideControl.fwdSlide();
+            break;
+
+        case "prev":
+            log.info("command: prev");
+            slideControl.backSlide();
             break;
 
         case "connected":
@@ -37,6 +56,12 @@ export const execute = (commandStr) => {
             break;
 
         default:
-            log.error("cannot execute: " + commandStr);
+            log.error("cannot execute: " + command);
     }
+}
+
+export const execute = (commandObjStr) => {
+    const commandObj = parse(commandObjStr);
+
+    executeCommand(commandObj.command, commandObj.slideId);
 }
