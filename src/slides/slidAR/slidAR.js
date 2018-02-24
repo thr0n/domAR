@@ -3,7 +3,7 @@ import {highlight} from './highlight';
 import {tooltip} from './tooltip';
 import {steps} from './steps';
 import {showCode} from './showCode';
-import {transfrom} from './transform';
+import {createElement} from './createElement';
 
 export const slidAR = {
     classUtil,
@@ -11,6 +11,6 @@ export const slidAR = {
     tooltip,
     steps,
     showCode,
-    transfrom
+    createElement
 };
 
