@@ -56,9 +56,20 @@ export const createPtStep = (title, selector, position) => {
     }
 }
 
+export const createPtStepWithReverse = (title, selector, position) => {
+    const step = createPtStep(title, selector, position);
+    const reverseStep = {
+        f: step.b,
+        b: step.f
+    }
+
+    return {step, reverseStep}
+}
+
 export const tooltip = {
     createPt,
     createPtStep,
+    createPtStepWithReverse,
     removePt,
     create,
     remove,

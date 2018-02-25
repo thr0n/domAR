@@ -49,15 +49,15 @@ export const removeBorder = (selector) => {
     removeClass(selector, ON_CLASS);
 }
 
-export const darkBorderStep = (selector) => {
+export const animatedBorderStep = (selector, borderColorClass) => {
     return {
-        f: () => darkBorder(selector),
-        b: () => removeBorder(selector)
+        f: () => animatedBorder(selector, borderColorClass),
+        b: () => removeBorder(selector, borderColorClass)
     }
 }
 
-export const darkBorderStepWithReverse = (selector) => {
-    const step = darkBorderStep(selector);
+export const animatedBorderStepWithReverse = (selector, borderColorClass) => {
+    const step = animatedBorderStep(selector, borderColorClass);
     const reverseStep = {
         f: step.b,
         b: step.f
@@ -67,11 +67,9 @@ export const darkBorderStepWithReverse = (selector) => {
 }
 
 export const highlight = {
-    lightBorder,
-    darkBorder,
     animatedBorder,
     removeBorder,
-    darkBorderStep,
-    darkBorderStepWithReverse,
+    animatedBorderStep,
+    animatedBorderStepWithReverse,
     LIGHT_COLOR_CLASS, DARK_COLOR_CLASS
 };
