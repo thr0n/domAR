@@ -17,37 +17,43 @@ export const COMMAND_FWD = "fwd";
 export const COMMAND_BACK = "back";
 export const COMMAND_NEXT = "next";
 export const COMMAND_PREV = "prev";
+export const COMMAND_LAST = "last";
+export const COMMAND_FIRST = "first";
 
 export const executeCommand = (command, slideId) => {
 
+    log.info("command: " + command);
+
     switch (command) {
         case "pause":
-            log.info("command: pause");
             slideControl.pauseJs(slideId);
             break;
 
         case "resume":
-            log.info("command: resume");
             slideControl.resumeJs(slideId);
             break;
 
-        case "fwd":
-            log.info("command: fwd");
+        case COMMAND_FWD:
             slideControl.forwardStep();
             break;
 
-        case "back":
-            log.info("command: back");
+        case COMMAND_BACK:
             slideControl.backwardStep();
             break;
 
-        case "next":
-            log.info("command: next");
+        case COMMAND_LAST:
+            slideControl.gotoLastStep();
+            break;
+
+        case COMMAND_FIRST:
+            slideControl.gotoFirstStep();
+            break;
+
+        case COMMAND_NEXT:
             slideControl.fwdSlide();
             break;
 
-        case "prev":
-            log.info("command: prev");
+        case COMMAND_PREV:
             slideControl.backSlide();
             break;
 

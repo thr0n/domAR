@@ -119,6 +119,26 @@
         animation: animate-cube 10s infinite ease-in-out;
     }
 
+    @keyframes perspective-x {
+        40% {perspective-origin: 500%}
+        80% {perspective-origin: -500%}
+        100% {perspective-origin: 0%}
+    }
+
+    .animate-perspective-x {
+        animation: perspective-x 10s infinite ease-in-out;
+    }
+
+    @keyframes perspective-y {
+        40% {perspective-origin: 0% 500%}
+        80% {perspective-origin: 0% -500%}
+        100% {perspective-origin: 0% 0%}
+    }
+
+    .animate-perspective-y {
+        animation: perspective-y 10s infinite ease-in-out;
+    }
+
 </style>
 
 <div id="cube-container">
@@ -168,7 +188,31 @@
             "        animation: animate-cube 10s infinite ease-in-out;\n" +
             "    }\n");
 
-        const animateStep = slidAR.classUtil.setClassStepWithReverse("#_cube", "animate-cube")
+        const animateStep = slidAR.classUtil.setClassStepWithReverse("#_cube", "animate-cube");
+
+        const perspectiveXCodeStep = slidAR.showCode.cssStepWithReverse("#code", "@keyframes perspective-x {\n" +
+            "        40% {perspective-origin: 500%}\n" +
+            "        80% {perspective-origin: -500%}\n" +
+            "        100% {perspective-origin: 0%}\n" +
+            "    }\n" +
+            "\n" +
+            "    .animate-perspective-x {\n" +
+            "        animation: perspective-x 10s infinite ease-in-out;\n" +
+            "    }");
+
+        const perspectiveXStep = slidAR.classUtil.setClassStepWithReverse("#cube-container", "animate-perspective-x");
+
+        const perspectiveYCodeStep = slidAR.showCode.cssStepWithReverse("#code", "@keyframes perspective-y {\n" +
+            "        40% {perspective-origin: 0% 500%}\n" +
+            "        80% {perspective-origin: 0% -500%}\n" +
+            "        100% {perspective-origin: 0% 0%}\n" +
+            "    }\n" +
+            "\n" +
+            "    .animate-perspective-y {\n" +
+            "        animation: perspective-y 10s infinite ease-in-out;\n" +
+            "    }");
+
+        const perspectiveYStep = slidAR.classUtil.setClassStepWithReverse("#cube-container", "animate-perspective-y");
 
 
         slidAR.steps.set("cube", [
@@ -190,6 +234,11 @@
             slidAR.steps.combineSteps([tooltipStep.reverseStep, keyframeCodeStep.step]),
             animateStep.step,
             slidAR.steps.combineSteps([animateStep.reverseStep, keyframeCodeStep.reverseStep]),
+            perspectiveXCodeStep.step,
+            perspectiveXStep.step,
+            slidAR.steps.combineSteps([perspectiveXStep.reverseStep, perspectiveXCodeStep.reverseStep]),
+            perspectiveYCodeStep.step,
+            perspectiveYStep.step,
         ])
     })()
 

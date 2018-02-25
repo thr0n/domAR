@@ -195,6 +195,36 @@ class SlideControl {
         }
     }
 
+    _stepFwd(numberOfSteps) {
+        if(numberOfSteps > 0) {
+            this.forwardStep();
+            setTimeout(() => this._stepFwd(numberOfSteps-1), 10);
+        }
+    }
+
+    _stepBack(numberOfSteps) {
+        if(numberOfSteps > 0) {
+            this.backwardStep();
+            setTimeout(() => this._stepBack(numberOfSteps-1), 10);
+        }
+    }
+
+    gotoLastStep() {
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
+        if(_.isEmpty(steps)) {
+            return
+        }
+        this._stepFwd(steps.length - currentStepNumber);
+    }
+
+    gotoFirstStep() {
+        const {steps, currentStepNumber} = this.getCurrentStepsObject();
+        if(_.isEmpty(steps) || !(currentStepNumber > 0)) {
+            return
+        }
+        this._stepBack(currentStepNumber);
+    }
+
     backwardStep() {
         const {steps, currentStepNumber} = this.getCurrentStepsObject();
         if(_.isEmpty(steps) || !(currentStepNumber > 0)) {
