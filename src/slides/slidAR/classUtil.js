@@ -1,5 +1,7 @@
 import * as d3 from 'd3';
 
+import {createReverseStep} from './steps';
+
 export const setRemoveClass = (selector, className, trueToSet, intervalInMs) => {
     d3.selectAll(selector)
         .each(function(_, i) {
@@ -41,6 +43,11 @@ export const setClassStep = (selector, className, intervalInMs) => {
     }
 }
 
+export const setClassStepWithReverse = (selector, className, intervalInMs) => {
+    const step = setClassStep(selector, className, intervalInMs);
+    return createReverseStep(step);
+}
+
 export const set2Classes = (selector, clasName1, className2, delay) => {
     setClass(selector, clasName1);
     setTimeout(() => setClass(selector, className2), delay);
@@ -58,6 +65,7 @@ export const classUtil = {
     setClass,
     removeClass,
     setClassStep,
+    setClassStepWithReverse,
     setClasses,
     removeClasses,
     set2Classes,

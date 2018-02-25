@@ -9,6 +9,7 @@ import * as key from './slidAR/key';
 import * as query from '../util/query';
 import * as slidAR from './slidAR/slidAR';
 import {slidarGlobal} from './slidAR/slidarGlobal';
+import * as steps from './slidAR/steps';
 
 window.slidAR = slidAR;
 
@@ -49,6 +50,6 @@ export const initSlides = async (rootSelector, slideCreateFunction, param) => {
     }
     else {
         slidarGlobal.withAr = false;
-        slideCreateFunction(rootSelector, selectedFilename);
+        slideCreateFunction(rootSelector, selectedFilename).then(() => steps.init());
     }
 }

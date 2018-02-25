@@ -139,28 +139,28 @@
             "    }")
 
         const topCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".top {\n" +
-            "        rotateX(90deg) translateZ(100px)\n" +
+            "        transform: rotateX(90deg) translateZ(100px)\n" +
             "    }")
 
         const bottomCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".bottom {\n" +
-            "        rotateX(-90deg) translateZ(100px)\n" +
+            "        transform: rotateX(-90deg) translateZ(100px)\n" +
             "    }")
 
-        const leftCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".bottom {\n" +
-            "        rotateY(-90deg) translateZ(100px)\n" +
+        const leftCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".left {\n" +
+            "        transform: rotateY(-90deg) translateZ(100px)\n" +
             "    }")
 
-        const rightCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".bottom {\n" +
-            "        rotateY(90deg) translateZ(100px)\n" +
+        const rightCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".right {\n" +
+            "        transform: rotateY(90deg) translateZ(100px)\n" +
             "    }")
 
-        const frontCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".bottom {\n" +
-            "        translateZ(100px)\n" +
+        const frontCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".front{\n" +
+            "        transform: translateZ(100px)\n" +
             "    }")
 
         const tooltipStep = slidAR.tooltip.createPtStepWithReverse("div.cube", "#_cube", slidAR.tooltip.TOP);
 
-        const keyframeCodeStep = slidAR.showCode.cssStep("#code", "    @keyframes animate-cube {\n" +
+        const keyframeCodeStep = slidAR.showCode.cssStepWithReverse("#code", "    @keyframes animate-cube {\n" +
             "        100% {transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)}\n" +
             "    }\n" +
             "\n" +
@@ -168,36 +168,28 @@
             "        animation: animate-cube 10s infinite ease-in-out;\n" +
             "    }\n");
 
+        const animateStep = slidAR.classUtil.setClassStepWithReverse("#_cube", "animate-cube")
+
 
         slidAR.steps.set("cube", [
             slidAR.createElement.divStep("#_cube span", "cube-back", ["cube-side"], "Back"),
             backCodeStep.step,
             slidAR.classUtil.setClassStep("#cube-back", "animate-back"),
-            backCodeStep.reverseStep,
-            slidAR.createElement.divStep("#_cube span", "cube-top", ["cube-side"], "Top"),
+            slidAR.steps.combineSteps([backCodeStep.reverseStep, slidAR.createElement.divStep("#_cube span", "cube-top", ["cube-side"], "Top")]),
             topCodeStep.step,
             slidAR.classUtil.setClassStep("#cube-top", "animate-top"),
-            topCodeStep.reverseStep,
-            slidAR.createElement.divStep("#_cube span", "cube-bottom", ["cube-side"], "Bottom"),
-            bottomCodeStep.step,
+            slidAR.steps.combineSteps([topCodeStep.reverseStep, slidAR.createElement.divStep("#_cube span", "cube-bottom", ["cube-side"], "Bottom"), bottomCodeStep.step]),
             slidAR.classUtil.setClassStep("#cube-bottom", "animate-bottom"),
-            bottomCodeStep.reverseStep,
-            slidAR.createElement.divStep("#_cube span", "cube-left", ["cube-side"], "Left"),
-            leftCodeStep.step,
+            slidAR.steps.combineSteps([bottomCodeStep.reverseStep, slidAR.createElement.divStep("#_cube span", "cube-left", ["cube-side"], "Left"), leftCodeStep.step]),
             slidAR.classUtil.setClassStep("#cube-left", "animate-left"),
-            leftCodeStep.reverseStep,
-            slidAR.createElement.divStep("#_cube span", "cube-right", ["cube-side"], "Right"),
-            rightCodeStep.step,
+            slidAR.steps.combineSteps([leftCodeStep.reverseStep, slidAR.createElement.divStep("#_cube span", "cube-right", ["cube-side"], "Right"), rightCodeStep.step]),
             slidAR.classUtil.setClassStep("#cube-right", "animate-right"),
-            rightCodeStep.reverseStep,
-            slidAR.createElement.divStep("#_cube span", "cube-front", ["cube-side"], "Front"),
-            frontCodeStep.step,
+            slidAR.steps.combineSteps([rightCodeStep.reverseStep, slidAR.createElement.divStep("#_cube span", "cube-front", ["cube-side"], "Front"), frontCodeStep.step]),
             slidAR.classUtil.setClassStep("#cube-front", "animate-front"),
-            frontCodeStep.reverseStep,
-            tooltipStep.step,
-            tooltipStep.reverseStep,
-            keyframeCodeStep,
-            slidAR.classUtil.setClassStep("#_cube", "animate-cube"),
+            slidAR.steps.combineSteps([frontCodeStep.reverseStep, tooltipStep.step]),
+            slidAR.steps.combineSteps([tooltipStep.reverseStep, keyframeCodeStep.step]),
+            animateStep.step,
+            slidAR.steps.combineSteps([animateStep.reverseStep, keyframeCodeStep.reverseStep]),
         ])
     })()
 
