@@ -25,7 +25,7 @@
 
     (function () {
 
-        const pieChartCode = slidAR.showCode.cssStepWithReverse("#code",
+        const pieChartCode = slidAR.showCode.jsStepWithReverse("#code",
             "var context = document.querySelector(div.front canvas).getContext('2d')\n" +
             "var config = {\n" +
             "   type: 'pie',\n" +
@@ -42,7 +42,7 @@
             "\n" +
             "new Chart(context, config);\n");
 
-        const donutCharCode = slidAR.showCode.cssStepWithReverse("#code",
+        const donutCharCode = slidAR.showCode.jsStepWithReverse("#code",
             "var context = document.querySelector(div.left canvas).getContext('2d')\n" +
             "var config = {\n" +
             "   type: 'doughnut',\n" +
@@ -86,6 +86,29 @@
             "   .attr(\"rx\", \"23.1\")\n" +
             "   .attr(\"ry\", \"23.1\")\n")
 
+        const pinAnimateCode = slidAR.showCode.jsStepWithReverse("#code",
+            "function horizontalBounce() {\n" +
+            "    dynamics.animate(div, \n" +
+            "        {rotateZ: -45}, \n" +
+            "        {type: dynamics.bounce, duration: 1800, complete: verticalBounce})\n" +
+            "}\n" +
+            "\n" +
+            "function verticalBounce() {\n" +
+            "    dynamics.animate(svg, \n" +
+            "        {scaleY: 0.8}, \n" +
+            "        {type: dynamics.bounce, duration: 800, bounciness: 0})\n" +
+            "\n" +
+            "    dynamics.animate(div, \n" +
+            "        {translateY: -60}, \n" +
+            "        {type: dynamics.forceWithGravity, bounciness: 0, duration: 500, delay: 150})\n" +
+            "\n" +
+            "    dynamics.animate(svg, \n" +
+            "        {scaleY: 0.8}, \n" +
+            "        {type: dynamics.bounce, duration: 800, bounciness: 600, delay: 650, complete: horizontalBounce})\n" +
+            "}\n" +
+            "\n" +
+            "horizontalBounce()\n")
+
         const tooltipStepFront = slidAR.tooltip.createPtStepWithReverse("div.front canvas", "#graphcube .front", slidAR.tooltip.TOP);
         const tooltipStepLeft = slidAR.tooltip.createPtStepWithReverse("div.right canvas", "#graphcube .right", slidAR.tooltip.TOP);
         const tooltipStepTop = slidAR.tooltip.createPtStepWithReverse("div.top svg", "#graphcube .top", slidAR.tooltip.TOP);
@@ -106,6 +129,9 @@
             tooltipStepTop.step,
             pinCode.step,
             {f: _graph_pin, b: _graph_clean_pin},
+            pinCode.reverseStep,
+            pinAnimateCode.step,
+            {f: _graph_pin_animate, b: _graph_pin_stop_animate},
         ])
 
     })()

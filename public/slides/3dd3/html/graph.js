@@ -96,16 +96,18 @@
             .attr("rx", "23.1")
             .attr("ry", "23.1")
 
-        var svg = document.querySelector('#graphcube .top svg')
-        var pin = document.querySelector('#graphcube .top')
+    }
 
-        var paused = false;
+    var paused = false;
+
+    window._graph_pin_animate = function () {
+        paused = false;
+        var svg = document.querySelector('#graphcube .top svg')
+        var div = document.querySelector('#graphcube .top')
 
         function horizontalBounce() {
-            // The bounce animation will return to the original state
-            // In this case, it will go from 0deg to -45deg to 0deg
             if(!paused) {
-                dynamics.animate(pin, {
+                dynamics.animate(div, {
                     rotateZ: -45
                 }, {
                     type: dynamics.bounce,
@@ -116,7 +118,6 @@
         }
 
         function verticalBounce() {
-            // We animate the two elements (svg, pin) independently
             dynamics.animate(svg, {
                 scaleY: 0.8
             }, {
@@ -126,7 +127,7 @@
             })
 
             // Use the delay option to delay your animations
-            dynamics.animate(pin, {
+            dynamics.animate(div, {
                 translateY: -60
             }, {
                 type: dynamics.forceWithGravity,
@@ -147,7 +148,10 @@
         }
 
         horizontalBounce()
+    }
 
+    window._graph_pin_stop_animate = function () {
+        paused = true;
     }
 
     window._graph_clean_pin = function () {
