@@ -12,8 +12,7 @@
 
     .with-image {
         background-image: url("./img/angels.png");
-        background-repeat: no-repeat;
-        background-size:     cover;
+        background-size: cover;
         background-position: left top;
     }
 
@@ -123,6 +122,13 @@
         const tooltipStepTop = slidAR.tooltip.createPtStepWithReverse("div.top svg", "#graphcube .top", slidAR.tooltip.TOP);
         const tooltipStepBack = slidAR.tooltip.createPtStepWithReverse("div.back div", "#graphcube .back", slidAR.tooltip.TOP);
 
+        const imageCssCode = slidAR.showCode.cssStepWithReverse("#graph .code",
+            ".with-image {\n" +
+            "   background-image: url(\"./img/angels.png\");\n" +
+            "   background-size: cover;\n" +
+            "   background-position: left top;\n" +
+            "}\n")
+
         const imageStep = slidAR.classUtil.setClassStepWithReverse("#graphcube .back", "with-image");
 
         slidAR.cube.create("#graphcube", 200);
@@ -144,6 +150,7 @@
             {f: _graph_pin_animate, b: _graph_pin_stop_animate},
             pinAnimateCode.reverseStep,
             tooltipStepBack.step,
+            imageCssCode.step,
             imageStep.step
         ])
 

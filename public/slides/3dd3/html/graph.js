@@ -128,7 +128,6 @@
                 bounciness: 0
             })
 
-            // Use the delay option to delay your animations
             dynamics.animate(div, {
                 translateY: -60
             }, {
