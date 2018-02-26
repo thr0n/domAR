@@ -1,42 +1,26 @@
 /* global slidAR */
 /* global Chart */
+/* global chartColors */
 
 (function () {
     let context;
 
+    var random0To100 = function() {
+        return Math.round(Math.random() * 100);
+    };
+
     window._graph_pie = function pie() {
         context = slidAR.canvas.getContext("#graphcube .front");
-
-        var randomScalingFactor = function() {
-            return Math.round(Math.random() * 100);
-        };
 
         var config = {
             type: 'pie',
             data: {
                 datasets: [{
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                    ],
-                    backgroundColor: [
-                        window.chartColors.red,
-                        window.chartColors.orange,
-                        window.chartColors.yellow,
-                        window.chartColors.green,
-                        window.chartColors.blue,
-                    ],
+                    data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],
+                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
                     label: 'Dataset 1'
                 }],
-                labels: [
-                    "Red",
-                    "Orange",
-                    "Yellow",
-                    "Green",
-                    "Blue"
+                labels: ["Red", "Orange", "Yellow", "Green", "Blue"
                 ]
             },
             options: {
@@ -47,7 +31,39 @@
         new Chart(context, config);
     }
 
-    window._graph__pie = function () {
+    window._graph_donut = function () {
+        context = slidAR.canvas.getContext("#graphcube .top");
+
+        var config = {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],
+                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
+                    label: 'Dataset 1'
+                }],
+                labels: ["Red", "Orange", "Yellow", "Green", "Blue"]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Doughnut Chart'
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        };
+
+        new Chart(context, config);
+    }
+
+    window._graph_clean = function () {
         slidAR.canvas.clearContext(context, 200, 200);
     }
 })()

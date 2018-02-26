@@ -10,6 +10,9 @@
 
 </style>
 
+<div class="slidecounter"></div>
+<div id="code"></div>
+
 <div id="graphcube">
 </div>
 
@@ -20,13 +23,62 @@
 
     (function () {
 
-        function createCube() {
+        const pieChartCode = slidAR.showCode.cssStepWithReverse("#code",
+            "        var config = {\n" +
+            "            type: 'pie',\n" +
+            "            data: {\n" +
+            "                datasets: [{\n" +
+            "                    data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],\n" +
+            "                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],\n" +
+            "                    label: 'Dataset 1'\n" +
+            "                }],\n" +
+            "                labels: [\"Red\", \"Orange\", \"Yellow\", \"Green\", \"Blue\"\n" +
+            "                ]\n" +
+            "            },\n" +
+            "            options: {\n" +
+            "                responsive: true\n" +
+            "            }\n" +
+            "        };\n" +
+            "\n" +
+            "        new Chart(context, config);\n");
 
-        }
+        const donutCharCode = slidAR.showCode.cssStepWithReverse("#code",
+            "var config = {\n" +
+            "            type: 'doughnut',\n" +
+            "            data: {\n" +
+            "                datasets: [{\n" +
+            "                    data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],\n" +
+            "                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],\n" +
+            "                    label: 'Dataset 1'\n" +
+            "                }],\n" +
+            "                labels: [\"Red\", \"Orange\", \"Yellow\", \"Green\", \"Blue\"]\n" +
+            "            },\n" +
+            "            options: {\n" +
+            "                responsive: true,\n" +
+            "                legend: {\n" +
+            "                    position: 'top',\n" +
+            "                },\n" +
+            "                title: {\n" +
+            "                    display: true,\n" +
+            "                    text: 'Chart.js Doughnut Chart'\n" +
+            "                },\n" +
+            "                animation: {\n" +
+            "                    animateScale: true,\n" +
+            "                    animateRotate: true\n" +
+            "                }\n" +
+            "            }\n" +
+            "        };\n" +
+            "\n" +
+            "        new Chart(context, config);");
 
         slidAR.steps.set("graph", [
             slidAR.cube.createWithCanvasStep("#graphcube", 200),
-            {f: _graph_pie, b: _graph__pie}
+            pieChartCode.step,
+            {f: _graph_pie, b: _graph_clean},
+            pieChartCode.reverseStep,
+            donutCharCode.step,
+            {f: _graph_donut, b: _graph_clean},
+            donutCharCode.reverseStep,
         ])
 
     })()
