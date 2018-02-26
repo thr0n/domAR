@@ -16,6 +16,7 @@
 <div id="graphcube">
 </div>
 
+<script src="./lib/dynamics.js"></script>
 <script src="./slides/3dd3/html/graph.js"></script>
 <script>
 
@@ -72,7 +73,7 @@
         const tooltipStepFront = slidAR.tooltip.createPtStepWithReverse("div.front canvas", "#graphcube .front", slidAR.tooltip.TOP);
         const tooltipStepLeft = slidAR.tooltip.createPtStepWithReverse("div.right canvas", "#graphcube .right", slidAR.tooltip.TOP);
 
-        slidAR.cube.createWithCanvas("#graphcube", 200);
+        slidAR.cube.create("#graphcube", 200);
         slidAR.canvas.addCanvas("#graphcube .front", 200, 200);
         slidAR.canvas.addCanvas("#graphcube .right", 200, 200);
 
@@ -85,6 +86,7 @@
             donutCharCode.step,
             {f: _graph_donut, b: _graph_clean_donut},
             donutCharCode.reverseStep,
+            {f: _graph_pin, b: _graph_clean_pin},
         ])
 
     })()
