@@ -14,6 +14,7 @@
     var donutContext;
 
     window._graph_pie = function pie() {
+        slidAR.canvas.addCanvas("#graphcube .front", 200, 200);
         pieContext = slidAR.canvas.getContext("#graphcube .front");
 
         var config = {
@@ -36,6 +37,7 @@
     }
 
     window._graph_donut = function () {
+        slidAR.canvas.addCanvas("#graphcube .right", 200, 200);
         donutContext = slidAR.canvas.getContext("#graphcube .right");
 
         var config = {
@@ -68,11 +70,11 @@
     }
 
     window._graph_clean_pie = function () {
-        slidAR.canvas.clearContext(pieContext, 200, 200);
+        $("#graphcube .front").empty();
     }
 
     window._graph_clean_donut = function () {
-        slidAR.canvas.clearContext(donutContext, 200, 200);
+        $("#graphcube .right").empty();
     }
 
     window._graph_pin = function () {
