@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import * as $ from 'jquery';
 
 const vsprintf = require('sprintf-js').vsprintf;
 
@@ -103,7 +104,19 @@ export const createWithCanvas = (containerSelector, sizeInPx) => {
         .style("display", "block")
 }
 
+export const remove = (containerSelector) => {
+    $(containerSelector).empty();
+}
+
+export const createWithCanvasStep = (containerSelector, sizeInPx) => {
+    return {
+        f: () => createWithCanvas(containerSelector, sizeInPx),
+        b: () => remove(containerSelector)
+    }
+}
+
 export const cube = {
     create,
-    createWithCanvas
+    createWithCanvas,
+    createWithCanvasStep
 }
