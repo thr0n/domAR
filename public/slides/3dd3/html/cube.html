@@ -17,7 +17,7 @@
         transform-style: preserve-3d;
     }
 
-    .cube-side {
+    #cube .cube-side {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -31,12 +31,12 @@
         color: white;
     }
 
-    @keyframes animate-back {
+    @keyframes cube-animate-back {
         100% {transform: rotateY(-180deg) translateZ(100px);}
     }
 
-    .animate-back {
-        animation: animate-back 1s ease-in-out;
+    #cube .animate-back {
+        animation: cube-animate-back 1s ease-in-out;
         animation-fill-mode: forwards;
     }
 
@@ -45,12 +45,12 @@
         color: white;
     }
 
-    @keyframes animate-top {
+    @keyframes cube-animate-top {
         100% {transform: rotateX(90deg) translateZ(100px)}
     }
 
-    .animate-top {
-        animation: animate-top 1s ease-in-out;
+    #cube .animate-top {
+        animation: cube-animate-top 1s ease-in-out;
         animation-fill-mode: forwards;
     }
 
@@ -59,12 +59,12 @@
         color: black;
     }
 
-    @keyframes animate-bottom {
+    @keyframes cube-animate-bottom {
         100% {transform: rotateX(-90deg) translateZ(100px)}
     }
 
-    .animate-bottom {
-        animation: animate-bottom 1s ease-in-out;
+    #cube .animate-bottom {
+        animation: cube-animate-bottom 1s ease-in-out;
         animation-fill-mode: forwards;
     }
 
@@ -73,12 +73,12 @@
         color: white;
     }
 
-    @keyframes animate-left {
+    @keyframes cube-animate-left {
         100% {transform: rotateY(-90deg) translateZ(100px)}
     }
 
-    .animate-left {
-        animation: animate-left 1s ease-in-out;
+    #cube .animate-left {
+        animation: cube-animate-left 1s ease-in-out;
         animation-fill-mode: forwards;
     }
 
@@ -87,12 +87,12 @@
         color: white;
     }
 
-    @keyframes animate-right {
+    @keyframes cube-animate-right {
         100% {transform: rotateY(90deg) translateZ(100px)}
     }
 
     .animate-right {
-        animation: animate-right 1s ease-in-out;
+        animation: cube-animate-right 1s ease-in-out;
         animation-fill-mode: forwards;
     }
 
@@ -101,41 +101,41 @@
         color: black;
     }
 
-    @keyframes animate-front {
+    @keyframes cube-animate-front {
         100% {transform: translateZ(100px)}
     }
 
-    .animate-front {
-        animation: animate-front 1s ease-in-out;
+    #cube .animate-front {
+        animation: cube-animate-front 1s ease-in-out;
         animation-fill-mode: forwards;
     }
 
-    @keyframes animate-cube {
+    @keyframes cube-animate-cube {
         100% {transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)}
     }
 
-    .animate-cube {
-        animation: animate-cube 10s infinite ease-in-out;
+    #cube .animate-cube {
+        animation: cube-animate-cube 10s infinite ease-in-out;
     }
 
-    @keyframes perspective-x {
+    @keyframes cube-perspective-x {
         40% {perspective-origin: 500%}
         80% {perspective-origin: -500%}
         100% {perspective-origin: 0%}
     }
 
-    .animate-perspective-x {
-        animation: perspective-x 10s infinite ease-in-out;
+    #cube .animate-perspective-x {
+        animation: cube-perspective-x 10s infinite ease-in-out;
     }
 
-    @keyframes perspective-y {
+    @keyframes cube-perspective-y {
         40% {perspective-origin: 0% 500%}
         80% {perspective-origin: 0% -500%}
         100% {perspective-origin: 0% 0%}
     }
 
-    .animate-perspective-y {
-        animation: perspective-y 10s infinite ease-in-out;
+    #cube .animate-perspective-y {
+        animation: cube-perspective-y 10s infinite ease-in-out;
     }
 
 </style>
