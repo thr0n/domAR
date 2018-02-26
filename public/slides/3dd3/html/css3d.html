@@ -37,7 +37,7 @@
 </div>
 
 <div id="transform-code"></div>
-<div id="animate-code"></div>
+<div class="code"></div>
 
 <script>
 
@@ -87,7 +87,7 @@
         }
 
         function showCodeAnimate() {
-            slidAR.showCode.css("#animate-code", "@keyframes rotate {\n" +
+            slidAR.showCode.css("#css3d .code", "@keyframes rotate {\n" +
                 "        0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }\n" +
                 "        50% { transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg); }\n" +
                 "        100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }\n" +
@@ -99,7 +99,7 @@
         }
 
         function _showCodeAnimate() {
-            slidAR.showCode.remove("#animate-code");
+            slidAR.showCode.remove("#css3d .code");
         }
 
         function rotate() {

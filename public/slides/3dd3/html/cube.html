@@ -149,39 +149,39 @@
     </div>
 </div>
 
-<div id="code"></div>
+<div class="code"></div>
 
 <script>
 
     (function () {
 
-        const backCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".back {\n" +
+        const backCodeStep = slidAR.showCode.cssStepWithReverse("#cube .code", ".back {\n" +
             "        transform: rotateY(-180deg) translateZ(100px);\n" +
             "    }")
 
-        const topCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".top {\n" +
+        const topCodeStep = slidAR.showCode.cssStepWithReverse("#cube .code", ".top {\n" +
             "        transform: rotateX(90deg) translateZ(100px)\n" +
             "    }")
 
-        const bottomCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".bottom {\n" +
+        const bottomCodeStep = slidAR.showCode.cssStepWithReverse("#cube .code", ".bottom {\n" +
             "        transform: rotateX(-90deg) translateZ(100px)\n" +
             "    }")
 
-        const leftCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".left {\n" +
+        const leftCodeStep = slidAR.showCode.cssStepWithReverse("#cube .code", ".left {\n" +
             "        transform: rotateY(-90deg) translateZ(100px)\n" +
             "    }")
 
-        const rightCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".right {\n" +
+        const rightCodeStep = slidAR.showCode.cssStepWithReverse("#cube .code", ".right {\n" +
             "        transform: rotateY(90deg) translateZ(100px)\n" +
             "    }")
 
-        const frontCodeStep = slidAR.showCode.cssStepWithReverse("#code", ".front{\n" +
+        const frontCodeStep = slidAR.showCode.cssStepWithReverse("#cube .code", ".front{\n" +
             "        transform: translateZ(100px)\n" +
             "    }")
 
         const tooltipStep = slidAR.tooltip.createPtStepWithReverse("div.cube", "#_cube", slidAR.tooltip.TOP);
 
-        const keyframeCodeStep = slidAR.showCode.cssStepWithReverse("#code", "    @keyframes animate-cube {\n" +
+        const keyframeCodeStep = slidAR.showCode.cssStepWithReverse("#cube .code", "    @keyframes animate-cube {\n" +
             "        100% {transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)}\n" +
             "    }\n" +
             "\n" +
@@ -191,7 +191,7 @@
 
         const animateStep = slidAR.classUtil.setClassStepWithReverse("#_cube", "animate-cube");
 
-        const perspectiveXCodeStep = slidAR.showCode.cssStepWithReverse("#code", "@keyframes perspective-x {\n" +
+        const perspectiveXCodeStep = slidAR.showCode.cssStepWithReverse("#cube .code", "@keyframes perspective-x {\n" +
             "        40% {perspective-origin: 500%}\n" +
             "        80% {perspective-origin: -500%}\n" +
             "        100% {perspective-origin: 0%}\n" +
@@ -203,7 +203,7 @@
 
         const perspectiveXStep = slidAR.classUtil.setClassStepWithReverse("#cube-container", "animate-perspective-x");
 
-        const perspectiveYCodeStep = slidAR.showCode.cssStepWithReverse("#code", "@keyframes perspective-y {\n" +
+        const perspectiveYCodeStep = slidAR.showCode.cssStepWithReverse("#cube .code", "@keyframes perspective-y {\n" +
             "        40% {perspective-origin: 0% 500%}\n" +
             "        80% {perspective-origin: 0% -500%}\n" +
             "        100% {perspective-origin: 0% 0%}\n" +
@@ -215,9 +215,9 @@
 
         const perspectiveYStep = slidAR.classUtil.setClassStepWithReverse("#cube-container", "animate-perspective-y");
 
+        slidAR.createElement.div("#_cube span", "cube-back", ["cube-side"], "Back"),
 
         slidAR.steps.set("cube", [
-            slidAR.createElement.divStep("#_cube span", "cube-back", ["cube-side"], "Back"),
             backCodeStep.step,
             slidAR.classUtil.setClassStep("#cube-back", "animate-back"),
             slidAR.steps.combineSteps([backCodeStep.reverseStep, slidAR.createElement.divStep("#_cube span", "cube-top", ["cube-side"], "Top")]),

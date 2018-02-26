@@ -20,7 +20,7 @@
 </style>
 
 <div class="slidecounter"></div>
-<div id="code"></div>
+<div class="code"></div>
 
 <div id="graphcube">
 </div>
@@ -34,7 +34,7 @@
 
     (function () {
 
-        const pieChartCode = slidAR.showCode.jsStepWithReverse("#code",
+        const pieChartCode = slidAR.showCode.jsStepWithReverse("#graph .code",
             "var context = document.querySelector(div.front canvas).getContext('2d')\n" +
             "var config = {\n" +
             "   type: 'pie',\n" +
@@ -51,7 +51,7 @@
             "\n" +
             "new Chart(context, config);\n");
 
-        const donutCharCode = slidAR.showCode.jsStepWithReverse("#code",
+        const donutCharCode = slidAR.showCode.jsStepWithReverse("#graph .code",
             "var context = document.querySelector(div.left canvas).getContext('2d')\n" +
             "var config = {\n" +
             "   type: 'doughnut',\n" +
@@ -79,7 +79,7 @@
             "\n" +
             "new Chart(context, config);");
 
-        const pinCode = slidAR.showCode.jsStepWithReverse("#code",
+        const pinCode = slidAR.showCode.jsStepWithReverse("#graph .code",
             "var svg d3.select(\"div.front svg\")\n" +
             "var g = svg.append(\"g\")\n" +
             "   .attr(\"transform\", \"translate(50,50)\")\n" +
@@ -95,7 +95,7 @@
             "   .attr(\"rx\", \"23.1\")\n" +
             "   .attr(\"ry\", \"23.1\")\n")
 
-        const pinAnimateCode = slidAR.showCode.jsStepWithReverse("#code",
+        const pinAnimateCode = slidAR.showCode.jsStepWithReverse("#graph .code",
             "function horizontalBounce() {\n" +
             "    dynamics.animate(div, \n" +
             "        {rotateZ: -45}, \n" +
@@ -121,6 +121,7 @@
         const tooltipStepFront = slidAR.tooltip.createPtStepWithReverse("div.front canvas", "#graphcube .front", slidAR.tooltip.TOP);
         const tooltipStepLeft = slidAR.tooltip.createPtStepWithReverse("div.right canvas", "#graphcube .right", slidAR.tooltip.TOP);
         const tooltipStepTop = slidAR.tooltip.createPtStepWithReverse("div.top svg", "#graphcube .top", slidAR.tooltip.TOP);
+        const tooltipStepBack = slidAR.tooltip.createPtStepWithReverse("div.back div", "#graphcube .back", slidAR.tooltip.TOP);
 
         const imageStep = slidAR.classUtil.setClassStepWithReverse("#graphcube .back", "with-image");
 
@@ -144,6 +145,7 @@
             pinAnimateCode.step,
             {f: _graph_pin_animate, b: _graph_pin_stop_animate},
             pinAnimateCode.reverseStep,
+            tooltipStepBack.step,
             imageStep.step
         ])
 
