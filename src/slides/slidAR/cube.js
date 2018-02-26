@@ -72,7 +72,9 @@ const create = (containerSelector, sizeInPx) => {
         .append("div")
         .attr("class", "_cube animate-cube")
 
-    inner.selectAll("div.cube-side")
+    const selection = () => inner.selectAll("div._cube div.cube-side");
+
+    selection()
         .data(sides)
         .enter()
         .append("div")
@@ -87,8 +89,21 @@ const create = (containerSelector, sizeInPx) => {
 
     containerStyles(container, sizeInPx);
     innerStyles(inner);
+
+    return selection();
+}
+
+export const createWithCanvas = (containerSelector, sizeInPx) => {
+
+    const selection = create(containerSelector, sizeInPx);
+    selection
+        .append("canvas")
+        .attr("width", sizeInPx)
+        .attr("height", sizeInPx)
+        .style("display", "block")
 }
 
 export const cube = {
-    create
+    create,
+    createWithCanvas
 }
