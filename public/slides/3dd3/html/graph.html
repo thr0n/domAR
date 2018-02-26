@@ -1,0 +1,30 @@
+<style>
+
+    @keyframes animate-cube {
+        100% {transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)}
+    }
+
+    .animate-cube {
+        animation: animate-cube 10s infinite ease-in-out;
+    }
+
+</style>
+
+<div id="graphcube">
+</div>
+
+<script>
+
+    /* global c3 */
+
+    (function () {
+
+        function pie() {
+        }
+
+        slidAR.cube.create("#graphcube", 200)
+        pie();
+    })()
+
+
+</script>

@@ -4,6 +4,7 @@ import {tooltip} from './tooltip';
 import {steps} from './steps';
 import {showCode} from './showCode';
 import {createElement} from './createElement';
+import {cube} from './cube';
 
 export const slidAR = {
     classUtil,
@@ -11,6 +12,7 @@ export const slidAR = {
     tooltip,
     steps,
     showCode,
-    createElement
+    createElement,
+    cube
 };
 
