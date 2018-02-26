@@ -1,11 +1,20 @@
 <style>
 
     @keyframes animate-cube {
-        100% {transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)}
+        33% {transform: rotateX(360deg) rotateY(0deg) rotateZ(0deg)}
+        66% {transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg)}
+        66% {transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)}
     }
 
     .animate-cube {
-        animation: animate-cube 10s infinite ease-in-out;
+        animation: animate-cube 20s infinite ease-in-out;
+    }
+
+    .with-image {
+        background-image: url("./img/angels.png");
+        background-repeat: no-repeat;
+        background-size:     cover;
+        background-position: left top;
     }
 
 </style>
@@ -113,6 +122,8 @@
         const tooltipStepLeft = slidAR.tooltip.createPtStepWithReverse("div.right canvas", "#graphcube .right", slidAR.tooltip.TOP);
         const tooltipStepTop = slidAR.tooltip.createPtStepWithReverse("div.top svg", "#graphcube .top", slidAR.tooltip.TOP);
 
+        const imageStep = slidAR.classUtil.setClassStepWithReverse("#graphcube .back", "with-image");
+
         slidAR.cube.create("#graphcube", 200);
         slidAR.canvas.addCanvas("#graphcube .front", 200, 200);
         slidAR.canvas.addCanvas("#graphcube .right", 200, 200);
@@ -132,6 +143,8 @@
             pinCode.reverseStep,
             pinAnimateCode.step,
             {f: _graph_pin_animate, b: _graph_pin_stop_animate},
+            pinAnimateCode.reverseStep,
+            imageStep.step
         ])
 
     })()
