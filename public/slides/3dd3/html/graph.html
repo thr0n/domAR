@@ -70,8 +70,25 @@
             "\n" +
             "new Chart(context, config);");
 
+        const pinCode = slidAR.showCode.jsStepWithReverse("#code",
+            "var svg d3.select(\"div.front svg\")\n" +
+            "var g = svg.append(\"g\")\n" +
+            "   .attr(\"transform\", \"translate(50,50)\")\n" +
+            "\n" +
+            "g.append(\"path\")\n" +
+            "   .attr(\"d\", \"M38 106.7c2.4 0 37.7-43 37.8-68.8 0-21-17-38-38-38C17 0 0 17 0 38c.4 27 35.4 68.7 38 68.7z\")\n" +
+            "   .attr(\"fill\", \"#EC1A0A\")\n" +
+            "\n" +
+            "g.append(\"ellipse\")\n" +
+            "   .attr(\"fill\", \"#FFF\")\n" +
+            "   .attr(\"cx\", \"38.1\")\n" +
+            "   .attr(\"cy\", \"38.1\")\n" +
+            "   .attr(\"rx\", \"23.1\")\n" +
+            "   .attr(\"ry\", \"23.1\")\n")
+
         const tooltipStepFront = slidAR.tooltip.createPtStepWithReverse("div.front canvas", "#graphcube .front", slidAR.tooltip.TOP);
         const tooltipStepLeft = slidAR.tooltip.createPtStepWithReverse("div.right canvas", "#graphcube .right", slidAR.tooltip.TOP);
+        const tooltipStepTop = slidAR.tooltip.createPtStepWithReverse("div.top svg", "#graphcube .top", slidAR.tooltip.TOP);
 
         slidAR.cube.create("#graphcube", 200);
         slidAR.canvas.addCanvas("#graphcube .front", 200, 200);
@@ -86,6 +103,8 @@
             donutCharCode.step,
             {f: _graph_donut, b: _graph_clean_donut},
             donutCharCode.reverseStep,
+            tooltipStepTop.step,
+            pinCode.step,
             {f: _graph_pin, b: _graph_clean_pin},
         ])
 
