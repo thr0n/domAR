@@ -20,64 +20,70 @@
 <script>
 
     /* global Chart */
+    /* global slidAR */
 
     (function () {
 
         const pieChartCode = slidAR.showCode.cssStepWithReverse("#code",
-            "        var config = {\n" +
-            "            type: 'pie',\n" +
-            "            data: {\n" +
-            "                datasets: [{\n" +
-            "                    data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],\n" +
-            "                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],\n" +
-            "                    label: 'Dataset 1'\n" +
-            "                }],\n" +
-            "                labels: [\"Red\", \"Orange\", \"Yellow\", \"Green\", \"Blue\"\n" +
-            "                ]\n" +
-            "            },\n" +
-            "            options: {\n" +
-            "                responsive: true\n" +
-            "            }\n" +
-            "        };\n" +
+            "var context = document.querySelector(div.front canvas).getContext('2d')\n" +
+            "var config = {\n" +
+            "   type: 'pie',\n" +
+            "   data: {\n" +
+            "       datasets: [{\n" +
+            "           data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],\n" +
+            "           backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],\n" +
+            "           label: 'Dataset 1'\n" +
+            "       }],\n" +
+            "       labels: [\"Red\", \"Orange\", \"Yellow\", \"Green\", \"Blue\"]\n" +
+            "   },\n" +
+            "   options: {responsive: true}\n" +
+            "};\n" +
             "\n" +
-            "        new Chart(context, config);\n");
+            "new Chart(context, config);\n");
 
         const donutCharCode = slidAR.showCode.cssStepWithReverse("#code",
+            "var context = document.querySelector(div.left canvas).getContext('2d')\n" +
             "var config = {\n" +
-            "            type: 'doughnut',\n" +
-            "            data: {\n" +
-            "                datasets: [{\n" +
-            "                    data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],\n" +
-            "                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],\n" +
-            "                    label: 'Dataset 1'\n" +
-            "                }],\n" +
-            "                labels: [\"Red\", \"Orange\", \"Yellow\", \"Green\", \"Blue\"]\n" +
-            "            },\n" +
-            "            options: {\n" +
-            "                responsive: true,\n" +
-            "                legend: {\n" +
-            "                    position: 'top',\n" +
-            "                },\n" +
-            "                title: {\n" +
-            "                    display: true,\n" +
-            "                    text: 'Chart.js Doughnut Chart'\n" +
-            "                },\n" +
-            "                animation: {\n" +
-            "                    animateScale: true,\n" +
-            "                    animateRotate: true\n" +
-            "                }\n" +
-            "            }\n" +
-            "        };\n" +
+            "   type: 'doughnut',\n" +
+            "   data: {\n" +
+            "       datasets: [{\n" +
+            "           data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],\n" +
+            "           backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],\n" +
+            "           label: 'Dataset 1'\n" +
+            "       }],\n" +
+            "       labels: [\"Red\", \"Orange\", \"Yellow\", \"Green\", \"Blue\"]\n" +
+            "   },\n" +
+            "   options: {\n" +
+            "       responsive: true,\n" +
+            "       legend: {position: 'top'},\n" +
+            "       title: {\n" +
+            "           display: true,\n" +
+            "           text: 'Chart.js Doughnut Chart'\n" +
+            "       },\n" +
+            "       animation: {\n" +
+            "           animateScale: true,\n" +
+            "           animateRotate: true\n" +
+            "       }\n" +
+            "   }\n" +
+            "};\n" +
             "\n" +
-            "        new Chart(context, config);");
+            "new Chart(context, config);");
+
+        const tooltipStepFront = slidAR.tooltip.createPtStepWithReverse("div.front canvas", "#graphcube .front", slidAR.tooltip.TOP);
+        const tooltipStepLeft = slidAR.tooltip.createPtStepWithReverse("div.right canvas", "#graphcube .right", slidAR.tooltip.TOP);
+
+        slidAR.cube.createWithCanvas("#graphcube", 200);
+        slidAR.canvas.addCanvas("#graphcube .front", 200, 200);
+        slidAR.canvas.addCanvas("#graphcube .right", 200, 200);
 
         slidAR.steps.set("graph", [
-            slidAR.cube.createWithCanvasStep("#graphcube", 200),
+            tooltipStepFront.step,
             pieChartCode.step,
-            {f: _graph_pie, b: _graph_clean},
+            {f: _graph_pie, b: _graph_clean_pie},
             pieChartCode.reverseStep,
+            tooltipStepLeft.step,
             donutCharCode.step,
-            {f: _graph_donut, b: _graph_clean},
+            {f: _graph_donut, b: _graph_clean_donut},
             donutCharCode.reverseStep,
         ])
 

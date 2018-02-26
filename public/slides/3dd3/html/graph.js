@@ -3,14 +3,15 @@
 /* global chartColors */
 
 (function () {
-    let context;
-
     var random0To100 = function() {
         return Math.round(Math.random() * 100);
     };
 
+    var pieContext;
+    var donutContext;
+
     window._graph_pie = function pie() {
-        context = slidAR.canvas.getContext("#graphcube .front");
+        pieContext = slidAR.canvas.getContext("#graphcube .front");
 
         var config = {
             type: 'pie',
@@ -28,11 +29,11 @@
             }
         };
 
-        new Chart(context, config);
+        new Chart(pieContext, config);
     }
 
     window._graph_donut = function () {
-        context = slidAR.canvas.getContext("#graphcube .top");
+        donutContext = slidAR.canvas.getContext("#graphcube .right");
 
         var config = {
             type: 'doughnut',
@@ -60,11 +61,15 @@
             }
         };
 
-        new Chart(context, config);
+        new Chart(donutContext, config);
     }
 
-    window._graph_clean = function () {
-        slidAR.canvas.clearContext(context, 200, 200);
+    window._graph_clean_pie = function () {
+        slidAR.canvas.clearContext(pieContext, 200, 200);
+    }
+
+    window._graph_clean_donut = function () {
+        slidAR.canvas.clearContext(donutContext, 200, 200);
     }
 })()
 
