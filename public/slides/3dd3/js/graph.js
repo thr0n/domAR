@@ -6,15 +6,12 @@
 /* global dynamics */
 
 (function () {
-    var pieContext;
-    var donutContext;
-
     window._graph_pie = function pie() {
-        pieContext = window._charts_pie("#graphcube .front", 200, 200);
+        window._charts_pie("#graphcube .front", 200, 200);
     }
 
     window._graph_donut = function () {
-        donutContext = window._charts_donut("#graphcube .right", 200, 200)
+        window._charts_donut("#graphcube .right", 200, 200)
     }
 
     window._graph_clean_pie = function () {
