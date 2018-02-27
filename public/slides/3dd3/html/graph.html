@@ -10,8 +10,20 @@
         animation: graph-animate-cube 20s infinite ease-in-out;
     }
 
-    #graph .with-image {
+    #graph .with-angels {
         background-image: url("./img/angels.png");
+        background-size: cover;
+        background-position: left top;
+    }
+
+    #graph .with-water {
+        background-image: url("./img/water.png");
+        background-size: cover;
+        background-position: left top;
+    }
+
+    #graph .with-bird {
+        background-image: url("./img/bird.png");
         background-size: cover;
         background-position: left top;
     }
@@ -79,7 +91,7 @@
             "new Chart(context, config);");
 
         const pinCode = slidAR.showCode.jsStepWithReverse("#graph .code",
-            "var svg d3.select(\"div.front svg\")\n" +
+            "var svg d3.select(\"div.top svg\")\n" +
             "var g = svg.append(\"g\")\n" +
             "   .attr(\"transform\", \"translate(50,50)\")\n" +
             "\n" +
@@ -123,13 +135,15 @@
         const tooltipStepBack = slidAR.tooltip.createPtStepWithReverse("div.back div", "#graphcube .back", slidAR.tooltip.TOP);
 
         const imageCssCode = slidAR.showCode.cssStepWithReverse("#graph .code",
-            ".with-image {\n" +
+            "div.back {\n" +
             "   background-image: url(\"./img/angels.png\");\n" +
             "   background-size: cover;\n" +
             "   background-position: left top;\n" +
             "}\n")
 
-        const imageStep = slidAR.classUtil.setClassStepWithReverse("#graphcube .back", "with-image");
+        const imageStepAngels = slidAR.classUtil.setClassStepWithReverse("#graphcube .back", "with-angels");
+        const imageStepWater = slidAR.classUtil.setClassStepWithReverse("#graphcube .left", "with-water");
+        const imageStepBird = slidAR.classUtil.setClassStepWithReverse("#graphcube .bottom", "with-bird");
 
         slidAR.cube.create("#graphcube", 200);
 
@@ -151,7 +165,10 @@
             pinAnimateCode.reverseStep,
             tooltipStepBack.step,
             imageCssCode.step,
-            imageStep.step
+            imageStepAngels.step,
+            imageCssCode.reverseStep,
+            imageStepWater.step,
+            imageStepBird.step,
         ])
 
     })()

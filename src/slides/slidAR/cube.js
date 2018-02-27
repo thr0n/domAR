@@ -42,7 +42,7 @@ const top = {
 
 const bottom = {
     name: SIDE_NAME_BOTTOM,
-    transform: "rotate(-90deg) translateZ(%s)",
+    transform: "rotateX(-90deg) translateZ(%s)",
     color: "#9e9d24"
 }
 
