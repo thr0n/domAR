@@ -6,75 +6,23 @@
 /* global dynamics */
 
 (function () {
-    var random0To100 = function() {
-        return Math.round(Math.random() * 100);
-    };
-
     var pieContext;
     var donutContext;
 
     window._graph_pie = function pie() {
-        slidAR.canvas.addCanvas("#graphcube .front", 200, 200);
-        pieContext = slidAR.canvas.getContext("#graphcube .front");
-
-        var config = {
-            type: 'pie',
-            data: {
-                datasets: [{
-                    data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],
-                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
-                    label: 'Dataset 1'
-                }],
-                labels: ["Red", "Orange", "Yellow", "Green", "Blue"
-                ]
-            },
-            options: {
-                responsive: true
-            }
-        };
-
-        new Chart(pieContext, config);
+        pieContext = window._charts_pie("#graphcube .front", 200, 200);
     }
 
     window._graph_donut = function () {
-        slidAR.canvas.addCanvas("#graphcube .right", 200, 200);
-        donutContext = slidAR.canvas.getContext("#graphcube .right");
-
-        var config = {
-            type: 'doughnut',
-            data: {
-                datasets: [{
-                    data: [random0To100(), random0To100(), random0To100(), random0To100(), random0To100()],
-                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
-                    label: 'Dataset 1'
-                }],
-                labels: ["Red", "Orange", "Yellow", "Green", "Blue"]
-            },
-            options: {
-                responsive: true,
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Chart.js Doughnut Chart'
-                },
-                animation: {
-                    animateScale: true,
-                    animateRotate: true
-                }
-            }
-        };
-
-        new Chart(donutContext, config);
+        donutContext = window._charts_donut("#graphcube .right", 200, 200)
     }
 
     window._graph_clean_pie = function () {
-        $("#graphcube .front").empty();
+        window._charts_clean("#graphcube .front");
     }
 
     window._graph_clean_donut = function () {
-        $("#graphcube .right").empty();
+        window._charts_clean("#graphcube .right");
     }
 
     window._graph_pin = function () {
