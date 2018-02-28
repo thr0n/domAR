@@ -14,6 +14,9 @@
         transform-style: preserve-3d;
         border-width: 1px;
         border-style: solid;
+        width: 100%;
+        height: 100%;
+        transition: all 1s ease-in-out;
     }
 
     #backAndFront .background {
@@ -26,29 +29,28 @@
     }
 
     #backAndFront .one {
-        z-index: 1000;
+        transform: translateZ(-1px);
+        transition: all 1s ease-in-out;
     }
 
     #backAndFront .two {
-        z-index: 2000;
+        transform: translateZ(+1px);
     }
 
     @keyframes flip-animation {
         100% {transform: rotateY(180deg)}
     }
 
-    .flip {
-        animation: flip-animation 1s ease-in-out;
-        animation-fill-mode: forwards;
+    #backAndFront .flip {
+        transform: rotateY(180deg);
     }
 
     @keyframes flip-back-animation {
-        100% {transform: rotateY(-180deg)}
+        100% {transform: rotateY(0deg)}
     }
 
-    .flip-back {
-        animation: flip-back-animation 1s ease-in-out;
-        animation-fill-mode: forwards;
+    #backAndFront .flip-back {
+        transform: rotateY(0deg)
     }
 
 </style>
@@ -57,7 +59,10 @@
 <div class="code"></div>
 
 <div class="container">
-    <div class="flipper background"></div>
+    <div class="flipper">
+        <div class="background one">123</div>
+        <div class="background two">456</div>
+    </div>
 </div>
 
 <script src="./lib/dynamics.js"></script>
@@ -69,28 +74,15 @@
 
     (function () {
 
-        function pie() {
-            window._backAndFront_pie("#backAndFront .flipper", 200, 200, "canvas-pie");
-        }
-
-        function _pie() {
-            window._backAndFront_clean_pie("#backAndFront .flipper");
-        }
-
-        const flipOuterStep = slidAR.classUtil.setClassStepWithReverse("#backAndFront .flipper", "flip");
-        const flipOuterBackStep = slidAR.classUtil.setClassStepWithReverse("#backAndFront .flipper", "flip-back");
-
-        const flipStep = slidAR.classUtil.setClassStep("#backAndFront .canvas-pie", "flip");
-
-        const secondBackgroundStep = slidAR.createElement.divStep("#backAndFront .flipper", "backAndFront-second", ["background", "two"], "");
+        const flipStep = slidAR.classUtil.setClassStepWithReverse("#backAndFront .flipper", "flip");
+        const flipBackStep = slidAR.classUtil.setClassStep("#backAndFront .flipper", "flip-back");
+        const flipOneStep = slidAR.classUtil.setClassStep("#backAndFront .one", "flip")
 
         slidAR.steps.set("backAndFront", [
-            {f: pie, b: _pie},
-            //secondBackgroundStep,
-            {f: window._backAndFront_box},
-            flipOuterStep.step,
-            flipOuterBackStep.step,
-            slidAR.steps.combine2StepsDelayed(flipOuterBackStep.step, flipOuterStep.reverseStep, 1000),
+            flipStep.step,
+            flipOneStep,
+            flipStep.reverseStep,
+            flipStep.step,
         ])
 
     })()
