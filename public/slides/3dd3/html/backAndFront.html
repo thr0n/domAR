@@ -1,30 +1,36 @@
 <style>
 
-    #backAndFront .flipper {
+    #backAndFront .container {
+        width: 200px;
+        height: 200px;
+        position: absolute;
         top: 40vh;
         left: 40vw;
+        font-size: 3em;
+        perspective: 800px;
+    }
+
+    #backAndFront .flipper {
+        transform-style: preserve-3d;
         border-width: 1px;
         border-style: solid;
     }
 
-    .background {
+    #backAndFront .background {
         position: absolute;
-        width: 200px;
-        height: 200px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-color: white;
     }
 
-    .second-background {
-        top: 0;
-        left: 0;
+    #backAndFront .one {
+        z-index: 1000;
     }
 
-    #backAndFront .inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 200px;
-        height: 200px;
+    #backAndFront .two {
+        z-index: 2000;
     }
 
     @keyframes flip-animation {
@@ -50,7 +56,8 @@
 <div class="slidecounter"></div>
 <div class="code"></div>
 
-<div class="flipper background">
+<div class="container">
+    <div class="flipper background"></div>
 </div>
 
 <script src="./lib/dynamics.js"></script>
@@ -75,11 +82,12 @@
 
         const flipStep = slidAR.classUtil.setClassStep("#backAndFront .canvas-pie", "flip");
 
-        const secondBackgroundStep = slidAR.createElement.divStep("#backAndFront .flipper", "backAndFront-second", ["background", "second-background"], "");
+        const secondBackgroundStep = slidAR.createElement.divStep("#backAndFront .flipper", "backAndFront-second", ["background", "two"], "");
 
         slidAR.steps.set("backAndFront", [
             {f: pie, b: _pie},
-            secondBackgroundStep,
+            //secondBackgroundStep,
+            {f: window._backAndFront_box},
             flipOuterStep.step,
             flipOuterBackStep.step,
             slidAR.steps.combine2StepsDelayed(flipOuterBackStep.step, flipOuterStep.reverseStep, 1000),
