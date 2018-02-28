@@ -6,10 +6,7 @@
         return Math.round(Math.random() * 100);
     };
 
-    window._charts_pie = function pie(selector, width, height) {
-        slidAR.canvas.addCanvas(selector, width, height);
-        var context = slidAR.canvas.getContext(selector);
-
+    window._charts_pie = function pie(context) {
         var config = {
             type: 'pie',
             data: {
@@ -31,8 +28,8 @@
         return context;
     }
 
-    window._charts_donut = function (selector, width, height) {
-        slidAR.canvas.addCanvas(selector, width, height);
+    window._charts_donut = function (selector, width, height, canvasClasses) {
+        slidAR.canvas.addCanvas(selector, width, height, canvasClasses);
         var context = slidAR.canvas.getContext(selector);
 
         var config = {

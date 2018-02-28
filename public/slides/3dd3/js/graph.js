@@ -7,7 +7,10 @@
 
 (function () {
     window._graph_pie = function pie() {
-        window._charts_pie("#graphcube .front", 200, 200);
+        slidAR.canvas.addCanvas("#graphcube .front", 200, 200);
+        var context = slidAR.canvas.getContext("#graphcube .front");
+
+        window._charts_pie(context);
     }
 
     window._graph_donut = function () {

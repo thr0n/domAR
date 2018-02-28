@@ -54,8 +54,24 @@ export const combineSteps = (steps) => {
     }
 }
 
+export const combine2StepsDelayed = (step1, step2, delay) => {
+    return {
+        f: () => {
+            step1.f();
+            setTimeout(() => {
+                step2.f();
+            }, delay);
+        },
+        b: () => {
+            step1.b();
+            step2.b();
+        }
+    }
+}
+
 export const steps = {
     set,
     createReverseStep,
-    combineSteps
+    combineSteps,
+    combine2StepsDelayed
 }

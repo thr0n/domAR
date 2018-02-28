@@ -9,12 +9,14 @@ export const clearContext = (ctx, width, height) => {
 }
 
 export const addCanvas = (parentSelector, width, height, classes) => {
-    d3.selectAll(parentSelector)
+    const canvas = d3.selectAll(parentSelector)
         .append("canvas")
         .attr("class", classes)
         .attr("width", width)
         .attr("height", height)
         .style("display", "block")
+
+    return canvas.node();
 }
 
 export const canvas = {
