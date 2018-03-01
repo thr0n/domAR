@@ -6,7 +6,10 @@
         return Math.round(Math.random() * 100);
     };
 
-    window._charts_pie = function pie(context) {
+    window._charts_pie = function pie(selector, width, height, canvasClasses) {
+        slidAR.canvas.addCanvas(selector, width, height, canvasClasses);
+        var context = slidAR.canvas.getContext(selector);
+
         var config = {
             type: 'pie',
             data: {

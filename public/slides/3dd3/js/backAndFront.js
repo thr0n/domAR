@@ -2,10 +2,11 @@
 
 (function () {
     window._backAndFront_pie = function pie() {
-        var canvas = slidAR.canvas.addCanvas("#backAndFront .flipper", 200, 200, "one");
-        var context = canvas.getContext('2d');
+        window._charts_pie("#backAndFront .flipper .one", 200, 200, "");
+    }
 
-        window._charts_pie(context);
+    window._backAndFront_donut = function pie() {
+        window._charts_donut("#backAndFront .flipper .two", 200, 200, "");
     }
 
     window._backAndFront_box = function () {

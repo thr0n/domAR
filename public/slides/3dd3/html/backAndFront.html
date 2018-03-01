@@ -60,8 +60,8 @@
 
 <div class="container">
     <div class="flipper">
-        <div class="background one">123</div>
-        <div class="background two">456</div>
+        <div class="background one"></div>
+        <div class="background two"></div>
     </div>
 </div>
 
@@ -74,9 +74,12 @@
 
     (function () {
 
+        window._backAndFront_pie();
+        window._backAndFront_donut();
+
         const flipStep = slidAR.classUtil.setClassStepWithReverse("#backAndFront .flipper", "flip");
         const flipBackStep = slidAR.classUtil.setClassStep("#backAndFront .flipper", "flip-back");
-        const flipOneStep = slidAR.classUtil.setClassStep("#backAndFront .one", "flip")
+        const flipOneStep = slidAR.classUtil.setClassStep("#backAndFront .one", "flip");
 
         slidAR.steps.set("backAndFront", [
             flipStep.step,
