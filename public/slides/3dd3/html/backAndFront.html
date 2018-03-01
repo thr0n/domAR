@@ -81,7 +81,11 @@
         const flipBackStep = slidAR.classUtil.setClassStep("#backAndFront .flipper", "flip-back");
         const flipOneStep = slidAR.classUtil.setClassStep("#backAndFront .one", "flip");
 
+        const tooltipOneStep = slidAR.tooltip.createPtStepWithReverse("div.one canvas", "#backAndFront .one", slidAR.tooltip.BOTTOM);
+        const tooltipTwoStep = slidAR.tooltip.createPtStepWithReverse("div.two canvas", "#backAndFront .two", slidAR.tooltip.TOP);
+
         slidAR.steps.set("backAndFront", [
+            slidAR.steps.combineSteps([tooltipOneStep.step, tooltipTwoStep.step]),
             flipStep.step,
             flipOneStep,
             flipStep.reverseStep,
