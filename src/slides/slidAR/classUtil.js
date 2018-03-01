@@ -6,7 +6,9 @@ export const setRemoveClass = (selector, className, trueToSet, intervalInMs) => 
     d3.selectAll(selector)
         .each(function(_, i) {
             const element = this;
-            const fct = () => d3.select(element).classed(className, trueToSet);
+            const fct = () => {
+                d3.select(element).classed(className, trueToSet);
+            }
             if(intervalInMs > 0) {
                 setTimeout(fct, i * intervalInMs);
             }
@@ -28,6 +30,18 @@ export const setClasses = (selector, classNames) => {
 
 export const removeClass = (selector, className, intervalInMs) => {
     setRemoveClass(selector, className, false, intervalInMs);
+}
+
+export const removeClassStep = (selector, className, intervalInMs) => {
+    return {
+        f:() => removeClass(selector, className, intervalInMs),
+        b: () => setClass(selector, className, intervalInMs)
+    }
+}
+
+export const removeClassStepWithReverse = (selector, className, intervalInMs) => {
+    const step = removeClassStep(selector, className, intervalInMs);
+    return createReverseStep(step);
 }
 
 export const removeClasses = (selector, classNames) => {
@@ -64,6 +78,8 @@ export const classUtil = {
     setRemoveClass,
     setClass,
     removeClass,
+    removeClassStep,
+    removeClassStepWithReverse,
     setClassStep,
     setClassStepWithReverse,
     setClasses,

@@ -38,7 +38,11 @@
     }
 
     @keyframes flip-animation {
-        100% {transform: rotateY(180deg)}
+        100% {transform: rotateY(360deg)}
+    }
+
+    #backAndFront .flip-animation {
+        animation: flip-animation 5s infinite ease-in-out;
     }
 
     #backAndFront .flip {
@@ -59,9 +63,11 @@
 <div class="code"></div>
 
 <div class="container">
-    <div class="flipper">
-        <div class="background one"></div>
-        <div class="background two"></div>
+    <div class="background inner-container">
+        <div class="flipper">
+            <div class="background one"></div>
+            <div class="background two"></div>
+        </div>
     </div>
 </div>
 
@@ -80,16 +86,28 @@
         const flipStep = slidAR.classUtil.setClassStepWithReverse("#backAndFront .flipper", "flip");
         const flipBackStep = slidAR.classUtil.setClassStep("#backAndFront .flipper", "flip-back");
         const flipOneStep = slidAR.classUtil.setClassStep("#backAndFront .one", "flip");
+        const flipAnimationStep = slidAR.classUtil.setClassStepWithReverse("#backAndFront .flipper", "flip-animation");
+        const removeFlipStep = slidAR.classUtil.removeClassStepWithReverse("#backAndFront .flipper", "flip")
 
         const tooltipOneStep = slidAR.tooltip.createPtStepWithReverse("div.one canvas", "#backAndFront .one", slidAR.tooltip.BOTTOM);
         const tooltipTwoStep = slidAR.tooltip.createPtStepWithReverse("div.two canvas", "#backAndFront .two", slidAR.tooltip.TOP);
 
+        const showCodeStep1 = slidAR.showCode.cssStepWithReverse("#backAndFront .code",
+            "div.one {transform: translateZ(-1px);}\n" +
+            "div.two {transform: translateZ(+1px);}")
+
+        const showCodeStep2 = slidAR.showCode.cssStepWithReverse("#backAndFront .code",
+            "div.one {transform: rotateY(180deg) translateZ(-1px);}\n" +
+            "div.two {transform: translateZ(+1px);}")
+
         slidAR.steps.set("backAndFront", [
             slidAR.steps.combineSteps([tooltipOneStep.step, tooltipTwoStep.step]),
+            showCodeStep1.step,
             flipStep.step,
+            showCodeStep2.step,
             flipOneStep,
-            flipStep.reverseStep,
-            flipStep.step,
+            slidAR.steps.combineSteps([removeFlipStep.step ,flipAnimationStep.step]),
+            flipAnimationStep.reverseStep,
         ])
 
     })()
