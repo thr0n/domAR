@@ -39,6 +39,22 @@ export const removeClassStep = (selector, className, intervalInMs) => {
     }
 }
 
+export const switchClasses = (selector, fromClass, toClass) => {
+    setRemoveClass(selector, fromClass, false);
+    setRemoveClass(selector, toClass, true);
+}
+
+export const switchClassesStep = (selector, fromClass, toClass) => {
+    return {
+        f: () => switchClasses(selector, fromClass, toClass),
+        b: () => switchClasses(selector, toClass, fromClass),
+    }
+}
+
+export const switchClassesStepWithReverse = (selector, fromClass, toClass) => {
+    return createReverseStep(switchClassesStep(selector, fromClass, toClass));
+}
+
 export const removeClassStepWithReverse = (selector, className, intervalInMs) => {
     const step = removeClassStep(selector, className, intervalInMs);
     return createReverseStep(step);
@@ -85,5 +101,8 @@ export const classUtil = {
     setClasses,
     removeClasses,
     set2Classes,
-    set2ClassesStep
+    set2ClassesStep,
+    switchClasses,
+    switchClassesStep,
+    switchClassesStepWithReverse
 };

@@ -7,7 +7,26 @@
         top: 40vh;
         left: 40vw;
         font-size: 3em;
+    }
+
+    #backAndFront .near {
         perspective: 800px;
+    }
+
+    #backAndFront .far {
+        perspective: 8000px;
+    }
+
+    .origin-near {
+        transform-origin: center center -100px;
+    }
+
+    .origin-even-nearer {
+        transform-origin: center center 400px;
+    }
+
+    .origin-far {
+        transform-origin: center center -5000px;
     }
 
     #backAndFront .flipper {
@@ -62,7 +81,7 @@
 <div class="slidecounter"></div>
 <div class="code"></div>
 
-<div class="container">
+<div class="container near">
     <div class="background inner-container">
         <div class="flipper">
             <div class="background one"></div>
@@ -100,6 +119,11 @@
             "div.one {transform: rotateY(180deg) translateZ(-1px);}\n" +
             "div.two {transform: translateZ(+1px);}")
 
+        const fromNearToFarStep = slidAR.classUtil.switchClassesStepWithReverse("#backAndFront .container", "near", "far");
+        const fromOriginHereToNearStep = slidAR.classUtil.setClassStepWithReverse("#backAndFront .flipper", "origin-near");
+        const fromOriginNearToFarStep = slidAR.classUtil.switchClassesStepWithReverse("#backAndFront .flipper", "origin-near", "origin-far");
+        const fromOriginFarToEvenNearerStep = slidAR.classUtil.switchClassesStepWithReverse("#backAndFront .flipper", "origin-far", "origin-even-nearer");
+
         slidAR.steps.set("backAndFront", [
             slidAR.steps.combineSteps([tooltipOneStep.step, tooltipTwoStep.step]),
             showCodeStep1.step,
@@ -108,6 +132,14 @@
             flipOneStep,
             slidAR.steps.combineSteps([removeFlipStep.step ,flipAnimationStep.step]),
             flipAnimationStep.reverseStep,
+            fromOriginHereToNearStep.step,
+            flipAnimationStep.step,
+            flipAnimationStep.reverseStep,
+            fromOriginNearToFarStep.step,
+            flipAnimationStep.step,
+            flipAnimationStep.reverseStep,
+            fromOriginFarToEvenNearerStep.step,
+            flipAnimationStep.step,
         ])
 
     })()
