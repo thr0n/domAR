@@ -17,15 +17,15 @@
         perspective: 8000px;
     }
 
-    .origin-near {
+    #backAndFront .origin-near {
         transform-origin: center center -100px;
     }
 
-    .origin-even-nearer {
-        transform-origin: center center 400px;
+    #backAndFront .origin-even-nearer {
+        transform-origin: center center 600px;
     }
 
-    .origin-far {
+    #backAndFront .origin-far {
         transform-origin: center center -5000px;
     }
 
@@ -79,7 +79,12 @@
 </style>
 
 <div class="slidecounter"></div>
-<div class="code"></div>
+<div class="code0"></div>
+<div class="code1"></div>
+<div class="code2"></div>
+<div class="code3"></div>
+<div class="code4"></div>
+<div class="code5"></div>
 
 <div class="container near">
     <div class="background inner-container">
@@ -108,37 +113,49 @@
         const flipAnimationStep = slidAR.classUtil.setClassStepWithReverse("#backAndFront .flipper", "flip-animation");
         const removeFlipStep = slidAR.classUtil.removeClassStepWithReverse("#backAndFront .flipper", "flip")
 
-        const tooltipOneStep = slidAR.tooltip.createPtStepWithReverse("div.one canvas", "#backAndFront .one", slidAR.tooltip.BOTTOM);
-        const tooltipTwoStep = slidAR.tooltip.createPtStepWithReverse("div.two canvas", "#backAndFront .two", slidAR.tooltip.TOP);
+        const tooltipOneStep = slidAR.tooltip.createPtStepWithReverse("div.flipper > div.one > canvas", "#backAndFront .one", slidAR.tooltip.BOTTOM);
+        const tooltipTwoStep = slidAR.tooltip.createPtStepWithReverse("div.flipper > div.two > canvas", "#backAndFront .two", slidAR.tooltip.TOP);
+        const tooltipFlipperStep = slidAR.tooltip.createPtStepWithReverse("div.flipper", "#backAndFront .flipper", slidAR.tooltip.TOP);
 
-        const showCodeStep1 = slidAR.showCode.cssStepWithReverse("#backAndFront .code",
+        const showCodeStepFlip = slidAR.showCode.cssStepWithReverse("#backAndFront .code0",
+            "div.flipper {transform: rotateY(180deg);}\n")
+        const showCodeStep1 = slidAR.showCode.cssStepWithReverse("#backAndFront .code1",
             "div.one {transform: translateZ(-1px);}\n" +
-            "div.two {transform: translateZ(+1px);}")
-
-        const showCodeStep2 = slidAR.showCode.cssStepWithReverse("#backAndFront .code",
+            "div.two {transform: translateZ(+1px);}\n" +
+            "div.flipper {transform: rotateY(180deg);}\n")
+        const showCodeStep2 = slidAR.showCode.cssStepWithReverse("#backAndFront .code2",
             "div.one {transform: rotateY(180deg) translateZ(-1px);}\n" +
-            "div.two {transform: translateZ(+1px);}")
+            "div.two {transform: translateZ(+1px);}\n" +
+            "div.flipper {transform: rotateY(180deg);}\n")
 
-        const fromNearToFarStep = slidAR.classUtil.switchClassesStepWithReverse("#backAndFront .container", "near", "far");
+        const showCodeStepOriginNear = slidAR.showCode.cssStepWithReverse("#backAndFront .code3",
+            "div.flipper {transform-origin: center center -100px;}\n")
+        const showCodeStepOriginFar = slidAR.showCode.cssStepWithReverse("#backAndFront .code4",
+            "div.flipper {transform-origin: center center -5000px;}\n")
+        const showCodeStepOriginEvenNearer = slidAR.showCode.cssStepWithReverse("#backAndFront .code5",
+            "div.flipper {transform-origin: center center 500px;}\n")
+
         const fromOriginHereToNearStep = slidAR.classUtil.setClassStepWithReverse("#backAndFront .flipper", "origin-near");
         const fromOriginNearToFarStep = slidAR.classUtil.switchClassesStepWithReverse("#backAndFront .flipper", "origin-near", "origin-far");
         const fromOriginFarToEvenNearerStep = slidAR.classUtil.switchClassesStepWithReverse("#backAndFront .flipper", "origin-far", "origin-even-nearer");
 
         slidAR.steps.set("backAndFront", [
-            slidAR.steps.combineSteps([tooltipOneStep.step, tooltipTwoStep.step]),
+            tooltipFlipperStep.step,
+            slidAR.steps.combineSteps([tooltipFlipperStep.reverseStep, tooltipOneStep.step, tooltipTwoStep.step]),
             showCodeStep1.step,
             flipStep.step,
-            showCodeStep2.step,
+            slidAR.steps.combineSteps([showCodeStep1.reverseStep, showCodeStep2.step]),
             flipOneStep,
-            slidAR.steps.combineSteps([removeFlipStep.step ,flipAnimationStep.step]),
+            slidAR.steps.combineSteps([removeFlipStep.step, flipAnimationStep.step]),
             flipAnimationStep.reverseStep,
-            fromOriginHereToNearStep.step,
+            slidAR.steps.combineSteps([tooltipOneStep.reverseStep, tooltipTwoStep.reverseStep, tooltipFlipperStep.step]),
+            slidAR.steps.combineSteps([showCodeStep2.reverseStep, showCodeStepOriginNear.step, fromOriginHereToNearStep.step]),
             flipAnimationStep.step,
             flipAnimationStep.reverseStep,
-            fromOriginNearToFarStep.step,
+            slidAR.steps.combineSteps([showCodeStepOriginNear.reverseStep, fromOriginNearToFarStep.step, showCodeStepOriginFar.step]),
             flipAnimationStep.step,
             flipAnimationStep.reverseStep,
-            fromOriginFarToEvenNearerStep.step,
+            slidAR.steps.combineSteps([fromOriginFarToEvenNearerStep.step, showCodeStepOriginEvenNearer.step, showCodeStepOriginFar.reverseStep]),
             flipAnimationStep.step,
         ])
 

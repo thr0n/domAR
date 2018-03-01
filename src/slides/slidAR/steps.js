@@ -50,7 +50,7 @@ const doAll = (steps) => {
 export const combineSteps = (steps) => {
     return {
         f: () => doAll(steps.map((step) => step.f)),
-        b: () => doAll(steps.map((step) => step.b))
+        b: () => doAll(steps.reverse().map((step) => step.b))
     }
 }
 
