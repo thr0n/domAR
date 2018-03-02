@@ -1,5 +1,7 @@
 import * as $ from 'jquery';
 
+import {createReverseStep} from './steps';
+
 const vsprintf = require('sprintf-js').vsprintf;
 
 const Prism = require('prismjs');
@@ -14,11 +16,45 @@ export const css = (selector, cssString) => {
     $(selector).html(withPre);
 }
 
+export const js = (selector, jsString) => {
+    const html = Prism.highlight(jsString, Prism.languages.javascript);
+    const withPre = putIntoPre("javascript", html);
+    $(selector).html(withPre);
+}
+
 export const remove = (selector) => {
     $(selector).empty();
 }
 
+export const cssStep = (selector, cssString) => {
+    return {
+        f: () => css(selector, cssString),
+        b: () => remove(selector)
+    }
+}
+
+export const jsStep = (selector, jsString) => {
+    return {
+        f: () => js(selector, jsString),
+        b: () => remove(selector)
+    }
+}
+
+export const cssStepWithReverse = (selector, cssString) => {
+    const step = cssStep(selector, cssString);
+    return createReverseStep(step);
+}
+
+export const jsStepWithReverse = (selector, jsString) => {
+    const step = jsStep(selector, jsString);
+    return createReverseStep(step);
+}
+
 export const showCode = {
     css,
-    remove
+    remove,
+    cssStep,
+    cssStepWithReverse,
+    jsStep,
+    jsStepWithReverse
 }

@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
-    "@argonjs/argon": "^1.4.0-58",
     "@tweenjs/tween.js": "^17.2.0",
     "animejs": "^2.2.0",
     "autoprefixer": "7.1.2",
@@ -16,6 +15,7 @@
     "bounce.js": "^0.8.2",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
+    "chart.js": "^2.7.1",
     "css-loader": "0.28.4",
     "d3": "^4.10.2",
     "dotenv": "4.0.0",

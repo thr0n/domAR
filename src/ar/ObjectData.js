@@ -23,6 +23,10 @@ export class ObjectData {
         return this.index < (this.totalNum - 1) ? this.index + 1 : 0;
     }
 
+    getPrevIndex() {
+        return this.index > 0 ? this.index - 1 : (this.totalNum - 1);
+    }
+
     setIndex(index) {
         this.index = index;
     }
