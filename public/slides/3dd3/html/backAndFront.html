@@ -153,7 +153,7 @@
             flipAnimationStep.step,
             flipAnimationStep.reverseStep,
             slidAR.steps.combineSteps([showCodeStepOriginNear.reverseStep, fromOriginNearToFarStep.step, showCodeStepOriginFar.step]),
-            flipAnimationStep.step,
+            Object.assign({}, flipAnimationStep.step, {demo: true}),
             flipAnimationStep.reverseStep,
             slidAR.steps.combineSteps([fromOriginFarToEvenNearerStep.step, showCodeStepOriginEvenNearer.step, showCodeStepOriginFar.reverseStep]),
             flipAnimationStep.step,

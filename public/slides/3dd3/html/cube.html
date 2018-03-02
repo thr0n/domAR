@@ -233,7 +233,7 @@
             slidAR.classUtil.setClassStep("#cube-front", "animate-front"),
             slidAR.steps.combineSteps([frontCodeStep.reverseStep, tooltipStep.step]),
             slidAR.steps.combineSteps([tooltipStep.reverseStep, keyframeCodeStep.step]),
-            animateStep.step,
+            Object.assign({}, animateStep.step, {demo: true}),
             slidAR.steps.combineSteps([animateStep.reverseStep, keyframeCodeStep.reverseStep]),
             perspectiveXCodeStep.step,
             perspectiveXStep.step,

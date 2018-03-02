@@ -2,6 +2,7 @@ import * as _ from 'lodash';
 
 import {slideControl} from '../control/SlideControl';
 import {paramValue} from '../../util/query';
+import {demo} from './demo';
 
 const _waitForSteps = (stepNum, resolve) => {
     const currentStepsObject = slideControl.getCurrentStepsObject();
@@ -39,8 +40,31 @@ export const init = () => {
     }
 }
 
+const doesDemoStepExist = (steps) => {
+    const demoSteps = steps.filter((step) => {
+        return step.demo;
+    })
+
+    return demoSteps.length > 0;
+}
+
+const goToDemoStep = (steps) => {
+    if(doesDemoStepExist(steps)) {
+        for(let i = 0; i < steps.length; i++) {
+            const step = steps[i];
+            step.f();
+            if(step.demo) {
+                break;
+            }
+        }
+    }
+}
+
 export const set = (slideId, steps) => {
     slideControl.setStepsObject(slideId, steps);
+    if(demo.is()) {
+        goToDemoStep(steps);
+    }
 }
 
 const doAll = (steps) => {

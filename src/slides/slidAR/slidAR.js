@@ -6,6 +6,7 @@ import {showCode} from './showCode';
 import {createElement} from './createElement';
 import {cube} from './cube';
 import {canvas} from './canvas';
+import {demo} from './demo';
 
 export const slidAR = {
     classUtil,
@@ -15,6 +16,7 @@ export const slidAR = {
     showCode,
     createElement,
     cube,
-    canvas
+    canvas,
+    demo
 };
 
